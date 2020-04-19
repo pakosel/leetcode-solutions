@@ -7,15 +7,19 @@ dotnet build
 ```
 
 ## Run tests
+``
+dotnet test --framework <selected_framework>
 ```
-dotnet test
+e.g.
+``
+dotnet test --framework netcoreapp3.1
 ```
 
 ## Run tests for the specific problem only
 ```
-dotnet test --filter <problemNamespace>
+dotnet test --framework <selected_framework> --filter <problemNamespace>
 ```
 e.g.
 ```
-dotnet test --filter "Atoi"
+dotnet test --framework netcoreapp3.1 --filter "Atoi"
 ```
