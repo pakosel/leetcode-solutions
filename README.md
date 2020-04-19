@@ -7,11 +7,11 @@ dotnet build
 ```
 
 ## Run tests
-``
+```
 dotnet test --framework <selected_framework>
 ```
 e.g.
-``
+```
 dotnet test --framework netcoreapp3.1
 ```
 
