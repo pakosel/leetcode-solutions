@@ -21,5 +21,5 @@ dotnet test --framework <selected_framework> --filter <problemNamespace>
 ```
 e.g.
 ```
-dotnet test --framework netcoreapp3.1 --filter "Atoi"
+dotnet test --framework "netcoreapp3.1" --filter "Atoi"
 ```
