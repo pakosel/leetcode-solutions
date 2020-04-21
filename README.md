@@ -8,16 +8,16 @@ dotnet build
 
 ## Run tests
 ```
-dotnet test --framework <selected_framework>
+dotnet test --framework "<selected_framework>"
 ```
 e.g.
 ```
-dotnet test --framework netcoreapp3.1
+dotnet test --framework "netcoreapp3.1"
 ```
 
 ## Run tests for the specific problem only
 ```
-dotnet test --framework <selected_framework> --filter <problemNamespace>
+dotnet test --framework "<selected_framework>" --filter "<problemNamespace>"
 ```
 e.g.
 ```
