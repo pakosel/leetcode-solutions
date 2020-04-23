@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MatchingPairs
 {
@@ -16,15 +17,18 @@ namespace MatchingPairs
                 var matching = 0;
                 var swapped = false;
                 var bestMatchFound = false;
-                Dictionary<char, List<char>> unmatched = new Dictionary<char, List<char>>();
+                Dictionary<char, HashSet<char>> unmatched = new Dictionary<char, HashSet<char>>();
                 for (int i = 0; i < len; i++)
-                    if (s[i] == t[i])
+                {
+                    char Si = s[i];
+                    char Ti = t[i];
+                    if (Si == Ti)
                         matching++;
                     else
                     {
                         if (!bestMatchFound)
                         {
-                            if (unmatched.ContainsKey(t[i]))
+                            if (unmatched.ContainsKey(Ti))
                             {
                                 if (!swapped)
                                 {
@@ -32,23 +36,26 @@ namespace MatchingPairs
                                     swapped = true;
                                 }
 
-                                if (unmatched[t[i]].Contains(s[i]))
+                                if (unmatched[Ti].Contains(Si))
                                 {
                                     matching++;
                                     bestMatchFound = true;
                                 }
-
-                                unmatched[t[i]].Add(s[i]);
                             }
                             else
-                                unmatched.Add(s[i], new List<char>() { t[i] });
+                                if(unmatched.ContainsKey(Si))
+                                    unmatched[Si].Add(Ti);
+                                else
+                                    unmatched.Add(Si, new HashSet<char>() { Ti });
                         }
                     }
+                }
 
-                if (!swapped)
-                    matching -= 2;
+                if (!swapped && matching == len)            //to cover test case no. 2
+                    if(s.Distinct().Count() == s.Length)    //to cover test case no. 9
+                        matching -= 2;
 
-                return matching > 0 ? matching : 0;
+                return matching;
             }
         }
 
