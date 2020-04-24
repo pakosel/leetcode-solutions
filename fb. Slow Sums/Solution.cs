@@ -41,5 +41,30 @@ namespace SlowSums
 
             return sum;
         }
+
+        public static int getTotalTime_naive(int[] arr)
+        {
+            List<int> lst = new List<int>(arr);
+            int sum = 0;
+
+            while(lst.Count > 1)
+            {
+                int max = 0;
+                int idx = 0;
+                for(int i=0; i<lst.Count - 1; i++)
+                {
+                    if(lst[i] + lst[i+1] > max)
+                    {
+                        idx = i;
+                        max = lst[i] + lst[i+1];
+                    }
+                }
+                sum += max;
+                lst[idx] = max;
+                lst.RemoveAt(idx + 1);
+            }
+
+            return sum;
+        }
     }
 }
