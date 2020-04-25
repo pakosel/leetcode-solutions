@@ -11,7 +11,7 @@ namespace PascalTriangle
             int [][] arr = new int [numRows][];
             if(numRows == 0)
                 return arr;
-                
+
             arr[0] = new int[1] {1};
             
             if(numRows == 1)
@@ -27,6 +27,34 @@ namespace PascalTriangle
                     arr_i[j] = arr[i-1][j] + arr[i-1][j-1];
 
                 arr[i] = arr_i;
+            }
+
+            return arr;
+        }
+        public IList<IList<int>> GeneratePascal_GenList(int numRows)
+        {
+            IList<IList<int>> arr = new List<IList<int>>();
+            if(numRows == 0)
+                return arr;
+                
+            arr.Add( new List<int>() { 1 } );
+            
+            if(numRows == 1)
+                return arr;
+
+            arr.Add( new List<int>() {1, 1} );
+
+            for(int i=2; i < numRows; i++)
+            {
+                var arr_i = new List<int>();
+                arr_i.Add(1);
+                
+                for(int j=1; j<i; j++)
+                    arr_i.Add(arr[i-1][j] + arr[i-1][j-1]);
+
+                arr_i.Add(1);
+
+                arr.Add( arr_i );
             }
 
             return arr;
