@@ -16,6 +16,7 @@ namespace InsertInterval
         [TestCase("[[1,5]]", new int[] {5,8}, "[[1,8]]")]
         [TestCase("[[1,5]]", new int[] {2,3}, "[[1,5]]")]
         [TestCase("[[1,5]]", new int[] {0,3}, "[[0,5]]")]
+        [TestCase("[[1,5]]", new int[] {0,0}, "[[0,0],[1,5]]")]
         public void Test_Example(string inputArr, int[] newInterval, string expected)
         {
             var arr = inputArr.TrimStart('[').TrimEnd(']').Split("],[");
