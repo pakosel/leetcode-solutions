@@ -19,16 +19,23 @@ namespace PartitionEqualSum
 
             if (sum % 2 == 0)
             {
-                var target = sum / 2;
-                var memoTable = new bool[len][];
+                if(nums[len-1] == sum / 2)
+                    return true;
+                if(nums[len-1] > sum / 2)
+                    return false;
+                
+                var target = sum / 2 - nums[len-1];
+                var memoTable = new bool[len-1][];
 
-                for(int i=0; i<len; i++)
+                for(int i=0; i<len-1; i++)
                 {
                     memoTable[i] = new bool[target+1];
                     for(int j=0; j<=target; j++)
                     {
                         if(i == 0)
                             memoTable[i][j] = (nums[i] == j);
+                        else if(j == 0)
+                            memoTable[i][j] = true;
                         else
                         {
                             if(j < nums[i])
@@ -39,7 +46,7 @@ namespace PartitionEqualSum
                     }
                 }
 
-                return memoTable[len-1][target];
+                return memoTable[len-2][target];
             }
 
             return false;
