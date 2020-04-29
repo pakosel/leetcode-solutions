@@ -39,9 +39,12 @@ namespace PartitionEqualSum
                         else
                         {
                             if(j < nums[i])
-                                memoTable[i][j] = memoTable[i-1][j];
+                                memoTable[i][j] = memoTable[i-1][j];    //value greater than current target sum won't help us
                             else
                                 memoTable[i][j] = memoTable[i-1][j] || memoTable[i-1][ j - nums[i] ];
+
+                            if(j == target && memoTable[i][j])
+                                return true;    //because the value will be "propagated" to "memoTable[len-2][target]" anyway
                         }
                     }
                 }
