@@ -8,44 +8,37 @@ namespace FourSum
     {
         public IList<IList<int>> FourSum(int[] nums, int target)
         {
-            var outList = new List<IList<int>>();
-
-            if (nums.Length < 4)
-                return outList;
-
+            int len = nums.Length;
             Array.Sort(nums);
 
-            Dictionary<int, int> values = new Dictionary<int, int>();
-            var len = nums.Length;
-            for (int i = len - 1; i >= 0; i--)
-                if (!values.ContainsKey(nums[i]))
-                    values.Add(nums[i], i);
-
-            for (int i = 0; i < len; i++)
-            {
-                if (i > 0 && nums[i - 1] == nums[i])
-                    continue;
-                for (int j = i + 1; j < len; j++)
+            IList<IList<int>> ret = new List<IList<int>>();
+            for (int i = 0; i < len-3; i++)
+                for (int j = i + 1; j < len-2; j++)
                 {
-                    if (j > i + 1 && nums[j - 1] == nums[j])
-                        continue;
-                    for (int k = j + 1; k < len; k++)
+                    var sum = nums[i] + nums[j];
+                    var lookingFor = target - sum;
+                    int left = j + 1;
+                    int right = len - 1;
+                    while (left < right)
                     {
-                        if (k > j + 1 && nums[k - 1] == nums[k])
-                            continue;
-                        var sum = nums[i] + nums[j] + nums[k];
-                        var lookingFor = target - sum;
-                        if (values.ContainsKey(lookingFor))
+                        if (nums[left] + nums[right] > lookingFor)
+                            right--;
+                        else if (nums[left] + nums[right] < lookingFor)
+                            left++;
+                        else //if(nums[left] + nums[right] == lookingFor)
                         {
-                            var idx = values[lookingFor];
-                            if (idx > i && idx > j && idx > k)
-                                outList.Add(new int[] { nums[i], nums[j], nums[k], nums[idx] });
+                            var newList = new List<int> { nums[i], nums[j], nums[left], nums[right] };
+                            if(ret.All(l => !this.EqualLists(l, newList)))
+                                ret.Add(newList);
+                            left++;
+                            right--;
                         }
                     }
                 }
-            }
 
-            return outList;
+            return ret;
         }
+
+        private bool EqualLists(IList<int> l1, IList<int> l2) => l1[0] == l2[0] && l1[1] == l2[1] && l1[2] == l2[2] && l1[3] == l2[3];
     }
 }
