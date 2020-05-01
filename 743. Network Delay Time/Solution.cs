@@ -27,18 +27,29 @@ namespace NetworkDelayTime
                 nodes[source].AddNeighbour(nodes[target], weight);
             }
 
-            Dictionary<int, int> visited = new Dictionary<int, int>();
-            visited.Add(K, 0);
-            dfs(nodes[K], visited);
-            if (visited.Count < N)
+            Dictionary<int, int> dist = new Dictionary<int, int>();
+            var inf = int.MaxValue / 2;
+            foreach(var n in nodes.Keys)
+                dist.Add(n, inf);
+            dist[K] = 0;
+            var nextNodeLabel = SelectNextNode(dist, nodes);
+            while(nextNodeLabel != 0)
+            {
+                dfs(nodes[nextNodeLabel], dist);
+                nextNodeLabel = SelectNextNode(dist, nodes);
+            }
+
+            if (dist.Any(n => n.Value >= inf))
                 return -1;
 
             var maxPath = 0;
             for (int i = 1; i <= N; i++)
-                maxPath = Math.Max(maxPath, visited[i]);
+                maxPath = Math.Max(maxPath, dist[i]);
 
             return maxPath;
         }
+
+        private int SelectNextNode(Dictionary<int, int> dist, Dictionary<int, Node> nodes) => dist.Where(n => !nodes[n.Key].Done).OrderBy(n => n.Value).FirstOrDefault().Key;
 
         private void dfs(Node node, Dictionary<int, int> visited)
         {
@@ -48,19 +59,18 @@ namespace NetworkDelayTime
                 var n = neighbour.Key;
                 var distToNeighbour = dist + neighbour.Value;
                 if (!visited.ContainsKey(n.Label))
-                {
                     visited.Add(n.Label, distToNeighbour);
-                    dfs(n, visited);
-                }
                 else if (distToNeighbour < visited[n.Label])
                     visited[n.Label] = distToNeighbour;
             }
+            node.Done = true;
         }
 
         public class Node
         {
             public int Label;
             public List<KeyValuePair<Node, int>> Neighbours = new List<KeyValuePair<Node, int>>();
+            public bool Done = false;
             public Node(int label) { Label = label; }
             public void AddNeighbour(Node node, int weight)
             {
