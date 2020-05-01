@@ -35,23 +35,21 @@ namespace NetworkDelayTime
             var nextNodeLabel = SelectNextNode(dist, nodes);
             while(nextNodeLabel != 0)
             {
-                dfs(nodes[nextNodeLabel], dist);
+                Dijkstra(nodes[nextNodeLabel], dist);
                 nextNodeLabel = SelectNextNode(dist, nodes);
             }
 
             if (dist.Any(n => n.Value >= inf))
                 return -1;
 
-            var maxPath = 0;
-            for (int i = 1; i <= N; i++)
-                maxPath = Math.Max(maxPath, dist[i]);
+            var maxPath = dist.Max(n => n.Value);
 
             return maxPath;
         }
 
         private int SelectNextNode(Dictionary<int, int> dist, Dictionary<int, Node> nodes) => dist.Where(n => !nodes[n.Key].Done).OrderBy(n => n.Value).FirstOrDefault().Key;
 
-        private void dfs(Node node, Dictionary<int, int> visited)
+        private void Dijkstra(Node node, Dictionary<int, int> visited)
         {
             var dist = visited[node.Label];
             foreach (var neighbour in node.Neighbours)
