@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace NumberOfVisibleNodes
 {
@@ -52,6 +53,7 @@ namespace NumberOfVisibleNodes
         [Test]
         [TestCase(new int[] {8,3,1,6,4,7,10,14,13}, 4)]
         [TestCase(new int[] {8,3,1,6,4,7,20,25,24,22,23}, 6)]
+        [TestCase(new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50}, 50)]
         public void Test_Cases(int[] nodes, int expected)
         {
             var bst = new BinarySearchTree();
@@ -65,6 +67,7 @@ namespace NumberOfVisibleNodes
         [Test]
         [TestCase(new int[] {8,3,1,6,4,7,10,14,13,}, 4)]
         [TestCase(new int[] {8,3,1,6,4,7,20,25,24,22,23}, 6)]
+        [TestCase(new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50}, 50)]
         public void Test_Cases_Naive(int[] nodes, int expected)
         {
             var bst = new BinarySearchTree();
@@ -73,6 +76,34 @@ namespace NumberOfVisibleNodes
             var ret = Solution_naive.visibleNodes(bst.root);
 
             Assert.AreEqual(ret, expected);
+        }
+
+        [Test]
+        public void Test_Random()
+        {
+            var rand = new Random(DateTime.Now.Millisecond);
+            var len = rand.Next(500,1000);
+
+            var bst = new BinarySearchTree();
+            for(var i=1; i<=len; i++)
+                bst.insert(i);
+            var ret = Solution.visibleNodes(bst.root);
+
+            Assert.AreEqual(ret, len);
+        }
+
+        [Test]
+        public void Test_Random_naive()
+        {
+            var rand = new Random(DateTime.Now.Millisecond);
+            var len = rand.Next(500,1000);
+
+            var bst = new BinarySearchTree();
+            for(var i=1; i<=len; i++)
+                bst.insert(i);
+            var ret = Solution_naive.visibleNodes(bst.root);
+
+            Assert.AreEqual(ret, len);
         }
     }
 
