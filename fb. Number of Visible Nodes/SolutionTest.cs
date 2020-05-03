@@ -26,19 +26,19 @@ namespace NumberOfVisibleNodes
         [Test]
         public void Test_Example2()
         {
-            var node = new Node(8) { left = new Node(3) { left = new Node(1), right = new Node(6) {left = new Node(4), right = new Node(7)}}, right = new Node(20) {right = new Node(24) {left = new Node(13) {left = new Node(10) {right = new Node(11)}}}}};
+            var node = new Node(8) { left = new Node(3) { left = new Node(1), right = new Node(6) {left = new Node(4), right = new Node(7)}}, right = new Node(20) {right = new Node(25) {left = new Node(24) {left = new Node(22) {right = new Node(23)}}}}};
 /*
             8  <------ root
            / \
          3    20
         / \     \
-       1   6     24
+       1   6     25
           / \    /
-         4   7  13
+         4   7  24
                /
-              10
+              22
                 \
-                 11
+                 23
 */            
             var ret = Solution.visibleNodes(node);
 
@@ -51,6 +51,7 @@ namespace NumberOfVisibleNodes
     {
         [Test]
         [TestCase(new int[] {8,3,1,6,4,7,10,14,13}, 4)]
+        [TestCase(new int[] {8,3,1,6,4,7,20,25,24,22,23}, 6)]
         public void Test_Cases(int[] nodes, int expected)
         {
             var bst = new BinarySearchTree();
@@ -62,7 +63,8 @@ namespace NumberOfVisibleNodes
         }
 
         [Test]
-        [TestCase(new int[] {8,3,1,6,4,7,10,14,13}, 4)]
+        [TestCase(new int[] {8,3,1,6,4,7,10,14,13,}, 4)]
+        [TestCase(new int[] {8,3,1,6,4,7,20,25,24,22,23}, 6)]
         public void Test_Cases_Naive(int[] nodes, int expected)
         {
             var bst = new BinarySearchTree();
