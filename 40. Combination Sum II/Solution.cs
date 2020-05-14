@@ -7,53 +7,39 @@ namespace CombinationSumII
 {
     public class Solution
     {
-        Dictionary<int, List<Tuple<List<int>, List<int>>>> visited = new Dictionary<int, List<Tuple<List<int>, List<int>>>>();
+        List<int> partialRes = new List<int>();
+        List<int> sortedCandidates;
+        IList<IList<int>> res;
+
         public IList<IList<int>> CombinationSum2(int[] candidates, int target)
         {
-            var res = new List<IList<int>>();
+            res = new List<IList<int>>();
+            sortedCandidates = candidates.OrderBy(t => t).ToList();
 
-            BackTrack(new List<int>(), candidates.OrderBy(t => t).ToList(), target, res);
+            BackTrack(0, target);
 
             return res;
         }
 
-        private void BackTrack(List<int> partialRes, List<int> candidates, int currentTarget, IList<IList<int>> res)
+        private void BackTrack(int currentCandidate, int currentTarget)
         {
-            var tupleCallLists = new Tuple<List<int>, List<int>>(partialRes, candidates);
-            if(visited.ContainsKey(currentTarget))
+            var prevC = -1;
+            for (int i = currentCandidate; i < sortedCandidates.Count; i++)
             {
-                var tupleList = visited[currentTarget];
-                if(tupleList.Any(t => t.Item1.SequenceEqual(partialRes) && t.Item2.SequenceEqual(candidates)))
-                    return;
-                else
-                    tupleList.Add(tupleCallLists);
-            }
-            else
-                visited.Add(currentTarget, new List<Tuple<List<int>, List<int>>>() {tupleCallLists});
-
-            Console.Out.WriteLine($"BackTrack partialRes: [{string.Join(',', partialRes)}] candidates: [{string.Join(',', candidates)}] currentTarget: [{currentTarget}]");
-            foreach (var c in candidates)
-            {
+                var c = sortedCandidates[i];
                 if (c > currentTarget)
                     return;
-                var newPartial = new List<int>(partialRes);
-                newPartial.Add(c);
-                newPartial = newPartial.OrderBy(t => t).ToList();
+                if (prevC == c)
+                    continue; //the same item was already considered in previous iteration
+                partialRes.Add(c);
 
                 if (c == currentTarget)
-                {
-                    if(!res.Any(l => l.SequenceEqual(newPartial)))
-                    {
-                        res.Add(newPartial);
-                        return;
-                    }
-                }
+                    res.Add(partialRes.ToArray());
                 else
-                {
-                    var newCandidates = new List<int>(candidates);
-                    newCandidates.Remove(c);
-                    BackTrack(newPartial, newCandidates, currentTarget - c, res);
-                }
+                    BackTrack(i + 1, currentTarget - c);
+
+                partialRes.Remove(c);
+                prevC = c;
             }
         }
     }
