@@ -7,7 +7,7 @@ namespace LetterCombinationsPhoneNumber
 {
     public class Solution
     {
-        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        Dictionary<char, List<char>> letters = new Dictionary<char, List<char>>();
         public IList<string> LetterCombinations(string digits)
         {
             var len = digits.Length;
@@ -20,25 +20,25 @@ namespace LetterCombinationsPhoneNumber
 
         private void InitDict()
         {
-            dict.Add("1", new List<string>() {});
-            dict.Add("2", new List<string>() {"a", "b", "c"});
-            dict.Add("3", new List<string>() {"d", "e", "f"});
-            dict.Add("4", new List<string>() {"g", "h", "i"});
-            dict.Add("5", new List<string>() {"j", "k", "l"});
-            dict.Add("6", new List<string>() {"m", "n", "o"});
-            dict.Add("7", new List<string>() {"p", "q", "r", "s"});
-            dict.Add("8", new List<string>() {"t", "u", "v"});
-            dict.Add("9", new List<string>() {"w", "x", "y", "z"});
+            letters.Add('1', new List<char>() {});
+            letters.Add('2', new List<char>() {'a', 'b', 'c'});
+            letters.Add('3', new List<char>() {'d', 'e', 'f'});
+            letters.Add('4', new List<char>() {'g', 'h', 'i'});
+            letters.Add('5', new List<char>() {'j', 'k', 'l'});
+            letters.Add('6', new List<char>() {'m', 'n', 'o'});
+            letters.Add('7', new List<char>() {'p', 'q', 'r', 's'});
+            letters.Add('8', new List<char>() {'t', 'u', 'v'});
+            letters.Add('9', new List<char>() {'w', 'x', 'y', 'z'});
         }
 
         public List<string> GetLetters(string digits)
         {
-            if(dict.ContainsKey(digits))
-                return dict[digits];
+            if(digits.Length == 1)
+                return new List<string>(letters[digits[0]].Select(c => c.ToString()));
 
             var res = new List<string>();
             var rest = GetLetters(digits.Substring(1));
-            foreach(var c in dict[digits[0].ToString()])
+            foreach(var c in letters[digits[0]])
                 foreach(var r in rest)
                     res.Add(c + r);
             return res;
