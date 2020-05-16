@@ -9,31 +9,30 @@ namespace ShortestPathInGridWithObstacles
     public class Solution
     {
         Dictionary<Point, int> visitedNodes = new Dictionary<Point, int>();
+        Queue<PointPathCredit> queue = new Queue<PointPathCredit>();
         Point final;
         int[][] Grid;
         public int ShortestPath(int[][] grid, int k)
         {
             if (grid.Length == 0)
                 return 0;
-            
+
             Grid = grid;
-            //Tuple<Point, path, credit>
-            Queue<Tuple<Point, int, int>> queue = new Queue<Tuple<Point, int, int>>();
-            queue.Enqueue(new Tuple<Point, int, int>(new Point(0, 0), 0, k));
+            queue.Enqueue(new PointPathCredit(new Point(0, 0), 0, k));
             final = new Point(grid.Length - 1, grid[0].Length - 1);
 
             while (queue.Count > 0)
             {
-                var tuple = queue.Dequeue();
-                var point = tuple.Item1;
-                var path = tuple.Item2;
-                var credit = tuple.Item3;
+                var ppc = queue.Dequeue();
+                var point = ppc.Point;
+                var path = ppc.Path;
+                var credit = ppc.Credit;
                 if (point == final)
                     return path;
 
                 if (visitedNodes.ContainsKey(point))
                 {
-                    if(visitedNodes[point] < credit)
+                    if (visitedNodes[point] < credit)
                         visitedNodes[point] = credit;
                     else
                         continue;
@@ -41,34 +40,38 @@ namespace ShortestPathInGridWithObstacles
                 else
                     visitedNodes.Add(point, credit);
 
-                var nextPoint = new Point(point.X + 1, point.Y);
-                if(ValidateNextPoint(nextPoint, credit, out var nextCredit))
-                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
-                nextPoint = new Point(point.X, point.Y + 1);
-                if(ValidateNextPoint(nextPoint, credit, out nextCredit))
-                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
-                nextPoint = new Point(point.X - 1, point.Y);
-                if(ValidateNextPoint(nextPoint, credit, out nextCredit))
-                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
-                nextPoint = new Point(point.X, point.Y - 1);
-                if(ValidateNextPoint(nextPoint, credit, out nextCredit))
-                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
+                ProcessPoint(point.X + 1, point.Y, credit, path);
+                ProcessPoint(point.X, point.Y + 1, credit, path);
+                ProcessPoint(point.X - 1, point.Y, credit, path);
+                ProcessPoint(point.X, point.Y - 1, credit, path);
             }
 
             return -1;
         }
 
-        bool ValidateNextPoint(Point p, int credit, out int nextCredit)
+        private void ProcessPoint(int x, int y, int currentCredit, int currentPath)
         {
-            nextCredit = -1;
-            if(p.X >= 0 && p.X <= final.X && p.Y >= 0 && p.Y <= final.Y)
+            if (x >= 0 && x <= final.X && y >= 0 && y <= final.Y)
             {
-                nextCredit = credit - Grid[p.X][p.Y];
-                if(nextCredit >= 0 && (!visitedNodes.ContainsKey(p) || visitedNodes[p] < nextCredit))
-                    return true;
+                var p = new Point(x, y);
+                var nextCredit = currentCredit - Grid[x][y];
+                if (nextCredit >= 0 && (!visitedNodes.ContainsKey(p) || visitedNodes[p] < nextCredit))
+                    queue.Enqueue(new PointPathCredit(p, currentPath + 1, nextCredit));
             }
-            return false;
-            
+        }
+
+        private struct PointPathCredit
+        {
+            public Point Point;
+            public int Path;
+            public int Credit;
+
+            public PointPathCredit(Point point, int path, int credit)
+            {
+                Point = point;
+                Path = path;
+                Credit = credit;
+            }
         }
     }
 }
