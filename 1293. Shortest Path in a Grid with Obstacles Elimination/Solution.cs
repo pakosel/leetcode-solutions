@@ -8,78 +8,67 @@ namespace ShortestPathInGridWithObstacles
 {
     public class Solution
     {
-        Dictionary<Point, Node> visitedNodes = new Dictionary<Point, Node>();
+        Dictionary<Point, int> visitedNodes = new Dictionary<Point, int>();
+        Point final;
+        int[][] Grid;
         public int ShortestPath(int[][] grid, int k)
         {
             if (grid.Length == 0)
                 return 0;
-
-            Queue<Node> queue = new Queue<Node>();
-            queue.Enqueue(new Node(0, 0, k, 0, grid));
+            
+            Grid = grid;
+            //Tuple<Point, path, credit>
+            Queue<Tuple<Point, int, int>> queue = new Queue<Tuple<Point, int, int>>();
+            queue.Enqueue(new Tuple<Point, int, int>(new Point(0, 0), 0, k));
+            final = new Point(grid.Length - 1, grid[0].Length - 1);
 
             while (queue.Count > 0)
             {
-                var node = queue.Dequeue();
-                if (node.IsFinal)
-                    return node.Path;
+                var tuple = queue.Dequeue();
+                var point = tuple.Item1;
+                var path = tuple.Item2;
+                var credit = tuple.Item3;
+                if (point == final)
+                    return path;
 
-                if (visitedNodes.ContainsKey(node.Point))
+                if (visitedNodes.ContainsKey(point))
                 {
-                    if(visitedNodes[node.Point].Credit < node.Credit)
-                        visitedNodes[node.Point] = node;
+                    if(visitedNodes[point] < credit)
+                        visitedNodes[point] = credit;
                     else
                         continue;
                 }
                 else
-                    visitedNodes.Add(node.Point, node);
+                    visitedNodes.Add(point, credit);
 
-                foreach (var n in node.Neighbours(visitedNodes))
-                    queue.Enqueue(n);
+                var nextPoint = new Point(point.X + 1, point.Y);
+                if(ValidateNextPoint(nextPoint, credit, out var nextCredit))
+                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
+                nextPoint = new Point(point.X, point.Y + 1);
+                if(ValidateNextPoint(nextPoint, credit, out nextCredit))
+                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
+                nextPoint = new Point(point.X - 1, point.Y);
+                if(ValidateNextPoint(nextPoint, credit, out nextCredit))
+                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
+                nextPoint = new Point(point.X, point.Y - 1);
+                if(ValidateNextPoint(nextPoint, credit, out nextCredit))
+                    queue.Enqueue(new Tuple<Point, int, int>(nextPoint, path+1, nextCredit));
             }
 
             return -1;
         }
-    }
 
-    public class Node
-    {
-        int X;
-        int Y;
-        public Point Point => new Point(X, Y);
-        public int Credit;
-        public int Path;
-        int[][] Grid;
-        int GridWidth => Grid.Length;
-        int GridHeight => Grid[0].Length;
-        public bool IsFinal => X == GridWidth - 1 && Y == GridHeight - 1;
-        public Node(int x, int y, int credit, int path, int[][] grid)
+        bool ValidateNextPoint(Point p, int credit, out int nextCredit)
         {
-            X = x;
-            Y = y;
-            Credit = credit - grid[x][y];
-            Path = path;
-            Grid = grid;
-        }
-
-        public IEnumerable<Node> Neighbours(Dictionary<Point, Node> visitedNodes)
-        {
-            var candidates = new List<Node>();
-            if (X < GridWidth - 1)
-                candidates.Add(new Node(X + 1, Y, Credit, Path + 1, Grid));
-            if (Y < GridHeight - 1)
-                candidates.Add(new Node(X, Y + 1, Credit, Path + 1, Grid));
-            if (X > 0)
-                candidates.Add(new Node(X - 1, Y, Credit, Path + 1, Grid));
-            if (Y > 0)
-                candidates.Add(new Node(X, Y - 1, Credit, Path + 1, Grid));
-
-            foreach (var candidate in candidates)
-                if (candidate.Credit >= 0)
-                {
-                    var visited = visitedNodes.ContainsKey(candidate.Point) ? visitedNodes[candidate.Point] : null;
-                    if (visited == null || visited.Credit < candidate.Credit)
-                        yield return candidate;
-                }
+            nextCredit = -1;
+            if(p.X >= 0 && p.X <= final.X && p.Y >= 0 && p.Y <= final.Y)
+            {
+                nextCredit = credit - Grid[p.X][p.Y];
+                if(nextCredit >= 0 && (!visitedNodes.ContainsKey(p) || visitedNodes[p] < nextCredit))
+                    return true;
+            }
+            return false;
+            
         }
     }
 }

@@ -34,6 +34,9 @@ namespace ShortestPathInGridWithObstacles
                                        new int[] {0,0,1,0,0,1,1,1,1,1,0,1,0,0,0},
                                        new int[] {0,0,0,1,1,0,0,1,1,1,1,1,1,0,0},
                                        new int[] {0,0,0,0,1,1,1,0,0,1,1,1,0,1,0}}, 27, 24},
+            new object[] {new int[][] {new int[] {0,1,0,0,0,1,0,0},
+                                       new int[] {0,1,0,1,0,1,0,1},
+                                       new int[] {0,0,0,1,0,0,1,0}}, 1, 13},
         };
 
         [Test]
