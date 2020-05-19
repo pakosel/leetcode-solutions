@@ -12,36 +12,25 @@ namespace MergeKsortedLists
 
         public ListNode MergeKLists(ListNode[] lists)
         {
-            if (lists.Length == 0)
-                return null;
-
-            ListNode res;
-            ListNode head;
+            ListNode res = null;
+            ListNode head = null;
 
             foreach (var list in lists)
                 TryAddToHeap(list);
 
-            res = minHeap.Min;
-            minHeap.Remove(res);
-            head = res;
-            if (res != null)
-            {
-                TryAddToHeap(res.next);
-                TryAddNodeFromDict(res.val);
-            }
-
-            if (res != null && res.next != null)
-                minHeap.Add(res.next);
-
             while (minHeap.Count > 0)
             {
                 var min = minHeap.Min;
+                if (res == null)
+                    res = min;
+
                 minHeap.Remove(min);
-                head.next = min;
-                if (min.next != null)
-                    TryAddToHeap(min.next);
+                if (head != null)
+                    head.next = min;
+
                 head = min;
 
+                TryAddToHeap(min.next);
                 TryAddNodeFromDict(min.val);
             }
 
@@ -83,7 +72,7 @@ namespace MergeKsortedLists
 
     public class ListNodeComparer : IComparer<ListNode>
     {
-        public int Compare(ListNode x, ListNode y) { return x.val.CompareTo(y.val); }
+        public int Compare(ListNode x, ListNode y) => x.val.CompareTo(y.val);
     }
 
     public class ListNode

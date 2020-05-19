@@ -17,8 +17,10 @@ namespace MergeKsortedLists
                                             new ListNode(2) {next = new ListNode(6)}},
                            new ListNode(1) {next = new ListNode(1) {next = new ListNode(2) {next = new ListNode(3) { next = new ListNode(4) { next = new ListNode(4) { next = new ListNode(5) { next = new ListNode(6)}}}}}}} },
             //[[],[-2],[-3,-2,1]], [-3, -2, -2, 1]
-            new object[] { new ListNode[] { new ListNode(-2), new ListNode(-3) {next = new ListNode(-2) { next = new ListNode(1)}} },
+            new object[] { new ListNode[] { null, new ListNode(-2), new ListNode(-3) {next = new ListNode(-2) { next = new ListNode(1)}} },
                            new ListNode(-3) {next = new ListNode(-2) {next = new ListNode(-2) {next = new ListNode(1)}}} },
+            //[], null
+            new object[] { new ListNode[0], null }
         };
 
         [Test]
