@@ -20,6 +20,7 @@ namespace Candy
             new object[] { new int[] {1,2,87,87,87,2,1}, 13},
             new object[] { new int[] {1,2,2,2,2,2,2,1}, 10},
             new object[] { new int[] {1,3,2,2,1}, 7},
+            new object[] { new int[] {1,3,4,5,2}, 11},
         };
 
         [Test]
