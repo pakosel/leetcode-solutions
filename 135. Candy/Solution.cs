@@ -11,31 +11,12 @@ namespace Candy
         {
             int len = ratings.Length;
             int[] res = new int[len];
-
-            var elements = new ElementWithIndex[len];
-            for (int i = 0; i < len; i++)
-                elements[i] = new ElementWithIndex(ratings[i], i);
-
             var minHeap = new SortedSet<ElementWithIndex>(new ComparerOrdinary());
-            foreach (var el in elements)
-                minHeap.Add(el);
 
-            var sumOrdinary = FindMinCandies(ratings, minHeap);
+            var i=0;
+            foreach (var el in ratings)
+                minHeap.Add(new ElementWithIndex(el, i++));
 
-            minHeap = new SortedSet<ElementWithIndex>(new ComparerReversed());
-            foreach (var el in elements)
-                minHeap.Add(el);
-
-            var sumReversed = FindMinCandies(ratings, minHeap);
-
-            return Math.Min(sumOrdinary, sumReversed);
-        }
-
-        private int FindMinCandies(int[] ratings, SortedSet<ElementWithIndex> minHeap)
-        {
-            int len = ratings.Length;
-            int[] res = new int[len];
-            int sum = 0;
 
             while (minHeap.Count > 0)
             {
@@ -57,6 +38,7 @@ namespace Candy
                 minHeap.Remove(min);
             }
 
+            int sum = 0;
             foreach (var r in res)
                 sum += r;
 
@@ -77,11 +59,6 @@ namespace Candy
         private struct ComparerOrdinary : IComparer<ElementWithIndex>
         {
             public int Compare(ElementWithIndex e1, ElementWithIndex e2) => e1.Rating != e2.Rating ? e1.Rating.CompareTo(e2.Rating) : e1.Index.CompareTo(e2.Index);
-        }
-
-        private struct ComparerReversed : IComparer<ElementWithIndex>
-        {
-            public int Compare(ElementWithIndex e1, ElementWithIndex e2) => e1.Rating != e2.Rating ? e1.Rating.CompareTo(e2.Rating) : e2.Index.CompareTo(e1.Index);
         }
     }
 }
