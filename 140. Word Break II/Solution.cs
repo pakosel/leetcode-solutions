@@ -7,7 +7,7 @@ namespace WordBreakII
 {
     public class Solution
     {
-        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        Dictionary<string, List<string>> cache = new Dictionary<string, List<string>>();
         IList<string> wordDict;
         int minWordLen;
         int maxWordLen;
@@ -30,8 +30,8 @@ namespace WordBreakII
             if (string.IsNullOrEmpty(s))
                 return new List<string>();
 
-            if (dict.ContainsKey(s))
-                return dict[s];
+            if (cache.ContainsKey(s))
+                return cache[s];
 
             var list = new List<string>();
 
@@ -55,7 +55,7 @@ namespace WordBreakII
                     }
                 }
             }
-            dict.Add(s, list);
+            cache.Add(s, list);
             return list;
         }
     }
