@@ -26,8 +26,7 @@ namespace WordBreakII
             var sol = new Solution();
             var res = sol.WordBreak(s, wordDict);
 
-            Assert.AreEqual(res.Count(), expected.Count());
-            Assert.IsTrue(expected.All(e => res.Contains(e)));
+            CollectionAssert.AreEquivalent(res, expected);
         }
     }
 }

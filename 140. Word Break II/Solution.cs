@@ -17,8 +17,8 @@ namespace WordBreakII
             foreach (var c in s)
                 if (!wordDict.Any(w => w.Contains(c)))
                     return new List<string>();
-            this.wordDict = wordDict;
 
+            this.wordDict = wordDict;
             maxWordLen = wordDict.Max(w => w.Length);
             minWordLen = wordDict.Min(w => w.Length);
 
