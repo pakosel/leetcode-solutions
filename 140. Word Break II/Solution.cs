@@ -7,20 +7,25 @@ namespace WordBreakII
 {
     public class Solution
     {
-        private Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        IList<string> wordDict;
+        int minWordLen;
+        int maxWordLen;
+
         public IList<string> WordBreak(string s, IList<string> wordDict)
         {
             foreach (var c in s)
                 if (!wordDict.Any(w => w.Contains(c)))
                     return new List<string>();
+            this.wordDict = wordDict;
 
-            var maxWordLen = wordDict.Max(w => w.Length);
-            var minWordLen = wordDict.Min(w => w.Length);
+            maxWordLen = wordDict.Max(w => w.Length);
+            minWordLen = wordDict.Min(w => w.Length);
 
-            return BreakNextWords(s, wordDict, minWordLen, maxWordLen);
+            return BreakNextWords(s);
         }
 
-        private IList<string> BreakNextWords(string s, IList<string> wordDict, int minWordLen, int maxWordLen)
+        private IList<string> BreakNextWords(string s)
         {
             if (string.IsNullOrEmpty(s))
                 return new List<string>();
@@ -34,24 +39,23 @@ namespace WordBreakII
             {
                 if (i > s.Length)
                     break;
-                var sub = s.Substring(0, i);
-                if (wordDict.Contains(sub))
+                var subLeft = s.Substring(0, i);
+                if (wordDict.Contains(subLeft))
                 {
-                    var restString = s.Substring(i);
-                    if (restString.Length == 0)
-                        list.Add($"{sub}");
+                    var subRight = s.Substring(i);
+                    if (subRight.Length == 0)
+                        list.Add($"{subLeft}");
                     else
                     {
-                        var rest = BreakNextWords(restString, wordDict, minWordLen, maxWordLen);
+                        var rest = BreakNextWords(subRight);
                         if (rest.Count == 0)
-                            continue;
+                            continue;  //no combination for the given subRight
                         foreach (var el in rest)
-                            list.Add($"{sub} {el}");
+                            list.Add($"{subLeft} {el}");
                     }
                 }
             }
             dict.Add(s, list);
-
             return list;
         }
     }
