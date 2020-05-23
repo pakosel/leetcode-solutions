@@ -28,5 +28,15 @@ namespace ClimbingStairs
 
             Assert.AreEqual(res, expected);
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_DP(int n, int expected)
+        {
+            var sol = new Solution();
+            var res = sol.ClimbStairs_DP(n);
+
+            Assert.AreEqual(res, expected);
+        }
     }
 }
