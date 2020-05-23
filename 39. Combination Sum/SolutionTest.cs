@@ -12,9 +12,9 @@ namespace CombinationSum
         private static readonly object[] testCases =
         {
             new object[] {new int[0], 7, new int[0][]},
-            new object[] {new int[4] {2,3,6,7}, 7, new int[2][] {new int[1]{7}, new int[3]{2,2,3}}},
-            new object[] {new int[2] {3,5}, 8, new int[1][] {new int[] {3,5}}},
-            new object[] {new int[3] {2,3,5}, 8, new int[][] {new int[] {3,5}, new int[] {2,3,3},new int[] {2,2,2,2}}},
+            new object[] {new int[] {2,3,6,7}, 7, new int[][] {new int[]{7}, new int[]{2,2,3}}},
+            new object[] {new int[] {3,5}, 8, new int[][] {new int[] {3,5}}},
+            new object[] {new int[] {2,3,5}, 8, new int[][] {new int[] {3,5}, new int[] {2,3,3},new int[] {2,2,2,2}}},
             new object[] {new int[] {2,5,8,4}, 10, new int[][] {new int[] {2,2,2,2,2}, new int[] {2,2,2,4}, new int[] {2,4,4}, new int[] {2,8}, new int[] {5,5}}},
         };
 
@@ -25,7 +25,11 @@ namespace CombinationSum
             var sol = new Solution();
             var res = sol.CombinationSum(candidates, target);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            CollectionAssert.AreEquivalent(res.Select(x => x.OrderBy(y => y)), expected);
+            //above is equivalent of the following:
+            // Assert.AreEqual(res.Count, expected.Count);
+            // foreach(var e in res)
+            //     Assert.IsTrue(expected.Any(l => l.SequenceEqual(e.OrderBy(x => x))));
         }
     }
 }
