@@ -12,6 +12,7 @@ namespace CombinationSum
 
         public IList<IList<int>> CombinationSum(int[] candidates, int target)
         {
+            Array.Sort(candidates);
             this.candidates = candidates;
             return FindSumCombinations(target);
         }
@@ -20,8 +21,6 @@ namespace CombinationSum
         {
             var res = new List<IList<int>>();
 
-            if (target <= 0)
-                return res;
             if (cache.ContainsKey(target))
                 return cache[target];
 
@@ -29,10 +28,10 @@ namespace CombinationSum
             {
                 var lookingFor = target - candidate;
                 if (lookingFor < 0)
-                    continue;
+                    break;
 
                 if (lookingFor == 0)
-                    res.Add(new List<int>() { candidate });
+                    res.Add(new int[] { candidate });
                 else
                 {
                     var subCombinations = FindSumCombinations(lookingFor);
@@ -40,9 +39,10 @@ namespace CombinationSum
                         continue;
                     foreach (var combination in subCombinations)
                     {
-                        var newItem = new List<int>(combination);
+                        var newItem = combination.ToList();
                         newItem.Add(candidate);
                         newItem.Sort();
+                       
                         if (!res.Any(l => l.SequenceEqual(newItem)))
                             res.Add(newItem);
                     }
