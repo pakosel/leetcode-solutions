@@ -15,18 +15,14 @@ namespace ConcatenatedWords
         {
             var result = new List<string>();
 
-            var nonEmptyWords = words.Where(w => w != string.Empty);
-            if (nonEmptyWords.Count() == 0)
+            var wordsSet = new HashSet<string>(words.Where(w => w != string.Empty));
+            if(wordsSet.Count == 0)
                 return result;
 
-            minWordLen = nonEmptyWords.Min(w => w.Length);
-            maxWordLen = nonEmptyWords.Max(w => w.Length);
+            minWordLen = wordsSet.Min(w => w.Length);
+            maxWordLen = wordsSet.Max(w => w.Length);
 
-            var wordsSet = new HashSet<string>();
-            foreach (var w in nonEmptyWords)
-                wordsSet.Add(w);
-
-            foreach (var w in nonEmptyWords)
+            foreach (var w in wordsSet)
                 if (CheckWord(w, wordsSet))
                     result.Add(w);
 
