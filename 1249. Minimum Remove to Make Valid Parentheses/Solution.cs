@@ -9,7 +9,6 @@ namespace MinimumRemoveToMakeValidParentheses
     {
         public string MinRemoveToMakeValid(string s)
         {
-            int balance = 0;
             var res = new StringBuilder();
             var openPos = new Stack<int>();
             int i = 0;
@@ -17,14 +16,12 @@ namespace MinimumRemoveToMakeValidParentheses
                 switch (c)
                 {
                     case '(':
-                        balance++;
                         res.Append(c);
                         openPos.Push(i++);
                         break;
                     case ')':
-                        if (balance > 0)
+                        if (openPos.Any())
                         {
-                            balance--;
                             res.Append(c);
                             openPos.Pop();
                             i++;
@@ -36,11 +33,10 @@ namespace MinimumRemoveToMakeValidParentheses
                         break;
                 }
 
-            while (balance > 0)
+            while (openPos.Any())
             {
                 var pos = openPos.Pop();
                 res.Remove(pos, 1);
-                balance--;
             }
 
             return res.ToString();
