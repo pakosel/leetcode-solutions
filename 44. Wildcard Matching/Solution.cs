@@ -7,65 +7,30 @@ namespace WildcardMatching
 {
     public class Solution
     {
-        Dictionary<Tuple<string, string>, bool> dictChecked = new Dictionary<Tuple<string, string>, bool>();
-
         public bool IsMatch(string s, string p)
         {
-            while (p.Contains("**"))
-                p = p.Replace("**", "*");
+            // does not affect performance
+            // while (p.Contains("**"))
+            //     p = p.Replace("**", "*");
 
-            var key = new Tuple<string, string>(s, p);
-            if (dictChecked.ContainsKey(key))
-                return dictChecked[key];
+            int sLen = s.Length;
+            int pLen = p.Length;
+            bool[,] memo = new bool[pLen+1, sLen+1];
 
-            if (s == "")
-                return IsEmptyMatch(p);
-            if (p == "")
-                return s == "";
+            memo[0, 0] = true;
+            for(int i=1; i<=pLen; i++)
+                memo[i, 0] = p[i-1] == '*' ? memo[i-1, 0] : false;
 
-            var c = p[0];
-            var p1 = p.Substring(1);
-
-            if (c == '*')
-            {
-                if (p.Length == 1)
+            for(int i=1; i<=pLen; i++)
+                for(int j=1; j<=sLen; j++)
                 {
-                    dictChecked.Add(key, true);
-                    return true;
+                    if(s[j-1] == p[i-1] || p[i-1] == '?')
+                        memo[i, j] = memo[i-1, j-1];
+                    else if(p[i-1] == '*')
+                        memo[i, j] = memo[i-1, j] || memo[i, j-1];
                 }
 
-                var s_idx = 0;
-                while (s_idx < s.Length)
-                {
-                    if (IsMatch(s.Substring(s_idx), p1))
-                    {
-                        dictChecked.Add(key, true);
-                        return true;
-                    }
-                    s_idx++;
-                }
-            }
-            else if (c == '?')
-                return IsMatch(s.Substring(1), p1);
-            else
-            {
-                if (s[0] != c)
-                {
-                    dictChecked.Add(key, false);
-                    return false;
-                }
-                return IsMatch(s.Substring(1), p1);
-            }
-            dictChecked.Add(key, false);
-            return false;
-        }
-
-        private bool IsEmptyMatch(string pattern)
-        {
-            foreach (var c in pattern)
-                if (c != '*')
-                    return false;
-            return true;
+            return memo[pLen, sLen];
         }
     }
 }
