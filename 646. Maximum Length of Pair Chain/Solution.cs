@@ -2,37 +2,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using System.Collections;
 
 namespace MaximumLengthOfPairChain
 {
     public class Solution
     {
-        Dictionary<int[], int> memoArr = new Dictionary<int[], int>();
-
-        public int FindLongestChain(int[][] pairs, int[] startPair = null)
+        public int FindLongestChain(int[][] pairs)
         {
-            if (pairs.Length == 0)
-                return 0;
+            Array.Sort(pairs, new ArrayComparer());
 
-            if (startPair != null && memoArr.ContainsKey(startPair))
-                return memoArr[startPair];
-
-            int result = 1;
-            foreach (var p in pairs)
+            int result = 0;
+            int curr = int.MinValue;
+            foreach(var p in pairs)
             {
-                if (startPair != null)
+                if(curr < p[0])
                 {
-                    if (startPair[1] < p[0])
-                        result = Math.Max(result, 1 + FindLongestChain(pairs, p));
+                    result++;
+                    curr = p[1];
                 }
-                else
-                    result = Math.Max(result, FindLongestChain(pairs, p));
             }
-            if (startPair != null)
-                memoArr.Add(startPair, result);
 
             return result;
 
+        }
+        private class ArrayComparer : IComparer
+        {
+            public int Compare(object arr1, object arr2) => ((int[])arr1)[1].CompareTo(((int[])arr2)[1]);
         }
     }
 }
