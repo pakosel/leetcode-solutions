@@ -11,6 +11,8 @@ namespace LongestIncreasingSubsequence
     {
         private static readonly object[] testCases =
         {
+            new object[] { new int[] {}, 0 },
+            new object[] { new int[] {1}, 1 },
             new object[] { new int[] {10,9,2,5,3,7,101,18}, 4 },
             new object[] { new int[] {10,9,2,5,3,7,101,18,20,22}, 6 },
             new object[] { new int[] {5, 4, 4, 3, 3, 6, 2, 9, 7, 8}, 4 },
