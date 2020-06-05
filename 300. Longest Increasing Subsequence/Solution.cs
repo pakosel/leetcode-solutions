@@ -8,12 +8,13 @@ namespace LongestIncreasingSubsequence
 {
     public class Solution
     {
-        Dictionary<int, int> memo = new Dictionary<int, int>();
+        int[] memo;
         public int LengthOfLIS(int[] nums)
         {
             if(nums.Length == 0)
                 return 0;
-                
+            memo = new int[nums.Length];
+
             int res = 1;
             for (int i = 0; i < nums.Length; i++)
                 res = Math.Max(res, Helper(nums, i));
@@ -22,7 +23,7 @@ namespace LongestIncreasingSubsequence
         }
         private int Helper(int[] nums, int start)
         {
-            if (memo.ContainsKey(start))
+            if (memo[start] != 0)
                 return memo[start];
 
             int res = 1;
@@ -30,7 +31,7 @@ namespace LongestIncreasingSubsequence
                 if (nums[i] > nums[start])
                     res = Math.Max(res, 1 + Helper(nums, i));
 
-            memo.Add(start, res);
+            memo[start] = res;
             return res;
         }
     }
