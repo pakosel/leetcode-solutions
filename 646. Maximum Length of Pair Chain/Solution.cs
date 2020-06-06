@@ -10,7 +10,7 @@ namespace MaximumLengthOfPairChain
     {
         public int FindLongestChain(int[][] pairs)
         {
-            Array.Sort(pairs, new ArrayComparer());
+            Array.Sort(pairs, (arr1, arr2) => arr1[1].CompareTo(arr2[1]));
 
             int result = 0;
             int curr = int.MinValue;
@@ -24,11 +24,6 @@ namespace MaximumLengthOfPairChain
             }
 
             return result;
-
-        }
-        private class ArrayComparer : IComparer
-        {
-            public int Compare(object arr1, object arr2) => ((int[])arr1)[1].CompareTo(((int[])arr2)[1]);
         }
     }
 }
