@@ -1,7 +1,9 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pakosel/leetcode-solutions)
+[![CircleCI](https://circleci.com/gh/pakosel/leetcode-solutions.svg?style=svg)](https://circleci.com/gh/pakosel/leetcode-solutions)
+
 # leetcode-solutions
 My solutions of the Leetcode problems. Full list of problems available here: https://leetcode.com/problemset/all/
 
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pakosel/leetcode-solutions)
 
 ## Prerequisites
 In order to run the solutions, install .net core SDK. Find detailed instructions [on Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-ubuntu-2004)
