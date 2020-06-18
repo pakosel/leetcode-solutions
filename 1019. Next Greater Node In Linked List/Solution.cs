@@ -7,32 +7,37 @@ namespace NextGreaterNodeInLinkedList
 {
     public class Solution
     {
+        //great explanation here: https://youtu.be/uFso48YRRao
         public int[] NextLargerNodes(ListNode head)
         {
-            List<int> res = new List<int>();
+            //determine list length
+            int len = 0;
+            var next = head;
+            while(next != null)
+            {
+                len++;
+                next = next.next;
+            }
+
+            int[] res = new int[len];
+
+            Stack<Tuple<int, int>> stack = new Stack<Tuple<int, int>>();
 
             var curr = head;
-
+            int i=0;
             while (curr != null)
             {
-                int nextLarger = NextLarger(curr.next, curr.val);
-                res.Add(nextLarger);
+                while(stack.Count > 0 && stack.Peek().Item1 < curr.val)
+                {
+                    var el = stack.Pop();
+                    int idx = el.Item2;
+                    res[idx] = curr.val;
+                }
+                stack.Push(new Tuple<int, int>(curr.val, i++));
                 curr = curr.next;
             }
 
-            return res.ToArray();
-        }
-
-        private int NextLarger(ListNode node, int val)
-        {
-            while (node != null)
-            {
-                if (node.val > val)
-                    return node.val;
-                node = node.next;
-            }
-
-            return 0;
+            return res;
         }
     }
 
