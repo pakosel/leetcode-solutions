@@ -26,7 +26,7 @@ namespace FindPairsWithSmallestSums
             var sol = new Solution();
             var res = sol.KSmallestPairs(nums1, nums2, k);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEquivalent(res, expected);
         }
     }
 }
