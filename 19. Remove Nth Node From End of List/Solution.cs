@@ -9,14 +9,13 @@ namespace RemoveNthNodeFromEndOfList
     {
         public ListNode RemoveNthFromEnd(ListNode head, int n)
         {
-            ListNode res = head;
             ListNode next = head;
             while (n >= 0 && next != null)
             {
                 next = next.next;
                 n--;
             }
-            if (next == null && n == 0)
+            if (next == null && n == 0) //test case no.4
                 return head.next;
 
             ListNode prevToRemove = head;
@@ -28,7 +27,7 @@ namespace RemoveNthNodeFromEndOfList
 
             prevToRemove.next = prevToRemove.next.next;
 
-            return res;
+            return head;
         }
     }
 
