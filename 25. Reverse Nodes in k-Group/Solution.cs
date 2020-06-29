@@ -15,7 +15,7 @@ namespace ReverseNodesInGroup
             var headTail = ReverseSublist(head, k);
             var res = headTail.Item1;
 
-            while (headTail != null && headTail.Item2 != null && headTail.Item2.next != null)
+            while (headTail.Item2 != null && headTail.Item2.next != null)
             {
                 var newHeadTail = ReverseSublist(headTail.Item2.next, k);
                 headTail.Item2.next = newHeadTail.Item1;
@@ -26,16 +26,16 @@ namespace ReverseNodesInGroup
         }
 
         //returning Tuple<newHead, newTail>
-        private Tuple<ListNode, ListNode> ReverseSublist(ListNode head, int count)
+        private (ListNode, ListNode) ReverseSublist(ListNode head, int count)
         {
             if (head == null)
-                return null;
+                return (null, null);
             int idx = count;
             var testLen = head.next;
             while (testLen != null && idx-- > 1)
                 testLen = testLen.next;
             if (idx > 1)
-                return new Tuple<ListNode, ListNode>(head, null);
+                return (head, null);
 
             var newTail = head;
             var curr = head.next;
@@ -49,7 +49,7 @@ namespace ReverseNodesInGroup
             }
             newTail.next = curr;
 
-            return new Tuple<ListNode, ListNode>(prev, newTail);
+            return (prev, newTail);
         }
     }
 
