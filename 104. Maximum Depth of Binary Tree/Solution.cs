@@ -10,8 +10,34 @@ namespace MaximumDepthBinaryTree
         if(root == null)
             return 0;
         
-        int maxLeft = root.left != null ? MaxDepth(root.left) : 0;
-        int maxRight = root.right != null ? MaxDepth(root.right) : 0;
+        var queue = new Queue<(TreeNode, int)>();
+        queue.Enqueue((root, 1));
+        int maxDepth = 0;
+
+        while(queue.Any())
+        {
+            var elem = queue.Dequeue();
+            var node = elem.Item1;
+            int level = elem.Item2;
+            if(level > maxDepth)
+                maxDepth = level;
+                
+            if(node.left != null)
+                queue.Enqueue((node.left, level+1));
+            if(node.right != null)
+                queue.Enqueue((node.right, level+1));
+        }
+
+        return maxDepth;
+    }
+
+    public int MaxDepthRecursive(TreeNode root) 
+    {
+        if(root == null)
+            return 0;
+        
+        int maxLeft = root.left != null ? MaxDepthRecursive(root.left) : 0;
+        int maxRight = root.right != null ? MaxDepthRecursive(root.right) : 0;
 
         return Math.Max(maxLeft, maxRight) + 1;
     }
