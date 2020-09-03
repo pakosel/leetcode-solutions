@@ -53,24 +53,31 @@ namespace AsFarFromLandAsPossible
                 int x = next.Item1;
                 int y = next.Item2;
                 int dist = next.Item3;
-                visited.Add((x, y));
+                if(visited.Contains((x, y)))
+                    continue;
+                else
+                    visited.Add((x, y));
 
                 if(Distances[x][y] >= 0)
-                    min = Math.Min(min, dist);
+                    min = Math.Min(min, Distances[x][y] + dist);
                 else
                 {
-                    if(x > 0 && !visited.Contains((x-1, y)))
+                    if(x > 0)
                         queue.Enqueue((x-1, y, dist + 1));
-                    if(x < Distances.Length - 1 && !visited.Contains((x+1, y)))
+                    if(x < Distances.Length - 1)
                         queue.Enqueue((x+1, y, dist + 1));
-                    if(y > 0 && !visited.Contains((x, y-1)))
+                    if(y > 0)
                         queue.Enqueue((x, y-1, dist + 1));
-                    if(y < Distances.Length - 1 && !visited.Contains((x, y+1)))
+                    if(y < Distances.Length - 1)
                         queue.Enqueue((x, y+1, dist + 1));
                 }
             }
 
-            return min < int.MaxValue ? min : -1;
+            if(min == int.MaxValue)
+                min = -1;
+            Distances[point.Item1][point.Item2] = min;
+
+            return min;
         }
     }
 }
