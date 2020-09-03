@@ -16,14 +16,46 @@ namespace AsFarFromLandAsPossible
 
             for (int i = 0; i < size; i++)
                 for (int j = 0; j < size; j++)
-                    if (Distances[i][j] == -1)
-                    {
-                        int maxDist = DFS((i, j));
-                        if (maxDist > max)
-                            max = maxDist;
-                    }
-                    
-            return max;
+                    if (Distances[i][j] == 0)
+                        BFS((i, j));
+
+            for (int i = 0; i < size; i++)
+                for (int j = 0; j < size; j++)
+                    if(Distances[i][j] != int.MaxValue && Distances[i][j] > max)
+                        max = Distances[i][j];
+
+            return max == 0 ? -1 : max;
+        }
+
+        private void BFS((int, int) point)
+        {
+            Queue<(int, int)> queue = new Queue<(int, int)>();
+            HashSet<(int, int)> visited = new HashSet<(int, int)>();
+            queue.Enqueue((point.Item1, point.Item2));
+
+            while (queue.Count > 0)
+            {
+                var next = queue.Dequeue();
+                int x = next.Item1;
+                int y = next.Item2;
+                if (visited.Contains((x, y)))
+                    continue;
+                else
+                    visited.Add((x, y));
+                int calcDist = ManhattanDist(point, (x, y));
+                if (calcDist > Distances[x][y])
+                    continue;
+                Distances[x][y] = calcDist;
+
+                if (x > 0)
+                    queue.Enqueue((x - 1, y));
+                if (x < Distances.Length - 1)
+                    queue.Enqueue((x + 1, y));
+                if (y > 0)
+                    queue.Enqueue((x, y - 1));
+                if (y < Distances.Length - 1)
+                    queue.Enqueue((x, y + 1));
+            }
         }
 
         private void InitDistances(int[][] grid)
@@ -35,53 +67,10 @@ namespace AsFarFromLandAsPossible
             {
                 Distances[i] = new int[size];
                 for (int j = 0; j < size; j++)
-                    Distances[i][j] = grid[i][j] == 1 ? 0 : -1;
+                    Distances[i][j] = grid[i][j] == 1 ? 0 : int.MaxValue;
             }
         }
 
         private int ManhattanDist((int, int) p1, (int, int) p2) => Math.Abs(p1.Item1 - p2.Item1) + Math.Abs(p1.Item2 - p2.Item2);
-
-        private int DFS((int, int) point)
-        {
-            int min = int.MaxValue;
-            
-            Queue<(int, int, int)> queue = new Queue<(int, int, int)>();
-            HashSet<(int, int)> visited = new HashSet<(int, int)>();
-            queue.Enqueue((point.Item1, point.Item2, 0));
-
-            while(queue.Count > 0)
-            {
-                var next = queue.Dequeue();
-                int x = next.Item1;
-                int y = next.Item2;
-                int dist = next.Item3;
-                if(visited.Contains((x, y)))
-                    continue;
-                else
-                    visited.Add((x, y));
-                if(ManhattanDist(point, (x, y)) > min)
-                    continue;
-
-                if(Distances[x][y] >= 0)
-                    min = Math.Min(min, Distances[x][y] + dist);
-                else
-                {
-                    if(x > 0)
-                        queue.Enqueue((x-1, y, dist + 1));
-                    if(x < Distances.Length - 1)
-                        queue.Enqueue((x+1, y, dist + 1));
-                    if(y > 0)
-                        queue.Enqueue((x, y-1, dist + 1));
-                    if(y < Distances.Length - 1)
-                        queue.Enqueue((x, y+1, dist + 1));
-                }
-            }
-
-            if(min == int.MaxValue)
-                min = -1;
-            Distances[point.Item1][point.Item2] = min;
-
-            return min;
-        }
     }
 }
