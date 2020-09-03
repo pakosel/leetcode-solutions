@@ -21,7 +21,7 @@ namespace MaximumDepthBinaryTree
         public void Test_Generic(TreeNode root, int expected)
         {
             var sol = new Solution();
-            var res = sol.MaxDepthRecursive(root);
+            var res = sol.MaxDepth(root);
 
             Assert.AreEqual(res, expected);
         }
