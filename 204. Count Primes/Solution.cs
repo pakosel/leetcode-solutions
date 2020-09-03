@@ -14,7 +14,8 @@ namespace CountPrimes
             for (int i = 2; i < n; i++)
                 sieve[i] = true;
 
-            for (int i = 2; i < n; i++)
+            //https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+            for (int i = 2; i < Math.Sqrt(n); i++)
             {
                 if (!sieve[i])
                     continue;
