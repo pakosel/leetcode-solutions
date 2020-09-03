@@ -39,6 +39,8 @@ namespace AsFarFromLandAsPossible
             }
         }
 
+        private int ManhattanDist((int, int) p1, (int, int) p2) => Math.Abs(p1.Item1 - p2.Item1) + Math.Abs(p1.Item2 - p2.Item2);
+
         private int DFS((int, int) point)
         {
             int min = int.MaxValue;
@@ -57,6 +59,8 @@ namespace AsFarFromLandAsPossible
                     continue;
                 else
                     visited.Add((x, y));
+                if(ManhattanDist(point, (x, y)) > min)
+                    continue;
 
                 if(Distances[x][y] >= 0)
                     min = Math.Min(min, Distances[x][y] + dist);
