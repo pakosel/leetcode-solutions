@@ -16,7 +16,7 @@ namespace MaximumBinaryTree
         {
             if (left == right)
                 return new TreeNode(nums[left]);
-            else if (left > right || right < left)
+            else if (left > right)
                 return null;
 
             int maxIdx = FindMaxIdx(nums, left, right);
