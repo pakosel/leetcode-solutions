@@ -17,7 +17,7 @@ namespace DeleteNodeInBst
             {
                 if (root.right == null)
                     return root.left;
-                var minNode = FindMin(root.right);
+                var minNode = FindAndExtractMin(root.right);
                 minNode.left = root.left;
                 if (minNode.val == root.right?.val)
                     return root.right;
@@ -25,26 +25,28 @@ namespace DeleteNodeInBst
                 return minNode;
             }
 
-            TreeNode parent = FindParentNodeByKey(root, key);
+            TreeNode parent = FindParentNodeByChildKey(root, key);
             if (parent != null)
             {
+                var replaceLeftChild = parent.left?.val == key;
                 TreeNode nodeToDel;
-                if (parent.left?.val == key)
+                if (replaceLeftChild)
                     nodeToDel = parent.left;
                 else
                     nodeToDel = parent.right;
 
-                var newNode = nodeToDel.right != null ? FindMin(nodeToDel.right) : nodeToDel.left;
-                if (newNode != null)
+                TreeNode newNode;
+                if(nodeToDel.right != null)
                 {
-                    if (newNode.val == nodeToDel.right?.val)
-                        nodeToDel.right = nodeToDel.right?.right;
-                    if(newNode.val != nodeToDel.left?.val)
-                        newNode.left = nodeToDel.left;
-                    newNode.right = nodeToDel.right;
+                    newNode = FindAndExtractMin(nodeToDel.right);
+                    newNode.left = nodeToDel.left;
+                    if(newNode.val != nodeToDel.right?.val)
+                        newNode.right = nodeToDel.right;
                 }
+                else
+                    newNode = nodeToDel.left;
 
-                if (parent.left?.val == key)
+                if (replaceLeftChild)
                     parent.left = newNode;
                 else
                     parent.right = newNode;
@@ -53,18 +55,19 @@ namespace DeleteNodeInBst
             return root;
         }
 
-        private TreeNode FindParentNodeByKey(TreeNode node, int key)
+        private TreeNode FindParentNodeByChildKey(TreeNode node, int key)
         {
             if (node == null)
                 return null;
             if (node.left?.val == key || node.right?.val == key)
                 return node;
             if (node.val > key)
-                return FindParentNodeByKey(node.left, key);
-            return FindParentNodeByKey(node.right, key);
+                return FindParentNodeByChildKey(node.left, key);
+
+            return FindParentNodeByChildKey(node.right, key);
         }
 
-        private TreeNode FindMin(TreeNode node)
+        private TreeNode FindAndExtractMin(TreeNode node)
         {
             TreeNode parent = null;
             while (node?.left != null)
@@ -72,8 +75,8 @@ namespace DeleteNodeInBst
                 parent = node;
                 node = node.left;
             }
-            if (parent != null)
-                parent.left = null;
+            if (parent != null) //extract and replace right subtree
+                parent.left = node.right;
 
             return node;
         }
