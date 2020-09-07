@@ -12,10 +12,10 @@ Basically, the deletion can be divided into two stages:
 **Constraints**:
 
 - The number of nodes in the tree is in the range `[0, 10<sup>4</sup>]`.
-- `-10<sup>5</sup> <= Node.val <= 10<sup>5</sup>`
+- -10<sup>5</sup> `<= Node.val <=` 10<sup>5</sup>
 - Each node has a **unique** value.
 - `root` is a valid binary search tree.
-- `-10<sup>5<sup> <= key <= 10<sup>5</sup>`
+- -10<sup>5<sup> `<= key <=` 10<sup>5</sup>
 
 ### Example 1:
 ```
