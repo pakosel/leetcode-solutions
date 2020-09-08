@@ -8,29 +8,19 @@ namespace KthSmallestElementInBst
     public class Solution
     {
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        HashSet<int> visited = new HashSet<int>();
         public int KthSmallest(TreeNode root, int k)
         {
             TraverseToMin(root);
 
             TreeNode node = null;
 
-            while(k > 0)
+            while(true)
             {
-                node = stack.Peek();
-                if(node.left == null || (node.left != null && visited.Contains(node.left.val)))
-                {
-                    stack.Pop();
-                    k--;
-                    visited.Add(node.val);
-                }
-                
-                if(k == 0)
+                node = stack.Pop();
+                if(--k == 0)
                     break;
-                else if(node.left != null && !visited.Contains(node.left.val))
-                    TraverseToMin(node.left);
-                else if(node.right != null && !visited.Contains(node.right.val))
-                    TraverseToMin(node.right);
+                
+                TraverseToMin(node.right);
             }
 
             return node.val;
