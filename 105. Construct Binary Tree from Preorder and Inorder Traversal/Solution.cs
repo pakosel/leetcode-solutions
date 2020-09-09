@@ -7,8 +7,12 @@ namespace ConstructBinaryTreeFromPreorderAndInorderTraversal
 {
     public class Solution
     {
+        private Dictionary<int, int> dict = new Dictionary<int, int>();
         public TreeNode BuildTree(int[] preorder, int[] inorder)
         {
+            for(int i=0; i<inorder.Length; i++)
+                dict.Add(inorder[i], i);
+
             return Builder(preorder, inorder, 0, 0, preorder.Length - 1);
         }
 
@@ -22,9 +26,7 @@ namespace ConstructBinaryTreeFromPreorderAndInorderTraversal
                 return new TreeNode(rootVal);
 
             TreeNode root = new TreeNode(rootVal);
-            int rootIdx = inorderLeft;
-            while(inorder[rootIdx] != rootVal)
-                rootIdx++;
+            int rootIdx = dict[rootVal];
             int inorderCount = rootIdx - inorderLeft;
 
             root.left = Builder(preorder, inorder, preorderLeft + 1, inorderLeft, rootIdx - 1);
