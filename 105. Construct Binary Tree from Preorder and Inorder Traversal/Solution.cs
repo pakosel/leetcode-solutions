@@ -9,21 +9,24 @@ namespace ConstructBinaryTreeFromPreorderAndInorderTraversal
     {
         public TreeNode BuildTree(int[] preorder, int[] inorder)
         {
-            return Builder(new List<int>(preorder), new List<int>(inorder));
+            return Builder(preorder, inorder);
         }
 
-        private TreeNode Builder(List<int> preorder, List<int> inorder)
+        private TreeNode Builder(int[] preorder, int[] inorder)
         {
-            int count = preorder.Count;
-            if(count == 0)
+            int count = preorder.Length;
+            if (count == 0)
                 return null;
-            else if(count == 1)
+            else if (count == 1)
                 return new TreeNode(preorder[0]);
 
             TreeNode root = new TreeNode(preorder[0]);
-            int rootIdx = inorder.IndexOf(root.val);
-            root.left = Builder(preorder.GetRange(1, rootIdx), inorder.GetRange(0, rootIdx));
-            root.right = Builder(preorder.GetRange(rootIdx + 1, count-rootIdx-1), inorder.GetRange(rootIdx + 1, count-rootIdx-1));
+            int rootIdx = 0;
+            while (inorder[rootIdx] != preorder[0])
+                rootIdx++;
+
+            root.left = Builder(preorder[1..(rootIdx + 1)], inorder[0..(rootIdx + 1)]);
+            root.right = Builder(preorder[(rootIdx + 1)..], inorder[(rootIdx + 1)..]);
 
             return root;
         }
