@@ -13,10 +13,10 @@ namespace ConstructBinaryTreeFromPreorderAndInorderTraversal
             for(int i=0; i<inorder.Length; i++)
                 dict.Add(inorder[i], i);
 
-            return Builder(preorder, inorder, 0, 0, preorder.Length - 1);
+            return Builder(preorder, 0, 0, preorder.Length - 1);
         }
 
-        private TreeNode Builder(int[] preorder, int[] inorder, int preorderLeft, int inorderLeft, int inorderRight)
+        private TreeNode Builder(int[] preorder, int preorderLeft, int inorderLeft, int inorderRight)
         {
             if(inorderLeft > inorderRight)
                 return null;
@@ -29,8 +29,8 @@ namespace ConstructBinaryTreeFromPreorderAndInorderTraversal
             int rootIdx = dict[rootVal];
             int inorderCount = rootIdx - inorderLeft;
 
-            root.left = Builder(preorder, inorder, preorderLeft + 1, inorderLeft, rootIdx - 1);
-            root.right = Builder(preorder, inorder, preorderLeft + inorderCount + 1, rootIdx + 1, inorderRight);
+            root.left = Builder(preorder, preorderLeft + 1, inorderLeft, rootIdx - 1);
+            root.right = Builder(preorder, preorderLeft + inorderCount + 1, rootIdx + 1, inorderRight);
 
             return root;
         }
