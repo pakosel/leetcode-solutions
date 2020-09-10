@@ -13,14 +13,10 @@ namespace RepeatedSubstringPattern
             if (len < 2)
                 return false;
 
-            for (int i = 2; i < 5000; i++)
-            {
-                if (i > len / 2)
-                    break;
+            for (int i = 2; i <= len / 2; i++)
                 if (len % i == 0)
                     if (CheckConcatenation(s, i))
                         return true;
-            }
 
             //check if all characters are the same
             char first = s[0];
