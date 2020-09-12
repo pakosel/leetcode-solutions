@@ -29,5 +29,15 @@ namespace LongestPalindromicSubsequence
 
             Assert.AreEqual(res, expected);
         }
+        
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Memoization(string s, int expected)
+        {
+            var sol = new SolutionMemoization();
+            var res = sol.LongestPalindromeSubseq(s);
+
+            Assert.AreEqual(res, expected);
+        }
     }
 }
