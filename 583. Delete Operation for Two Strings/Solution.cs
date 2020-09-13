@@ -7,6 +7,52 @@ namespace DeleteOperationForTwoStrings
 {
     public class Solution
     {
+        public int MinDistance(string word1, string word2)
+        {
+            int len1 = word1.Length;
+            int len2 = word2.Length;
+            if(len1 == 0)
+                return len2;
+            if(len2 == 0)
+                return len1;
+
+            int[,] arr = new int[len1, len2];
+
+            arr[0,0] = word1[0] == word2[0] ? 0 : 2;
+            bool done = arr[0,0] == 0;
+
+            for(int i=1; i<len1; i++)
+                if(word1[i] == word2[0] && !done)
+                {
+                    arr[i, 0] = arr[i-1, 0] - 1;
+                    done = true;
+                }
+                else
+                    arr[i, 0] = arr[i-1, 0] + 1;
+
+            done = arr[0,0] == 0;
+            for(int j=1; j<len2; j++)
+                if(word1[0] == word2[j] && !done)
+                {
+                    arr[0, j] = arr[0, j-1] - 1;
+                    done = true;
+                }
+                else
+                    arr[0, j] = arr[0, j-1] + 1;
+
+            for(int i=1; i<len1; i++)
+                for(int j=1; j<len2; j++)
+                    if(word1[i] == word2[j])
+                        arr[i, j] = arr[i-1, j-1];
+                    else
+                        arr[i,j] = Math.Min(arr[i-1, j], arr[i, j-1]) + 1;
+            
+            return arr[len1-1, len2-1];
+        }
+    }
+
+    public class Solution_Memoization
+    {
         Dictionary<(string, string), int> memo = new Dictionary<(string, string), int>();
 
         public int MinDistance(string word1, string word2)
@@ -24,7 +70,7 @@ namespace DeleteOperationForTwoStrings
             int res;
             int len1 = s1.Length;
             int len2 = s2.Length;
-            
+
             if (len1 == 0)
                 res = len2;
             else if (len2 == 0)
