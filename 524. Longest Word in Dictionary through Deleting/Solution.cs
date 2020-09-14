@@ -9,18 +9,14 @@ namespace LongestWordInDictionaryThroughDeleting
     {
         public string FindLongestWord(string s, IList<string> d)
         {
-            string res = "";
             var arr = d.ToArray();
             Array.Sort(arr, (e1, e2) => e1.Length != e2.Length ? e2.Length.CompareTo(e1.Length) : e1.CompareTo(e2));
 
             foreach (var w in arr)
                 if (CanTransform(s, w))
-                {
-                    res = w;
-                    break;
-                }
+                    return w;
 
-            return res;
+            return "";
         }
 
         private bool CanTransform(string w1, string w2)
@@ -31,19 +27,10 @@ namespace LongestWordInDictionaryThroughDeleting
             int len2 = w2.Length;
 
             while (p1 < len1 && p2 < len2)
-            {
-                if (w1[p1] == w2[p2])
-                {
-                    p1++;
+                if (w1[p1++] == w2[p2])
                     p2++;
-                    if (p2 == len2)
-                        return true;
-                }
-                else
-                    p1++;
-            }
 
-            return false;
+            return p2 == len2;
         }
     }
 }
