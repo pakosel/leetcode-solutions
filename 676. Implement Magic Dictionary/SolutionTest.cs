@@ -13,6 +13,7 @@ namespace ImplementMagicDictionary
         {
             new object[] { new string[] {"hello", "leetcode"}, new string[] {"hello", "hhllo", "hell", "leetcoded"}, new bool[] {false, true, false, false} },
             new object[] { new string[] {"null"}, new string[] {"hello", "hhllo", "hell", "leetcoded"}, new bool[] {false, false, false, false} },
+            new object[] { new string[] {"hello","hallo","leetcode"}, new string[] {"hello", "hhllo", "hell", "leetcoded"}, new bool[] {true,true,false,false} },
         };
 
         [Test]
