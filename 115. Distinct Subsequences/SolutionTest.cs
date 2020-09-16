@@ -27,5 +27,15 @@ namespace DistinctSubsequences
 
             Assert.AreEqual(res, expected);
         }
+        
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Memoization(string s, string t, int expected)
+        {
+            var sol = new Solution_Memo();
+            var res = sol.NumDistinct(s, t);
+
+            Assert.AreEqual(res, expected);
+        }
     }
 }
