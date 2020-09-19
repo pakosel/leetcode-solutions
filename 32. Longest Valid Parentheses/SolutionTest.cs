@@ -17,6 +17,7 @@ namespace LongestValidParentheses
             new object[] { "()", 2 },
             new object[] { "(()", 2 },
             new object[] { ")()())", 4 },
+            new object[] { "()((())()", 6 },
         };
 
         [Test]
