@@ -15,8 +15,8 @@ namespace MinimumWindowSubstring
             new object[] { "ABAACBAB", "ABC", "ACB" },
             new object[] { "", "ABC", "" },
             new object[] { "ABCD", "EF", "" },
-            //fix and uncomment
-            //new object[] { "A", "AA", "" },
+            new object[] { "A", "AA", "" },
+            new object[] { "cabwefgewcwaefgcf", "cae", "cwae" },
         };
 
         [Test]

@@ -7,41 +7,52 @@ namespace MinimumWindowSubstring
 {
     public class Solution
     {
-        //Incomplete solution
-        //works only if t contains unique characters
+        //Sliding window solution implementation
         public string MinWindow(string s, string t)
         {
-            int lenS = s.Length;
-            int lenT = t.Length;
-            int minWin = int.MaxValue;
-            string res = "";
+            int minuses = 0;
+            Dictionary<char, int> dict = new Dictionary<char, int>();
 
-            int[,] arr = new int[lenS + 1, lenT];
-
-            for (int i = 0; i < lenT; i++)
-                arr[0, i] = -1;
-            for (int j = 1; j <= lenS; j++)
-            {
-                int min = int.MaxValue;
-                int max = -1;
-                for (int i = 0; i < lenT; i++)
+            foreach(var c in t)
+                if(dict.ContainsKey(c))
+                    dict[c] = dict[c] - 1;
+                else
                 {
-                    if (s[j - 1] == t[i])
-                        arr[j, i] = j - 1;
-                    else
-                        arr[j, i] = arr[j - 1, i];
-
-                    min = Math.Min(min, arr[j, i]);
-                    max = Math.Max(max, arr[j, i]);
+                    dict.Add(c, -1);
+                    minuses++;
                 }
-                if (min != -1 && max != -1)
+
+            string res = "";
+            int lenS = s.Length;
+            int left = 0;
+            int right = 0;
+            while(left < lenS)
+            {
+                if(minuses > 0)
                 {
-                    int candidate = max - min + 1;
-                    if (candidate < minWin)
+                    if(right >= lenS)
+                        break;
+                    var key = s[right];
+                    if(dict.ContainsKey(key))
                     {
-                        minWin = candidate;
-                        res = s.Substring(min, minWin);
+                        dict[key] = dict[key] + 1;
+                        if(dict[key] == 0)
+                            minuses--;
                     }
+                    right++;
+                }
+                else
+                {
+                    if(res.Length == 0 || right - left < res.Length) 
+                        res = s.Substring(left, right - left);
+                    var key = s[left];
+                    if(dict.ContainsKey(key))
+                    {
+                        if(dict[key] == 0)
+                            minuses++;
+                        dict[key] = dict[key] - 1;
+                    }
+                    left++;
                 }
             }
 
