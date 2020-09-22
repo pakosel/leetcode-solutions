@@ -7,6 +7,46 @@ namespace ShortestCommonSubsequence
 {
     public class Solution
     {
+        public string ShortestCommonSupersequence(string str1, string str2)
+        {
+            int len1 = str1.Length;
+            int len2 = str2.Length;
+            string[,] arr = new string[len1, len2];
+
+            arr[0,0] = str1[0] == str2[0] ? str1[0].ToString() : str2[0] + str1[0].ToString();
+
+            for(int i=1; i<len1; i++)
+                arr[i,0] = str1[i] == str2[0] ? arr[i-1,0] : arr[i-1,0] + str1[i];
+            for(int j=1; j<len2; j++)
+                arr[0,j] = str2[j] == str1[0] ? arr[0, j-1] : arr[0, j-1] + str2[j];
+
+            for(int i=1; i<len1; i++)
+                for(int j = 1; j<len2; j++)
+                {
+                    if(str1[i] == str2[j])
+                        arr[i,j] = arr[i-1, j-1] + str1[i];
+                    else
+                    {
+                        var left = arr[i-1, j];
+                        var top = arr[i, j-1];
+                        arr[i, j] = left.Length < top.Length ? left + str1[i] : top + str2[j];
+                    }
+                }
+
+            for(int i=0; i<len1; i++)
+            {
+                for(int j=0; j<len2; j++)
+                    System.Console.Write($"{arr[i,j]}, ");
+                System.Console.WriteLine();
+            }
+
+
+            return arr[len1-1, len2-1];
+        }
+    }
+
+    public class Solution_Memo
+    {
         Dictionary<(string, string), string> memo = new Dictionary<(string, string), string>();
 
         public string ShortestCommonSupersequence(string str1, string str2)

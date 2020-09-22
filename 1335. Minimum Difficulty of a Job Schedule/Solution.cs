@@ -7,6 +7,40 @@ namespace MinimumDifficultyOfJobSchedule
 {
     public class Solution
     {
+        public int MinDifficulty(int[] jobDifficulty, int d)
+        {
+            int forward = FindDifficulty(jobDifficulty, d);
+            Array.Reverse(jobDifficulty);
+            int backward = FindDifficulty(jobDifficulty, d);
+            
+            return Math.Min(forward, backward);
+        }
+
+        private int FindDifficulty(int[] jobDifficulty, int d)
+        {
+            int len = jobDifficulty.Length;
+
+            if(d > len)
+                return -1;
+            int[,] arr = new int[d,len];
+
+            arr[0,0] = jobDifficulty[0];
+            for(int i=1;i<len;i++)
+                arr[0,i] = Math.Max(arr[0,i-1], jobDifficulty[i]);
+            
+            for(int j=1; j<d; j++)
+                for(int i=j; i<len; i++)
+                    if(i == j)
+                        arr[j, i] = arr[j-1, i-1] + jobDifficulty[i];
+                    else
+                        arr[j, i] = Math.Min(arr[j-1, i-1], arr[j, i-1]) + jobDifficulty[i];
+
+            return arr[d-1,len-1];
+        }
+    }
+
+    public class Solution_Memoization
+    {
         private Dictionary<(int, int), int> memo = new Dictionary<(int, int), int>();
 
         public int MinDifficulty(int[] jobDifficulty, int d)
