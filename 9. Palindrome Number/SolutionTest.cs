@@ -17,13 +17,24 @@ namespace PalindromeNumber
             new object[] { -121, false },
             new object[] { 10, false },
             new object[] { -101, false },
+            new object[] { 1237321, true },
         };
 
         [Test]
         [TestCaseSource("testCases")]
         public void Test_Generic(int x, bool expected)
         {
-            var sol = new Solution();
+            var sol = new Solution_NoString();
+            var res = sol.IsPalindrome(x);
+
+            Assert.AreEqual(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_toString(int x, bool expected)
+        {
+            var sol = new Solution_ToString();
             var res = sol.IsPalindrome(x);
 
             Assert.AreEqual(res, expected);
