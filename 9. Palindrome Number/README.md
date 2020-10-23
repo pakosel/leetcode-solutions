@@ -3,7 +3,7 @@
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
 **Follow up**: Could you solve it without converting the integer to a string?
-**Constraints**: `-231 <= x <= 231 - 1`
+**Constraints**: <code>-2<sup>31</sup> <= x <= 2<sup>31</sup> - 1</code>
 
 ### Example 1:
 ```
