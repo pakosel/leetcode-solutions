@@ -12,8 +12,8 @@ namespace ConvertBinaryNumberInLinkedList
             int res = 0;
             while (head != null)
             {
-                res *= 2;
-                res += head.val;
+                res = res << 1;     //res *= 2;
+                res += head.val;    //res += head.val;
                 head = head.next;
             }
 
