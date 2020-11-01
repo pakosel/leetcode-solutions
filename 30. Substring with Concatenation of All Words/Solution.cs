@@ -7,38 +7,49 @@ namespace SubstringConcatenationAllWords
 {
     public class Solution
     {
-        int wordLen;
-
         public IList<int> FindSubstring(string s, string[] words)
         {
-            wordLen = words[0].Length;
+            int len = s.Length;
+            int wordLen = words[0].Length;
             int concatLen = wordLen * words.Length;
 
             List<int> res = new List<int>();
-            if (s.Length < concatLen)
+            if (len < concatLen)
                 return res;
 
-            for (int i = 0; i <= s.Length - concatLen; i++)
-                if (CheckString(s.Substring(i), words))
-                    res.Add(i);
+            var wordsList = words.ToList();
+
+            int left = 0;
+            int right = wordLen;
+
+            while(left < len && right < len+1)
+            {
+                var sub = s.Substring(right - wordLen, wordLen);
+                if(wordsList.Contains(sub))
+                {
+                    wordsList.Remove(sub);
+                    if(wordsList.Count == 0)
+                    {
+                        res.Add(left);
+                        left++;
+                        right = left + wordLen;
+                        wordsList = words.ToList();
+                        // wordsList.Add(s.Substring(left, wordLen));
+                        // left += wordLen;
+                        // right += wordLen;
+                    }
+                    else
+                        right += wordLen;
+                }
+                else
+                {
+                    left++;
+                    right = left + wordLen;
+                    wordsList = words.ToList();
+                }
+            }
 
             return res;
-        }
-
-        private bool CheckString(string s, IEnumerable<string> words)
-        {
-            if (words.Count() == 0)
-                return true;
-
-            string word = s.Substring(0, wordLen);
-            int cnt = words.Count(w => w == word);
-            if (cnt == 0)
-                return false;
-            var newWords = words.Where(w => w != word);
-            for (int i = 1; i < cnt; i++)
-                newWords = newWords.Append(word);
-
-            return CheckString(s.Substring(wordLen), newWords);
         }
     }
 }
