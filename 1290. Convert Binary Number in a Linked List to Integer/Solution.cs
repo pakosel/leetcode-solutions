@@ -13,7 +13,7 @@ namespace ConvertBinaryNumberInLinkedList
             while (head != null)
             {
                 res = res << 1;     //res *= 2;
-                res += head.val;    //res += head.val;
+                res |= head.val;    //res += head.val;
                 head = head.next;
             }
 
