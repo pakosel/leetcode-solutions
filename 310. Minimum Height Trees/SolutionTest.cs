@@ -23,27 +23,46 @@ namespace MinimumHeightTrees
         [TestCaseSource("testCases")]
         public void Test_Generic(int n, string strEdges, int[] expected)
         {
-            int[][] edges;
-            var coll = strEdges.TrimStart('[').TrimEnd(']');
-            if(coll.Length > 0)
-            {
-                var arr = coll.Split("],[");
-                edges = new int[arr.Length][];
-                for(int i=0; i<arr.Length; i++)
-                {
-                    var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                    edges[i] = new int[innerArr.Length];
-                    for(int j=0; j<innerArr.Length; j++)
-                        edges[i][j] = int.Parse(innerArr[j]);
-                }
-            }
-            else
-                edges = new int[0][];
+            var edges = StringArrayToArray(strEdges);
 
             var sol = new Solution();
             var res = sol.FindMinHeightTrees(n, edges);
 
             CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_BFS(int n, string strEdges, int[] expected)
+        {
+            var edges = StringArrayToArray(strEdges);
+
+            var sol = new Solution_BFS();
+            var res = sol.FindMinHeightTrees(n, edges);
+
+            CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        private int[][] StringArrayToArray(string strArray)
+        {
+            int[][] res;
+            var coll = strArray.TrimStart('[').TrimEnd(']');
+            if(coll.Length > 0)
+            {
+                var arr = coll.Split("],[");
+                res = new int[arr.Length][];
+                for(int i=0; i<arr.Length; i++)
+                {
+                    var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
+                    res[i] = new int[innerArr.Length];
+                    for(int j=0; j<innerArr.Length; j++)
+                        res[i][j] = int.Parse(innerArr[j]);
+                }
+            }
+            else
+                res = new int[0][];
+
+            return res;
         }
     }
 }
