@@ -9,6 +9,41 @@ namespace AddTwoNumbersII
     {
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
+            var stack1 = BuildStack(l1);
+            var stack2 = BuildStack(l2);
+            
+            ListNode head = null;
+            int carry = 0;
+            while(stack1.Count > 0 || stack2.Count > 0 || carry > 0)
+            {
+                int e1 = stack1.Count > 0 ? stack1.Pop() : 0;
+                int e2 = stack2.Count > 0 ? stack2.Pop() : 0;
+
+                int curval = e1 + e2 + carry;
+                carry = curval / 10;
+                head = new ListNode(curval % 10, head);
+            }
+
+            return head;
+        }
+
+        private Stack<int> BuildStack(ListNode head)
+        {
+            Stack<int> res = new Stack<int>();
+            while (head != null)
+            {
+                res.Push(head.val);
+                head = head.next;
+            }
+
+            return res;
+        }
+    }
+
+    public class Solution_Partial
+    {
+        public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+        {
             long n1 = BuildNumber(l1);
             long n2 = BuildNumber(l2);
 

@@ -11,16 +11,36 @@ namespace AddTwoNumbersII
     {
         private static readonly object[] testCases =
         {
-            new object[] { "[7,2,4,3]", "[5,6,4]", "7,8,0,7" },
+            new object[] { "[0]", "[0]", "[0]" },
+            new object[] { "[0]", "[7]", "[7]" },
+            new object[] { "[1]", "[1]", "[2]" },
+            new object[] { "[1]", "[9]", "[1,0]" },
+            new object[] { "[5]", "[5]", "[1,0]" },
+            new object[] { "[7,2,4,3]", "[5,6,4]", "[7,8,0,7]" },
             new object[] { "[3,9,9,9,9,9,9,9,9,9]", "[7]", "[4,0,0,0,0,0,0,0,0,6]" },
-            //new object[] { "[2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9]", "[5,6,4,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9,9,9,9]", "[8,0,7,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,7,2,4,3,8]" },
+        };
+
+        private static readonly object[] testCases_huge =
+        {
+            new object[] { "[2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9]", "[5,6,4,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9,9,9,9]", "[8,0,7,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,7,2,4,3,8]" },
         };
 
         [Test]
         [TestCaseSource("testCases")]
+        [TestCaseSource("testCases_huge")]
         public void Test_Generic(string strL1, string strL2, string expected)
         {
             var sol = new Solution();
+            var res = sol.AddTwoNumbers(ArrToList(strL1), ArrToList(strL2));
+
+            ListNodeEquals(res, ArrToList(expected));
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Partial(string strL1, string strL2, string expected)
+        {
+            var sol = new Solution_Partial();
             var res = sol.AddTwoNumbers(ArrToList(strL1), ArrToList(strL2));
 
             ListNodeEquals(res, ArrToList(expected));
