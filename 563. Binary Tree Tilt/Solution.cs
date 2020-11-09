@@ -7,28 +7,29 @@ namespace BinaryTreeTilt
 {
     public class Solution
     {
-        int Sum = 0;
+        int Result = 0;
+
         public int FindTilt(TreeNode root)
         {
             if (root == null)
                 return 0;
 
-            GetSumAndTilt(root);
-            return Sum;
+            GetSumAndCalcTilt(root);
+            return Result;
         }
 
-        private (int, int) GetSumAndTilt(TreeNode node)
+        private int GetSumAndCalcTilt(TreeNode node)
         {
             if (node == null)
-                return (0, 0);
-            (int, int) left = GetSumAndTilt(node.left);
-            (int, int) right = GetSumAndTilt(node.right);
+                return 0;
+            int leftSum = GetSumAndCalcTilt(node.left);
+            int rightSum = GetSumAndCalcTilt(node.right);
 
-            int sum = left.Item1 + right.Item1 + node.val;
-            int tilt = Math.Abs(left.Item1 - right.Item1);
+            int sum = leftSum + rightSum + node.val;
+            int tilt = Math.Abs(leftSum - rightSum);
 
-            Sum += tilt;
-            return (sum, tilt);
+            Result += tilt;
+            return sum;
         }
     }
 
