@@ -18,6 +18,8 @@ namespace ValidSquare
             new object[] {"[[0,0],[1,1],[0,0],[0,0]]", false},
             new object[] {"[[0,0],[1,1],[1,1],[0,0]]", false},
             new object[] {"[[0,0],[0,0],[0,0],[0,0]]", false},
+            new object[] {"[[0,0],[-1,0],[1,0],[0,1]]", false},
+            new object[] {"[[0,0],[1,1],[1,0],[1,1]]", false},
         };
 
         [Test]
@@ -31,6 +33,22 @@ namespace ValidSquare
                 Assert.IsTrue(p.Length == 2);
 
             var sol = new Solution();
+            var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
+
+            Assert.AreEqual(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_WithoutHashSet(string arrStr, bool expected)
+        {
+            var points = MatrixFromString(arrStr);
+
+            Assert.IsTrue(points.Length == 4);
+            foreach(var p in points)
+                Assert.IsTrue(p.Length == 2);
+
+            var sol = new Solution_WithoutHashSet();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
 
             Assert.AreEqual(res, expected);
