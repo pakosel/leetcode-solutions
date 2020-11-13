@@ -3,6 +3,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace LowestCommonAncestorOfBinaryTree
 {
@@ -22,67 +23,12 @@ namespace LowestCommonAncestorOfBinaryTree
         [TestCaseSource("testCases")]
         public void Test_Stack(string treeStr, int p, int q, int expected)
         {
-            var head = BuildTree(treeStr);
+            var head = TreeNodeHelper.BuildTree(treeStr);
 
             var sol = new Solution_Stack();
             var res = sol.LowestCommonAncestor(head, p, q);
 
             Assert.AreEqual(res.val, expected);
         }
-
-        private TreeNode BuildTree(string arrStr)
-        {
-            var arr = ParseArray(arrStr);
-
-            TreeNode head = null;
-
-            if(arr.Length > 0)
-            {
-                head = NewTreeNode(arr[0]);
-
-                Queue<TreeNode> parents = new Queue<TreeNode>();
-                parents.Enqueue(head);
-
-                int i = 1;
-                TreeNode parent = null;
-                while(i < arr.Length)
-                {
-                    var node = NewTreeNode(arr[i]);
-
-                    if(parent == null)
-                    {
-                        parent = parents.Dequeue();
-                        parent.left = node;
-                    }
-                    else
-                    {
-                        parent.right = node;
-                        parent = null;
-                    }
-
-                    if(node != null)
-                        parents.Enqueue(node);
-                    i++;
-                }
-            }
-
-            return head;
-        }
-
-        private int?[] ParseArray(string arrStr)
-        {
-            var arrS = arrStr.TrimStart('[').TrimEnd(']').Split(",");
-            int?[] arr = new int?[arrS.Length];
-
-            for(int i=0; i<arrS.Length; i++)
-                if(arrS[i] == "null")
-                    arr[i] = null;
-                else
-                    arr[i] = int.Parse(arrS[i]);
-
-            return arr;
-        }
-
-        private TreeNode NewTreeNode(int? val) => val != null ? new TreeNode(val ?? 0) : null;
     }
 }
