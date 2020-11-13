@@ -10,6 +10,9 @@ namespace Common
         public static int?[] ParseArrayForTreeNode(string arrStr)
         {
             var arrS = arrStr.TrimStart('[').TrimEnd(']').Split(",");
+            if(arrS[0] == "")
+                return new int?[0];
+
             int?[] arr = new int?[arrS.Length];
 
             for(int i=0; i<arrS.Length; i++)
