@@ -2,6 +2,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace PermutationsII
 {
@@ -24,42 +25,13 @@ namespace PermutationsII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string arrStr, string expectedStr)
         {
-            var input = ArrayFromString(arrStr);
-            var expected = MatrixFromString(expectedStr);
+            var input = ArrayHelper.ArrayFromString(arrStr);
+            var expected = ArrayHelper.MatrixFromString(expectedStr);
 
             var sol = new Solution();
             var res = sol.PermuteUnique(input);
 
             CollectionAssert.AreEqual(res, expected);
-        }
-
-        private int[] ArrayFromString(string arrString)
-        {
-            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
-            if(arr[0] == "")
-                return new int[0];
-
-            var res = new int[arr.Length];
-            for(int i=0; i<arr.Length; i++)
-                res[i] = int.Parse(arr[i]);
-
-            return res;
-        }
-
-        private int[][] MatrixFromString(string matrixStr)
-        {
-            int[][] matrix;
-            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
-            matrix = new int[arr.Length][];
-            for(int i=0; i<arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                matrix[i] = new int[innerArr.Length];
-                for(int j=0; j<innerArr.Length; j++)
-                    matrix[i][j] = int.Parse(innerArr[j]);
-            }
-
-            return matrix;
         }
     }
 }
