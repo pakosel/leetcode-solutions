@@ -19,27 +19,9 @@ namespace NumberOfSquarefulArrays
             Array.Sort(A);
             var numsList = A.ToList();
 
-            var all = Helper(numsList);
+            var allValid = Helper(numsList);
 
-            int res = 0;
-
-            foreach (var list in all)
-            {
-                if (list.Count != len)
-                    continue;
-                bool isPerfect = true;
-
-                for (int i = 1; i < len; i++)
-                    if (!IsPerfectSquare(list[i - 1] + list[i]))
-                    {
-                        isPerfect = false;
-                        break;
-                    }
-                if (isPerfect)
-                    res++;
-            }
-
-            return res;
+            return allValid.Count;
         }
 
         private bool IsPerfectSquare(int sum) => Math.Sqrt(sum) % 1 == 0;
