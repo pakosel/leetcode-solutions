@@ -6,6 +6,27 @@ using Common;
 
 namespace RangeSumOfBst
 {
+    public class Solution_Recursive
+    {
+        public int RangeSumBST(TreeNode root, int low, int high)
+        {
+            if(root == null)
+                return 0;
+
+            int res = 0;
+
+            if(root.val <= high && root.val >= low)
+                res += root.val;
+            
+            if(root.val > low)
+                res += RangeSumBST(root.left, low, high);
+            if(root.val < high)
+                res += RangeSumBST(root.right, low, high);
+
+            return res;
+        }
+    }
+
     public class Solution
     {
         Stack<TreeNode> stack = new Stack<TreeNode>();

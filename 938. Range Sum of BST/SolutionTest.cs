@@ -30,5 +30,17 @@ namespace RangeSumOfBst
 
             Assert.AreEqual(res, expected);
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Recursive(string treeStr, int low, int high, int expected)
+        {
+            var head = TreeNodeHelper.BuildTree(treeStr);
+
+            var sol = new Solution_Recursive();
+            var res = sol.RangeSumBST(head, low, high);
+
+            Assert.AreEqual(res, expected);
+        }
     }
 }
