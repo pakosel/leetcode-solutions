@@ -7,14 +7,14 @@ namespace MirrorReflection
 {
     public class Solution
     {
+        //explanation:
+        //https://leetcode.com/problems/mirror-reflection/discuss/939379/C-faster-than-100-with-very-simple-explanation
         public int MirrorReflection(int p, int q)
         {
             if (p == q)
                 return 1;
             if (q == 0)
                 return 0;
-            if (p % 2 == 1)
-                return q % 2 == 0 ? 0 : 1;
 
             bool rightSide = true;
             int sum = q;

@@ -10,6 +10,7 @@ namespace MirrorReflection
     {
         private static readonly object[] testCasesStr =
         {
+            new object[] {2, 0, 0},
             new object[] {2, 1, 2},
             new object[] {2, 2, 1},
             new object[] {4, 1, 2},
@@ -27,6 +28,7 @@ namespace MirrorReflection
             new object[] {6, 4, 0},
             new object[] {6, 5, 2},
             new object[] {6, 6, 1},
+            new object[] {7, 0, 0},
             new object[] {7, 1, 1},
             new object[] {7, 2, 0},
             new object[] {7, 3, 1},
