@@ -11,7 +11,7 @@ namespace MergeIntervals
         {
             if (intervals.Length == 0)
                 return intervals;
-            Array.Sort(intervals, (i1, i2) => i1[0] != i2[0] ? i1[0].CompareTo(i2[0]) : i1[1].CompareTo(i2[1]));
+            Array.Sort(intervals, (i1, i2) => i1[0].CompareTo(i2[0]));
 
             var res = new List<int[]>();
             int opening = intervals[0][0];

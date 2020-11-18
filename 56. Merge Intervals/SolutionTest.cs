@@ -2,6 +2,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace MergeIntervals
 
@@ -25,43 +26,11 @@ namespace MergeIntervals
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string intervalsStr, string expected)
         {
-            var intervals = StrMatrixToArray(intervalsStr);
+            var intervals = ArrayHelper.MatrixFromString(intervalsStr);
             var sol = new Solution();
             var res = sol.Merge(intervals);
 
-            Assert.AreEqual(MatrixArrayToStr(res), expected);
-        }
-
-        public int[][] StrMatrixToArray(string matrixStr)
-        {
-            if(matrixStr == "[]")
-                return new int[0][];
-
-            int[][] matrix;
-            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
-            matrix = new int[arr.Length][];
-            for (int i = 0; i < arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                matrix[i] = new int[innerArr.Length];
-                for (int j = 0; j < innerArr.Length; j++)
-                    matrix[i][j] = int.Parse(innerArr[j]);
-            }
-
-            return matrix;
-        }
-
-        public string MatrixArrayToStr(int[][] matrix)
-        {
-            if(matrix.Length == 0)
-                return "[]";
-
-            StringBuilder sb = new StringBuilder();
-            sb.Append('[');
-            sb.Append(string.Join(',', matrix.Select(it => "[" + string.Join(',', it) + "]")));
-            sb.Append(']');
-
-            return sb.ToString();
-        }
+            Assert.AreEqual(ArrayHelper.MatrixToString(res), expected);
+        }       
     }
 }

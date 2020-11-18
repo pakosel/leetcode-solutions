@@ -41,6 +41,8 @@ namespace Common
         {
             int[][] matrix;
             var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
+            if(arr[0] == "")
+                return new int[0][];
             matrix = new int[arr.Length][];
             for(int i=0; i<arr.Length; i++)
             {
@@ -51,6 +53,19 @@ namespace Common
             }
 
             return matrix;
+        }
+
+        public static string MatrixToString(int[][] matrix)
+        {
+            if(matrix.Length == 0)
+                return "[]";
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append('[');
+            sb.Append(string.Join(',', matrix.Select(it => "[" + string.Join(',', it) + "]")));
+            sb.Append(']');
+
+            return sb.ToString();
         }
     }
 }
