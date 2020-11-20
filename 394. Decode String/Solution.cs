@@ -7,7 +7,7 @@ namespace DecodeString
 {
     public class Solution
     {
-        Dictionary<int, int> brackets = new Dictionary<int, int>();
+        int[] brackets = new int[30];
         public string DecodeString(string s)
         {
             Stack<int> stack = new Stack<int>();
@@ -17,7 +17,7 @@ namespace DecodeString
                 if(c == '[')
                     stack.Push(i);
                 else if (c == ']')
-                    brackets.Add(stack.Pop(), i);
+                    brackets[stack.Pop()] = i;
             }
 
             return Helper(s, 0, s.Length - 1);
