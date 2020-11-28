@@ -18,8 +18,7 @@ namespace MergeInBetweenLinkedLists
             else
                 nodes.Item1.next = list2;
 
-            var lastNode = LastNode(list2);
-            lastNode.next = nodes.Item2;
+            LastNode(list2).next = nodes.Item2;
 
             return head;
         }
