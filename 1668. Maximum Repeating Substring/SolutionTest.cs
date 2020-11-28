@@ -29,5 +29,15 @@ namespace MaximumRepeatingSubstring
 
             Assert.AreEqual(res, expected);
         }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_Generic_BF(string sequence, string word, int expected)
+        {
+            var sol = new Solution_BF();
+            var res = sol.MaxRepeating(sequence, word);
+
+            Assert.AreEqual(res, expected);
+        }
     }
 }

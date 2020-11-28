@@ -5,6 +5,26 @@ using System.Text;
 
 namespace MaximumRepeatingSubstring
 {
+    public class Solution_BF
+    {
+        public int MaxRepeating(string sequence, string word)
+        {
+            int max = 0;
+            string test = word;
+            while (true)
+            {
+                if (sequence.Contains(test))
+                {
+                    max++;
+                    test += word;
+                }
+                else
+                    break;
+            }
+            return max;
+        }
+    }
+
     public class Solution
     {
         public int MaxRepeating(string sequence, string word)
