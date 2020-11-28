@@ -47,9 +47,14 @@ namespace Common
             for(int i=0; i<arr.Length; i++)
             {
                 var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                matrix[i] = new int[innerArr.Length];
-                for(int j=0; j<innerArr.Length; j++)
-                    matrix[i][j] = int.Parse(innerArr[j]);
+                if(innerArr[0] == "")
+                    matrix[i] = new int[0];
+                else
+                {
+                    matrix[i] = new int[innerArr.Length];
+                    for(int j=0; j<innerArr.Length; j++)
+                        matrix[i][j] = int.Parse(innerArr[j]);
+                }
             }
 
             return matrix;
