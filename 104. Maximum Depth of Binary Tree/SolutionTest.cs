@@ -2,6 +2,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace MaximumDepthBinaryTree
 {
@@ -10,16 +11,19 @@ namespace MaximumDepthBinaryTree
     {
         private static readonly object[] testCases =
         {
-            new object[] {null, 0 },
-            new object[] {new TreeNode(3), 1 },
-            new object[] {new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7))), 3 },
-            new object[] {new TreeNode(0, new TreeNode(2, new TreeNode(1, new TreeNode(5), new TreeNode(1))), new TreeNode(4, new TreeNode(3, null, new TreeNode(6)), new TreeNode(-1, null, new TreeNode(8, new TreeNode(7))))), 5 },
+            new object[] {"[]", 0 },
+            new object[] {"[3]", 1 },
+            new object[] {"[3,9,20,null,null,15,7]", 3 },
+            new object[] {"[1,null,2]", 2 },
+            new object[] {"[0,2,4,1,null,3,-1,5,1,null,6,null,8,null,null,null,null,7]", 5 },
         };
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Generic(TreeNode root, int expected)
+        public void Test_Generic(string strArr, int expected)
         {
+            var root = TreeNodeHelper.BuildTree(strArr);
+
             var sol = new Solution();
             var res = sol.MaxDepth(root);
 
@@ -28,10 +32,12 @@ namespace MaximumDepthBinaryTree
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Recursive(TreeNode root, int expected)
+        public void Test_Queue(string strArr, int expected)
         {
+            var root = TreeNodeHelper.BuildTree(strArr);
+
             var sol = new Solution();
-            var res = sol.MaxDepthRecursive(root);
+            var res = sol.MaxDepth(root);
 
             Assert.AreEqual(res, expected);
         }
