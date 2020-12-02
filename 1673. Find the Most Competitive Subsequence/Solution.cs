@@ -5,6 +5,31 @@ using System.Text;
 
 namespace FindTheMostCompetitiveSubsequence
 {
+    public class Solution_Dqueue
+    {
+        public int[] MostCompetitive(int[] nums, int k)
+        {
+            int len = nums.Length;
+            int[] res = new int[k];
+            int resIdx = 0;
+            List<int> visited = new List<int>();
+            
+            for (int i = 0; i < len; i++)
+            {
+                var curr = nums[i];
+                while (visited.Count > 0 && visited.First() > curr)
+                    visited.RemoveAt(0);
+                visited.Insert(0, curr);
+                if (i >= len - (k - resIdx))
+                {
+                    res[resIdx++] = visited.Last();
+                    visited.RemoveAt(visited.Count - 1);
+                }
+            }
+            return res;
+        }
+    }
+
     public class Solution
     {
         public int[] MostCompetitive(int[] nums, int k)

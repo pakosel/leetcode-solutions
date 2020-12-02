@@ -28,5 +28,17 @@ namespace FindTheMostCompetitiveSubsequence
 
             CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
         }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_GenericDqueue(string strArr, int k, string expected)
+        {
+            var nums = ArrayHelper.ArrayFromString(strArr);
+
+            var sol = new Solution_Dqueue();
+            var res = sol.MostCompetitive(nums, k);
+
+            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
+        }
     }
 }
