@@ -8,7 +8,7 @@ namespace BurstBalloons
 {
     public class Solution
     {
-        Dictionary<List<int>, int> dict = new Dictionary<List<int>, int>(new ListComparer());
+        Dictionary<string, int> dict = new Dictionary<string, int>();
 
         public int MaxCoins(int[] nums)
         {
@@ -17,8 +17,9 @@ namespace BurstBalloons
 
         private int GetMax(List<int> nums)
         {
-            if (dict.ContainsKey(nums))
-                return dict[nums];
+            var key = string.Join(',', nums);
+            if (dict.ContainsKey(key))
+                return dict[key];
 
             int len = nums.Count;
             int res = 0;
@@ -35,13 +36,14 @@ namespace BurstBalloons
                     int prev = i > 0 ? nums[i - 1] : 1;
                     int next = i < len - 1 ? nums[i + 1] : 1;
 
-                    var subList = new List<int>(nums);
-                    subList.RemoveAt(i);
-                    int curr = prev * nums[i] * next + GetMax(subList);
+                    int tmp = nums[i];
+                    nums.RemoveAt(i);
+                    int curr = prev * tmp * next + GetMax(nums);
                     res = Math.Max(res, curr);
+                    nums.Insert(i, tmp);
                 }
             }
-            dict.Add(nums, res);
+            dict.Add(key, res);
             return res;
         }
     }
