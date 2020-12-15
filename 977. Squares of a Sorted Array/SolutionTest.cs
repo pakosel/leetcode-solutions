@@ -33,6 +33,18 @@ namespace SquaresOfSortedArray
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Naive(string arrStr, string expected)
+        {
+            var arr = ArrayHelper.ArrayFromString(arrStr);
+
+            var sol = new Solution_Naive();
+            var res = sol.SortedSquares(arr);
+
+            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_Parallel(string arrStr, string expected)
         {
             var arr = ArrayHelper.ArrayFromString(arrStr);
