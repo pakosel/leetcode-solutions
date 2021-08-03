@@ -41,7 +41,8 @@ namespace Common
         {
             int[][] matrix;
             var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
-            if(arr[0] == "")
+
+            if(arr[0] == "" && arr.Length < 2)
                 return new int[0][];
             matrix = new int[arr.Length][];
             for(int i=0; i<arr.Length; i++)
