@@ -36,9 +36,10 @@ namespace Common
 
             return res;
         }
-
+        
         public static int[][] MatrixFromString(string matrixStr)
         {
+            matrixStr = matrixStr.Replace(" ", "");
             int[][] matrix;
             var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
 
