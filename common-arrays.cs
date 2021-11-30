@@ -62,6 +62,31 @@ namespace Common
             return matrix;
         }
 
+        public static char[][] CharMatrixFromString(string matrixStr)
+        {
+            matrixStr = matrixStr.Replace(" ", "");
+            char[][] matrix;
+            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
+
+            if(arr[0] == "" && arr.Length < 2)
+                return new char[0][];
+            matrix = new char[arr.Length][];
+            for(int i=0; i<arr.Length; i++)
+            {
+                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
+                if(innerArr[0] == "")
+                    matrix[i] = new char[0];
+                else
+                {
+                    matrix[i] = new char[innerArr.Length];
+                    for(int j=0; j<innerArr.Length; j++)
+                        matrix[i][j] = char.Parse(innerArr[j]);
+                }
+            }
+
+            return matrix;
+        }
+
         public static string MatrixToString(int[][] matrix)
         {
             if(matrix.Length == 0)
