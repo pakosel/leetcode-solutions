@@ -9,56 +9,42 @@ namespace PermutationInString
     {
         public bool CheckInclusion(string s1, string s2)
         {
-            int s1_len = s1.Length;
-            int s2_len = s2.Length;
+            int len = s1.Length;
+            var letters = new int[26];
+            foreach (var c in s1)
+                letters[c - 'a']++;
 
-            int[] s1_letters = new int[26];
-            foreach (char c in s1)
-                s1_letters[c - 'a']++;
-
-            int cnt = s1_len;
-            int left = 0;
-
-            while(left < s2_len)
+            int i = 0;
+            int found = 0;
+            while (i < s2.Length)
             {
-                char c = s2[left];
-                if(s1_letters[c - 'a'] > 0)
+                if (len == found)
+                    return true;
+                var letter = s2[i];
+                var pos = letter - 'a';
+                if (letters[pos] > 0)
                 {
-                    s1_letters[c - 'a']--;
-                    cnt--;
-                    break;
-                }
-                left++;
-            }
-            if(cnt == 0)
-                return true;
-
-            int right = left + 1;
-
-            while(right < s2.Length)
-            {
-                char c = s2[right];
-                if(s1_letters[c - 'a'] > 0)
-                {
-                    s1_letters[c - 'a']--;
-                    cnt--;
-                    if(cnt == 0)
-                        return true;
+                    letters[pos]--;
+                    found++;
                 }
                 else
-                    while(left < right)
+                {
+                    //try to find this letter from the first hit position until current pos
+                    while (found > 0)
                     {
-                        char c_left = s2[left];
-                        left++;
-                        if(c_left == c)
+                        var prevLetter = s2[i - found];
+                        if (prevLetter == letter)
                             break;
-                        s1_letters[c_left - 'a']++;
-                        cnt++;
+                        else
+                        {
+                            letters[prevLetter - 'a']++;
+                            found--;
+                        }
                     }
-                right++;
+                }
+                i++;
             }
-
-            return false;
+            return len == found;
         }
     }
 }
