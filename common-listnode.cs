@@ -7,15 +7,25 @@ namespace Common
 {
     public class ListNodeHelper
     {
-        public static ListNode BuildList(string arrStr)
+        public static ListNode BuildList(string arrStr) => BuildList(ArrayHelper.ArrayFromString(arrStr));
+        public static ListNode BuildList(int[] arr)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
-            
             ListNode node = null;
             for(int i=arr.Length-1; i>=0; i--)
                 node = new ListNode(arr[i], node);
             
             return node;
+        }
+        
+        public static ListNode[] BuildListArray(string arrStr)
+        {
+            var arr = ArrayHelper.MatrixFromString(arrStr);
+            
+            var res = new ListNode[arr.Length];
+            for(int i=0; i<res.Length; i++)
+                res[i] = BuildList(arr[i]);
+            
+            return res;
         }
 
         public static bool AreEqual(ListNode list1, ListNode list2)
@@ -29,6 +39,17 @@ namespace Common
             }
 
             return list1 == null && list2 == null;
+        }
+        
+        public static bool AreEqual(ListNode[] list1, ListNode[] list2)
+        {
+            if(list1.Length != list2.Length)
+                return false;
+            for(int i=0; i<list1.Length; i++)
+                if(!AreEqual(list1[i], list2[i]))
+                    return false;
+
+            return true;
         }
     }
 
