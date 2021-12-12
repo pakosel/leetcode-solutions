@@ -8,51 +8,37 @@ namespace PartitionEqualSum
     {
         public bool CanPartition(int[] nums)
         {
-            int len = nums.Length;
-            if (len < 2)
-                return false;
-
-            int sum = 0;
-            Array.Sort(nums);
-            for (int i = 0; i < len; i++)
-                sum += nums[i];
+            var sum = nums.ToList().Sum();
 
             if (sum % 2 == 0)
+                return SubsetSum(nums, sum / 2);
+            else
+                return false;
+        }
+
+        private bool SubsetSum(int[] nums, int target)
+        {
+            var len = nums.Length;
+            Array.Sort(nums);
+
+            var arr = new bool[len][];
+            for (int i = 0; i < len; i++)
             {
-                if(nums[len-1] == sum / 2)
-                    return true;
-                if(nums[len-1] > sum / 2)
-                    return false;
-                
-                var target = sum / 2 - nums[len-1];
-                var memoTable = new bool[len-1][];
-
-                for(int i=0; i<len-1; i++)
-                {
-                    memoTable[i] = new bool[target+1];
-                    for(int j=0; j<=target; j++)
-                    {
-                        if(i == 0)
-                            memoTable[i][j] = (nums[i] == j);
-                        else if(j == 0)
-                            memoTable[i][j] = true;
-                        else
-                        {
-                            if(j < nums[i])
-                                memoTable[i][j] = memoTable[i-1][j];    //value greater than current target sum won't help us
-                            else
-                                memoTable[i][j] = memoTable[i-1][j] || memoTable[i-1][ j - nums[i] ];
-
-                            if(j == target && memoTable[i][j])
-                                return true;    //because the value will be "propagated" to "memoTable[len-2][target]" anyway
-                        }
-                    }
-                }
-
-                return memoTable[len-2][target];
+                arr[i] = new bool[target + 1];
+                arr[i][0] = true;
             }
 
-            return false;
+            if(nums[0] <= target)
+                arr[0][nums[0]] = true;
+
+            for (int i = 1; i < len; i++)
+            {
+                var val = nums[i];
+                for (int j = 1; j <= target; j++)
+                    arr[i][j] = j < val ? arr[i - 1][j] : arr[i - 1][j] || arr[i - 1][j - val];
+            }
+
+            return arr[len - 1][target];
         }
     }
 }
