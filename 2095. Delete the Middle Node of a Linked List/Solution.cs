@@ -10,13 +10,10 @@ namespace DeleteTheMiddleNodeOfLinkedList
     {
         public ListNode DeleteMiddle(ListNode head)
         {
-            int cnt = 0;
+            int cnt = 1;
             var curr = head;
-            while (curr != null)
-            {
+            while ((curr = curr.next) != null)
                 cnt++;
-                curr = curr.next;
-            }
             cnt /= 2;
             if (cnt == 0)
                 return null;
