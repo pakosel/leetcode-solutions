@@ -2,78 +2,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using Common;
 
 namespace MaximumDifferenceBetweenNodeAncestor
 {
     public class Solution
     {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        SortedSet<int> heap = new SortedSet<int>();
-        Dictionary<int, int> nodeDict = new Dictionary<int, int>();
-        int maxDiff = 0;
-
+        int max = 0;
         public int MaxAncestorDiff(TreeNode root)
         {
-            TraverseLeft(root);
-            while (stack.Count > 0)
-            {
-                var node = stack.Peek();
-                if (node.right == null)
-                {
-                    int minmax = Math.Max(Math.Abs(heap.Min - node.val), Math.Abs(heap.Max - node.val));
-                    Pop();
-                    maxDiff = Math.Max(maxDiff, minmax);
-                }
-                else
-                {
-                    TraverseLeft(node.right);
-                    node.right = null;
-                }
-            }
+            Helper(root);
 
-            return maxDiff;
+            return max;
         }
 
-        private void TraverseLeft(TreeNode node)
+        (int min, int max) Helper(TreeNode node)
         {
-            while (node != null)
-            {
-                stack.Push(node);
-                if (nodeDict.ContainsKey(node.val))
-                    nodeDict[node.val]++;
-                else
-                {
-                    heap.Add(node.val);
-                    nodeDict.Add(node.val, 1);
-                }
-                node = node.left;
-            }
+            if(node == null)
+                return (-1, -1);
+
+            var left = Helper(node.left);
+            var right = Helper(node.right);
+            var maxDiff = MaxDiff(left, right, node.val);
+
+            //both childs are null
+            if(maxDiff.max == -1)
+                return (node.val, node.val);
+
+            return (maxDiff.min != -1 ? Math.Min(maxDiff.min, node.val) : Math.Min(maxDiff.max, node.val), Math.Max(maxDiff.max, node.val));
         }
 
-        private TreeNode Pop()
+        private (int min, int max) MaxDiff((int min, int max) left, (int min, int max) right, int val)
         {
-            var res = stack.Pop();
-            if (nodeDict[res.val] == 1)
-            {
-                nodeDict.Remove(res.val);
-                heap.Remove(res.val);
-            }
-            else
-                nodeDict[res.val]--;
+            var mx = Math.Max(left.max, right.max);
+            var mi = Math.Min(left.min, right.min);
 
-            return res;
-        }
-    }
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
+            //both childs are null
+            if(mx == -1)
+                return (-1, -1);
+            //one of the childs is null
+            if(mi == -1)
+                mi = Math.Max(left.min, right.min);
+
+            max = Math.Max(max, Math.Max(Math.Abs(val - mx), Math.Abs(val - mi)));
+
+            return (mi, mx);
         }
     }
 }
