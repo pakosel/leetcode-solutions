@@ -10,7 +10,7 @@ namespace NextGreaterNumericallyBalancedNumber
     {
         public int NextBeautifulNumber(int n)
         {
-            for (int i = n + 1; i < 10000000; i++)
+            for (int i = n + 1; i < 10_000_000; i++)
                 if (IsBeauty(i))
                     return i;
             return -1;
