@@ -4,17 +4,17 @@ using System.Linq;
 using System.Collections.Generic;
 using Common;
 
-namespace InsertIntoBinarySearchTree
+namespace SearchInBinarySearchTree
 {
     [TestFixture]
     public class SolutionTest
     {
         private static readonly object[] testCases =
         {
-            new object[] {"[]", 5, "[5]"},
-            new object[] {"[4,2,7,1,3]", 5, "[4,2,7,1,3,5]"},
-            new object[] {"[40,20,60,10,30,50,70]", 25, "[40,20,60,10,30,50,70,null,null,25]"},
-            new object[] {"[4,2,7,1,3,null,null,null,null,null,null]", 5, "[4,2,7,1,3,5]"},
+            new object[] {"[1]", 1, "[1]"},
+            new object[] {"[1]", 5, "[]"},
+            new object[] {"[4,2,7,1,3]", 2, "[2,1,3]"},
+            new object[] {"[4,2,7,1,3]", 5, "[]"},
         };
 
         [Test]
@@ -25,7 +25,7 @@ namespace InsertIntoBinarySearchTree
             var expected = TreeNodeHelper.BuildTree(expectedStr);
 
             var sol = new Solution();
-            var res = sol.InsertIntoBST(root, val);
+            var res = sol.SearchBST(root, val);
 
             Assert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
         }
