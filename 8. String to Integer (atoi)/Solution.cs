@@ -1,49 +1,37 @@
 using System.Text;
 
-namespace Atoi
+namespace StringToInteger
 {
     public class Solution
     {
-        public int MyAtoi(string str)
+        public int MyAtoi(string s)
         {
-            if (str == "2147483648")
-                return int.MaxValue;
-
-            var arr = str.Split(' ');
-
-            foreach (var s in arr)
-            {
-                if (s.Length == 0)
-                    continue;
-
-                if ((s[0] >= 48 && s[0] <= 57) ||
-                    ((s[0] == '-' || s[0] == '+') && s.Length > 1 && (s[1] >= 48 && s[1] <= 57)))
+            long res = 0;
+            bool? neg = null;
+            bool parsing = false;
+            foreach (var c in s)
+                if (c >= '0' && c <= '9')
                 {
-                    //find last num char
-                    var numStr = s;
-                    for (int i = 1; i < s.Length; i++)
-                        if (s[i] < 48 || s[i] > 57)
-                        {
-                            numStr = s.Substring(0, i);
-                            break;
-                        }
-
-                    int ret;
-                    var ok = int.TryParse(numStr, out ret);
-                    if (ok)
-                        return ret;
-                    else
-                        return s[0] == '-' ? int.MinValue : int.MaxValue;
-
-                    //i'm not interested in the rest of arr
-                    //break;
+                    parsing = true;
+                    res = res * 10 + (c - '0');
+                    if (res > int.MaxValue)
+                        break;
                 }
-                else
+                else if ((c >= 'a' && c <= 'z') || c == '.' || parsing)
                     break;
-            }
-
-            return 0;
+                else if (c == '-' || c == '+')
+                    if (neg != null)
+                        return 0;
+                    else
+                    {
+                        neg = (c == '-');
+                        parsing = true;
+                    }
+            if (neg == true)
+                res = 0 - res;
+            return res > int.MaxValue ? int.MaxValue :
+                   res < int.MinValue ? int.MinValue :
+                   (int)res;
         }
-
     }
 }
