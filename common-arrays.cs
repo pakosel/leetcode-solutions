@@ -65,6 +65,7 @@ namespace Common
         public static char[][] CharMatrixFromString(string matrixStr)
         {
             matrixStr = matrixStr.Replace(" ", "");
+            matrixStr = matrixStr.Replace("'", "");
             char[][] matrix;
             var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
 
