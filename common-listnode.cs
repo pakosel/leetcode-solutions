@@ -51,6 +51,16 @@ namespace Common
 
             return true;
         }
+
+        public static ListNode Tail(ListNode head)
+        {
+            var curr = head;
+            while(curr?.next != null)
+            {
+                curr = curr.next;
+            }
+            return curr;
+        }
     }
 
     public class ListNode
