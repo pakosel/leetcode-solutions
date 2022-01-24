@@ -8,7 +8,6 @@ namespace MinimumHeightTrees
     public class Solution
     {
         HashSet<int>[] Edges;
-        int min = int.MaxValue;
 
         public IList<int> FindMinHeightTrees(int n, int[][] edges)
         {

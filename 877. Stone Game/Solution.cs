@@ -17,8 +17,6 @@ namespace StoneGame
     {
         Dictionary<(int, int), int> maxPoints = new Dictionary<(int, int), int>();
         int[] Piles;
-        int Alex = 0;
-        int Lee = 0;
 
         public bool StoneGame(int[] piles)
         {
