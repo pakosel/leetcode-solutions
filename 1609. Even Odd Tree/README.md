@@ -9,7 +9,7 @@ A binary tree is named **Even-Odd** if it meets the following conditions:
 Given the `root` of a binary tree, *return* `true` *if the binary tree is* ***Even-Odd***, *otherwise return* `false`.
 
 **Constraints**:
-The number of nodes in the tree is in the range <code>[1, 10<sup>5</sup>]</code>.
+- The number of nodes in the tree is in the range <code>[1, 10<sup>5</sup>]</code>.
 - <code>1 <= Node.val <= 10<sup>5</sup></code>
 
 ### Example 1:
