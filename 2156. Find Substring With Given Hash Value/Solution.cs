@@ -10,26 +10,33 @@ namespace FindSubstringWithGivenHashValue
     {
         public string SubStrHash(string s, int power, int m, int k, int hashValue)
         {
-            var arr = new int[s.Length];
-            var powers = new long[k];
-            powers[0] = 1;
-            for (int i = 1; i < k; i++)
-                powers[i] = (powers[i - 1] * power) % m;
+            var len = s.Length;
+            var arr = new int[len];
+            var startIdx = 0;
 
-            for (int i = 0; i < s.Length; i++)
-                arr[i] = s[i] - 'a' + 1;
+            for (int i = 0; i < len; i++)
+                arr[i] = (s[i] - 'a' + 1);
 
-            for (int i = 0; i < s.Length && i + k - 1 < s.Length; i++)
+            long val = 0;
+            long p = 1;
+            for(int i=len-k; i<len; i++)
             {
-                long val = arr[i] % m;
-                for (int j = 1; j < k; j++)
-                    val = (val + arr[i + j] * powers[j]) % m;
-
-                if (val == hashValue)
-                    return s.Substring(i, k);
+                val = (val + arr[i] * p);
+                if(i < len-1)   //we will need the value power^(k-1) later in the code
+                    p = (p * power) % m;
             }
 
-            return s.Substring(0, k);
+            if(val % m == hashValue)
+                startIdx = len-k;
+
+            for(int i=len-k-1; i>=0; i--)
+            {
+                val = ((val % m) - (arr[i+k]*p % m) + m) * power + arr[i];
+                if(val % m == hashValue)
+                    startIdx = i;   //we need to continue since we're asked to return THE FIRST substring
+            }
+
+            return s.Substring(startIdx, k);
         }
     }
 }
