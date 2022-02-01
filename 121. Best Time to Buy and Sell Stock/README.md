@@ -1,10 +1,14 @@
 # 121. Best Time to Buy and Sell Stock
 
-Say you have an array for which the *i*<sup>th</sup> element is the price of a given stock on day *i*.
+You are given an array `prices` where `prices[i]` is the price of a given stock on the <code>i<sup>th</sup></code> day.
 
-If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+You want to maximize your profit by choosing a **single day** to buy one stock and choosing a **different day in the future** to sell that stock.
 
-Note that you cannot sell a stock before you buy one.
+Return the *maximum profit you can achieve from this transaction*. If you cannot achieve any profit, return `0`.
+
+**Constraints**:
+- <code>1 <= prices.length <= 10<sup>5</sup></code>
+- <code>0 <= prices[i] <= 10<sup>4</sup></code>
 
 ### Example 1:
 ```
