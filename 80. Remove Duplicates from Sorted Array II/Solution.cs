@@ -9,25 +9,16 @@ namespace RemoveDuplicatesFromSortedArrayII
     {
         public int RemoveDuplicates(int[] nums)
         {
-            if (nums.Length == 0)
-                return 0;
-
-            int cnt = 0;
-            int idx = 1;
             int i = 1;
-            while (i < nums.Length)
+            int j = 2;
+            while (j < nums.Length)
             {
-                if (nums[i - 1] == nums[i])
-                    cnt++;
+                if (nums[i] == nums[j] && nums[i - 1] == nums[j])
+                    j++;
                 else
-                    cnt = 0;
-                if (cnt < 2)
-                    nums[idx++] = nums[i];
-
-                i++;
+                    nums[++i] = nums[j++];
             }
-
-            return idx;
+            return Math.Min(nums.Length, i + 1);
         }
     }
 }
