@@ -4,10 +4,11 @@ Given a **set** of candidate numbers (`candidates`) (**without duplicates**) and
 
 The same repeated number may be chosen from candidates unlimited number of times.
 
-**Note**:
-
-- All numbers (including `target`) will be positive integers.
-- The solution set must not contain duplicate combinations.
+**Constraints**:
+- `1 <= candidates.length <= 30`
+- `1 <= candidates[i] <= 200`
+- All elements of `candidates` are **distinct**.
+- `1 <= target <= 500`
 
 ### Example 1:
 ```
@@ -28,4 +29,10 @@ A solution set is:
   [2,3,3],
   [3,5]
 ]
+```
+
+### Example 3:
+```
+Input: candidates = [2], target = 1
+Output: []
 ```
