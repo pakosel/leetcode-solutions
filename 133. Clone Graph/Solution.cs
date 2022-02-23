@@ -5,6 +5,22 @@ using System.Text;
 
 namespace CloneGraph
 {
+    public class Solution_Recursive
+    {
+        Dictionary<int, Node> Visited = new Dictionary<int, Node>();
+        public Node CloneGraph(Node node)
+        {
+            if (node == null)
+                return null;
+            if (Visited.ContainsKey(node.val))
+                return Visited[node.val];
+            var res = new Node(node.val);
+            Visited.Add(node.val, res);
+            foreach (var n in node.neighbors)
+                res.neighbors.Add(CloneGraph(n));
+            return res;
+        }
+    }
     public class Solution
     {
         public Node CloneGraph(Node node)

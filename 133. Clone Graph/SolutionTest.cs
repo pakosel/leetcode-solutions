@@ -2,42 +2,76 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace CloneGraph
 {
     [TestFixture]
     public class SolutionTest
     {
+        private static readonly object[] testCases =
+        {
+            new object[] {"[]"},
+            new object[] {"[[]]"},
+            new object[] {"[[2],[1]]"},
+            new object[] {"[[2,4],[1,3],[2,4],[1,3]]"},
+        };
+
         [Test]
-        [TestCase("[]")]
-        [TestCase("[[]]")]
-        [TestCase("[[2],[1]]")]
-        [TestCase("[[2,4],[1,3],[2,4],[1,3]]")]
+        [TestCaseSource("testCases")]
+        public void Test_Recursive(string inputArr)
+        {
+            var nodes = BuildGraph(inputArr);
+            var node = nodes.Length > 0 ? nodes[0] : null;
+
+            var sol = new Solution_Recursive();
+            var ret = sol.CloneGraph(node);
+
+            var nodesAreEqual = NodesAreEqual(node, ret);
+
+            if(node != null)
+                Assert.AreNotEqual(node, ret);
+            Assert.AreEqual(nodesAreEqual, true);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Example(string inputArr)
         {
-            var arr = inputArr.TrimStart('[').TrimEnd(']').Split("],[");
+            var nodes = BuildGraph(inputArr);
+            var node = nodes.Length > 0 ? nodes[0] : null;
+
+            var sol = new Solution();
+            var ret = sol.CloneGraph(node);
+
+            var nodesAreEqual = NodesAreEqual(node, ret);
+
+            if(node != null)
+                Assert.AreNotEqual(node, ret);
+            Assert.AreEqual(nodesAreEqual, true);
+        }
+
+        private Node[] BuildGraph(string inputArr)
+        {
+            var arr = ArrayHelper.MatrixFromString(inputArr);
+
             var nodes = new Node[arr.Length];
             for(int i=0; i<arr.Length; i++)
                 nodes[i] = new Node(i);
 
             for(int i=0; i<arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                for(int j=0; j<innerArr.Length; j++)
+                for(int j=0; j<arr[i].Length; j++)
                     nodes[i].neighbors.Add(nodes[j]);
-            }
 
-            var sol = new Solution();
-            var ret = sol.CloneGraph(nodes[0]);
-
-            HashSet<Node> visited = new HashSet<Node>();
-            var nodesAreEqual = NodesAreEqual(nodes[0], ret, visited);
-
-            Assert.AreEqual(nodesAreEqual, true);
+            return nodes;
         }
 
-        private bool NodesAreEqual(Node n1, Node n2, HashSet<Node> visited)
+        private bool NodesAreEqual(Node n1, Node n2, HashSet<Node> visited = null)
         {
+            if(n1 == null)
+                return n2 == null;
+            if(visited == null)
+                visited = new HashSet<Node>();
             if(visited.Contains(n1))
                 return true;
 
