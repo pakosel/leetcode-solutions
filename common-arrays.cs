@@ -88,6 +88,34 @@ namespace Common
             return matrix;
         }
 
+        public static int?[][] NullableMatrixFromString(string matrixStr)
+        {
+            matrixStr = matrixStr.Replace(" ", "");
+            int?[][] matrix;
+            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
+
+            if(arr[0] == "" && arr.Length < 2)
+                return new int?[0][];
+            matrix = new int?[arr.Length][];
+            for(int i=0; i<arr.Length; i++)
+            {
+                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
+                if(innerArr[0] == "")
+                    matrix[i] = new int?[0];
+                else
+                {
+                    matrix[i] = new int?[innerArr.Length];
+                    for(int j=0; j<innerArr.Length; j++)
+                        if(innerArr[j] == "null")
+                            matrix[i][j] = null;
+                        else
+                            matrix[i][j] = int.Parse(innerArr[j]);
+                }
+            }
+
+            return matrix;
+        }
+
         public static string MatrixToString(int[][] matrix)
         {
             if(matrix.Length == 0)
