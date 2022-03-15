@@ -9,37 +9,27 @@ namespace MinimumRemoveToMakeValidParentheses
     {
         public string MinRemoveToMakeValid(string s)
         {
-            var res = new StringBuilder();
-            var openPos = new Stack<int>();
-            int i = 0;
+            var sb = new StringBuilder();
+            var stack = new Stack<int>();
             foreach (var c in s)
-                switch (c)
+                if (c == ')')
                 {
-                    case '(':
-                        res.Append(c);
-                        openPos.Push(i++);
-                        break;
-                    case ')':
-                        if (openPos.Any())
-                        {
-                            res.Append(c);
-                            openPos.Pop();
-                            i++;
-                        }
-                        break;
-                    default:
-                        res.Append(c);
-                        i++;
-                        break;
+                    if (stack.Count != 0)
+                    {
+                        stack.Pop();
+                        sb.Append(c);
+                    }
                 }
+                else
+                {
+                    if (c == '(')
+                        stack.Push(sb.Length);
+                    sb.Append(c);
+                }
+            while (stack.Count > 0)
+                sb.Remove(stack.Pop(), 1);
 
-            while (openPos.Any())
-            {
-                var pos = openPos.Pop();
-                res.Remove(pos, 1);
-            }
-
-            return res.ToString();
+            return sb.ToString();
         }
     }
 }
