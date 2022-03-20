@@ -21,6 +21,7 @@ namespace SimplifyPath
             new object[] {"/foo/.../bar/../../..", "/"},
             new object[] {"/foo/.../bar/../../../..", "/"},
             new object[] {"/foo..", "/foo.."},
+            new object[] {"/foo..", "THIS WILL FAIL"},
         };
 
         [Test]
