@@ -6,7 +6,11 @@
  jobs:
    test:
      description: Run all tests
-     executor: win/default
+     executor:
+      imagename: windows-server-2022-gui
+      name: win/windows
+      size: medium
+      version: edge
      steps:
        - checkout
        - run: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
@@ -15,7 +19,11 @@
            path: C:\Users\circleci\project\test_coverage
   
    build:
-     executor: win/default     
+     executor:
+      imagename: windows-server-2022-gui
+      name: win/windows
+      size: medium
+      version: edge
     
      steps:
        - checkout
