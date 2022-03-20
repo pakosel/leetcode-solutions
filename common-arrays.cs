@@ -116,6 +116,22 @@ namespace Common
             return matrix;
         }
 
+        public static int?[] NullableArrayFromString(string arrString)
+        {
+            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
+            if(arr[0] == "")
+                return new int?[0];
+
+            var res = new int?[arr.Length];
+            for(int i=0; i<arr.Length; i++)
+                if(arr[i] != "null")
+                    res[i] = int.Parse(arr[i]);
+                else
+                    res[i] = null;
+
+            return res;
+        }
+
         public static string MatrixToString(int[][] matrix)
         {
             if(matrix.Length == 0)
