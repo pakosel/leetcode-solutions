@@ -10,26 +10,5 @@
        - run:
            name: Install common tools
            command: |
-             sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
-   test:
-     description: Run all tests
-     steps:
-       - checkout
-       - run: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
-       - run: pwd
-       - store_artifacts:
-           path: ~/project/test_coverage
-  
-   build:
-     steps:
-       - checkout
-       - run: dotnet build
-
- workflows:
-   test_and_build:
-     jobs:
-       - commands
-       - test
-       - build:
-           requires:
-             - test
+             - sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
+             - dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
