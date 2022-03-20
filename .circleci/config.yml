@@ -1,34 +1,20 @@
  version: 2.1
 
  orbs:
-  debian: onehq/debian@1.0.0
+  node: circleci/node@5.0.1
 
- commands:
-   install_common_tools:
-     steps:
-     - run:
-         name: Install common tools
-         command: |
-           sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
  jobs:
    test:
      description: Run all tests
      steps:
        - checkout
+       - run: sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
        - run: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
        - run: pwd
        - store_artifacts:
            path: ~/project/test_coverage
   
-   build:
-     steps:
-       - checkout
-       - run: dotnet build
-
  workflows:
    test_and_build:
      jobs:
        - test
-       - build:
-           requires:
-             - test
