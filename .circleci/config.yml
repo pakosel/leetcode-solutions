@@ -4,17 +4,22 @@
   node: circleci/node@5.0.1
 
  jobs:
-   test:
-     description: Run all tests
-     steps:
-       - checkout
-       - run: sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
-       - run: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
-       - run: pwd
-       - store_artifacts:
-           path: ~/project/test_coverage
-  
+  test:
+    executor:
+      name: node/default
+      tag: '16'
+    steps:
+      - checkout
+      - run:
+          command: sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
+          name: Install dotnet6
+      - run:
+          command: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
+      - run:
+          command: pwd
+      - store_artifacts:
+          path: ~/project/test_coverage
  workflows:
-   test_and_build:
-     jobs:
-       - test
+  test_my_app:
+    jobs:
+      - test
