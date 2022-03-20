@@ -1,30 +1,26 @@
  version: 2.1
 
  orbs:
-  win: circleci/windows@3.0.0
+  debian: onehq/debian@1.0.0
 
  jobs:
+   commands:
+     install_common_tools:
+       steps:
+       - run:
+           name: Install common tools
+           command: |
+             sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
    test:
      description: Run all tests
-     executor:
-      imagename: windows-server-2019-vs2019
-      name: win/windows
-      size: medium
-      version: stable
      steps:
        - checkout
        - run: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
        - run: pwd
        - store_artifacts:
-           path: C:\Users\circleci\project\test_coverage
+           path: ~/project/test_coverage
   
    build:
-     executor:
-      imagename: windows-server-2019-vs2019
-      name: win/windows
-      size: medium
-      version: stable
-    
      steps:
        - checkout
        - run: dotnet build
@@ -32,6 +28,7 @@
  workflows:
    test_and_build:
      jobs:
+       - commands
        - test
        - build:
            requires:
