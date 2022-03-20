@@ -7,10 +7,10 @@
    test:
      description: Run all tests
      executor:
-      imagename: windows-server-2022-gui
+      imagename: windows-server-2019-vs2019
       name: win/windows
       size: medium
-      version: edge
+      version: stable
      steps:
        - checkout
        - run: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
@@ -20,10 +20,10 @@
   
    build:
      executor:
-      imagename: windows-server-2022-gui
+      imagename: windows-server-2019-vs2019
       name: win/windows
       size: medium
-      version: edge
+      version: stable
     
      steps:
        - checkout
