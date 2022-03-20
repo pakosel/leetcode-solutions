@@ -6,7 +6,8 @@
  jobs:
   test:
     executor:
-      name: mcr.microsoft.com/dotnet/sdk
+      docker:
+        - image: mcr.microsoft.com/dotnet/sdk
     steps:
       - checkout
       - run:
