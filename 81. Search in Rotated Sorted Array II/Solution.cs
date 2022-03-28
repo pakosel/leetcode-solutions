@@ -9,45 +9,30 @@ namespace SearchInRotatedSortedArrayII
     {
         public bool Search(int[] nums, int target)
         {
-            if (nums.Length == 0)
-                return false;
+            if (nums[0] == target)
+                return true;
+            for (int i = 1; i < nums.Length; i++)
+                if (nums[i] == target)
+                    return true;
+                else if (nums[i] < nums[i - 1])
+                    return BinSearch(nums, target, i, nums.Length - 1);
 
-            var res = SearchForward(nums, target);
-            if (res == null)
-                res = SearchBackward(nums, target);
-
-            return res == true ? true : false;
+            return false;
         }
 
-        private bool? SearchForward(int[] nums, int target)
+        private bool BinSearch(int[] nums, int target, int start, int end)
         {
-            int i = 0;
-            int prev = nums[i];
-            while (i < nums.Length && nums[i] < target)
+            while (start <= end)
             {
-                if (nums[i] < prev)
-                    return null;
-                prev = nums[i++];
+                var mid = start + (end - start) / 2;
+                if (target == nums[mid])
+                    return true;
+                if (target < nums[mid])
+                    end = mid - 1;
+                else
+                    start = mid + 1;
             }
-            if (i == 0 && nums[i] != target)
-                return null;
-
-            return i < nums.Length && nums[i] == target;
-        }
-
-        private bool? SearchBackward(int[] nums, int target)
-        {
-            int len = nums.Length;
-            int i = len - 1;
-            int prev = nums[i];
-            while (i >= 0 && nums[i] > target)
-            {
-                if (nums[i] > prev)
-                    return false;
-                prev = nums[i--];
-            }
-
-            return i >= 0 && nums[i] == target;
+            return false;
         }
     }
 }
