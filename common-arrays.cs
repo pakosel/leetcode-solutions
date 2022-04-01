@@ -36,6 +36,18 @@ namespace Common
 
             return res;
         }
+        public static char[] CharArrayFromString(string arrString)
+        {
+            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
+            if(arr[0] == "")
+                return new char[0];
+
+            var res = new char[arr.Length];
+            for(int i=0; i<arr.Length; i++)
+                res[i] = char.Parse(arr[i]);
+
+            return res;
+        }
         
         public static int[][] MatrixFromString(string matrixStr)
         {
