@@ -8,38 +8,21 @@ namespace ContainerWithMostWater
     {
         public int MaxArea(int[] height)
         {
-            var max = 0;
-            var left = -1;
-            for (int i = 0; i < height.Length - 1; i++)
+            var top = height.Max();
+            var res = 0;
+            var left = 0;
+            var right = height.Length - 1;
+            for (int i = 1; i <= top; i++)
             {
-                if (left != -1 && height[i] <= height[left])
-                    continue;
-                var m = MaxContainer(height, i);
-                if (m > max)
-                {
-                    max = m;
-                    left = i;
-                }
-            }
-            return max;
-        }
-
-        private int MaxContainer(int[] height, int start)
-        {
-            var max = 0;
-            var right = -1;
-            var left = height[start];
-
-            for (int i = height.Length - 1; i > start; i--)
-            {
-                if (right != -1 && height[i] <= height[right])
-                    continue;
-                var m = (i - start) * Math.Min(left, height[i]);
-                if (m > max)
-                    max = m;
+                while (height[left] < i)
+                    left++;
+                while (height[right] < i)
+                    right--;
+                var area = (right - left) * i;
+                res = Math.Max(res, area);
             }
 
-            return max;
+            return res;
         }
     }
 }
