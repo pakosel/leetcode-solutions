@@ -26,9 +26,12 @@ namespace TopKFrequentElements
             var expected = ArrayHelper.ArrayFromString(expectedStr);
 
             var sol = new Solution();
+            var solutionBoring = new SolutionBoring();
             var res = sol.TopKFrequent(arr, k);
+            var resBoring = solutionBoring.TopKFrequent(arr, k);
 
             CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(resBoring, expected);
         }
     }
 }

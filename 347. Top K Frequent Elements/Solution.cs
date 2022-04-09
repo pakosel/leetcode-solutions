@@ -26,4 +26,28 @@ namespace TopKFrequentElements
             return res;
         }
     }
+
+    public class SolutionBoring
+    {
+        public int[] TopKFrequent(int[] nums, int k)
+        {
+            var dict = new Dictionary<int, int>();
+            foreach (var n in nums)
+                if (dict.ContainsKey(n))
+                    dict[n]++;
+                else
+                    dict.Add(n, 1);
+
+            var res = new int[k];
+            int i=0;
+            foreach (var kvp in dict.OrderByDescending(kv => kv.Value))
+            {
+                res[i++] = kvp.Key;
+                if(i == k)
+                    break;
+            }
+            
+            return res;
+        }
+    }
 }
