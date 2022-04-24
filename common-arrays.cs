@@ -127,6 +127,21 @@ namespace Common
 
             return matrix;
         }
+        public static string[][] StringMatrixFromString(string matrixStr)
+        {
+            matrixStr = matrixStr.Replace(" ", "");
+            matrixStr = matrixStr.Replace("\"", "");
+            string[][] matrix;
+            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
+
+            if(arr[0] == "" && arr.Length < 2)
+                return new string[0][];
+            matrix = new string[arr.Length][];
+            for(int i=0; i<arr.Length; i++)
+                matrix[i] = arr[i].TrimStart('[').TrimEnd(']').Split(',');
+
+            return matrix;
+        }
 
         public static int?[] NullableArrayFromString(string arrString)
         {
