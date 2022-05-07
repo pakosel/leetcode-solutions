@@ -17,16 +17,7 @@ namespace The132Pattern
                     min = n;
                 else
                 {
-                    if (stack.Count > 0 && stack.Peek().i == min)
-                    {
-                        if (stack.Peek().k < n)
-                        {
-                            stack.Pop();
-                            stack.Push((min, n));
-                        }
-                    }
-                    else
-                        stack.Push((min, n));
+                    stack.Push((min, n));
                     Optimize(stack);
                 
                     foreach (var c in stack)
