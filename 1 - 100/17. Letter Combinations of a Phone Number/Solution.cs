@@ -7,41 +7,48 @@ namespace LetterCombinationsPhoneNumber
 {
     public class Solution
     {
-        Dictionary<char, List<char>> letters = new Dictionary<char, List<char>>();
         public IList<string> LetterCombinations(string digits)
         {
-            var len = digits.Length;
-            if(len == 0)
+            if(digits.Length == 0)
                 return new string[0];
+            var first = Map(digits[0]);
+            var subst = LetterCombinations(digits.Substring(1));
 
-            InitDict();           
-            return GetLetters(digits);
-        }
+            if (subst.Count == 0)
+                return first;
 
-        private void InitDict()
-        {
-            letters.Add('1', new List<char>() {});
-            letters.Add('2', new List<char>() {'a', 'b', 'c'});
-            letters.Add('3', new List<char>() {'d', 'e', 'f'});
-            letters.Add('4', new List<char>() {'g', 'h', 'i'});
-            letters.Add('5', new List<char>() {'j', 'k', 'l'});
-            letters.Add('6', new List<char>() {'m', 'n', 'o'});
-            letters.Add('7', new List<char>() {'p', 'q', 'r', 's'});
-            letters.Add('8', new List<char>() {'t', 'u', 'v'});
-            letters.Add('9', new List<char>() {'w', 'x', 'y', 'z'});
-        }
+            var res = new string[first.Count * subst.Count];
+            var i = 0;
 
-        public List<string> GetLetters(string digits)
-        {
-            if(digits.Length == 1)
-                return new List<string>(letters[digits[0]].Select(c => c.ToString()));
-
-            var res = new List<string>();
-            var rest = GetLetters(digits.Substring(1));
-            foreach(var c in letters[digits[0]])
-                foreach(var r in rest)
-                    res.Add(c + r);
+            foreach (var c in first)
+                foreach (var s in subst)
+                    res[i++] = (c + s);
             return res;
+        }
+
+        private IList<string> Map(char digit)
+        {
+            switch (digit)
+            {
+                case '2':
+                    return new string[] { "a", "b", "c" };
+                case '3':
+                    return new string[] { "d", "e", "f" };
+                case '4':
+                    return new string[] { "g", "h", "i" };
+                case '5':
+                    return new string[] { "j", "k", "l" };
+                case '6':
+                    return new string[] { "m", "n", "o" };
+                case '7':
+                    return new string[] { "p", "q", "r", "s" };
+                case '8':
+                    return new string[] { "t", "u", "v" };
+                case '9':
+                    return new string[] { "w", "x", "y", "z" };
+                default:
+                    return new string[0];
+            }
         }
     }
 }
