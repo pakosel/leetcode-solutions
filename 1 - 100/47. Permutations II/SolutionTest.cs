@@ -31,7 +31,33 @@ namespace PermutationsII
             var sol = new Solution();
             var res = sol.PermuteUnique(input);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_GenericList(string arrStr, string expectedStr)
+        {
+            var input = ArrayHelper.ArrayFromString(arrStr);
+            var expected = ArrayHelper.MatrixFromString(expectedStr);
+
+            var sol = new Solution_List();
+            var res = sol.PermuteUnique(input);
+
+            CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_GenericMemo(string arrStr, string expectedStr)
+        {
+            var input = ArrayHelper.ArrayFromString(arrStr);
+            var expected = ArrayHelper.MatrixFromString(expectedStr);
+
+            var sol = new Solution_Memoization();
+            var res = sol.PermuteUnique(input);
+
+            CollectionAssert.AreEquivalent(res, expected);
         }
     }
 }
