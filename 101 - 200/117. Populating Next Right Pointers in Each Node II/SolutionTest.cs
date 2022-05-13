@@ -33,5 +33,17 @@ namespace PopulatingNextRightPointersEachNodeII
 
             Assert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_GenericRecursive(string treeStr, string expected)
+        {
+            var root = TreeNodeHelper.ToNode(TreeNodeHelper.BuildTree(treeStr));
+
+            var sol = new Solution_Recursive();
+            var res = sol.Connect(root);
+
+            Assert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
+        }
     }
 }
