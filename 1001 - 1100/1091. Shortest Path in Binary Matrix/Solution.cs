@@ -14,7 +14,6 @@ namespace ShortestPathInBinaryMatrix
                 return -1;
 
             var queue = new Queue<(int x, int y, int len)>();
-            var min = int.MaxValue;
 
             queue.Enqueue((0, 0, 1));
             while (queue.Count > 0)
@@ -22,9 +21,7 @@ namespace ShortestPathInBinaryMatrix
                 var q = queue.Dequeue();
                 if (q.x < 0 || q.x >= n || q.y < 0 || q.y >= n)
                     continue;
-                if (q.x == n - 1 && q.y == n - 1)
-                    min = Math.Min(min, q.len);
-
+                
                 var val = grid[q.x][q.y];
                 if (val == 1)
                     continue;
@@ -42,7 +39,8 @@ namespace ShortestPathInBinaryMatrix
                 }
             }
 
-            return min != int.MaxValue ? min : -1;
+            var min = grid[n - 1][n - 1];
+            return min != 0 ? min : -1;
         }
     }
 }

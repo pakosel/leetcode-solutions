@@ -15,6 +15,9 @@ namespace ShortestPathInBinaryMatrix
             new object[] {"[[0,1],[1,0]]", 2},
             new object[] {"[[0,0,0],[1,1,0],[1,1,0]]", 4},
             new object[] {"[[1,0,0],[1,1,0],[1,1,0]]", -1},
+            new object[] {"[[1,0],[0,0]]", -1},
+            new object[] {"[[0,0,0],[1,1,0],[1,1,1]]", -1},
+            new object[] {"[[0,1,0,0,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0],[0,0,0,1,0]]", 13},
         };
 
         [Test]
@@ -26,7 +29,7 @@ namespace ShortestPathInBinaryMatrix
             var sol = new Solution();
             var res = sol.ShortestPathBinaryMatrix(grid);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }
