@@ -87,6 +87,16 @@ namespace Common
 
             return res.TrimEnd(',') + "]";
         }
+
+        public static TreeNode FindNodeWithVal(TreeNode root, int val)
+        {
+            if(root == null || root.val == val)
+                return root;
+            var left = FindNodeWithVal(root.left, val);
+            if(left != null)
+                return left;
+            return FindNodeWithVal(root.right, val);
+        }
     }
 
     public class TreeNode
