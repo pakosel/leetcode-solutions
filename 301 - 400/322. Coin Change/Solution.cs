@@ -5,38 +5,25 @@ using System.Text;
 
 namespace CoinChange
 {
-    public class Solution
+    public class Solution_DP
     {
         public int CoinChange(int[] coins, int amount)
         {
-            if (amount < 1)
-                return amount;
-            Array.Sort(coins);
+            Array.Sort(coins, (x, y) => y.CompareTo(x));
+            var cl = coins.Length;
+            var dp = Enumerable.Range(0, cl).Select(_ => new int[amount + 1]).ToArray();
 
-            int len = coins.Length;
-            const int inf = int.MaxValue-1;
-            int[,] arr = new int[len+1, amount+1];
-            
-            for(int j=0; j<=amount; j++)
-                arr[0,j] = inf;
+            for (int i = 0; i < cl; i++)
+                dp[i][0] = 0;
 
-            for(int i=1; i<=len; i++)
-            {
-                if(coins[i-1] > amount)
+            for (int i = 0; i < cl; i++)
+                for (int j = 1; j <= amount; j++)
                 {
-                    arr[len, amount] = arr[i-1, amount];
-                    break;
+                    dp[i][j] = (coins[i] > j || dp[i][j - coins[i]] == int.MaxValue ? int.MaxValue : 1 + dp[i][j - coins[i]]);
+                    if (i > 0)
+                        dp[i][j] = Math.Min(dp[i][j], dp[i - 1][j]);
                 }
-                for(int j=1; j<=amount; j++)
-                    if(j < coins[i-1])
-                        arr[i,j] = arr[i-1,j];
-                    else if(j == coins[i-1])
-                        arr[i,j] = 1;
-                    else
-                        arr[i,j] = Math.Min(arr[i-1, j], j > coins[i-1] ? 1 + arr[i, j - coins[i-1]] : inf);
-            }
-
-            return arr[len, amount] == inf ? -1 : arr[len,amount];
+            return dp[cl - 1][amount] == int.MaxValue ? -1 : dp[cl - 1][amount];
         }
     }
 
