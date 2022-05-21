@@ -23,6 +23,18 @@ namespace CoinChange
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Dp2(string coinsStr, int amount, int expected)
+        {
+            var coins = ArrayHelper.ArrayFromString(coinsStr);
+
+            var sol = new Solution_DPv2();
+            var res = sol.CoinChange(coins, amount);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Dp(string coinsStr, int amount, int expected)
         {
             var coins = ArrayHelper.ArrayFromString(coinsStr);
@@ -30,7 +42,7 @@ namespace CoinChange
             var sol = new Solution_DP();
             var res = sol.CoinChange(coins, amount);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -42,7 +54,7 @@ namespace CoinChange
             var sol = new Solution_Recursive();
             var res = sol.CoinChange(coins, amount);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -5,6 +5,23 @@ using System.Text;
 
 namespace CoinChange
 {
+    public class Solution_DPv2
+    {
+        public int CoinChange(int[] coins, int amount)
+        {
+            var dp = new int[amount + 1];
+
+            Array.Fill(dp, int.MaxValue);
+            dp[0] = 0;
+
+            for (int i = 0; i < coins.Length; i++)
+                for (int a = 1; a <= amount; a++)
+                    if (coins[i] <= a && dp[a - coins[i]] != int.MaxValue)
+                        dp[a] = Math.Min(dp[a], 1 + dp[a - coins[i]]);
+
+            return (dp[amount] == int.MaxValue ? -1 : dp[amount]);
+        }
+    }
     public class Solution_DP
     {
         public int CoinChange(int[] coins, int amount)
