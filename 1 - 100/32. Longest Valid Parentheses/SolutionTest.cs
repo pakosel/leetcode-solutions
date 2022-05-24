@@ -18,6 +18,9 @@ namespace LongestValidParentheses
             new object[] { "(()", 2 },
             new object[] { ")()())", 4 },
             new object[] { "()((())()", 6 },
+            new object[] { "()(()", 2 },
+            new object[] { "(()(", 2 },
+            new object[] { ")()())", 4 },
         };
 
         [Test]
@@ -25,6 +28,16 @@ namespace LongestValidParentheses
         public void Test_Generic(string s, int expected)
         {
             var sol = new Solution();
+            var res = sol.LongestValidParentheses(s);
+
+            Assert.AreEqual(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Stack(string s, int expected)
+        {
+            var sol = new Solution_Stack();
             var res = sol.LongestValidParentheses(s);
 
             Assert.AreEqual(res, expected);
