@@ -31,7 +31,7 @@ namespace StackStabilization
 
         [Test]
         [TestCaseSource("testCasesStr")]
-        public void Test_Generic(int N, string rStr, int A, int B, int expected)
+        public void Test_Generic(int N, string rStr, int A, int B, long expected)
         {
             var R = ArrayHelper.ArrayFromString(rStr);
 
