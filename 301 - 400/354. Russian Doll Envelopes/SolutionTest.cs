@@ -3,6 +3,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace RussianDollEnvelopes
 {
@@ -11,21 +12,37 @@ namespace RussianDollEnvelopes
     {
         private static readonly object[] testCases =
         {
-            new object[] {new int[][] { }, 0 },
-            new object[] {new int[][] { new int[] {1,1} }, 1 },
-            new object[] {new int[][] {new int[] {5,4}, new int[] {6,4}, new int[] {6,7}, new int[] {2,3}}, 3 },
-            new object[] {new int[][] {new int[] {2,100}, new int[] {3,200}, new int[] {4,300}, new int[] {5,500}, new int[] {5,400}, new int[] {5,250}, new int[] {6,370}, new int[] {6,360}, new int[] {7,380}}, 5 },
-            new object[] {new int[][] {new int[] {46,89}, new int[] {50,53}, new int[] {52,68}, new int[] {72,45}, new int[] {77,81}}, 3 },
+            new object[] {"[[]]", 0 },
+            new object[] {"[[1,1]]", 1 },
+            new object[] {"[[1,1],[1,1],[1,1]]", 1 },
+            new object[] {"[[5,4],[6,4],[6,7],[2,3]]", 3 },
+            new object[] {"[[2,100],[3,200],[4,300],[5,500],[5,400],[5,250],[6,370],[6,360],[7,380]]", 5 },
+            new object[] {"[[46,89],[50,53],[52,68],[72,45],[77,81]]", 3 },
+            new object[] {"[[1,2],[2,3],[3,4],[3,5],[4,5],[5,5],[5,6],[6,7],[7,8]]", 7 },
         };
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Generic(int[][] envelopes, int expected)
+        public void Test_DP(string envelopesStr, int expected)
         {
-            var sol = new Solution();
+            var envelopes = ArrayHelper.MatrixFromString(envelopesStr);
+
+            var sol = new Solution_DP();
             var res = sol.MaxEnvelopes(envelopes);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Memoization(string envelopesStr, int expected)
+        {
+            var envelopes = ArrayHelper.MatrixFromString(envelopesStr);
+
+            var sol = new Solution_Memo();
+            var res = sol.MaxEnvelopes(envelopes);
+
+            Assert.AreEqual(expected, res);
         }
     }
 }
