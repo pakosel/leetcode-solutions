@@ -22,7 +22,7 @@ namespace DesignUndergroundSystem
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string[] commands, string argsStr, double?[] expected)
         {
-            var args = ArrayHelper.StringMatrixFromString(argsStr);
+            var args = ArrayHelper.MatrixFromString<string>(argsStr, true);
 
             Assert.AreEqual(commands.Length, args.Length);
             Assert.AreEqual(commands.Length, expected.Length);            

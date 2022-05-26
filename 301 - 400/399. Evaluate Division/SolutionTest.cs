@@ -21,8 +21,8 @@ namespace EvaluateDivision
         [TestCaseSource("testCases")]
         public void Test_Generic(string equationsStr, double[] values, string queriesStr, double[] expected)
         {
-            var equations = ArrayHelper.StringMatrixFromString(equationsStr);
-            var queries = ArrayHelper.StringMatrixFromString(queriesStr);
+            var equations = ArrayHelper.MatrixFromString<string>(equationsStr, true);
+            var queries = ArrayHelper.MatrixFromString<string>(queriesStr, true);
 
             Assert.AreEqual(equations.Length, values.Length);
             Assert.AreEqual(queries.Length, expected.Length);
