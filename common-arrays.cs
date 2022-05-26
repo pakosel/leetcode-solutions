@@ -36,6 +36,18 @@ namespace Common
 
             return res;
         }
+        public static long[] LongArrayFromString(string arrString)
+        {
+            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
+            if(arr[0] == "")
+                return new long[0];
+
+            var res = new long[arr.Length];
+            for(long i=0; i<arr.Length; i++)
+                res[i] = long.Parse(arr[i]);
+
+            return res;
+        }
         public static char[] CharArrayFromString(string arrString)
         {
             var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
