@@ -20,7 +20,7 @@ namespace MaximumWhiteTilesCoveredByCarpet
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string tilesStr, int carpetLen, int expected)
         {
-            var tiles = ArrayHelper.MatrixFromString(tilesStr);
+            var tiles = ArrayHelper.MatrixFromString<int>(tilesStr);
 
             var sol = new Solution();
             var res = sol.MaximumWhiteTiles(tiles, carpetLen);

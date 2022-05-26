@@ -22,7 +22,7 @@ namespace JumpGame
         [TestCaseSource("testCases")]
         public void Test_Generic(string numsStr, bool expected)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
 
             var sol = new Solution();
             var res = sol.CanJump(nums);

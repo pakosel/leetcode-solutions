@@ -19,8 +19,8 @@ namespace KClosestPointsToOrigin
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string pointsStr, int k, string expectedStr)
         {
-            var points = ArrayHelper.MatrixFromString(pointsStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var points = ArrayHelper.MatrixFromString<int>(pointsStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.KClosest(points, k);

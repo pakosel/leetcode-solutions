@@ -23,7 +23,7 @@ namespace TwoFurthestHousesWithDifferentColors
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string colorsStr, int expected)
         {
-            var colors = ArrayHelper.ArrayFromString(colorsStr);
+            var colors = ArrayHelper.ArrayFromString<int>(colorsStr);
 
             var sol = new Solution();
             var res = sol.MaxDistance(colors);

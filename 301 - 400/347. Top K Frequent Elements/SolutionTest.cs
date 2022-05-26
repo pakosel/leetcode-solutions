@@ -22,8 +22,8 @@ namespace TopKFrequentElements
         [TestCaseSource("testCases")]
         public void Test_Stack(string arrStr, int k, string expectedStr)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var solutionBoring = new SolutionBoring();

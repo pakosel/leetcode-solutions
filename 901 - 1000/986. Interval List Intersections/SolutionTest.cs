@@ -23,12 +23,12 @@ namespace IntervalListIntersections
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string firstArrStr, string secondArrStr, string expectedArrStr)
         {
-            var first = ArrayHelper.MatrixFromString(firstArrStr);
-            var second = ArrayHelper.MatrixFromString(secondArrStr);
+            var first = ArrayHelper.MatrixFromString<int>(firstArrStr);
+            var second = ArrayHelper.MatrixFromString<int>(secondArrStr);
 
             var sol = new Solution();
             var res = sol.IntervalIntersection(first, second);
-            var expected = ArrayHelper.MatrixFromString(expectedArrStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedArrStr);
 
             CollectionAssert.AreEqual(res, expected);
         }

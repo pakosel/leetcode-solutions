@@ -27,7 +27,7 @@ namespace CinemaSeatAllocation
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(int n, string reservedStr, int expected)
         {
-            var reserved = ArrayHelper.MatrixFromString(reservedStr);
+            var reserved = ArrayHelper.MatrixFromString<int>(reservedStr);
 
             var sol = new Solution();
             var res = sol.MaxNumberOfFamilies(n, reserved);

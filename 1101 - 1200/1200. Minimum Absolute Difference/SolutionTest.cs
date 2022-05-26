@@ -23,8 +23,8 @@ namespace MinimumAbsoluteDifference
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string arrStr, string expectedStr)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.MinimumAbsDifference(arr);

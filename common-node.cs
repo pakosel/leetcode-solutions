@@ -9,7 +9,7 @@ namespace Common
     {
         public static NodeN BuildTree(string arrStr)
         {
-            var arr = ArrayHelper.ParseArrayForTreeNode(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int?>(arrStr);
 
             NodeN head = null;
 

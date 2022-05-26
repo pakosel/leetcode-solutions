@@ -22,7 +22,7 @@ namespace MaxNumberOfKSumPairs
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string numsStr, int k, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
 
             var sol = new Solution();
             var res = sol.MaxOperations(nums, k);

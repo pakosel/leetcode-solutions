@@ -25,8 +25,8 @@ namespace FindTheDistanceValueBetweenTwoArrays
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string arr1Str, string arr2Str, int d, int expected)
         {
-            var arr1 = ArrayHelper.ArrayFromString(arr1Str);
-            var arr2 = ArrayHelper.ArrayFromString(arr2Str);
+            var arr1 = ArrayHelper.ArrayFromString<int>(arr1Str);
+            var arr2 = ArrayHelper.ArrayFromString<int>(arr2Str);
 
             var sol = new Solution();
             var res = sol.FindTheDistanceValue(arr1, arr2, d);

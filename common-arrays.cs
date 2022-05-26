@@ -2,143 +2,67 @@ using System;
 using System.Text;
 using System.Linq;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Common
 {
     public class ArrayHelper
     {
-        public static int?[] ParseArrayForTreeNode(string arrStr)
+        //TODO: replace reflection with IParseable<T> definition after migration to .net 7
+        private static MethodInfo GetParserInoker<T>()
         {
-            var arrS = arrStr.TrimStart('[').TrimEnd(']').Split(",");
-            if(arrS[0] == "")
-                return new int?[0];
-
-            int?[] arr = new int?[arrS.Length];
-
-            for(int i=0; i<arrS.Length; i++)
-                if(arrS[i] == "null")
-                    arr[i] = null;
-                else
-                    arr[i] = int.Parse(arrS[i]);
-
-            return arr;
-        }
-
-        public static int[] ArrayFromString(string arrString)
-        {
-            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
-            if(arr[0] == "")
-                return new int[0];
-
-            var res = new int[arr.Length];
-            for(int i=0; i<arr.Length; i++)
-                res[i] = int.Parse(arr[i]);
-
-            return res;
-        }
-        public static long[] LongArrayFromString(string arrString)
-        {
-            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
-            if(arr[0] == "")
-                return new long[0];
-
-            var res = new long[arr.Length];
-            for(long i=0; i<arr.Length; i++)
-                res[i] = long.Parse(arr[i]);
-
-            return res;
-        }
-        public static char[] CharArrayFromString(string arrString)
-        {
-            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
-            if(arr[0] == "")
-                return new char[0];
-
-            var res = new char[arr.Length];
-            for(int i=0; i<arr.Length; i++)
-                res[i] = char.Parse(arr[i]);
-
-            return res;
+            //for int? long? etc. we need to call "Parse" on an underlying type, i.e.: int, long, etc.
+            var baseType = (Nullable.GetUnderlyingType(typeof(T)) != null ? Nullable.GetUnderlyingType(typeof(T)) : typeof(T));
+            return baseType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static, null, new[] { typeof(string) }, null);
         }
         
-        public static int[][] MatrixFromString(string matrixStr)
+        public static T[] ArrayFromString<T>(string arrString)
         {
-            matrixStr = matrixStr.Replace(" ", "");
-            int[][] matrix;
-            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
+            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
+            if(arr[0] == "")
+                return new T[0];
 
-            if(arr[0] == "" && arr.Length < 2)
-                return new int[0][];
-            matrix = new int[arr.Length][];
+            var res = new T[arr.Length];
             for(int i=0; i<arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                if(innerArr[0] == "")
-                    matrix[i] = new int[0];
+                if(arr[i] != "null")
+                    res[i] = (T)GetParserInoker<T>().Invoke(null, new[] {arr[i]});
                 else
-                {
-                    matrix[i] = new int[innerArr.Length];
-                    for(int j=0; j<innerArr.Length; j++)
-                        matrix[i][j] = int.Parse(innerArr[j]);
-                }
-            }
+                    res[i] = default(T);
 
-            return matrix;
+            return res;
         }
 
-        public static char[][] CharMatrixFromString(string matrixStr)
+        public static T[][] MatrixFromString<T>(string matrixStr)
         {
             matrixStr = matrixStr.Replace(" ", "");
-            matrixStr = matrixStr.Replace("'", "");
-            char[][] matrix;
+            if(typeof(T) == typeof(char))
+                matrixStr = matrixStr.Replace("'", "");
+
+            T[][] matrix;
             var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
 
             if(arr[0] == "" && arr.Length < 2)
-                return new char[0][];
-            matrix = new char[arr.Length][];
+                return new T[0][];
+            matrix = new T[arr.Length][];
             for(int i=0; i<arr.Length; i++)
             {
                 var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
                 if(innerArr[0] == "")
-                    matrix[i] = new char[0];
+                    matrix[i] = new T[0];
                 else
                 {
-                    matrix[i] = new char[innerArr.Length];
+                    matrix[i] = new T[innerArr.Length];
                     for(int j=0; j<innerArr.Length; j++)
-                        matrix[i][j] = char.Parse(innerArr[j]);
-                }
-            }
-
-            return matrix;
-        }
-
-        public static int?[][] NullableMatrixFromString(string matrixStr)
-        {
-            matrixStr = matrixStr.Replace(" ", "");
-            int?[][] matrix;
-            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
-
-            if(arr[0] == "" && arr.Length < 2)
-                return new int?[0][];
-            matrix = new int?[arr.Length][];
-            for(int i=0; i<arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                if(innerArr[0] == "")
-                    matrix[i] = new int?[0];
-                else
-                {
-                    matrix[i] = new int?[innerArr.Length];
-                    for(int j=0; j<innerArr.Length; j++)
-                        if(innerArr[j] == "null")
-                            matrix[i][j] = null;
+                        if(innerArr[j] != "null")
+                            matrix[i][j] = (T)GetParserInoker<T>().Invoke(null, new[] {innerArr[j]});
                         else
-                            matrix[i][j] = int.Parse(innerArr[j]);
+                            matrix[i][j] = default(T);
                 }
             }
 
             return matrix;
         }
+
         public static string[][] StringMatrixFromString(string matrixStr)
         {
             matrixStr = matrixStr.Replace(" ", "");
@@ -155,23 +79,8 @@ namespace Common
             return matrix;
         }
 
-        public static int?[] NullableArrayFromString(string arrString)
-        {
-            var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
-            if(arr[0] == "")
-                return new int?[0];
 
-            var res = new int?[arr.Length];
-            for(int i=0; i<arr.Length; i++)
-                if(arr[i] != "null")
-                    res[i] = int.Parse(arr[i]);
-                else
-                    res[i] = null;
-
-            return res;
-        }
-
-        public static string MatrixToString(int[][] matrix)
+        public static string MatrixToString<T>(T[][] matrix)
         {
             if(matrix.Length == 0)
                 return "[]";

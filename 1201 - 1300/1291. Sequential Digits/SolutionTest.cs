@@ -21,7 +21,7 @@ namespace SequentialDigits
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(int low, int high, string expectedStr)
         {
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.SequentialDigits(low, high);

@@ -23,7 +23,7 @@ namespace MaximalRectangle
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string charMatrix, int expected)
         {
-            var matrix = ArrayHelper.CharMatrixFromString(charMatrix);
+            var matrix = ArrayHelper.MatrixFromString<char>(charMatrix);
 
             var sol = new Solution();
             var res = sol.MaximalRectangle(matrix);

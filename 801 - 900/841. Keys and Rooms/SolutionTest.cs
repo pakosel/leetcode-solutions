@@ -21,7 +21,7 @@ namespace KeysAndRooms
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string matrixStr, bool expected)
         {
-            var rooms = ArrayHelper.MatrixFromString(matrixStr);
+            var rooms = ArrayHelper.MatrixFromString<int>(matrixStr);
             
             var sol = new Solution();
             var res = sol.CanVisitAllRooms(rooms);

@@ -24,7 +24,7 @@ namespace MinimumValueToGetPositiveStepByStepSum
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrayStr, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(arrayStr);
+            var nums = ArrayHelper.ArrayFromString<int>(arrayStr);
 
             var sol = new Solution();
             var ret = sol.MinStartValue(nums);

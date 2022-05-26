@@ -25,7 +25,7 @@ namespace NumberOfSquarefulArrays
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrStr, int expected)
         {
-            var input = ArrayHelper.ArrayFromString(arrStr);
+            var input = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.NumSquarefulPerms(input);

@@ -24,8 +24,8 @@ namespace ValidateStackSequences
         [TestCaseSource("testCasesStr")]
         public void Test_Memoization(string pushedStr, string poppedStr, bool expected)
         {
-            var pushed = ArrayHelper.ArrayFromString(pushedStr);
-            var popped = ArrayHelper.ArrayFromString(poppedStr);
+            var pushed = ArrayHelper.ArrayFromString<int>(pushedStr);
+            var popped = ArrayHelper.ArrayFromString<int>(poppedStr);
 
             var sol = new Solution();
             var res = sol.ValidateStackSequences(pushed, popped);

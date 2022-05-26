@@ -20,7 +20,7 @@ namespace RemoveCoveredIntervals
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string intervalsStr, int expected)
         {
-            var intervals = ArrayHelper.MatrixFromString(intervalsStr);
+            var intervals = ArrayHelper.MatrixFromString<int>(intervalsStr);
 
             var sol = new Solution();
             var res = sol.RemoveCoveredIntervals(intervals);

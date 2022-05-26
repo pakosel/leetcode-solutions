@@ -22,14 +22,14 @@ namespace RemoveDuplicatesFromSortedArrayII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string arrStrIn, int expected, string arrStrOut)
         {
-            var nums = ArrayHelper.ArrayFromString(arrStrIn);
+            var nums = ArrayHelper.ArrayFromString<int>(arrStrIn);
 
             var sol = new Solution();
             var res = sol.RemoveDuplicates(nums);
 
             Assert.AreEqual(res, expected);
             
-            var targetNums = ArrayHelper.ArrayFromString(arrStrOut);
+            var targetNums = ArrayHelper.ArrayFromString<int>(arrStrOut);
             CollectionAssert.AreEquivalent(targetNums, nums.Take(expected));
         }
     }

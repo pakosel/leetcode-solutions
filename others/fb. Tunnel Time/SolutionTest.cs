@@ -20,8 +20,8 @@ namespace TunnelTime
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(long C, int N, string aStr, string bStr, long K, long expected)
         {
-            var A = ArrayHelper.LongArrayFromString(aStr);
-            var B = ArrayHelper.LongArrayFromString(bStr);
+            var A = ArrayHelper.ArrayFromString<long>(aStr);
+            var B = ArrayHelper.ArrayFromString<long>(bStr);
             Assert.AreEqual(A.Length, B.Length);
 
             var sol = new Solution();

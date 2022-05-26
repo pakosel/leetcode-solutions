@@ -23,7 +23,7 @@ namespace MinCostToConnectAllPoints
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string pointsStr, int expected)
         {
-            var points = ArrayHelper.MatrixFromString(pointsStr);
+            var points = ArrayHelper.MatrixFromString<int>(pointsStr);
 
             var sol = new Solution();
             var res = sol.MinCostConnectPoints(points);

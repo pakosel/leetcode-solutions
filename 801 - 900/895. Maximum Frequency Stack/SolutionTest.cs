@@ -18,8 +18,8 @@ namespace MaximumFrequencyStack
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string[] commands, string argsStr, string expectedStr)
         {
-            var args = ArrayHelper.MatrixFromString(argsStr);
-            var expected = ArrayHelper.NullableArrayFromString(expectedStr);
+            var args = ArrayHelper.MatrixFromString<int>(argsStr);
+            var expected = ArrayHelper.ArrayFromString<int?>(expectedStr);
             Assert.AreEqual(commands.Length, args.Length);
             Assert.AreEqual(commands.Length, expected.Length);
 

@@ -24,11 +24,11 @@ namespace ThreeSum
         [TestCaseSource("testCases")]
         public void Test_Examples(string input, string expected)
         {
-            var nums = ArrayHelper.ArrayFromString(input);
+            var nums = ArrayHelper.ArrayFromString<int>(input);
             var sol = new Solution();
             var ret = sol.ThreeSum(nums);
 
-            var expectedArr = ArrayHelper.MatrixFromString(expected);
+            var expectedArr = ArrayHelper.MatrixFromString<int>(expected);
 
             CollectionAssert.AreEquivalent(ret, expectedArr);
         }
@@ -38,13 +38,13 @@ namespace ThreeSum
         public void Test_Better(string input, string expected)
         {
             //parse input array and prepare input data
-            var nums = ArrayHelper.ArrayFromString(input);
+            var nums = ArrayHelper.ArrayFromString<int>(input);
             
             var sol = new Solution();
             var ret = sol.ThreeSum_better(nums);
 
             //parse expected array
-            var expectedArr = ArrayHelper.MatrixFromString(expected);
+            var expectedArr = ArrayHelper.MatrixFromString<int>(expected);
 
             CollectionAssert.AreEquivalent(ret, expectedArr);
         }

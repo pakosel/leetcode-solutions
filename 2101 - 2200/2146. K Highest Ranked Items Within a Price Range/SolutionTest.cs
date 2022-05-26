@@ -20,10 +20,10 @@ namespace KHighestRankedItemsWithinPriceRange
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string gridStr, string priceStr, string startStr, int k, string expectedStr)
         {
-            var grid = ArrayHelper.MatrixFromString(gridStr);
-            var pricing = ArrayHelper.ArrayFromString(priceStr);
-            var start = ArrayHelper.ArrayFromString(startStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
+            var pricing = ArrayHelper.ArrayFromString<int>(priceStr);
+            var start = ArrayHelper.ArrayFromString<int>(startStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.HighestRankedKItems(grid, pricing, start, k);

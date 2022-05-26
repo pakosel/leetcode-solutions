@@ -27,7 +27,7 @@ namespace StreamOfCharacters
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] words, string queryArrStr, bool[] expectedArr)
         {
-            var queryArr = ArrayHelper.CharMatrixFromString(queryArrStr);
+            var queryArr = ArrayHelper.MatrixFromString<char>(queryArrStr);
             var sol = new StreamChecker(words);
             var res = new bool[queryArr.Length];
             int i=0;

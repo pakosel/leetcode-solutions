@@ -21,7 +21,7 @@ namespace FindTheTownJudge
         [TestCaseSource("testCases")]
         public void Test_Generic(int n, string trustStr, int expected)
         {
-            var trust = ArrayHelper.MatrixFromString(trustStr);
+            var trust = ArrayHelper.MatrixFromString<int>(trustStr);
 
             var sol = new Solution();
             var res = sol.FindJudge(n, trust);

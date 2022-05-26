@@ -24,7 +24,7 @@ namespace BinarySearch
         [TestCaseSource("testCases")]
         public void Test_Generic(string numsStr, int target, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
 
             var sol = new Solution();
             var res = sol.Search(nums, target);

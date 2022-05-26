@@ -21,7 +21,7 @@ namespace NumberOfIslands
         [TestCaseSource("testCases")]
         public void Test_Generic(string gridStr, int expected)
         {
-            var grid = ArrayHelper.CharMatrixFromString(gridStr);
+            var grid = ArrayHelper.MatrixFromString<char>(gridStr);
 
             var sol = new Solution();
             var res = sol.NumIslands(grid);

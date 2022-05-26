@@ -19,7 +19,7 @@ namespace BestTimeToBuyStock
         [TestCaseSource("testCases")]
         public void Test_Example(string pricesStr, int expected)
         {
-            var prices = ArrayHelper.ArrayFromString(pricesStr);
+            var prices = ArrayHelper.ArrayFromString<int>(pricesStr);
 
             var sol = new Solution();
             var ret = sol.MaxProfit(prices);

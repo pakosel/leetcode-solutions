@@ -20,7 +20,7 @@ namespace RichestCustomerWealth
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string accountsStr, int expected)
         {
-            var accounts = ArrayHelper.MatrixFromString(accountsStr);
+            var accounts = ArrayHelper.MatrixFromString<int>(accountsStr);
 
             var sol = new Solution();
             var res = sol.MaximumWealth(accounts);

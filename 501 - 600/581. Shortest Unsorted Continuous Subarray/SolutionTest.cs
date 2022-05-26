@@ -28,7 +28,7 @@ namespace ShortestUnsortedContinuousSubarray
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrStr, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(arrStr);
+            var nums = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.FindUnsortedSubarray(nums);

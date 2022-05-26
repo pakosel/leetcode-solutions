@@ -23,8 +23,8 @@ namespace SingleNumberIII
         [TestCaseSource("testCases")]
         public void Test_Generic(string numsStr, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.SingleNumber(nums);

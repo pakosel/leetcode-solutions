@@ -24,7 +24,7 @@ namespace PathWithMinimumEffort
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string heightsStr, int expected)
         {
-            var heights = ArrayHelper.MatrixFromString(heightsStr);
+            var heights = ArrayHelper.MatrixFromString<int>(heightsStr);
 
             var sol = new Solution();
             var res = sol.MinimumEffortPath(heights);

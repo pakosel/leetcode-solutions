@@ -19,12 +19,12 @@ namespace SumAbsoluteDifferencesInSortedArray
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string strArr, string expected)
         {
-            var nums = ArrayHelper.ArrayFromString(strArr);
+            var nums = ArrayHelper.ArrayFromString<int>(strArr);
 
             var sol = new Solution();
             var res = sol.GetSumAbsoluteDifferences(nums);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
+            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
         }
     }
 }

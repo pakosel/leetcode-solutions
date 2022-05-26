@@ -33,7 +33,7 @@ namespace StackStabilization
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(int N, string rStr, int A, int B, long expected)
         {
-            var R = ArrayHelper.ArrayFromString(rStr);
+            var R = ArrayHelper.ArrayFromString<int>(rStr);
 
             var sol = new Solution();
             var res = sol.getMinimumSecondsRequired(N, R, A, B);

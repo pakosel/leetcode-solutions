@@ -23,7 +23,7 @@ namespace CanPlaceFlowers
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string arrStr, int n, bool expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.CanPlaceFlowers(arr, n);

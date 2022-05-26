@@ -20,8 +20,8 @@ namespace CountUnguardedCellsInTheGrid
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(int m, int n, string guardsStr, string wallsStr, int expected)
         {
-            var guards = ArrayHelper.MatrixFromString(guardsStr);
-            var walls = ArrayHelper.MatrixFromString(wallsStr);
+            var guards = ArrayHelper.MatrixFromString<int>(guardsStr);
+            var walls = ArrayHelper.MatrixFromString<int>(wallsStr);
 
             var sol = new Solution();
             var res = sol.CountUnguarded(m, n, guards, walls);

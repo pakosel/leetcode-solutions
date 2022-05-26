@@ -23,7 +23,7 @@ namespace SmallestStringWithSwaps
         [TestCaseSource("testCases")]
         public void Test_Generic(string s, string pairsStr, string expected)
         {
-            var pairs = ArrayHelper.MatrixFromString(pairsStr);
+            var pairs = ArrayHelper.MatrixFromString<int>(pairsStr);
 
             var sol = new Solution();
             var res = sol.SmallestStringWithSwaps(s, pairs);

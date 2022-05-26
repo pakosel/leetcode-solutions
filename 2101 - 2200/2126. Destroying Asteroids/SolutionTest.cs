@@ -22,7 +22,7 @@ namespace DestroyingAsteroids
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(int mass, string asteroidsStr, bool expected)
         {
-            var asteroids = ArrayHelper.ArrayFromString(asteroidsStr);
+            var asteroids = ArrayHelper.ArrayFromString<int>(asteroidsStr);
 
             var sol = new Solution();
             var res = sol.AsteroidsDestroyed(mass, asteroids);

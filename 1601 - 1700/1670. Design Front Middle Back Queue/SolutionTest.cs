@@ -21,7 +21,7 @@ namespace DesignFrontMiddleBackQueue
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string[] commands, string argsStr, int?[] expected)
         {
-            var argsMatrix = ArrayHelper.MatrixFromString(argsStr);
+            var argsMatrix = ArrayHelper.MatrixFromString<int>(argsStr);
             System.Console.WriteLine(argsMatrix.Length);
 
             var sol = new FrontMiddleBackQueue();

@@ -28,7 +28,7 @@ namespace SearchInRotatedSortedArrayII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string arrStr, int target, bool expected)
         {
-            var nums = ArrayHelper.ArrayFromString(arrStr);
+            var nums = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.Search(nums, target);

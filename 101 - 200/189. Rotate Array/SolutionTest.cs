@@ -26,8 +26,8 @@ namespace RotateArray
         [TestCaseSource("testCases")]
         public void Test_Generic(string numsStr, int k, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution_Basic();
             sol.Rotate(nums, k);
@@ -39,8 +39,8 @@ namespace RotateArray
         [TestCaseSource("testCases")]
         public void Test_O_k(string numsStr, int k, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution_O_k();
             sol.Rotate(nums, k);
@@ -52,8 +52,8 @@ namespace RotateArray
         [TestCaseSource("testCases")]
         public void Test_O_1(string numsStr, int k, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution_O_1();
             sol.Rotate(nums, k);

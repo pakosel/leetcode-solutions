@@ -27,8 +27,8 @@ namespace GasStation
         [TestCaseSource("testCases")]
         public void Test_Generic(string gasStr, string costStr, int expected)
         {
-            var gas = ArrayHelper.ArrayFromString(gasStr);
-            var cost = ArrayHelper.ArrayFromString(costStr);
+            var gas = ArrayHelper.ArrayFromString<int>(gasStr);
+            var cost = ArrayHelper.ArrayFromString<int>(costStr);
 
             var sol = new Solution();
             var res = sol.CanCompleteCircuit(gas, cost);

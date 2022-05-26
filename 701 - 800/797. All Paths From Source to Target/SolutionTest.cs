@@ -23,11 +23,11 @@ namespace AllPathsFromSourceToTarget
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string graphStr, string expectedArr)
         {
-            var graph = ArrayHelper.MatrixFromString(graphStr);
+            var graph = ArrayHelper.MatrixFromString<int>(graphStr);
 
             var sol = new Solution();
             var res = sol.AllPathsSourceTarget(graph);
-            var expected = ArrayHelper.MatrixFromString(expectedArr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedArr);
 
             CollectionAssert.AreEquivalent(res, expected);
         }

@@ -28,7 +28,7 @@ namespace KokoEatingBananas
         [TestCaseSource("testCases")]
         public void Test_Generic(string strArr, int h, int expected)
         {
-            var piles = ArrayHelper.ArrayFromString(strArr);
+            var piles = ArrayHelper.ArrayFromString<int>(strArr);
 
             var sol = new Solution();
             var res = sol.MinEatingSpeed(piles, h);

@@ -22,7 +22,7 @@ namespace MinimumCostOfBuyingCandiesWithDiscount
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string arrStr, int expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.MinimumCost(arr);

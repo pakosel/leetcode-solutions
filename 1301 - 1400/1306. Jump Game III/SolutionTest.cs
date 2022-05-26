@@ -25,7 +25,7 @@ namespace JumpGameIII
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string arrStr, int start, bool expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.CanReach(arr, start);

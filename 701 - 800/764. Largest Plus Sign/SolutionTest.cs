@@ -24,7 +24,7 @@ namespace LargestPlusSign
         [TestCaseSource("testCases")]
         public void Test_Generic(int n, string minesStr, int expected)
         {
-            var mines = ArrayHelper.MatrixFromString(minesStr);
+            var mines = ArrayHelper.MatrixFromString<int>(minesStr);
 
             var sol = new Solution();
             var res = sol.OrderOfLargestPlusSign(n, mines);

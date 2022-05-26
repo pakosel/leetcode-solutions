@@ -25,7 +25,7 @@ namespace CoinChange
         [TestCaseSource("testCases")]
         public void Test_Dp2(string coinsStr, int amount, int expected)
         {
-            var coins = ArrayHelper.ArrayFromString(coinsStr);
+            var coins = ArrayHelper.ArrayFromString<int>(coinsStr);
 
             var sol = new Solution_DPv2();
             var res = sol.CoinChange(coins, amount);
@@ -37,7 +37,7 @@ namespace CoinChange
         [TestCaseSource("testCases")]
         public void Test_Dp(string coinsStr, int amount, int expected)
         {
-            var coins = ArrayHelper.ArrayFromString(coinsStr);
+            var coins = ArrayHelper.ArrayFromString<int>(coinsStr);
 
             var sol = new Solution_DP();
             var res = sol.CoinChange(coins, amount);
@@ -49,7 +49,7 @@ namespace CoinChange
         [TestCaseSource("testCases")]
         public void Test_Recursive(string coinsStr, int amount, int expected)
         {
-            var coins = ArrayHelper.ArrayFromString(coinsStr);
+            var coins = ArrayHelper.ArrayFromString<int>(coinsStr);
 
             var sol = new Solution_Recursive();
             var res = sol.CoinChange(coins, amount);

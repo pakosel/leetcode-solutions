@@ -28,8 +28,8 @@ namespace SortArrayByParity
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string numsStr, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
             var sol = new Solution();
             var res = sol.SortArrayByParity(nums);
@@ -41,8 +41,8 @@ namespace SortArrayByParity
         [TestCaseSource("testCasesStr")]
         public void Test_Linq(string numsStr, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
             var sol = new Solution_Linq();
             var res = sol.SortArrayByParity(nums);
@@ -54,8 +54,8 @@ namespace SortArrayByParity
         [TestCaseSource("testCasesStr")]
         public void Test_InPlace(string numsStr, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
             var sol = new Solution_InPlace();
             var res = sol.SortArrayByParity(nums);
@@ -66,8 +66,8 @@ namespace SortArrayByParity
         [TestCaseSource("testCasesStr")]
         public void Test_2pass(string numsStr, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
             var sol = new Solution_2pass();
             var res = sol.SortArrayByParity(nums);

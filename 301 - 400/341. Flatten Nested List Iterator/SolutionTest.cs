@@ -21,7 +21,7 @@ namespace FlattenNestedListIterator
         [TestCaseSource("testCases")]
         public void Test_Stack(string listStr, string expectedStr)
         {
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             var list = NestedIntegerImpl.BuildListFromString(listStr);
 
             var sol = new NestedIterator(list);

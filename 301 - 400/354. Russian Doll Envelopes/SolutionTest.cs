@@ -25,7 +25,7 @@ namespace RussianDollEnvelopes
         [TestCaseSource("testCases")]
         public void Test_DP(string envelopesStr, int expected)
         {
-            var envelopes = ArrayHelper.MatrixFromString(envelopesStr);
+            var envelopes = ArrayHelper.MatrixFromString<int>(envelopesStr);
 
             var sol = new Solution_DP();
             var res = sol.MaxEnvelopes(envelopes);
@@ -37,7 +37,7 @@ namespace RussianDollEnvelopes
         [TestCaseSource("testCases")]
         public void Test_Memoization(string envelopesStr, int expected)
         {
-            var envelopes = ArrayHelper.MatrixFromString(envelopesStr);
+            var envelopes = ArrayHelper.MatrixFromString<int>(envelopesStr);
 
             var sol = new Solution_Memo();
             var res = sol.MaxEnvelopes(envelopes);

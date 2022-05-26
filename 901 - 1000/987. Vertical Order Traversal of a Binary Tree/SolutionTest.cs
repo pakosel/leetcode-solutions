@@ -24,7 +24,7 @@ namespace VerticalOrderTraversalOfBinaryTree
         public void Test_Generic(string treeStr, string expectedStr)
         {
             var root = TreeNodeHelper.BuildTree(treeStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.VerticalTraversal(root);

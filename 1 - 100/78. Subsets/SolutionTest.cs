@@ -25,8 +25,8 @@ namespace Subsets
         [TestCaseSource("testCases")]
         public void Test_Generic(string numsStr, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.Subsets(nums);

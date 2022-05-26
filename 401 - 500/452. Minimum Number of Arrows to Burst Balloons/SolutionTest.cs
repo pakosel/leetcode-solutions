@@ -22,7 +22,7 @@ namespace MinimumNumberOfArrowsToBurstBalloons
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrStr, int expected)
         {
-            var points = ArrayHelper.MatrixFromString(arrStr);
+            var points = ArrayHelper.MatrixFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.FindMinArrowShots(points);

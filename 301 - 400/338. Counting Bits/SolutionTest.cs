@@ -30,7 +30,7 @@ namespace CountingBits
         [TestCaseSource("testCases")]
         public void Test_Stack(int n, string expectedStr)
         {
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.CountBits(n);

@@ -25,7 +25,7 @@ namespace ArithmeticSlices
         [TestCaseSource("testCases")]
         public void Test_Generic(string strArray, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(strArray);
+            var nums = ArrayHelper.ArrayFromString<int>(strArray);
 
             var sol = new Solution();
             var res = sol.NumberOfArithmeticSlices(nums);

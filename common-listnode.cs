@@ -7,7 +7,7 @@ namespace Common
 {
     public class ListNodeHelper
     {
-        public static ListNode BuildList(string arrStr) => BuildList(ArrayHelper.ArrayFromString(arrStr));
+        public static ListNode BuildList(string arrStr) => BuildList(ArrayHelper.ArrayFromString<int>(arrStr));
         public static ListNode BuildList(int[] arr)
         {
             ListNode node = null;
@@ -19,7 +19,7 @@ namespace Common
         
         public static ListNode[] BuildListArray(string arrStr)
         {
-            var arr = ArrayHelper.MatrixFromString(arrStr);
+            var arr = ArrayHelper.MatrixFromString<int>(arrStr);
             
             var res = new ListNode[arr.Length];
             for(int i=0; i<res.Length; i++)

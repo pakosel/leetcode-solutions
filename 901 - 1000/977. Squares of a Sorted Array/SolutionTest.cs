@@ -23,36 +23,36 @@ namespace SquaresOfSortedArray
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string arrStr, string expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.SortedSquares(arr);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
+            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
         }
 
         [Test]
         [TestCaseSource("testCasesStr")]
         public void Test_Naive(string arrStr, string expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution_Naive();
             var res = sol.SortedSquares(arr);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
+            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
         }
 
         [Test]
         [TestCaseSource("testCasesStr")]
         public void Test_Parallel(string arrStr, string expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution_Parallel();
             var res = sol.SortedSquares(arr);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString(expected));
+            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
         }
     }
 }

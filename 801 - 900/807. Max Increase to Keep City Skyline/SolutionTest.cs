@@ -20,7 +20,7 @@ namespace MaxIncreaseToKeepCitySkyline
         [TestCaseSource("testCases")]
         public void Test_Generic(string strGrid, int expected)
         {
-            var grid = ArrayHelper.MatrixFromString(strGrid);
+            var grid = ArrayHelper.MatrixFromString<int>(strGrid);
 
             var sol = new Solution();
             var res = sol.MaxIncreaseKeepingSkyline(grid);

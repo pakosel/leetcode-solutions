@@ -23,8 +23,8 @@ namespace StoneGameVI
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string strArrA, string strArrB, int expected)
         {
-            var aliceVal = ArrayHelper.ArrayFromString(strArrA);
-            var bobVal = ArrayHelper.ArrayFromString(strArrB);
+            var aliceVal = ArrayHelper.ArrayFromString<int>(strArrA);
+            var bobVal = ArrayHelper.ArrayFromString<int>(strArrB);
 
             var sol = new Solution();
             var res = sol.StoneGameVI(aliceVal, bobVal);

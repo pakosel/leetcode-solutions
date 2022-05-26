@@ -20,8 +20,8 @@ namespace ExecutionOfAllSuffixInstructionsStayingInGrid
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(int n, string startPosStr, string s, string expectedStr)
         {
-            var startPos = ArrayHelper.ArrayFromString(startPosStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var startPos = ArrayHelper.ArrayFromString<int>(startPosStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.ExecuteInstructions(n, startPos, s);

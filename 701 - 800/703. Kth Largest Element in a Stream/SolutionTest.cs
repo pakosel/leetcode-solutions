@@ -21,9 +21,9 @@ namespace KthLargestElementInStream
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] commands, int k, string initStr, string argsStr, string expectedStr)
         {
-            var init = ArrayHelper.ArrayFromString(initStr);
-            var args = ArrayHelper.ArrayFromString(argsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var init = ArrayHelper.ArrayFromString<int>(initStr);
+            var args = ArrayHelper.ArrayFromString<int>(argsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             Assert.AreEqual(commands.Length, expected.Length);
             Assert.AreEqual(args.Length, expected.Length);

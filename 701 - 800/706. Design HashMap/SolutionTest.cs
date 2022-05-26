@@ -19,7 +19,7 @@ namespace DesignHashMap
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] commands, string argsStr, int?[] expected)
         {
-            var args = ArrayHelper.MatrixFromString(argsStr);
+            var args = ArrayHelper.MatrixFromString<int>(argsStr);
             Assert.AreEqual(commands.Length, args.Length);
             Assert.AreEqual(commands.Length, expected.Length);
             int?[] res = new int?[commands.Length];

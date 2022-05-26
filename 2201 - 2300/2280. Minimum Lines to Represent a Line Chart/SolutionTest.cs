@@ -24,7 +24,7 @@ namespace MinimumLinesToRepresentLineChart
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string stockPricesStr, int expected)
         {
-            var stockPrices = ArrayHelper.MatrixFromString(stockPricesStr);
+            var stockPrices = ArrayHelper.MatrixFromString<int>(stockPricesStr);
 
             var sol = new Solution();
             var res = sol.MinimumLines(stockPrices);

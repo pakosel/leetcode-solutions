@@ -23,7 +23,7 @@ namespace ValidMountainArray
         [TestCaseSource("testCasesStr")]
         public void Test_Memoization(string arrStr, bool expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.ValidMountainArray(arr);

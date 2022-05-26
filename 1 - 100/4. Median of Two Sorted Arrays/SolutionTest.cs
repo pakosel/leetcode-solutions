@@ -24,8 +24,8 @@ namespace MedianOfTwoSortedArrays
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string nums1Str, string nums2Str, double expected)
         {
-            var nums1 = ArrayHelper.ArrayFromString(nums1Str);
-            var nums2 = ArrayHelper.ArrayFromString(nums2Str);
+            var nums1 = ArrayHelper.ArrayFromString<int>(nums1Str);
+            var nums2 = ArrayHelper.ArrayFromString<int>(nums2Str);
 
             Assert.IsTrue(nums1.Length > 0 || nums2.Length > 0);
 

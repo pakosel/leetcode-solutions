@@ -32,7 +32,7 @@ namespace PartitionEqualSum
 
         public void Test_Example(string numsStr, bool expected)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
 
             var sol = new Solution();
             var ret = sol.CanPartition(nums);

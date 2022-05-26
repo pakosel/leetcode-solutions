@@ -28,8 +28,8 @@ namespace ClosestDessertCost
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string baseStr, string toppingsStr, int target, int expected)
         {
-            var baseCosts = ArrayHelper.ArrayFromString(baseStr);
-            var toppingCosts = ArrayHelper.ArrayFromString(toppingsStr);
+            var baseCosts = ArrayHelper.ArrayFromString<int>(baseStr);
+            var toppingCosts = ArrayHelper.ArrayFromString<int>(toppingsStr);
 
             var sol = new Solution();
             var res = sol.ClosestCost(baseCosts, toppingCosts, target);

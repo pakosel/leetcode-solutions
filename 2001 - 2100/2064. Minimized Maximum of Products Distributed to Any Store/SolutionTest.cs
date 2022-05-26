@@ -23,7 +23,7 @@ namespace MinimizedMaximumOfProductsDistributedToAnyStore
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(int n, string arrStr, int expected)
         {
-            var quantities = ArrayHelper.ArrayFromString(arrStr);
+            var quantities = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.MinimizedMaximum(n, quantities);

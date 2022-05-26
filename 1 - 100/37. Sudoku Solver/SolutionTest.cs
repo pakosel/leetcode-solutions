@@ -20,8 +20,8 @@ namespace SudokuSolver
         [TestCaseSource("testCases")]
         public void Test_Generic(string boardStr, string expectedStr)
         {
-            var board = ArrayHelper.CharMatrixFromString(boardStr);
-            var expected = ArrayHelper.CharMatrixFromString(expectedStr);
+            var board = ArrayHelper.MatrixFromString<char>(boardStr);
+            var expected = ArrayHelper.MatrixFromString<char>(expectedStr);
 
             var sol = new Solution();
             sol.SolveSudoku(board);

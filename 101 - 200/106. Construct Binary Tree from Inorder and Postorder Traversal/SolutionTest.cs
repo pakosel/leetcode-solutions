@@ -23,8 +23,8 @@ namespace ConstructBinaryTreeFromInorderAndPostorderTraversal
         [TestCaseSource("testCases")]
         public void Test_Generic(string inorderStr, string postorderStr, string expectedStr)
         {
-            var inorder = ArrayHelper.ArrayFromString(inorderStr);
-            var postorder = ArrayHelper.ArrayFromString(postorderStr);
+            var inorder = ArrayHelper.ArrayFromString<int>(inorderStr);
+            var postorder = ArrayHelper.ArrayFromString<int>(postorderStr);
 
             var sol = new Solution();
             var res = sol.BuildTree(inorder, postorder);

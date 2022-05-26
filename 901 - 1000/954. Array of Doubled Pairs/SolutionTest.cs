@@ -26,7 +26,7 @@ namespace ArrayOfDoubledPairs
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string arrStr, bool expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.CanReorderDoubled(arr);

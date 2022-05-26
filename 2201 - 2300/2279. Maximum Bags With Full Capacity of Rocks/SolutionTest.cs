@@ -20,8 +20,8 @@ namespace MaximumBagsWithFullCapacityOfRocks
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string capacityStr, string rocksStr, int additionalRocks, int expected)
         {
-            var capacity = ArrayHelper.ArrayFromString(capacityStr);
-            var rocks = ArrayHelper.ArrayFromString(rocksStr);
+            var capacity = ArrayHelper.ArrayFromString<int>(capacityStr);
+            var rocks = ArrayHelper.ArrayFromString<int>(rocksStr);
 
             Assert.AreEqual(capacity.Length, rocks.Length);
 

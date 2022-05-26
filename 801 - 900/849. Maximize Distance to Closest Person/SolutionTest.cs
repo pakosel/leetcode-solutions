@@ -27,7 +27,7 @@ namespace MaximizeDistanceToClosestPerson
         [TestCaseSource("testCases")]
         public void Test_Generic(string seatsArr, int expected)
         {
-            var seats = ArrayHelper.ArrayFromString(seatsArr);
+            var seats = ArrayHelper.ArrayFromString<int>(seatsArr);
 
             var sol = new Solution();
             var res = sol.MaxDistToClosest(seats);

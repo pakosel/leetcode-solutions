@@ -31,8 +31,8 @@ namespace Shift2DGrid
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string gridStr, int k, string expectedStr)
         {
-            var grid = ArrayHelper.MatrixFromString(gridStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.ShiftGrid(grid, k);

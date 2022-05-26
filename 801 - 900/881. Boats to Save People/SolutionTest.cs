@@ -21,7 +21,7 @@ namespace BoatsToSavePeople
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string peopleStr, int limit, int expected)
         {
-            var people = ArrayHelper.ArrayFromString(peopleStr);
+            var people = ArrayHelper.ArrayFromString<int>(peopleStr);
 
             var sol = new Solution();
             var res = sol.NumRescueBoats(people, limit);

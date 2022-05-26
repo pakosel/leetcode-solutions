@@ -23,8 +23,8 @@ namespace ReverseString
         [TestCaseSource("testCases")]
         public void Test_Stack(string arrStr, string expectedStr)
         {
-            var arr = ArrayHelper.CharArrayFromString(arrStr);
-            var expected = ArrayHelper.CharArrayFromString(expectedStr);
+            var arr = ArrayHelper.ArrayFromString<char>(arrStr);
+            var expected = ArrayHelper.ArrayFromString<char>(expectedStr);
 
             var sol = new Solution();
             sol.ReverseString(arr);

@@ -21,8 +21,8 @@ namespace MaximumDistanceBetweenPairOfValues
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string nums1Str, string nums2Str, int expected)
         {
-            var nums1 = ArrayHelper.ArrayFromString(nums1Str);
-            var nums2 = ArrayHelper.ArrayFromString(nums2Str);
+            var nums1 = ArrayHelper.ArrayFromString<int>(nums1Str);
+            var nums2 = ArrayHelper.ArrayFromString<int>(nums2Str);
 
             var sol = new Solution();
             var res = sol.MaxDistance(nums1, nums2);

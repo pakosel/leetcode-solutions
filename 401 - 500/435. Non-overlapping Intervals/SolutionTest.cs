@@ -22,7 +22,7 @@ namespace NonoverlappingIntervals
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrStr, int expected)
         {
-            var intervals = ArrayHelper.MatrixFromString(arrStr);
+            var intervals = ArrayHelper.MatrixFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.EraseOverlapIntervals(intervals);

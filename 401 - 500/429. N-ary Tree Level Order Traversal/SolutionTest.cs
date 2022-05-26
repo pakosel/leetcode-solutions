@@ -27,7 +27,7 @@ namespace NaryTreeLevelOrderTraversal
             var sol = new Solution();
             var res = sol.LevelOrder(root);
 
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             CollectionAssert.AreEquivalent(res, expected);
         }

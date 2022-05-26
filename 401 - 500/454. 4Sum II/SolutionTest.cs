@@ -21,10 +21,10 @@ namespace FourSumII
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrStrA, string arrStrB, string arrStrC, string arrStrD, int expected)
         {
-            var A = ArrayHelper.ArrayFromString(arrStrA);
-            var B = ArrayHelper.ArrayFromString(arrStrB);
-            var C = ArrayHelper.ArrayFromString(arrStrC);
-            var D = ArrayHelper.ArrayFromString(arrStrD);
+            var A = ArrayHelper.ArrayFromString<int>(arrStrA);
+            var B = ArrayHelper.ArrayFromString<int>(arrStrB);
+            var C = ArrayHelper.ArrayFromString<int>(arrStrC);
+            var D = ArrayHelper.ArrayFromString<int>(arrStrD);
 
             var sol = new Solution();
             var res = sol.FourSumCount(A, B, C, D);

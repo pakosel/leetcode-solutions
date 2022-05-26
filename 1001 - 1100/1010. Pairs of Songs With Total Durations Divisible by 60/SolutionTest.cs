@@ -23,7 +23,7 @@ namespace PairsOfSongsDivisibleBy60
         [TestCaseSource("testCases")]
         public void Test_Generic(string strArr, int expected)
         {
-            var time = ArrayHelper.ArrayFromString(strArr);
+            var time = ArrayHelper.ArrayFromString<int>(strArr);
 
             var sol = new Solution();
             var res = sol.NumPairsDivisibleBy60(time);

@@ -20,9 +20,9 @@ namespace OnlineStockSpan
         public void Test_Generic(string pricesStr, string expectedStr)
         {
             var sol = new StockSpanner();
-            var prices = ArrayHelper.MatrixFromString(pricesStr);
+            var prices = ArrayHelper.MatrixFromString<int>(pricesStr);
             var res = new int[prices.Length];
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             Assert.AreEqual(prices.Length, expected.Length);
 

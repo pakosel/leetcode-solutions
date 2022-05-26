@@ -29,7 +29,7 @@ namespace UniquePathsII
         [TestCaseSource("testCases")]
         public void Test_Backtrack(string gridStr, int expected)
         {
-            var grid = ArrayHelper.MatrixFromString(gridStr);
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
             var sol = new Solution_Backtrack();
             var res = sol.UniquePathsWithObstacles(grid);
 
@@ -40,7 +40,7 @@ namespace UniquePathsII
         [TestCaseSource("testCases")]
         public void Test_TopDown(string gridStr, int expected)
         {
-            var grid = ArrayHelper.MatrixFromString(gridStr);
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
             var sol = new Solution();
             var res = sol.UniquePathsWithObstacles(grid);
 

@@ -20,7 +20,7 @@ namespace AddingSpacesToString
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string s, string spacesStr, string expected)
         {
-            var spaces = ArrayHelper.ArrayFromString(spacesStr);
+            var spaces = ArrayHelper.ArrayFromString<int>(spacesStr);
 
             var sol = new Solution();
             var res = sol.AddSpaces(s, spaces);

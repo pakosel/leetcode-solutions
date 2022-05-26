@@ -20,7 +20,7 @@ namespace DetectSquares
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string[] commands, string inputsStr, int?[] expected)
         {
-            var inputs = ArrayHelper.MatrixFromString(inputsStr);
+            var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
             Assert.AreEqual(inputs.Length, commands.Length);
             Assert.AreEqual(expected.Length, commands.Length);
 

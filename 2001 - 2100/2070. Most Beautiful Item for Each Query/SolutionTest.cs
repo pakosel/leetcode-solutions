@@ -22,9 +22,9 @@ namespace MostBeautifulItemForEachQuery
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string itemsStr, string queriesStr, string expectedStr)
         {
-            var items = ArrayHelper.MatrixFromString(itemsStr);
-            var queries = ArrayHelper.ArrayFromString(queriesStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var items = ArrayHelper.MatrixFromString<int>(itemsStr);
+            var queries = ArrayHelper.ArrayFromString<int>(queriesStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             Assert.AreEqual(queries.Length, expected.Length);
 

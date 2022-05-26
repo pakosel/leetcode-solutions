@@ -27,7 +27,7 @@ namespace LongestContinuousSubarrayWithAbsoluteDiffLessThanEqualLimit
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string arrStr, int limit, int expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.LongestSubarray(arr, limit);

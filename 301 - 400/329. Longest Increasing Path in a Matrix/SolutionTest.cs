@@ -24,7 +24,7 @@ namespace LongestIncreasingPathInMatrix
         [TestCaseSource("testCases")]
         public void Test_Stack(string matrixStr, int expected)
         {
-            var matrix = ArrayHelper.MatrixFromString(matrixStr);
+            var matrix = ArrayHelper.MatrixFromString<int>(matrixStr);
 
             var sol = new Solution();
             var res = sol.LongestIncreasingPath(matrix);

@@ -22,7 +22,7 @@ namespace JumpGameIV
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string arrStr, int expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.MinJumps(arr);

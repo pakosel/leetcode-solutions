@@ -26,8 +26,8 @@ namespace GameOfLife
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string gridStr, string expectedStr)
         {
-            var grid = ArrayHelper.MatrixFromString(gridStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             sol.GameOfLife(grid);

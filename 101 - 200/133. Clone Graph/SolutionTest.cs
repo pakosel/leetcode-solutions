@@ -53,7 +53,7 @@ namespace CloneGraph
 
         private Node[] BuildGraph(string inputArr)
         {
-            var arr = ArrayHelper.MatrixFromString(inputArr);
+            var arr = ArrayHelper.MatrixFromString<int>(inputArr);
 
             var nodes = new Node[arr.Length];
             for(int i=0; i<arr.Length; i++)

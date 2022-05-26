@@ -22,8 +22,8 @@ namespace CopyListWithRandomPointer
         [TestCaseSource("testCases")]
         public void Test_Generic(string listStr, string expectedStr)
         {
-            var arr = ArrayHelper.NullableMatrixFromString(listStr);
-            var arrExp = ArrayHelper.NullableMatrixFromString(expectedStr);
+            var arr = ArrayHelper.MatrixFromString<int?>(listStr);
+            var arrExp = ArrayHelper.MatrixFromString<int?>(expectedStr);
             var head = BuildNodeList(arr);
             var expected = BuildNodeList(arrExp);
 

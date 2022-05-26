@@ -22,7 +22,7 @@ namespace IsGraphBipartite
         [TestCaseSource("testCases")]
         public void Test_Generic(string graphStr, bool expected)
         {
-            var graph = ArrayHelper.MatrixFromString(graphStr);
+            var graph = ArrayHelper.MatrixFromString<int>(graphStr);
 
             var sol = new Solution();
             var res = sol.IsBipartite(graph);

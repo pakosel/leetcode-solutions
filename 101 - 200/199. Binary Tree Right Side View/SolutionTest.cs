@@ -27,7 +27,7 @@ namespace BinaryTreeRightSideView
         public void Test_Generic(string treeStr, string expectedStr)
         {
             var root = TreeNodeHelper.BuildTree(treeStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var ret = sol.RightSideView(root);

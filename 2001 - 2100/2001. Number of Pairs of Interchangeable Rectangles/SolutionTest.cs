@@ -19,7 +19,7 @@ namespace NumberOfPairsOfInterchangeableRectangles
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string rectanglesStr, int expected)
         {
-            var rectangles = ArrayHelper.MatrixFromString(rectanglesStr);
+            var rectangles = ArrayHelper.MatrixFromString<int>(rectanglesStr);
 
             var sol = new Solution();
             var res = sol.InterchangeableRectangles(rectangles);

@@ -20,7 +20,7 @@ namespace NumberOfOperationsToMakeNetworkConnected
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(int n, string connectionsStr, int expected)
         {
-            var connections = ArrayHelper.MatrixFromString(connectionsStr);
+            var connections = ArrayHelper.MatrixFromString<int>(connectionsStr);
 
             var sol = new Solution();
             var res = sol.MakeConnected(n, connections);

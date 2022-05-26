@@ -28,7 +28,7 @@ namespace BurstBalloons
         [TestCaseSource("testCases")]
         public void Test_Stack(string arrStr, int expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.MaxCoins(arr);

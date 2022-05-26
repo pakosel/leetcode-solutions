@@ -21,7 +21,7 @@ namespace TwoCityScheduling
         [TestCaseSource("testCases")]
         public void Test_Generic(string costsStr, int expected)
         {
-            var costs = ArrayHelper.MatrixFromString(costsStr);
+            var costs = ArrayHelper.MatrixFromString<int>(costsStr);
 
             var sol = new Solution();
             var res = sol.TwoCitySchedCost(costs);

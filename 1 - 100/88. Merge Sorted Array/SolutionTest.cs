@@ -22,12 +22,12 @@ namespace MergeSortedArray
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string arrStr1, int m, string arrStr2, int n, string expectedStr)
         {
-            var nums1 = ArrayHelper.ArrayFromString(arrStr1);
-            var nums2 = ArrayHelper.ArrayFromString(arrStr2);
+            var nums1 = ArrayHelper.ArrayFromString<int>(arrStr1);
+            var nums2 = ArrayHelper.ArrayFromString<int>(arrStr2);
 
             var sol = new Solution();
             sol.Merge(nums1, m, nums2, n);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             Assert.AreEqual(nums1, expected);
         }

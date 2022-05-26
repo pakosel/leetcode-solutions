@@ -19,8 +19,8 @@ namespace PartitionArrayAccordingToGivenPivot
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string numsStr, int pivot, string expectedStr)
         {
-            var nums = ArrayHelper.ArrayFromString(numsStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.PivotArray(nums, pivot);

@@ -32,7 +32,7 @@ namespace CombinationSumIII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(int k, int n, string expectedStr)
         {
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.CombinationSum3(k, n);

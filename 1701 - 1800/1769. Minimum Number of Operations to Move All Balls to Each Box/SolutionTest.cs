@@ -31,7 +31,7 @@ namespace MinimumNumberOfOperationsToMoveAllBallsToEachBox
         {
             var sol = new Solution();
             var res = sol.MinOperations(boxes);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             CollectionAssert.AreEqual(res, expected);
         }

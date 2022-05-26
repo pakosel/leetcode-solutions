@@ -26,8 +26,8 @@ namespace CombinationSum
         [TestCaseSource("testCases")]
         public void Test_Generic(string candidatesStr, int target, string expectedStr)
         {
-            var candidates = ArrayHelper.ArrayFromString(candidatesStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var candidates = ArrayHelper.ArrayFromString<int>(candidatesStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.CombinationSum(candidates, target);

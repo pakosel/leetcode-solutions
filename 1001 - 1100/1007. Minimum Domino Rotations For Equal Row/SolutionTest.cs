@@ -21,8 +21,8 @@ namespace MinimumDominoRotationsForEqualRow
         [TestCaseSource("testCasesStr")]
         public void Test_Memoization(string topsStr, string bottomsStr, int expected)
         {
-            var tops = ArrayHelper.ArrayFromString(topsStr);
-            var bottoms = ArrayHelper.ArrayFromString(bottomsStr);
+            var tops = ArrayHelper.ArrayFromString<int>(topsStr);
+            var bottoms = ArrayHelper.ArrayFromString<int>(bottomsStr);
 
             var sol = new Solution();
             var res = sol.MinDominoRotations(tops, bottoms);

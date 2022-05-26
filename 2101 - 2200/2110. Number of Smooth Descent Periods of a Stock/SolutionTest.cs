@@ -26,7 +26,7 @@ namespace NumberOfSmoothDescentPeriodsOfStock
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string pricesStr, long expected)
         {
-            var prices = ArrayHelper.ArrayFromString(pricesStr);
+            var prices = ArrayHelper.ArrayFromString<int>(pricesStr);
 
             var sol = new Solution();
             var res = sol.GetDescentPeriods(prices);

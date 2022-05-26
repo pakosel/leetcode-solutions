@@ -20,7 +20,7 @@ namespace PartitionArrayIntoDisjointIntervals
         [TestCaseSource("testCasesStr")]
         public void Test_Memoization(string arrStr, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(arrStr);
+            var nums = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.PartitionDisjoint(nums);

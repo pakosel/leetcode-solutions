@@ -24,7 +24,7 @@ namespace ShortestPathInBinaryMatrix
         [TestCaseSource("testCases")]
         public void Test_Generic(string gridStr, int expected)
         {
-            var grid = ArrayHelper.MatrixFromString(gridStr);
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
 
             var sol = new Solution();
             var res = sol.ShortestPathBinaryMatrix(grid);

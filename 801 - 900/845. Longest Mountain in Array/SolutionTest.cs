@@ -28,7 +28,7 @@ namespace LongestMountainInArray
         [TestCaseSource("testCasesStr")]
         public void Test_Memoization(string arrStr, int expected)
         {
-            var arr = ArrayHelper.ArrayFromString(arrStr);
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
 
             var sol = new Solution();
             var res = sol.LongestMountain(arr);

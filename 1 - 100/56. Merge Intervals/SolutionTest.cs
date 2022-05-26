@@ -26,7 +26,7 @@ namespace MergeIntervals
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string intervalsStr, string expected)
         {
-            var intervals = ArrayHelper.MatrixFromString(intervalsStr);
+            var intervals = ArrayHelper.MatrixFromString<int>(intervalsStr);
             var sol = new Solution();
             var res = sol.Merge(intervals);
 

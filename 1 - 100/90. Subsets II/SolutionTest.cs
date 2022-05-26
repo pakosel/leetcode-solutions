@@ -20,9 +20,9 @@ namespace SubsetsII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string arrStrIn, string arrStrOut)
         {
-            var expected = ArrayHelper.MatrixFromString(arrStrOut);
+            var expected = ArrayHelper.MatrixFromString<int>(arrStrOut);
 
-            var nums = ArrayHelper.ArrayFromString(arrStrIn);
+            var nums = ArrayHelper.ArrayFromString<int>(arrStrIn);
 
             var sol = new Solution();
             var res = sol.SubsetsWithDup(nums);

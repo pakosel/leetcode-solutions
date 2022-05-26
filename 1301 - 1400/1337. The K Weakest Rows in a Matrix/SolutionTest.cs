@@ -19,8 +19,8 @@ namespace TheKWeakestRowsInMatrix
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string matStr, int k, string expectedStr)
         {
-            var mat = ArrayHelper.MatrixFromString(matStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var mat = ArrayHelper.MatrixFromString<int>(matStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.KWeakestRows(mat, k);

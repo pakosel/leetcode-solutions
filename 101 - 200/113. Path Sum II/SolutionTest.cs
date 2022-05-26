@@ -28,7 +28,7 @@ namespace PathSumII
             var sol = new Solution();
             var res = sol.PathSum(root, target);
 
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             CollectionAssert.AreEquivalent(res, expected);
         }

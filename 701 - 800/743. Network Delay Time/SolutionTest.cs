@@ -23,7 +23,7 @@ namespace NetworkDelayTime
         [TestCaseSource("testCases")]
         public void Test_Generic(string timesStr, int n, int k, int expected)
         {
-            var times = ArrayHelper.MatrixFromString(timesStr);
+            var times = ArrayHelper.MatrixFromString<int>(timesStr);
 
             var sol = new Solution();
             var res = sol.NetworkDelayTime(times, n, k);

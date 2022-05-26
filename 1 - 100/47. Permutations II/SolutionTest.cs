@@ -25,8 +25,8 @@ namespace PermutationsII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(string arrStr, string expectedStr)
         {
-            var input = ArrayHelper.ArrayFromString(arrStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var input = ArrayHelper.ArrayFromString<int>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.PermuteUnique(input);
@@ -38,8 +38,8 @@ namespace PermutationsII
         [TestCaseSource("testCases")]
         public void Test_GenericList(string arrStr, string expectedStr)
         {
-            var input = ArrayHelper.ArrayFromString(arrStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var input = ArrayHelper.ArrayFromString<int>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution_List();
             var res = sol.PermuteUnique(input);
@@ -51,8 +51,8 @@ namespace PermutationsII
         [TestCaseSource("testCases")]
         public void Test_GenericMemo(string arrStr, string expectedStr)
         {
-            var input = ArrayHelper.ArrayFromString(arrStr);
-            var expected = ArrayHelper.MatrixFromString(expectedStr);
+            var input = ArrayHelper.ArrayFromString<int>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
             var sol = new Solution_Memoization();
             var res = sol.PermuteUnique(input);

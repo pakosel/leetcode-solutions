@@ -26,7 +26,7 @@ namespace BinaryTreePostorderTraversal
 
             var sol = new Solution();
             var ret = sol.PostorderTraversal(tree);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             CollectionAssert.AreEquivalent(ret, expected);
         }

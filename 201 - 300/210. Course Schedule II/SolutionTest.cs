@@ -22,8 +22,8 @@ namespace CourseScheduleII
         [TestCaseSource("testCases")]
         public void Test_GenericStr(int numCourses, string prereqStr, string expectedStr)
         {
-            var prereq = ArrayHelper.MatrixFromString(prereqStr);
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var prereq = ArrayHelper.MatrixFromString<int>(prereqStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.FindOrder(numCourses, prereq);

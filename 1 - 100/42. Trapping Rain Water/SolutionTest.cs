@@ -22,7 +22,7 @@ namespace TrappingRainWater
         [TestCaseSource("testCases")]
         public void Test_Generic(string heightStr, int expected)
         {
-            var height = ArrayHelper.ArrayFromString(heightStr);
+            var height = ArrayHelper.ArrayFromString<int>(heightStr);
 
             var sol = new Solution();
             var res = sol.Trap(height);

@@ -23,7 +23,7 @@ namespace AllElementsInTwoBinarySearchTrees
         {
             var root1 = TreeNodeHelper.BuildTree(root1Str);
             var root2 = TreeNodeHelper.BuildTree(root2Str);
-            var expected = ArrayHelper.ArrayFromString(expectedStr).ToList();
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr).ToList();
 
             var sol = new Solution();
             var res = sol.GetAllElements(root1, root2);

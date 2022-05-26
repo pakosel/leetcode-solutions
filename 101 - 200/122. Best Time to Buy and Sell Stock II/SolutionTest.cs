@@ -22,7 +22,7 @@ namespace BestTimeToBuyStockII
         [TestCaseSource("testCases")]
         public void Test_Generic(string arrayStr, int expected)
         {
-            var prices = ArrayHelper.ArrayFromString(arrayStr);
+            var prices = ArrayHelper.ArrayFromString<int>(arrayStr);
 
             var sol = new Solution();
             var ret = sol.MaxProfit(prices);

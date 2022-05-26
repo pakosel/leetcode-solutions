@@ -31,7 +31,7 @@ namespace SingleElementInSortedArray
         [TestCaseSource("testCases")]
         public void Test_Generic(string strArr, int expected)
         {
-            var nums = ArrayHelper.ArrayFromString(strArr);
+            var nums = ArrayHelper.ArrayFromString<int>(strArr);
 
             var sol = new Solution();
             var res = sol.SingleNonDuplicate(nums);

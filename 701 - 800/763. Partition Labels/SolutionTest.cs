@@ -24,7 +24,7 @@ namespace PartitionLabels
         [TestCaseSource("testCases")]
         public void Test_Generic(string s, string expectedStr)
         {
-            var expected = ArrayHelper.ArrayFromString(expectedStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             var sol = new Solution();
             var res = sol.PartitionLabels(s);

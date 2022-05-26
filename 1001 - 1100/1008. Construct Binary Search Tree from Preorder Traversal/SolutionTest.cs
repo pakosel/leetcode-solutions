@@ -22,7 +22,7 @@ namespace ConstructBinarySearchTreeFromPreorderTraversal
         [TestCaseSource("testCases")]
         public void Test_Generic(string preorderStr, string expectedStr)
         {
-            var preorder = ArrayHelper.ArrayFromString(preorderStr);
+            var preorder = ArrayHelper.ArrayFromString<int>(preorderStr);
             var expected = TreeNodeHelper.BuildTree(expectedStr);
 
             var sol = new Solution();

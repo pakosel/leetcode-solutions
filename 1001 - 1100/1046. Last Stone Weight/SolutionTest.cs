@@ -21,7 +21,7 @@ namespace LastStoneWeight
         [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string stonesStr, int expected)
         {
-            var stones = ArrayHelper.ArrayFromString(stonesStr);
+            var stones = ArrayHelper.ArrayFromString<int>(stonesStr);
 
             var sol = new Solution();
             var res = sol.LastStoneWeight(stones);
