@@ -37,6 +37,8 @@ namespace Common
             matrixStr = matrixStr.Replace(" ", "");
             if(typeof(T) == typeof(char))
                 matrixStr = matrixStr.Replace("'", "");
+            if(typeof(T) == typeof(string))
+                skipContentParsing = true;
 
             T[][] matrix;
             var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
