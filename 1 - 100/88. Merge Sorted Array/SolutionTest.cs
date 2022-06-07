@@ -11,11 +11,11 @@ namespace MergeSortedArray
     {
         private static readonly object[] testCases =
         {
-            new object[] {"[]", 0, "[0]", 0, "[]"},
             new object[] {"[1]", 1, "[]", 0, "[1]"},
             new object[] {"[0]", 0, "[1]", 1, "[1]"},
             new object[] {"[1,2,3,0,0,0]", 3, "[2,5,6]", 3, "[1,2,2,3,5,6]"},
-            
+            new object[] {"[1,1,1,0,0,0]", 3, "[2,2,2]", 3, "[1,1,1,2,2,2]"},
+            new object[] {"[11,11,11,0,0,0]", 3, "[2,2,2]", 3, "[2,2,2,11,11,11]"},
         };
 
         [Test]
