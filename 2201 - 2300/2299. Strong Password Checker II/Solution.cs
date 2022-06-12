@@ -2,10 +2,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using Common;
 
 namespace StrongPasswordCheckerII
 {
+    public class SolutionRegex
+    {
+        public bool StrongPasswordCheckerII(string password)
+        {
+            bool has8Char = (password.Length > 7);
+            //(?=...) for optional groups - to ignore the order of expression blocks
+            var regex = new Regex(@"(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[0-9]+)(?=.*[!@#$%^&*()\-+]+)");
+            var match = regex.Match(password).Success;
+            var anySame = Enumerable.Range(0, password.Length).Any(i => i > 0 && password[i-1] == password[i]);
+            
+            return has8Char && match && !anySame;
+        }
+    }
+
     public class Solution
     {
         public bool StrongPasswordCheckerII(string password)
