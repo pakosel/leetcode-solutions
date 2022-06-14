@@ -11,14 +11,25 @@ namespace DeleteOperationForTwoStrings
     {
         private static readonly object[] testCases =
         {
-            new object[] { "", "", 0 },
-            new object[] { "a", "", 1 },
             new object[] { "a", "b", 2 },
             new object[] { "a", "xyz", 4 },
             new object[] { "sea", "eat", 2 },
             new object[] { "a", "aaa", 2 },
             new object[] { "aaakhjsdfljkxxxxxlkjlkjlkjlkjbbb", "aakhjsdljkxxxxlkjlkjkjlkjbb", 5 },
+            new object[] { "abcdef", "ghibj", 9 },
+            new object[] { "idmciznflgnmltogiktnpobphxiucrojnrhrlyoanggjkftiaxmtugjhaimwyhbrfwpsedytsdmygydsjalzbbylwuffvgtxpcndlzmxnztxurnsdwbbsmykzcxcthpildrdmzjegmejmozscntkdlhheupekxswqeakoszdvyfrjkpmhowaekopjzqujimyisqdicfnxvcixlnwerhvoqluqccesstotknqsefyolxsfkyutwvrnrekuzcefuucikmyxuuurzsdsryqlqkjbfcrntnnhxhmisgyotsuhqvelucimmnqrwxxzrzbipcjkwqrohzujollavnitrsyxouryrlzjplcsiazlcdenawgwghshnfuivxvyyurrkkmbqnwgzpalgovftpigmdoklvqcjrvtausiuinxwhwxudbrfufgesvfxpnrlqlyyglaziqmifqgiqzvleesmgyrqenadabfudtldchnqbxgdjxxwasvkv", "sgnovlkpajzhbdaafwtvohoaoajnnddqwnwfxzzhoyknctwuklgskrktmhhvxyydgzbaskvibprbtdalstywrrbcwxvojgmmraebbtugsdgzutrqfdhniieglwicfwpclvqloakwfeflzonbelpblcctisyktkqrqoyotkvkipmtbfpvehwoospxbmazboacjpoafgqyeacndbfzprvbhrvqzreuybdbwlbefulexmqgjeqkcjrgbawrfposyydpxffjcwhljbvxajorjvxxgikjpfbyildmnhdfntulvwvdcfzipjlfrnwrbhsjgvnixuwvtomwsapapcxwnxdwnybnsztgrglsbfldsmrtupdmfbolcviivrofjwucfayuonxbefjutvllpypsefmftabmuywdiptrntptzsyuvftvauqrsgxvygffrmkvvolwskrgfrxunbudaystrypugjutoqhorgxmpvypftumdzijrgfqhlw", 690 },
+            new object[] { "kchfpbgvfktzljsstxvknwmiwzoinfbzxovupttgqjmmdshggpfuqdbbpqxjdawhkksferiintkufbrwzfptwbzoktldpqaezcsiofrndxlmdkpqfuuxtgoibzbeowxfltafwoplmjeosqpqhahbovywoekhbsmcexujjuqnytslatcysjxginldpvohyclnmywfpodhjvzsgcdsjhyrryfhrymlyxmjbtwuwgwdjxudxxwptggosacwuqzbmlfkjotbpkbbowegyrruhawfpppbqrxkbebmfixxzuybkcrmjntkydqpdcfqjvbfhncxvdjyzokcalvgxjuwwsltbehsewsjlqpvkvieaqaprxehbmanopneoxesxdxweffhqceztqeoidqsntmdzybcyxbtfgnjlqzyzthexqjkrbrykjtvekcqainapnchbgoiiuipnizxyjffbzildnmgphykczweslpebrxlaolybojrrgavrpk", "kjxylgpcvtoxufswsgwfyhkfrqwhbizzycmynrdnqeaqwwirgxwgwvucpcgcfukitrlcevhvqdffmeqbcikvudblefjlhncnabewuwtreqruzpauqqkajihsulkwsmxfjpfkrawmzwkhxkaaxrthnujvhquqapcygyupwikypuedwureejjzrjrgtzwtwzswztftakcggmkcpusdztdxywxmzbdbfltdkrtmvqiipzfzolpzticizlcqlgfzqgmmlgvffgfzurcxaolpiavwocxylvgusmmrffnghheevqcqimdkzzbxvlithzcdnehzzstwcmzrxlcwfxxpwfxhlenhlgtqnpzdyltgimtksonsvkmuvqasvfwjrkknexhnouzlxqhspthpillmiksagzxephqakuxhvkosexxygwibcsyqlxgbtbnbtowumcalabxqdqgjodepohfuahtrgkiazqilqqvrfpduckdyaaxzbnehvhh", 686 },
         };
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_GenericDP(string word1, string word2, int expected)
+        {
+            var sol = new SolutionDP();
+            var res = sol.MinDistance(word1, word2);
+
+            Assert.AreEqual(expected, res);
+        }
 
         [Test]
         [TestCaseSource("testCases")]

@@ -5,6 +5,29 @@ using System.Text;
 
 namespace DeleteOperationForTwoStrings
 {
+    public class SolutionDP
+    {
+        public int MinDistance(string word1, string word2)
+        {
+            var len1 = word1.Length;
+            var len2 = word2.Length;
+
+            var dp = Enumerable.Range(0, len2+1).Select(_ => new int[len1+1]).ToArray();
+            
+            for(int i=1; i<=len2; i++)
+                for(int j=1; j<=len1; j++)
+                    if(word2[i-1] == word1[j-1])
+                        dp[i][j] = dp[i-1][j-1] + 1;
+                    else
+                        dp[i][j] = Math.Max(dp[i-1][j], dp[i][j-1]);
+            
+            //length of maximum common subsequence
+            var maxCommon = dp[len2][len1];
+            
+            return len1 + len2 - 2*maxCommon;            
+        }
+    }
+
     public class Solution
     {
         public int MinDistance(string word1, string word2)
