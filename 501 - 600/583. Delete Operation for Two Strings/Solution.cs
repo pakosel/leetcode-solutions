@@ -24,7 +24,7 @@ namespace DeleteOperationForTwoStrings
             //length of maximum common subsequence
             var maxCommon = dp[len2][len1];
             
-            return len1 + len2 - 2*maxCommon;            
+            return len1 + len2 - 2*maxCommon;
         }
     }
 
