@@ -8,19 +8,35 @@ namespace LongestPalindromicSubstring
     [TestFixture]
     public class SolutionTest
     {
+        private static readonly object[] testCases =
+        {
+            new object[] {"a", "a"},
+            new object[] {"babad", "bab"},
+            new object[] {"cbbd", "bb"},
+            new object[] {"abba", "abba"},
+            new object[] {"abcba", "abcba"},
+            new object[] {"cbbdcbbdcaabxqxbdcbbdcbbdcbbd", "bxqxb"},
+            new object[] {"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+        };
+
         [Test]
-        [TestCase("", "")]
-        [TestCase("a", "a")]
-        [TestCase("babad", "bab")]
-        [TestCase("cbbd", "bb")]
-        [TestCase("abba", "abba")]
-        [TestCase("abcba", "abcba")]
-        public void Test_Example(string s, string expected)
+        [TestCaseSource("testCases")]
+        public void Test_Solution2022(string s, string expected)
+        {
+            var sol = new Solution2022();
+            var res = sol.LongestPalindrome(s);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Examples(string s, string expected)
         {
             var sol = new Solution();
-            var ret = sol.LongestPalindrome(s);
+            var res = sol.LongestPalindrome(s);
 
-            Assert.AreEqual(ret, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

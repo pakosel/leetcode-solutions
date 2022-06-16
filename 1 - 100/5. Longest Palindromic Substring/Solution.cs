@@ -4,6 +4,32 @@ using System;
 
 namespace LongestPalindromicSubstring
 {
+    public class Solution2022
+    {
+        public string LongestPalindrome(string s)
+        {
+            (int left, int right) res = (0, 0);
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                var check = Check(i, i);
+                if (check.right - check.left > res.right - res.left)
+                    res = check;
+                check = Check(i, i + 1);
+                if (check.right - check.left > res.right - res.left)
+                    res = check;
+            }
+            return s.Substring(res.left, res.right - res.left + 1);
+
+            (int left, int right) Check(int left, int right)
+            {
+                var max = (left, left);
+                while (left >= 0 && right < s.Length && s[left] == s[right])
+                    max = (left--, right++);
+                return max;
+            }
+        }
+    }
+    
     public class Solution
     {
         public string LongestPalindrome(string s)

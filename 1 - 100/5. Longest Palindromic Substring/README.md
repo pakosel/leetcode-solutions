@@ -1,6 +1,10 @@
-5. Longest Palindromic Substring
+# 5. Longest Palindromic Substring
 
-Given a string `s`, find the longest palindromic substring in `s`. You may assume that the maximum length of `s` is `1000`.
+Given a string `s`, find the *longest palindromic substring* in `s`.
+
+**Constraints**:
+- `1 <= s.length <= 1000`
+- `s` consist of only digits and English letters.
 
 ### Example 1:
 ```
