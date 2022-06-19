@@ -18,6 +18,9 @@ namespace Common
         
         public static T[] ArrayFromString<T>(string arrString)
         {
+            bool skipContentParsing = false;
+            if(typeof(T) == typeof(string))
+                skipContentParsing = true;
             var arr = arrString.TrimStart('[').TrimEnd(']').Split(',');
             if(arr[0] == "")
                 return new T[0];
@@ -25,7 +28,10 @@ namespace Common
             var res = new T[arr.Length];
             for(int i=0; i<arr.Length; i++)
                 if(arr[i] != "null")
-                    res[i] = (T)ParseMethod<T>().Invoke(null, new[] {arr[i]});
+                    if(!skipContentParsing)
+                        res[i] = (T)ParseMethod<T>().Invoke(null, new[] {arr[i]});
+                    else
+                        res[i] = (T)(object)arr[i];
                 else
                     res[i] = default(T);
 
