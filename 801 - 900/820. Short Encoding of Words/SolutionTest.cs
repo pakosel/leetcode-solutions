@@ -20,12 +20,22 @@ namespace ShortEncodingOfWords
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Trie(string[] words, int expected)
+        {
+            var sol = new Solution_Trie();
+            var res = sol.MinimumLengthEncoding(words);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string[] words, int expected)
         {
             var sol = new Solution();
             var res = sol.MinimumLengthEncoding(words);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }
