@@ -14,9 +14,21 @@ namespace PartitioningIntoMinimumNumberOfDeciBinaryNumbers
             new object[] {"1", 1},
             new object[] {"10", 1},
             new object[] {"32", 3},
+            new object[] {"1234", 4},
+            new object[] {"4321", 4},
             new object[] {"82734", 8},
             new object[] {"27346209830709182346", 9},
         };
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_Generic2022(string s, int expected)
+        {
+            var sol = new Solution();
+            var res = sol.MinPartitions(s);
+
+            Assert.AreEqual(res, expected);
+        }
 
         [Test]
         [TestCaseSource("testCasesStr")]
