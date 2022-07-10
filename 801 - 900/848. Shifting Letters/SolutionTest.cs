@@ -30,7 +30,7 @@ namespace ShiftingLetters
             var sol = new Solution();
             var res = sol.ShiftingLetters(S, shifts);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace LinkedListCycle
             var sol = new Solution();
             var res = sol.HasCycle(head);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
         
         [Test]
@@ -43,7 +43,7 @@ namespace LinkedListCycle
             var sol = new Solution_O1();
             var res = sol.HasCycle(head);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         private void MakeLoop(ListNode head, int loopIdx)

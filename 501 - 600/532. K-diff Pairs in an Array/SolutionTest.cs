@@ -29,7 +29,7 @@ namespace KdiffPairsInAnArray
             var sol = new Solution();
             var res = sol.FindPairs(nums, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

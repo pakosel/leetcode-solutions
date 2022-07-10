@@ -53,7 +53,7 @@ namespace DesignUndergroundSystem
                         break;
                 }
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

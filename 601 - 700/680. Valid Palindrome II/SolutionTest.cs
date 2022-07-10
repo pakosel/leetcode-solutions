@@ -29,7 +29,7 @@ namespace ValidPalindromeII
             var sol = new Solution();
             var res = sol.ValidPalindrome(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

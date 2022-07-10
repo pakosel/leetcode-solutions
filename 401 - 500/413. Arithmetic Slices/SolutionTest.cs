@@ -30,7 +30,7 @@ namespace ArithmeticSlices
             var sol = new Solution();
             var res = sol.NumberOfArithmeticSlices(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

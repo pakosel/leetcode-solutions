@@ -27,7 +27,7 @@ namespace JumpGameII
             var sol = new Solution();
             var res = sol.Jump(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

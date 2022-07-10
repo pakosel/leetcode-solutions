@@ -37,7 +37,7 @@ namespace ToeplitzMatrix
             var sol = new Solution();
             var res = sol.IsToeplitzMatrix(matrix);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

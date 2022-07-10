@@ -29,7 +29,7 @@ namespace PartitionLabels
             var sol = new Solution();
             var res = sol.PartitionLabels(s);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

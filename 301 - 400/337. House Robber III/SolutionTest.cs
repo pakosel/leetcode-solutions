@@ -28,7 +28,7 @@ namespace HouseRobberIII
             var sol = new Solution();
             var res = sol.Rob(head);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

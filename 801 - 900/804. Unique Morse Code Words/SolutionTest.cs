@@ -24,7 +24,7 @@ namespace UniqueMorseCodeWords
             var sol = new Solution();
             var res = sol.UniqueMorseRepresentations(words);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

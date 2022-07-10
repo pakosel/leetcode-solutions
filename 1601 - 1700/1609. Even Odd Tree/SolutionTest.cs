@@ -25,7 +25,7 @@ namespace EvenOddTree
             var sol = new Solution();
             var res = sol.IsEvenOddTree(root);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

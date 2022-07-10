@@ -26,7 +26,7 @@ namespace FindTheTownJudge
             var sol = new Solution();
             var res = sol.FindJudge(n, trust);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

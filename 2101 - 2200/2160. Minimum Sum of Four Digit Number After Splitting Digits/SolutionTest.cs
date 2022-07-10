@@ -22,7 +22,7 @@ namespace MinimumSumOfFourDigitNumberAfterSplittingDigits
             var sol = new Solution();
             var res = sol.MinimumSum(num);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

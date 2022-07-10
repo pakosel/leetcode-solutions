@@ -30,7 +30,7 @@ namespace NumberOfSquarefulArrays
             var sol = new Solution();
             var res = sol.NumSquarefulPerms(input);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

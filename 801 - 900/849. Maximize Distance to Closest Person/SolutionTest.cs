@@ -32,7 +32,7 @@ namespace MaximizeDistanceToClosestPerson
             var sol = new Solution();
             var res = sol.MaxDistToClosest(seats);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

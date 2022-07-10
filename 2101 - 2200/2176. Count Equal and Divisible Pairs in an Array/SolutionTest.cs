@@ -24,7 +24,7 @@ namespace CountEqualAndDivisiblePairsInAnArray
             var sol = new Solution();
             var res = sol.CountPairs(nums, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

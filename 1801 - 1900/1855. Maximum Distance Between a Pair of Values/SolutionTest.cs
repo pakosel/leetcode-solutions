@@ -27,7 +27,7 @@ namespace MaximumDistanceBetweenPairOfValues
             var sol = new Solution();
             var res = sol.MaxDistance(nums1, nums2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

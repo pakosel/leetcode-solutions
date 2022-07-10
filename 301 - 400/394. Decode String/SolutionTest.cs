@@ -30,7 +30,7 @@ namespace DecodeString
             var sol = new Solution();
             var res = sol.DecodeString(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }       
     }
 }

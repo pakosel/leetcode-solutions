@@ -30,7 +30,7 @@ namespace TopKFrequentElements
             var res = sol.TopKFrequent(arr, k);
             var resBoring = solutionBoring.TopKFrequent(arr, k);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
             CollectionAssert.AreEqual(resBoring, expected);
         }
     }

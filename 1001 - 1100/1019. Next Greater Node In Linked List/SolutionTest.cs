@@ -24,7 +24,7 @@ namespace NextGreaterNodeInLinkedList
             var sol = new Solution();
             var res = sol.NextLargerNodes(head);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

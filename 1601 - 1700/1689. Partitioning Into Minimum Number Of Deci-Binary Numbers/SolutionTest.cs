@@ -27,7 +27,7 @@ namespace PartitioningIntoMinimumNumberOfDeciBinaryNumbers
             var sol = new Solution();
             var res = sol.MinPartitions(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace PartitioningIntoMinimumNumberOfDeciBinaryNumbers
             var sol = new Solution();
             var res = sol.MinPartitions(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

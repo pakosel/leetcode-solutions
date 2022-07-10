@@ -25,7 +25,7 @@ namespace MaximumWhiteTilesCoveredByCarpet
             var sol = new Solution();
             var res = sol.MaximumWhiteTiles(tiles, carpetLen);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace MaximumLengthOfPairChain
             var sol = new Solution();
             var res = sol.FindLongestChain(pairs);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

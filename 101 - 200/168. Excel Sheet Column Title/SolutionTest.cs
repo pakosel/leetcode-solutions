@@ -30,7 +30,7 @@ namespace ExcelSheetColumnTitle
             var sol = new Solution();
             var res = sol.ConvertToTitle(colNum);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

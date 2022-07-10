@@ -29,7 +29,7 @@ namespace MaximumWidthOfBinaryTree
             var sol = new Solution();
             var res = sol.WidthOfBinaryTree(root);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
         
         [Test]
@@ -41,7 +41,7 @@ namespace MaximumWidthOfBinaryTree
             var sol = new Solution_NoRecursion();
             var res = sol.WidthOfBinaryTree(root);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace LongestMountainInArray
             var sol = new Solution();
             var res = sol.LongestMountain(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

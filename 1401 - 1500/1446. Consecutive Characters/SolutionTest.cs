@@ -27,7 +27,7 @@ namespace ConsecutiveCharacters
             var sol = new Solution();
             var res = sol.MaxPower(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

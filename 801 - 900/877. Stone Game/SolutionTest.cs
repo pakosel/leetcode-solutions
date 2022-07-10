@@ -27,7 +27,7 @@ namespace StoneGame
             var sol = new Solution_Memoization();
             var res = sol.StoneGame(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

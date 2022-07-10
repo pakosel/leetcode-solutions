@@ -51,7 +51,7 @@ namespace MirrorReflection
             var sol = new Solution();
             var res = sol.MirrorReflection(p, q);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

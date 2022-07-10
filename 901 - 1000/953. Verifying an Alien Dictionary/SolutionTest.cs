@@ -24,7 +24,7 @@ namespace VerifyingAlienDictionary
             var sol = new Solution();
             var res = sol.IsAlienSorted(words, order);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

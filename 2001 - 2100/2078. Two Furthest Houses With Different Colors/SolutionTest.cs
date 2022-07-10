@@ -28,7 +28,7 @@ namespace TwoFurthestHousesWithDifferentColors
             var sol = new Solution();
             var res = sol.MaxDistance(colors);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

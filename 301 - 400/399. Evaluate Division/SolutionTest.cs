@@ -30,7 +30,7 @@ namespace EvaluateDivision
             var sol = new Solution();
             var res = sol.CalcEquation(equations, values, queries);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

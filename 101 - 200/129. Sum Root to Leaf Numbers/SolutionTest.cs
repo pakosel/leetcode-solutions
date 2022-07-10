@@ -28,7 +28,7 @@ namespace SumRootToLeafNumbers
             var sol = new Solution();
             var res = sol.SumNumbers(root);
             
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

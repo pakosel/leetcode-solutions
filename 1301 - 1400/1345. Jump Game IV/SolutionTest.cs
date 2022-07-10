@@ -27,7 +27,7 @@ namespace JumpGameIV
             var sol = new Solution();
             var res = sol.MinJumps(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

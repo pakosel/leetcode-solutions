@@ -31,7 +31,7 @@ namespace CapitalizeTheTitle
             var sol = new Solution();
             var res = sol.CapitalizeTitle(title);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

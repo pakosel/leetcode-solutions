@@ -29,7 +29,7 @@ namespace MaximumProductSubarray
             var sol = new Solution();
             var res = sol.MaxProduct(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

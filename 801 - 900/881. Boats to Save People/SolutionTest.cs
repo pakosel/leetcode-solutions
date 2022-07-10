@@ -26,7 +26,7 @@ namespace BoatsToSavePeople
             var sol = new Solution();
             var res = sol.NumRescueBoats(people, limit);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

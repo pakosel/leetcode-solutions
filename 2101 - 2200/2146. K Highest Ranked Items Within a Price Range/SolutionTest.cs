@@ -28,7 +28,7 @@ namespace KHighestRankedItemsWithinPriceRange
             var sol = new Solution();
             var res = sol.HighestRankedKItems(grid, pricing, start, k);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

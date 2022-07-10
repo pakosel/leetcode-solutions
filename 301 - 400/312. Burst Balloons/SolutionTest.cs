@@ -33,7 +33,7 @@ namespace BurstBalloons
             var sol = new Solution();
             var res = sol.MaxCoins(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

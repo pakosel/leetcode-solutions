@@ -28,7 +28,7 @@ namespace CompareVersionNumbers
             var sol = new Solution();
             var res = sol.CompareVersion(version1, version2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

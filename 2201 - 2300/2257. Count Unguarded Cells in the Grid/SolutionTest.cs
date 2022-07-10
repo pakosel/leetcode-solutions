@@ -26,7 +26,7 @@ namespace CountUnguardedCellsInTheGrid
             var sol = new Solution();
             var res = sol.CountUnguarded(m, n, guards, walls);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

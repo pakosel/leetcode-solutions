@@ -29,7 +29,7 @@ namespace OnlineStockSpan
             for(int i=0; i<prices.Length; i++)
                 res[i] = sol.Next(prices[i][0]);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace FlattenNestedListIterator
             while (sol.HasNext())
                 res.Add(sol.Next());
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

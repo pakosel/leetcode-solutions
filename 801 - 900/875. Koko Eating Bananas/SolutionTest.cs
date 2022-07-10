@@ -33,7 +33,7 @@ namespace KokoEatingBananas
             var sol = new Solution();
             var res = sol.MinEatingSpeed(piles, h);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

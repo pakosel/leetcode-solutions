@@ -29,7 +29,7 @@ namespace SearchSuggestionsSystem
             var sol = new Solution();
             var res = sol.SuggestedProducts(products, searchWord);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

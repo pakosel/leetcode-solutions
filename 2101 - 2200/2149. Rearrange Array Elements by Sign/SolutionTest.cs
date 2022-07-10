@@ -26,7 +26,7 @@ namespace RearrangeArrayElementsBySign
             var sol = new Solution();
             var res = sol.RearrangeArray(nums);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

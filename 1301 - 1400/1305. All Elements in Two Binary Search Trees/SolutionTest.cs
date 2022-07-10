@@ -28,7 +28,7 @@ namespace AllElementsInTwoBinarySearchTrees
             var sol = new Solution();
             var res = sol.GetAllElements(root1, root2);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

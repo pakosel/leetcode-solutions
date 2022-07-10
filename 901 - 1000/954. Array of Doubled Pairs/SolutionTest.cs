@@ -31,7 +31,7 @@ namespace ArrayOfDoubledPairs
             var sol = new Solution();
             var res = sol.CanReorderDoubled(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

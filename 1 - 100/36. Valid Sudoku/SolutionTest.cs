@@ -23,7 +23,7 @@ namespace ValidSudoku
             var sol = new Solution();
             var res = sol.IsValidSudoku(board);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace DetectSquares
                         break;
                 }
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

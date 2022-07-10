@@ -35,7 +35,7 @@ namespace SearchInRotatedSortedArray
             var sol = new Solution();
             var res = sol.Search(nums, target);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

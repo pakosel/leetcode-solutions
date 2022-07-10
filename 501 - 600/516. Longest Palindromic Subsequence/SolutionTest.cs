@@ -27,7 +27,7 @@ namespace LongestPalindromicSubsequence
             var sol = new Solution();
             var res = sol.LongestPalindromeSubseq(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
         
         [Test]
@@ -37,7 +37,7 @@ namespace LongestPalindromicSubsequence
             var sol = new SolutionMemoization();
             var res = sol.LongestPalindromeSubseq(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

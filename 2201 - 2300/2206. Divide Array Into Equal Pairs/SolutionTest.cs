@@ -24,7 +24,7 @@ namespace DivideArrayIntoEqualPairs
             var sol = new Solution();
             var res = sol.DivideArray(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

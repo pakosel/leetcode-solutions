@@ -30,7 +30,7 @@ namespace SimplifyPath
             var sol = new Solution();
             var res = sol.SimplifyPath(path);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

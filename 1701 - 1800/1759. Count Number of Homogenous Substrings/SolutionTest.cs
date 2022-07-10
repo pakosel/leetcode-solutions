@@ -26,7 +26,7 @@ namespace CountNumberOfHomogenousSubstrings
             var sol = new Solution();
             var res = sol.CountHomogenous(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

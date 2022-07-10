@@ -31,7 +31,7 @@ namespace PowerOfFour
             var sol = new Solution();
             var res = sol.IsPowerOfFour(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

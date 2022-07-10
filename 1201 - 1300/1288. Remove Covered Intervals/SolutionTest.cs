@@ -25,7 +25,7 @@ namespace RemoveCoveredIntervals
             var sol = new Solution();
             var res = sol.RemoveCoveredIntervals(intervals);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

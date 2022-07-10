@@ -32,7 +32,7 @@ namespace LongestContinuousSubarrayWithAbsoluteDiffLessThanEqualLimit
             var sol = new Solution();
             var res = sol.LongestSubarray(arr, limit);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

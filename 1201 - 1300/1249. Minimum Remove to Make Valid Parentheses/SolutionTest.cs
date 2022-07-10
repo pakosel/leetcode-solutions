@@ -27,7 +27,7 @@ namespace MinimumRemoveToMakeValidParentheses
             var sol = new Solution();
             var res = sol.MinRemoveToMakeValid(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

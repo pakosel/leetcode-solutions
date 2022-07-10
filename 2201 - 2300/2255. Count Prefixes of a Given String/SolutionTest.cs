@@ -22,7 +22,7 @@ namespace CountPrefixesOfGivenString
             var sol = new Solution();
             var res = sol.CountPrefixes(words, s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

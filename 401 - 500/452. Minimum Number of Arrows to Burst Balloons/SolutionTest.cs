@@ -27,7 +27,7 @@ namespace MinimumNumberOfArrowsToBurstBalloons
             var sol = new Solution();
             var res = sol.FindMinArrowShots(points);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

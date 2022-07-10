@@ -31,7 +31,7 @@ namespace FindSmallestDivisorGivenThreshold
             var sol = new Solution();
             var res = sol.SmallestDivisor(arr, threshold);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

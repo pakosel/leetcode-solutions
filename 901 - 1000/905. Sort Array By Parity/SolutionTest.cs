@@ -34,7 +34,7 @@ namespace SortArrayByParity
             var sol = new Solution();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -47,7 +47,7 @@ namespace SortArrayByParity
             var sol = new Solution_Linq();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -60,7 +60,7 @@ namespace SortArrayByParity
             var sol = new Solution_InPlace();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
         [Test]
         [TestCaseSource("testCasesStr")]
@@ -72,7 +72,7 @@ namespace SortArrayByParity
             var sol = new Solution_2pass();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

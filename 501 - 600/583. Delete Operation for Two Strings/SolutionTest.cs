@@ -38,7 +38,7 @@ namespace DeleteOperationForTwoStrings
             var sol = new Solution();
             var res = sol.MinDistance(word1, word2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace DeleteOperationForTwoStrings
             var sol = new Solution_Memoization();
             var res = sol.MinDistance(word1, word2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

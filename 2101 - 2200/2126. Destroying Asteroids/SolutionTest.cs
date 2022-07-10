@@ -27,7 +27,7 @@ namespace DestroyingAsteroids
             var sol = new Solution();
             var res = sol.AsteroidsDestroyed(mass, asteroids);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

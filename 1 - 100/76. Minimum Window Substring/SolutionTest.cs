@@ -26,7 +26,7 @@ namespace MinimumWindowSubstring
             var sol = new Solution();
             var res = sol.MinWindow(s, t);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace LongestWordInDictionary
             var sol = new Solution();
             var res = sol.LongestWord(words);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

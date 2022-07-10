@@ -27,7 +27,7 @@ namespace NumberOfWaysToSplitArray
             var sol = new Solution();
             var res = sol.WaysToSplitArray(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

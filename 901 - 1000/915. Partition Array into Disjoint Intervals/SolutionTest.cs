@@ -25,7 +25,7 @@ namespace PartitionArrayIntoDisjointIntervals
             var sol = new Solution();
             var res = sol.PartitionDisjoint(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

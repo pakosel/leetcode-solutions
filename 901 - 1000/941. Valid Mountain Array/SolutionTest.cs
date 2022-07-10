@@ -28,7 +28,7 @@ namespace ValidMountainArray
             var sol = new Solution();
             var res = sol.ValidMountainArray(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

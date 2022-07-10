@@ -29,7 +29,7 @@ namespace PathSumIII
             var sol = new Solution();
             var res = sol.PathSum(root, target);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

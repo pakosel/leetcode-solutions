@@ -39,7 +39,7 @@ namespace AsFarFromLandAsPossible
             var sol = new Solution();
             var res = sol.MaxDistance(grid);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         private static readonly object[] testCases =
@@ -63,7 +63,7 @@ namespace AsFarFromLandAsPossible
             var sol = new Solution();
             var res = sol.MaxDistance(grid);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

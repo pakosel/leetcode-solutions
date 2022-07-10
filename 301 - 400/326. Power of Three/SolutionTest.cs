@@ -37,7 +37,7 @@ namespace PowerOfThree
             var sol = new Solution();
             var res = sol.IsPowerOfThree(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

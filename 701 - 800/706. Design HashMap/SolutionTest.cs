@@ -39,7 +39,7 @@ namespace DesignHashMap
                         break;
                 }
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

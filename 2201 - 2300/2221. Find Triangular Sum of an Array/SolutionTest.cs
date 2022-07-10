@@ -24,7 +24,7 @@ namespace FindTriangularSumOfAnArray
             var sol = new Solution();
             var res = sol.TriangularSum(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

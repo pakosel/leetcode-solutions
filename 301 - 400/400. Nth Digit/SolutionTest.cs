@@ -28,7 +28,7 @@ namespace NthDigit
             var sol = new Solution();
             var res = sol.FindNthDigit(input);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

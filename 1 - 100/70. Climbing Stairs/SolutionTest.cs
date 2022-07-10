@@ -26,7 +26,7 @@ namespace ClimbingStairs
             var sol = new Solution();
             var res = sol.ClimbStairs(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace ClimbingStairs
             var sol = new Solution();
             var res = sol.ClimbStairs_DP(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

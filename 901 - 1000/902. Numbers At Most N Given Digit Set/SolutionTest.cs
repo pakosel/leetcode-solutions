@@ -37,7 +37,7 @@ namespace NumbersAtMostNGivenDigitSet
             var sol = new Solution();
             var res = sol.AtMostNGivenDigitSet(digits, n);
             
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

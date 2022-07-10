@@ -32,7 +32,7 @@ namespace KthSmallestElementInBst
             var sol = new Solution();
             var res = sol.KthSmallest(input, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

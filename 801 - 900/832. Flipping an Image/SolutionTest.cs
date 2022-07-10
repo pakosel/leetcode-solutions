@@ -26,7 +26,7 @@ namespace FlippingImage
             var sol = new Solution();
             var res = sol.FlipAndInvertImage(input);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
 
         private int[][] MatrixFromString(string matrixStr)

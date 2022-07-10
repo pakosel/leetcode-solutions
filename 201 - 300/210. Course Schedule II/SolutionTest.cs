@@ -28,7 +28,7 @@ namespace CourseScheduleII
             var sol = new Solution();
             var res = sol.FindOrder(numCourses, prereq);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

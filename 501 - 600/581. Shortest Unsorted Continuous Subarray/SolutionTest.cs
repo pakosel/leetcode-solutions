@@ -33,7 +33,7 @@ namespace ShortestUnsortedContinuousSubarray
             var sol = new Solution();
             var res = sol.FindUnsortedSubarray(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

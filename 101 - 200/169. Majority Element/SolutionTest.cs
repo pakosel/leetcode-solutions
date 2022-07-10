@@ -25,7 +25,7 @@ namespace MajorityElement
             var sol = new Solution();
             var res = sol.MajorityElement(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

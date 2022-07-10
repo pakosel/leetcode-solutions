@@ -24,7 +24,7 @@ namespace AddStrings
             var sol = new Solution();
             var res = sol.AddStrings(num1, num2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

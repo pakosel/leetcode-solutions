@@ -31,7 +31,7 @@ namespace RemoveAllAdjacentDuplicatesInStringII
             var sol = new Solution();
             var res = sol.RemoveDuplicates(s, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

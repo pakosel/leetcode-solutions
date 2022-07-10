@@ -26,7 +26,7 @@ namespace SmallestIntegerDivisibleByK
             var sol = new Solution();
             var res = sol.SmallestRepunitDivByK(K);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

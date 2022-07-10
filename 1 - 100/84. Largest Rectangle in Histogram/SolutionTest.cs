@@ -24,7 +24,7 @@ namespace LargestRectangleHistogram
             var sol = new Solution();
             var res = sol.LargestRectangleArea(heights);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

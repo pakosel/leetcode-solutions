@@ -28,7 +28,7 @@ namespace RangeSumOfBst
             var sol = new Solution();
             var res = sol.RangeSumBST(head, low, high);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace RangeSumOfBst
             var sol = new Solution_Recursive();
             var res = sol.RangeSumBST(head, low, high);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

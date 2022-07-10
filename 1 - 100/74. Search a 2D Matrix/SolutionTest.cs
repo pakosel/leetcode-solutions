@@ -28,7 +28,7 @@ namespace Search2DMatrix
             var sol = new Solution();
             var res = sol.SearchMatrix(matrix, target);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

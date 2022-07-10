@@ -30,7 +30,7 @@ namespace LongestValidParentheses
             var sol = new Solution();
             var res = sol.LongestValidParentheses(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace LongestValidParentheses
             var sol = new Solution_Stack();
             var res = sol.LongestValidParentheses(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

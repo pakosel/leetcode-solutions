@@ -26,7 +26,7 @@ namespace NumberOfIslands
             var sol = new Solution();
             var res = sol.NumIslands(grid);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

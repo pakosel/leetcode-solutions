@@ -30,7 +30,7 @@ namespace MaximalSquare
             var sol = new Solution();
             var res = sol.MaximalSquare(matrix);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

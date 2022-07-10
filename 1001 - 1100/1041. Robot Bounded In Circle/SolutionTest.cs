@@ -27,7 +27,7 @@ namespace RobotBoundedInCircle
             var sol = new Solution();
             var res = sol.IsRobotBounded(instructions);
             
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

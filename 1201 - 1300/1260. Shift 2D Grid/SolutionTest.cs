@@ -37,7 +37,7 @@ namespace Shift2DGrid
             var sol = new Solution();
             var res = sol.ShiftGrid(grid, k);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

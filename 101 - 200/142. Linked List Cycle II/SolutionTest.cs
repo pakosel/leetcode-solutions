@@ -36,7 +36,7 @@ namespace LinkedListCycleII
             var sol = new Solution();
             var res = sol.DetectCycle(head);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

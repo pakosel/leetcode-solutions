@@ -28,7 +28,7 @@ namespace MinCostToConnectAllPoints
             var sol = new Solution();
             var res = sol.MinCostConnectPoints(points);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

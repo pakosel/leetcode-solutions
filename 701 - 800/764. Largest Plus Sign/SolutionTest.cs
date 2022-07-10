@@ -29,7 +29,7 @@ namespace LargestPlusSign
             var sol = new Solution();
             var res = sol.OrderOfLargestPlusSign(n, mines);
             
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

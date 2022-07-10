@@ -26,7 +26,7 @@ namespace FormLargestInteger
             var sol = new Solution();
             var res = sol.LargestNumber(arr, target);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

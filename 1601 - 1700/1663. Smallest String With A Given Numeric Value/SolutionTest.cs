@@ -24,7 +24,7 @@ namespace SmallestStringWithGivenNumericValue
             var sol = new Solution();
             var res = sol.GetSmallestString(n, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

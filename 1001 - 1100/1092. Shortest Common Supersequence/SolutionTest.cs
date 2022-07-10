@@ -27,7 +27,7 @@ namespace ShortestCommonSubsequence
             var sol = new Solution();
             var res = sol.ShortestCommonSupersequence(str1, str2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

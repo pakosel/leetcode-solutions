@@ -24,7 +24,7 @@ namespace NumberOfWaysToSelectBuildings
             var sol = new Solution();
             var res = sol.NumberOfWays(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

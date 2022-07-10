@@ -27,7 +27,7 @@ namespace IsSubsequence
             var sol = new Solution();
             var res = sol.IsSubsequence(s, t);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

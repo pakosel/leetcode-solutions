@@ -30,7 +30,7 @@ namespace ValidateStackSequences
             var sol = new Solution();
             var res = sol.ValidateStackSequences(pushed, popped);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

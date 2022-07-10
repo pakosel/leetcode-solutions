@@ -31,7 +31,7 @@ namespace FindTheDistanceValueBetweenTwoArrays
             var sol = new Solution();
             var res = sol.FindTheDistanceValue(arr1, arr2, d);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

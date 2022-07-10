@@ -29,7 +29,7 @@ namespace CheckIfAllAsAppearsBeforeAllBs
             var sol = new Solution();
             var res = sol.CheckString(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

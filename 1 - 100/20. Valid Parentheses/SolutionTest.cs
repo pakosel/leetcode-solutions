@@ -28,7 +28,7 @@ namespace ValidParentheses
             var sol = new Solution();
             var res = sol.IsValid(input);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

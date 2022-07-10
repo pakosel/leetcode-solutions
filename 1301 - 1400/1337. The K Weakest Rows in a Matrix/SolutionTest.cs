@@ -25,7 +25,7 @@ namespace TheKWeakestRowsInMatrix
             var sol = new Solution();
             var res = sol.KWeakestRows(mat, k);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

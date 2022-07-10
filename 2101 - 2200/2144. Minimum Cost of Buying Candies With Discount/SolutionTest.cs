@@ -27,7 +27,7 @@ namespace MinimumCostOfBuyingCandiesWithDiscount
             var sol = new Solution();
             var res = sol.MinimumCost(arr);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

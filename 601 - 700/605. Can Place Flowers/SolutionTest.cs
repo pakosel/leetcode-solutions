@@ -28,7 +28,7 @@ namespace CanPlaceFlowers
             var sol = new Solution();
             var res = sol.CanPlaceFlowers(arr, n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

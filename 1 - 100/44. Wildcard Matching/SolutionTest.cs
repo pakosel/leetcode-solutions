@@ -35,7 +35,7 @@ namespace WildcardMatching
             var sol = new Solution();
             var res = sol.IsMatch(s, p);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

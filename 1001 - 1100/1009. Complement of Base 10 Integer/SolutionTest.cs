@@ -48,7 +48,7 @@ namespace ComplementOfBase10Integer
             var sol = new Solution();
             var res = sol.BitwiseComplement(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace MinimumAbsoluteDifference
             var sol = new Solution();
             var res = sol.MinimumAbsDifference(arr);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

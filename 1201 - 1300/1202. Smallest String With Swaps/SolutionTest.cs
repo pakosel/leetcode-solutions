@@ -28,7 +28,7 @@ namespace SmallestStringWithSwaps
             var sol = new Solution();
             var res = sol.SmallestStringWithSwaps(s, pairs);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

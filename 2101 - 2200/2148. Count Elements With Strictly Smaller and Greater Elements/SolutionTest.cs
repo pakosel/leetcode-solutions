@@ -25,7 +25,7 @@ namespace CountElementsWithStrictlySmallerAndGreaterElements
             var sol = new Solution();
             var res = sol.CountElements(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

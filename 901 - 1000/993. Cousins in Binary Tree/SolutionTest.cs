@@ -22,7 +22,7 @@ namespace CousinsInBinaryTree
             var sol = new Solution();
             var res = sol.IsCousins(root, x, y);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace CountSortedVowelStrings
             var sol = new Solution();
             var res = sol.CountVowelStrings(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

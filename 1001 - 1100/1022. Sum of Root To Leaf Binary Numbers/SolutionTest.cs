@@ -26,7 +26,7 @@ namespace SumOfRootToLeafBinaryNumbers
             var sol = new Solution();
             var res = sol.SumRootToLeaf(root);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

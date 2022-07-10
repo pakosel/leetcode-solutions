@@ -24,7 +24,7 @@ namespace MinimumAsciiDeleteSumForTwoStrings
             var sol = new Solution();
             var res = sol.MinimumDeleteSum(s1, s2);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

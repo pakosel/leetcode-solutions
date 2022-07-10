@@ -30,7 +30,7 @@ namespace IntervalListIntersections
             var res = sol.IntervalIntersection(first, second);
             var expected = ArrayHelper.MatrixFromString<int>(expectedArrStr);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

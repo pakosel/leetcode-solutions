@@ -27,7 +27,7 @@ namespace MaximumRepeatingSubstring
             var sol = new Solution();
             var res = sol.MaxRepeating(sequence, word);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace MaximumRepeatingSubstring
             var sol = new Solution_BF();
             var res = sol.MaxRepeating(sequence, word);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace NextGreaterNumericallyBalancedNumber
             var sol = new Solution();
             var res = sol.NextBeautifulNumber(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

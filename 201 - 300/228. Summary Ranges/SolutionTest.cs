@@ -30,7 +30,7 @@ namespace SummaryRanges
             var sol = new Solution();
             var res = sol.SummaryRanges(nums);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

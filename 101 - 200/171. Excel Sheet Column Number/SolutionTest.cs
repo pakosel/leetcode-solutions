@@ -25,7 +25,7 @@ namespace ExcelSheetColumnNumber
             var sol = new Solution();
             var res = sol.TitleToNumber(columnTitle);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

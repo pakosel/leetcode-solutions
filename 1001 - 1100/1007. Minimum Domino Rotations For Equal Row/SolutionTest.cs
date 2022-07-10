@@ -27,7 +27,7 @@ namespace MinimumDominoRotationsForEqualRow
             var sol = new Solution();
             var res = sol.MinDominoRotations(tops, bottoms);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

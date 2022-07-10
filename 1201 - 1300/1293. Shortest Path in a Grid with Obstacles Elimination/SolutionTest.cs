@@ -46,7 +46,7 @@ namespace ShortestPathInGridWithObstacles
             var sol = new Solution();
             var res = sol.ShortestPath(grid, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

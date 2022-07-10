@@ -44,7 +44,7 @@ namespace StoneGameIV
             var sol = new Solution();
             var res = sol.WinnerSquareGame(n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

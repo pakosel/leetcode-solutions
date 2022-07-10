@@ -29,7 +29,7 @@ namespace FindThreeConsecutiveIntegersThatSumToGivenNumber
             var sol = new Solution();
             var res = sol.SumOfThree(num);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

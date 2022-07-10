@@ -26,7 +26,7 @@ namespace TwoCityScheduling
             var sol = new Solution();
             var res = sol.TwoCitySchedCost(costs);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

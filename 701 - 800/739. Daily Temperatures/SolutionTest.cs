@@ -26,7 +26,7 @@ namespace DailyTemperatures
             var res = sol.DailyTemperatures(temperatures);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

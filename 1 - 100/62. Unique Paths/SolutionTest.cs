@@ -33,7 +33,7 @@ namespace UniquePaths
             var sol = new Solution();
             var res = sol.UniquePaths(m, n);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

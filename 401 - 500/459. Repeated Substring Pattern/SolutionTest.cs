@@ -29,7 +29,7 @@ namespace RepeatedSubstringPattern
             var sol = new Solution();
             var res = sol.RepeatedSubstringPattern(input);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace ExecutionOfAllSuffixInstructionsStayingInGrid
             var sol = new Solution();
             var res = sol.ExecuteInstructions(n, startPos, s);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

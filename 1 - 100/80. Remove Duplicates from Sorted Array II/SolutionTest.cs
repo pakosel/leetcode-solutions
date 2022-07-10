@@ -27,7 +27,7 @@ namespace RemoveDuplicatesFromSortedArrayII
             var sol = new Solution();
             var res = sol.RemoveDuplicates(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
             
             var targetNums = ArrayHelper.ArrayFromString<int>(arrStrOut);
             CollectionAssert.AreEquivalent(targetNums, nums.Take(expected));

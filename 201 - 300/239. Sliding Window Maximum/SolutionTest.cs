@@ -28,7 +28,7 @@ namespace SlidingWindowMaximum
             var sol = new Solution();
             var res = sol.MaxSlidingWindow(nums, k);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

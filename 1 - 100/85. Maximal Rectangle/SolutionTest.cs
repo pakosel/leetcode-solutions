@@ -28,7 +28,7 @@ namespace MaximalRectangle
             var sol = new Solution();
             var res = sol.MaximalRectangle(matrix);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

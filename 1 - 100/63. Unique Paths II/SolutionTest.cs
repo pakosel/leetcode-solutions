@@ -33,7 +33,7 @@ namespace UniquePathsII
             var sol = new Solution_Backtrack();
             var res = sol.UniquePathsWithObstacles(grid);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace UniquePathsII
             var sol = new Solution();
             var res = sol.UniquePathsWithObstacles(grid);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

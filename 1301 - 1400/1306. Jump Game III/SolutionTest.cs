@@ -30,7 +30,7 @@ namespace JumpGameIII
             var sol = new Solution();
             var res = sol.CanReach(arr, start);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

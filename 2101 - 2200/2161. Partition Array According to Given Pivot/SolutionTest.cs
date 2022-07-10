@@ -25,7 +25,7 @@ namespace PartitionArrayAccordingToGivenPivot
             var sol = new Solution();
             var res = sol.PivotArray(nums, pivot);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

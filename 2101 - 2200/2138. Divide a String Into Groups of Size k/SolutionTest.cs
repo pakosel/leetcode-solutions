@@ -23,7 +23,7 @@ namespace DivideStringIntoGroupsOfSizek
             var sol = new Solution();
             var res = sol.DivideString(s, k, fill);
 
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

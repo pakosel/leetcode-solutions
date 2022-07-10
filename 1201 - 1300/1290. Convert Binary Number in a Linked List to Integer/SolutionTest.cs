@@ -38,7 +38,7 @@ namespace ConvertBinaryNumberInLinkedList
             var sol = new Solution();
             var res = sol.GetDecimalValue(head);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

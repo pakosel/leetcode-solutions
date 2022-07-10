@@ -23,7 +23,7 @@ namespace FindTheDifference
             var sol = new Solution();
             var res = sol.FindTheDifference(s, t);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

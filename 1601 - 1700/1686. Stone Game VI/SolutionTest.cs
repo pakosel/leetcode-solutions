@@ -29,7 +29,7 @@ namespace StoneGameVI
             var sol = new Solution();
             var res = sol.StoneGameVI(aliceVal, bobVal);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

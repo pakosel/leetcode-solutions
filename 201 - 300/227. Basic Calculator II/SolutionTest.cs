@@ -29,7 +29,7 @@ namespace BasicCalculatorII
             var sol = new Solution();
             var res = sol.Calculate(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

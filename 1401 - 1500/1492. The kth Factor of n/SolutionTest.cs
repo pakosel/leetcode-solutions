@@ -25,7 +25,7 @@ namespace ThekthFactorOfN
             var sol = new Solution();
             var res = sol.KthFactor(n, k);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

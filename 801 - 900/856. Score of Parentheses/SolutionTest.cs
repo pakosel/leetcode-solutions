@@ -27,7 +27,7 @@ namespace ScoreOfParentheses
             var sol = new Solution();
             var res = sol.ScoreOfParentheses(s);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

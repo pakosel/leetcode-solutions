@@ -27,7 +27,7 @@ namespace MinimumAverageDifference
             var sol = new Solution();
             var res = sol.MinimumAverageDifference(nums);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

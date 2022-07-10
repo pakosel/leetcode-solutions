@@ -24,7 +24,7 @@ namespace NumberOfPairsOfInterchangeableRectangles
             var sol = new Solution();
             var res = sol.InterchangeableRectangles(rectangles);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }
