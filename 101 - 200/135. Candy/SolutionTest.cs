@@ -30,7 +30,7 @@ namespace Candy
             var sol = new Solution();
             var res = sol.Candy(ratings);
 
-            Assert.AreEqual(res, expected);
+            Assert.AreEqual(expected, res);
         }
     }
 }

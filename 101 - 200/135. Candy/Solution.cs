@@ -10,36 +10,35 @@ namespace Candy
         public int Candy(int[] ratings)
         {
             int len = ratings.Length;
-            int[] candies = new int[len];
-            var minHeap = new SortedSet<int>(new RatingsComparer() { ratings = ratings });
+            var arr = new int[len];
+            var res = 0;
+            var pq = new PriorityQueue<int, int>();
+            var pq2 = new PriorityQueue<int, int>();    //all indexes with the same rating
+            
+            for(int i=0; i<len; i++)
+                pq.Enqueue(i, ratings[i]);      //process with increasing ratings
 
-            var i=0;
-            while(i < len)
-                minHeap.Add(i++);
-
-            while (minHeap.Count > 0)
+            while(pq.Count > 0)
             {
-                var minIndex = minHeap.Min;
-                var min = ratings[minIndex];
-                var leftCandy = minIndex > 0 ? candies[minIndex - 1] : 0;
-                var rightCandy = minIndex < len - 1 ? candies[minIndex + 1] : 0;
-                var minCandy = 1;
-                if (leftCandy > 0 && ratings[minIndex - 1] < ratings[minIndex])
-                    minCandy = leftCandy + 1;
-                if (rightCandy > 0)
-                    minCandy = Math.Max(minCandy, rightCandy + 1); //no need to check ratings for the right side because comparer sorts by INDEX
-                candies[minIndex] = minCandy;
-                minHeap.Remove(minIndex);
+                var peekRating = ratings[pq.Peek()];
+                while(pq.Count > 0 && ratings[pq.Peek()] == peekRating)
+                {
+                    var idx = pq.Dequeue();
+                    pq2.Enqueue(idx, Math.Max(idx > 0 ? arr[idx-1] : 0, idx < len - 1 ? arr[idx+1] : 0));
+                }
+
+                while(pq2.Count > 0)
+                {
+                    var idx = pq2.Dequeue();
+                    var left = idx > 0 ? (ratings[idx-1] < ratings[idx] ? arr[idx-1] + 1 : arr[idx-1]) : 0;
+                    var right = idx < len-1 ? (ratings[idx+1] < ratings[idx] ? arr[idx+1] + 1 : arr[idx+1]) : 0;
+                    arr[idx] = Math.Max(left, right);
+                    if(arr[idx] == 0)
+                        arr[idx] = 1;   //at least one candy for everyone
+                    res += arr[idx];
+                }
             }
-
-            return candies.Sum();
-        }
-
-        private struct RatingsComparer : IComparer<int>
-        {
-            public int[] ratings;
-
-            public int Compare(int idx1, int idx2) => ratings[idx1] != ratings[idx2] ? ratings[idx1].CompareTo(ratings[idx2]) : idx1.CompareTo(idx2);
+            return res;
         }
     }
 }
