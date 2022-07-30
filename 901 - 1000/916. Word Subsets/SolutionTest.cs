@@ -28,5 +28,19 @@ namespace WordSubsets
 
             CollectionAssert.AreEqual(expected, res);
         }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_TLE(string words1Str, string words2Str, string expectedStr)
+        {
+            var words1 = ArrayHelper.ArrayFromString<string>(words1Str);
+            var words2 = ArrayHelper.ArrayFromString<string>(words2Str);
+            var expected = ArrayHelper.ArrayFromString<string>(expectedStr);
+
+            var sol = new Solution_TLE();
+            var res = sol.WordSubsets(words1, words2);
+
+            CollectionAssert.AreEqual(expected, res);
+        }
     }
 }
