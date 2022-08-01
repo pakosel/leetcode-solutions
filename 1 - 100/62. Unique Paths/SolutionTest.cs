@@ -35,5 +35,15 @@ namespace UniquePaths
 
             Assert.AreEqual(expected, res);
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_2021(int m, int n, int expected)
+        {
+            var sol = new Solution_2021();
+            var res = sol.UniquePaths(m, n);
+
+            Assert.AreEqual(expected, res);
+        }
     }
 }
