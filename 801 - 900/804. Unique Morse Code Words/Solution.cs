@@ -5,9 +5,31 @@ using System.Text;
 
 namespace UniqueMorseCodeWords
 {
+    public class Solution_2022
+    {
+        public int UniqueMorseRepresentations(string[] words)
+        {
+            var codes = new string[] { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+
+            var set = new HashSet<string>();
+
+            foreach (var w in words)
+                set.Add(Encode(w));
+            return set.Count;
+
+            string Encode(string word)
+            {
+                var sb = new StringBuilder();
+                foreach (var c in word)
+                    sb.Append(codes[c - 'a']);
+                return sb.ToString();
+            }
+        }
+    }
+    
     public class Solution
     {
-        private string[] letters = new string[] {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        private string[] letters = new string[] { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
         public int UniqueMorseRepresentations(string[] words)
         {
             HashSet<string> transform = new HashSet<string>();

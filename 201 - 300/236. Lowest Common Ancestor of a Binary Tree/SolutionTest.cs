@@ -21,6 +21,18 @@ namespace LowestCommonAncestorOfBinaryTree
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic(string treeStr, int p, int q, int expected)
+        {
+            var root = TreeNodeHelper.BuildTree(treeStr);
+
+            var sol = new Solution();
+            var res = sol.LowestCommonAncestor(root, TreeNodeHelper.FindNodeWithVal(root, p), TreeNodeHelper.FindNodeWithVal(root, q));
+
+            Assert.AreEqual(res.val, expected);
+        }
+        
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Stack(string treeStr, int p, int q, int expected)
         {
             var head = TreeNodeHelper.BuildTree(treeStr);

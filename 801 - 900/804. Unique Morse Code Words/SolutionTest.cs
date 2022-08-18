@@ -19,7 +19,17 @@ namespace UniqueMorseCodeWords
 
         [Test]
         [TestCaseSource("testCasesStr")]
-        public void Test_Memoization(string[] words, int expected)
+        public void Test_2022(string[] words, int expected)
+        {
+            var sol = new Solution_2022();
+            var res = sol.UniqueMorseRepresentations(words);
+
+            Assert.AreEqual(expected, res);
+        }
+        
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_Generic(string[] words, int expected)
         {
             var sol = new Solution();
             var res = sol.UniqueMorseRepresentations(words);
