@@ -6,6 +6,22 @@ using Common;
 
 namespace PowerOfFour
 {
+    public class Solution_2022
+    {
+        public bool IsPowerOfFour(int n)
+        {
+            var zeros = 0;
+            while (n > 0 && (n & 1) == 0)
+            {
+                zeros++;
+                n >>= 1;
+            }
+            if (zeros % 2 == 0 && n == 1)
+                return true;
+            return false;
+        }
+    }
+    
     public class Solution
     {
         public bool IsPowerOfFour(int n)

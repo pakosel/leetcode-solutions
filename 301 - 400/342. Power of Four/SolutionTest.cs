@@ -22,11 +22,23 @@ namespace PowerOfFour
             new object[] {8, false },
             new object[] {16, true },
             new object[] {-16, false },
+            new object[] {-2147483648, false },
+            new object[] {2147483647, false },
         };
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Stack(int n, bool expected)
+        public void Test_Generic22(int n, bool expected)
+        {
+            var sol = new Solution_2022();
+            var res = sol.IsPowerOfFour(n);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic(int n, bool expected)
         {
             var sol = new Solution();
             var res = sol.IsPowerOfFour(n);
