@@ -2,10 +2,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using Common;
 
 namespace BinaryTreeInorderTraversal
 {
     public class Solution
+    {
+        public IList<int> InorderTraversal(TreeNode root)
+        {
+            var res = new List<int>(100);
+            if (root == null)
+                return res;
+            Add(root);
+
+            void Add(TreeNode node)
+            {
+                if (node.left != null)
+                    Add(node.left);
+                res.Add(node.val);
+                if (node.right != null)
+                    Add(node.right);
+            }
+
+            return res;
+        }
+    }
+
+    public class Solution_2020
     {
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
@@ -32,18 +55,6 @@ namespace BinaryTreeInorderTraversal
                 stack.Push(node);
                 node = node.left;
             }
-        }
-    }
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
         }
     }
 }
