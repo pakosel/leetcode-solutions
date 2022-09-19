@@ -29,7 +29,7 @@ namespace SmallestSubarraysWithMaximumBitwiseOR
                 var max = 1;
                 for (int j = 0; j < bits.Length; j++)
                 {
-                    while (bits[j].Count > 0 && bits[j].Peek() < i)
+                    while (bits[j].TryPeek(out var idx) && idx < i)
                         bits[j].Dequeue();
                     if (bits[j].Count > 0)
                         max = Math.Max(max, bits[j].Peek() - i + 1);
