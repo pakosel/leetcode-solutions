@@ -6,6 +6,34 @@ using Common;
 
 namespace PathSumII
 {
+    public class Solution_2022
+    {
+        public IList<IList<int>> PathSum(TreeNode root, int targetSum)
+        {
+            var res = new List<IList<int>>();
+            if (root != null)
+                Dfs(new List<int>(5000), root);
+
+            return res;
+
+            void Dfs(List<int> visited, TreeNode root)
+            {
+                visited.Add(root.val);
+                if (root.left == null && root.right == null)
+                {
+                    if (visited.Sum() == targetSum)
+                        res.Add(visited);
+                }
+                else
+                {
+                    if (root.left != null)
+                        Dfs(new List<int>(visited), root.left);
+                    if (root.right != null)
+                        Dfs(new List<int>(visited), root.right);
+                }
+            }
+        }
+    }
     public class Solution
     {
         public IList<IList<int>> PathSum(TreeNode root, int targetSum)

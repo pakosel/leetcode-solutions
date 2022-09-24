@@ -21,6 +21,19 @@ namespace PathSumII
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic_2022(string strArray, int target, string expectedStr)
+        {
+            var root = TreeNodeHelper.BuildTree(strArray);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
+
+            var sol = new Solution_2022();
+            var res = sol.PathSum(root, target);
+
+            CollectionAssert.AreEqual(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string strArray, int target, string expectedStr)
         {
             var root = TreeNodeHelper.BuildTree(strArray);
@@ -30,7 +43,7 @@ namespace PathSumII
 
             var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            CollectionAssert.AreEqual(res, expected);
         }
     }
 }
