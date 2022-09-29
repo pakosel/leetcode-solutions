@@ -2,9 +2,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using Common;
 
 namespace RemoveNthNodeFromEndOfList
 {
+    //one-pass solution
+    public class Solution_2022
+    {
+        public ListNode RemoveNthFromEnd(ListNode head, int n)
+        {
+            var q = new Queue<ListNode>();
+            var curr = head;
+            while (curr != null)
+            {
+                q.Enqueue(curr);
+                if (q.Count > n + 1)
+                    q.Dequeue();
+                curr = curr.next;
+            }
+            if (q.Count < n + 1)
+                return head?.next;
+            var prev = q.Dequeue();
+            var toDel = q.Dequeue();
+            prev.next = toDel.next;
+
+            return head;
+        }
+    }
     public class Solution
     {
         public ListNode RemoveNthFromEnd(ListNode head, int n)
@@ -28,17 +52,6 @@ namespace RemoveNthNodeFromEndOfList
             prevToRemove.next = prevToRemove.next.next;
 
             return head;
-        }
-    }
-
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
         }
     }
 }
