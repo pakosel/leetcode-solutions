@@ -11,18 +11,34 @@ namespace GroupAnagrams
     {
         private static readonly object[] testCasesStr =
         {
-            new object[] {new string [] {""}, new List<IList<string>> {new string [] {""}}},
-            new object[] {new string [] {"a"}, new List<IList<string>> {new string [] {"a"}}},
-            new object[] {new string [] {"eat","tea","tan","ate","nat","bat"}, new List<IList<string>> {new string [] {"bat"},new string [] {"tan","nat"},new string [] {"eat","tea","ate"}}},
-            new object[] {new string [] {"ac","d"}, new List<IList<string>> {new string [] {"ac"},new string [] {"d"}}},
-            new object[] {new string [] {"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}, new List<IList<string>> {new string [] {"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},new string [] {"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}},
-            
+            new object[] {"[]", "[[]]"},
+            new object[] {"[a]", "[[a]]"},
+            new object[] {"[eat,tea,tan,ate,nat,bat]", "[[eat,tea,ate],[tan,nat],[bat]]"},
+            new object[] {"[ac,d]", "[[ac],[d]]"},
+            new object[] {"[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]", "[[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa],[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]]"},
+            new object[] {"[eat,tea,tan,ate,nat,bat,ac,bd,aac,bbd,aacc,bbdd,acc,bdd]", "[[eat,tea,ate],[tan,nat],[bat],[ac],[bd],[aac],[bbd],[aacc],[bbdd],[acc],[bdd]]"},
         };
 
         [Test]
         [TestCaseSource("testCasesStr")]
-        public void Test_Generic(string[] arr, IList<IList<string>> expected)
+        public void Test_Generic2022(string arrStr, string expectedStr)
         {
+            var arr = ArrayHelper.ArrayFromString<string>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<string>(expectedStr);
+
+            var sol = new Solution_2022();
+            var res = sol.GroupAnagrams(arr);
+
+            CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_Generic(string arrStr, string expectedStr)
+        {
+            var arr = ArrayHelper.ArrayFromString<string>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<string>(expectedStr);
+
             var sol = new Solution();
             var res = sol.GroupAnagrams(arr);
 
@@ -31,8 +47,11 @@ namespace GroupAnagrams
 
         [Test]
         [TestCaseSource("testCasesStr")]
-        public void Test_Slow(string[] arr, IList<IList<string>> expected)
+        public void Test_Slow(string arrStr, string expectedStr)
         {
+            var arr = ArrayHelper.ArrayFromString<string>(arrStr);
+            var expected = ArrayHelper.MatrixFromString<string>(expectedStr);
+
             var sol = new Solution_Slow();
             var res = sol.GroupAnagrams(arr);
 
