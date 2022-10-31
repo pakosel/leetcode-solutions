@@ -2,6 +2,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace ToeplitzMatrix
 
@@ -21,18 +22,21 @@ namespace ToeplitzMatrix
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_GenericStr(string matrixStr, bool expected)
+        public void Test_Generic2022(string matrixStr, bool expected)
         {
-            int[][] matrix;
-            var arr = matrixStr.TrimStart('[').TrimEnd(']').Split("],[");
-            matrix = new int[arr.Length][];
-            for(int i=0; i<arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                matrix[i] = new int[innerArr.Length];
-                for(int j=0; j<innerArr.Length; j++)
-                    matrix[i][j] = int.Parse(innerArr[j]);
-            }
+            var matrix = ArrayHelper.MatrixFromString<int>(matrixStr);
+
+            var sol = new Solution_2022();
+            var res = sol.IsToeplitzMatrix(matrix);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic(string matrixStr, bool expected)
+        {
+            var matrix = ArrayHelper.MatrixFromString<int>(matrixStr);
 
             var sol = new Solution();
             var res = sol.IsToeplitzMatrix(matrix);
