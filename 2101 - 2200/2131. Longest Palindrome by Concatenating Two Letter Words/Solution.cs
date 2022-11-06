@@ -6,6 +6,57 @@ using Common;
 
 namespace LongestPalindromeByConcatenatingTwoLetterWords
 {
+    public class Solution2022
+    {
+        public int LongestPalindrome(string[] words)
+        {
+            var sb = new StringBuilder();
+            var dict = new Dictionary<string, int>();
+            var rev = new Dictionary<string, string>();
+            foreach (var w in words)
+                if (w[0] != w[1] && !rev.ContainsKey(w))
+                    rev.Add(w, Rev(w));
+
+            foreach (var w in words)
+                if (dict.ContainsKey(w))
+                    dict[w]++;
+                else
+                    dict.Add(w, 1);
+            var res = 0;
+            
+            var hadSingle = false;
+            foreach (var w in words)
+                if (w[0] == w[1])
+                {
+                    var cnt = 2 * (dict[w] / 2);
+                    res += 2 * cnt;
+                    dict[w] -= cnt;
+                    if (dict[w] > 0)
+                        hadSingle = true;
+                }
+                else if (dict.ContainsKey(w) && dict.ContainsKey(rev[w]) && dict[w] > 0 && dict[rev[w]] > 0)
+                {
+                    var min = Math.Min(dict[w], dict[rev[w]]);
+                    res += 4 * min;
+                    dict[w] -= min;
+                    dict[rev[w]] -= min;
+                }
+
+            if (hadSingle)
+                res += 2;
+
+            return res;
+
+            string Rev(string s)
+            {
+                sb.Clear();
+                sb.Append(s[1]);
+                sb.Append(s[0]);
+                return sb.ToString();
+            }
+        }
+    }
+
     public class Solution
     {
         public int LongestPalindrome(string[] words)
