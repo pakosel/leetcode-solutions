@@ -8,30 +8,24 @@ namespace OnlineStockSpan
 {
     public class StockSpanner
     {
-        int count;
-        List<(int, int)> prices;
-
+        List<(int price, int cnt)> list;
         public StockSpanner()
         {
-            count = 0;
-            prices = new List<(int, int)>();
+            list = new List<(int price, int cnt)>();
         }
 
         public int Next(int price)
         {
-            int i = count;
-            int val = 1;
-            while (i > 0)
-                if (prices[i - 1].Item1 <= price)
-                {
-                    val += prices[i - 1].Item2;
-                    i -= prices[i - 1].Item2;
-                }
-                else
-                    break;
-            prices.Add((price, val));
-            count++;
-            return val;
+            var pos = list.Count - 1;
+            var res = 1;
+            while (pos >= 0 && list[pos].price <= price)
+            {
+                res += list[pos].cnt;
+                pos -= list[pos].cnt;
+            }
+            list.Add((price, res));
+
+            return res;
         }
     }
 }
