@@ -18,6 +18,16 @@ namespace ValidSudoku
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic2022(char[][] board, bool expected)
+        {
+            var sol = new Solution_2022();
+            var res = sol.IsValidSudoku(board);
+
+            Assert.AreEqual(expected, res);
+        }
+        
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(char[][] board, bool expected)
         {
             var sol = new Solution();

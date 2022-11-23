@@ -6,6 +6,53 @@ using Common;
 
 namespace ValidSudoku
 {
+    public class Solution_2022
+    {
+        public bool IsValidSudoku(char[][] board)
+        {
+            //validate rows
+            foreach (var row in board)
+                if (!Validate(row))
+                    return false;
+            
+            //validate cols
+            for (int i = 0; i < 9; i++)
+            {
+                var col = new List<char>();
+                foreach (var row in board)
+                    col.Add(row[i]);
+                if (!Validate(col))
+                    return false;
+            }
+
+            //validate boxes
+            for (int r = 0; r < 9; r += 3)
+                for (int c = 0; c < 9; c += 3)
+                {
+                    var box = new List<char>();
+                    for (int rr = 0; rr < 3; rr++)
+                        for (int cc = 0; cc < 3; cc++)
+                            box.Add(board[r + rr][c + cc]);
+                    if (!Validate(box))
+                        return false;
+                }
+
+            return true;
+
+            bool Validate(IList<char> arr)
+            {
+                var set = new HashSet<char>(9);
+                foreach (var c in arr)
+                    if (c == '.')
+                        continue;
+                    else if (!set.Contains(c))
+                        set.Add(c);
+                    else
+                        return false;
+                return true;
+            }
+        }
+    }
     public class Solution
     {
         int[][] sudoku = null;
