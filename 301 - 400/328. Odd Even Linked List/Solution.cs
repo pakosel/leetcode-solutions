@@ -10,29 +10,19 @@ namespace OddEvenLinkedList
     {
         public ListNode OddEvenList(ListNode head)
         {
-            var queue = new Queue<int>();
-            var node = head;
-            var isEven = true;
-            while (node?.next != null)
+            if (head == null)
+                return head;
+            var lastOdd = head;
+            var firstEven = head.next;
+            var even = lastOdd.next;
+            while (even != null && even.next != null)
             {
-                if (isEven)
-                {
-                    queue.Enqueue(node.next.val);
-                    node.next = node.next.next;
-                }
-                else
-                {
-                    if (node.next != null)
-                        node = node.next;
-                    else
-                        break;
-                }
-                isEven = !isEven;
-            }
-            while (queue.Count > 0)
-            {
-                node.next = new ListNode(queue.Dequeue());
-                node = node.next;
+                var temp = even.next?.next;
+                lastOdd.next = even.next;
+                even.next = temp;
+                lastOdd = lastOdd.next;
+                lastOdd.next = firstEven;
+                even = even.next;
             }
             return head;
         }
