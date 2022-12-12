@@ -5,6 +5,20 @@ using System.Text;
 
 namespace ClimbingStairs
 {
+    public class Solution_2022
+    {
+        public int ClimbStairs(int n)
+        {
+            if (n < 3)
+                return n;
+            var prev1 = 2;
+            var prev2 = 1;
+            for (int i = 3; i <= n; i++)
+                (prev2, prev1) = (prev1, prev1 + prev2);
+            return prev1;
+        }
+    }
+
     public class Solution
     {
         public int ClimbStairs(int n)
