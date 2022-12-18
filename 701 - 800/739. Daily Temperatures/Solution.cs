@@ -5,6 +5,27 @@ using System.Text;
 
 namespace DailyTemperatures
 {
+    public class Solution_2022
+    {
+        public int[] DailyTemperatures(int[] temp)
+        {
+            var len = temp.Length;
+            var res = new int[len];
+            var stack = new Stack<int>();
+            var idx = len - 1;
+            stack.Push(idx);
+            res[idx] = 0;
+            while (--idx >= 0)
+            {
+                while (stack.Count > 0 && temp[stack.Peek()] <= temp[idx])
+                    stack.Pop();
+                if (stack.Count > 0)
+                    res[idx] = stack.Peek() - idx;
+                stack.Push(idx);
+            }
+            return res;
+        }
+    }
     public class Solution
     {
         const int T_MIN = 30;
