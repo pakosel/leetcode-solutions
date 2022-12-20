@@ -19,6 +19,18 @@ namespace KeysAndRooms
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_2022(string matrixStr, bool expected)
+        {
+            var rooms = ArrayHelper.MatrixFromString<int>(matrixStr);
+            
+            var sol = new Solution_2022();
+            var res = sol.CanVisitAllRooms(rooms);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_GenericStr(string matrixStr, bool expected)
         {
             var rooms = ArrayHelper.MatrixFromString<int>(matrixStr);
