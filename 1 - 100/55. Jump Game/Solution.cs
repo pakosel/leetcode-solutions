@@ -4,6 +4,23 @@ using System;
 
 namespace JumpGame
 {
+    public class Solution_2022
+    {
+        public bool CanJump(int[] nums)
+        {
+            var len = nums.Length;
+            var res = new bool[len];
+            res[len - 1] = true;
+            for (int i = len - 2; i >= 0; i--)
+            {
+                var idx = i + 1;
+                while (idx < len && idx <= nums[i] + i && !res[i])
+                    res[i] |= res[idx++];
+            }
+            return res[0];
+        }
+    }
+    
     public class Solution
     {
         public bool CanJump(int[] nums)

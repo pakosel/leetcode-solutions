@@ -20,6 +20,18 @@ namespace JumpGame
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_2022(string numsStr, bool expected)
+        {
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+
+            var sol = new Solution_2022();
+            var res = sol.CanJump(nums);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string numsStr, bool expected)
         {
             var nums = ArrayHelper.ArrayFromString<int>(numsStr);
