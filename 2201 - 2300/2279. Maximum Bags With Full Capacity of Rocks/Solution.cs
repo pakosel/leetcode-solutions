@@ -15,16 +15,14 @@ namespace MaximumBagsWithFullCapacityOfRocks
                 capacity[i] -= rocks[i];
             Array.Sort(capacity);
             var res = 0;
-            foreach (var c in capacity)
-            {
-                if (additionalRocks <= 0 && c > 0)
-                    break;
-                if (c <= additionalRocks)
+            for (int i = 0; i < len; i++)
+                if (additionalRocks >= capacity[res])
                 {
-                    additionalRocks -= c;
+                    additionalRocks -= capacity[res];
                     res++;
                 }
-            }
+                else
+                    break;
             return res;
         }
     }
