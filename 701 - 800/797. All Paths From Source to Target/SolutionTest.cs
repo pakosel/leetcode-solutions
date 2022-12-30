@@ -21,6 +21,19 @@ namespace AllPathsFromSourceToTarget
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_2022(string graphStr, string expectedArr)
+        {
+            var graph = ArrayHelper.MatrixFromString<int>(graphStr);
+
+            var sol = new Solution_2022();
+            var res = sol.AllPathsSourceTarget(graph);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedArr);
+
+            CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_GenericStr(string graphStr, string expectedArr)
         {
             var graph = ArrayHelper.MatrixFromString<int>(graphStr);
