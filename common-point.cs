@@ -17,11 +17,11 @@ namespace Common
 
         public static Point operator +(Point p1, Point p2) => new(p1.X + p2.X, p1.Y + p2.Y);
         public static Point operator -(Point p1, Point p2) => new(p1.X - p2.X, p1.Y - p2.Y);
-        public static bool operator ==(Point p1, Point p2) => p1.Equals(p2);
-        public static bool operator !=(Point p1, Point p2) => !p1.Equals(p2);
+        public static bool operator ==(Point p1, Point p2) => p1.X == p2.X && p1.Y == p2.Y;
+        public static bool operator !=(Point p1, Point p2) => !(p1 == p2);
 
         public override bool Equals(object p) => p is Point && ((Point)p).X == X && ((Point)p).Y == Y;
 
-        public override int GetHashCode() => X.GetHashCode() * 3 + Y.GetHashCode();
+        public override int GetHashCode() => X ^ Y;
     }
 }
