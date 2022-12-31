@@ -22,6 +22,6 @@ namespace Common
 
         public override bool Equals(object p) => p is Point && ((Point)p).X == X && ((Point)p).Y == Y;
 
-        public override int GetHashCode() => X ^ Y;
+        public override int GetHashCode() => HashCode.Combine(X, Y);
     }
 }
