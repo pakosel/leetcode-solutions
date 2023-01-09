@@ -2,6 +2,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace BinaryTreePreorderTraversal
 {
@@ -10,43 +11,60 @@ namespace BinaryTreePreorderTraversal
     {
         private static readonly object[] testCases =
         {
-            //[1,null,2,3]
-            new object[] {new TreeNode(1, null, new TreeNode(2, new TreeNode(3))), new int[] {1,2,3}},
-            //[1,4,3,2]
-            new object[] {new TreeNode(1, new TreeNode(4, new TreeNode(2)), new TreeNode(3)), new int[] {1,4,2,3}},
-            //[7,5,9,4,6,8,10]
-            new object[] {new TreeNode(7, new TreeNode(5, new TreeNode(4), new TreeNode(6)), new TreeNode(9, new TreeNode(8), new TreeNode(10))), new int[] {7,5,4,6,9,8,10}},
-            new object[] {new TreeNode(15, new TreeNode(12, new TreeNode(10, new TreeNode(5, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(7, new TreeNode(6), new TreeNode(8))), new TreeNode(11)), new TreeNode(13, null, new TreeNode(14))), new TreeNode(20, new TreeNode(18))), new int[] { 15,12,10,5,3,2,4,7,6,8,11,13,14,20,18} },
+            new object[] {"[]", "[]"},
+            new object[] {"[1]", "[1]"},
+            new object[] {"[1,2,3]", "[1,2,3]"},
+            new object[] {"[1,null,2,null,3]", "[1,2,3]"},
+            new object[] {"[1,2,null,3,null,4]", "[1,2,3,4]"},
+            new object[] {"[1,null,2,3]", "[1,2,3]"},
+            new object[] {"[1,4,3,2]", "[1,4,2,3]"},
+            new object[] {"[7,5,9,4,6,8,10]", "[7,5,4,6,9,8,10]"},
         };
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_PreorderTraversal(TreeNode root, IList<int> expected)
+        public void Test_2022(string treeStr, string expectedStr)
         {
-            var sol = new Solution();
-            var ret = sol.PreorderTraversal(root);
+            var root = TreeNodeHelper.BuildTree(treeStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            Assert.AreEqual(ret, expected);
+            var sol = new Solution_2022();
+            var res = sol.PreorderTraversal(root);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_PreorderTraversal(string treeStr, string expectedStr)
+        {
+            var root = TreeNodeHelper.BuildTree(treeStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
+
+            var sol = new Solution();
+            var res = sol.PreorderTraversal(root);
+
+            Assert.AreEqual(expected, res);
         }
 
         private static readonly object[] testCases_bfs =
-                {
-            //[1,null,2,3]
-            new object[] {new TreeNode(1, null, new TreeNode(2, new TreeNode(3))), new int[] {1,2,3}},
-            //[1,4,3,2]
-            new object[] {new TreeNode(1, new TreeNode(4, new TreeNode(2)), new TreeNode(3)), new int[] {1,4,3,2}},
-            //[7,5,9,4,6,8,10]
-            new object[] {new TreeNode(7, new TreeNode(5, new TreeNode(4), new TreeNode(6)), new TreeNode(9, new TreeNode(8), new TreeNode(10))), new int[] {7,5,9,4,6,8,10}},
+        {
+            new object[] {"[1,null,2,3]", "[1,2,3]"},
+            new object[] {"[1,4,3,2]", "[1,4,3,2]"},
+            new object[] {"[7,5,9,4,6,8,10]", "[7,5,9,4,6,8,10]"},
         };
 
         [Test]
         [TestCaseSource("testCases_bfs")]
-        public void Test_BfsTraversal(TreeNode root, IList<int> expected)
+        public void Test_BfsTraversal(string treeStr, string expectedStr)
         {
-            var sol = new Solution();
-            var ret = sol.BfsTraversal(root);
+            var root = TreeNodeHelper.BuildTree(treeStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            Assert.AreEqual(ret, expected);
+            var sol = new Solution();
+            var res = sol.BfsTraversal(root);
+
+            Assert.AreEqual(expected, res);
         }
     }
 }

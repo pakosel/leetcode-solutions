@@ -2,9 +2,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using Common;
 
 namespace BinaryTreePreorderTraversal
 {
+    public class Solution_2022
+    {
+        public IList<int> PreorderTraversal(TreeNode root)
+        {
+            var res = new List<int>();
+            Traverse(root);
+
+            return res;
+
+            void Traverse(TreeNode node)
+            {
+                if (node == null)
+                    return;
+                res.Add(node.val);
+                Traverse(node.left);
+                Traverse(node.right);
+            }
+        }
+    }
+
     public class Solution
     {
         public IList<int> PreorderTraversal(TreeNode root)
@@ -34,7 +55,7 @@ namespace BinaryTreePreorderTraversal
             var queue = new Queue<TreeNode>();
             if (root == null)
                 return res;
-                
+
             queue.Enqueue(root);
             while (queue.Count() > 0)
             {
@@ -47,19 +68,6 @@ namespace BinaryTreePreorderTraversal
             }
 
             return res;
-        }
-    }
-
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
         }
     }
 }
