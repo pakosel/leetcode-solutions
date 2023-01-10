@@ -3,6 +3,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace SymmetricTree
 {
@@ -11,21 +12,23 @@ namespace SymmetricTree
     {
         private static readonly object[] testCases =
         {
-            new object[] {null, true },
-            new object[] {new TreeNode(1), true },
-            new object[] {new TreeNode(1, new TreeNode(2), new TreeNode(2)), true },
-            new object[] {new TreeNode(1, new TreeNode(2), new TreeNode(3)), false },
-            new object[] {new TreeNode(1, null, new TreeNode(3)), false },
-            new object[] {new TreeNode(1, new TreeNode(2), null), false },
-            new object[] {new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)), new TreeNode(2, new TreeNode(4), new TreeNode(3))), true },
-            new object[] {new TreeNode(1, new TreeNode(2, null, new TreeNode(3)), new TreeNode(2, null, new TreeNode(3))), false },
-            new object[] {new TreeNode(1, new TreeNode(2, new TreeNode(2)), new TreeNode(2, new TreeNode(2))), false },
+            new object[] {"[]", true },
+            new object[] {"[1]", true },
+            new object[] {"[1,2,2]", true },
+            new object[] {"[1,2,3]", false },
+            new object[] {"[1,null,3]", false },
+            new object[] {"[1,2]", false },
+            new object[] {"[1,2,2,3,4,4,3]", true },
+            new object[] {"[1,2,2,null,3,null,3]", false },
+            new object[] {"[1,2,2,2,null,2]", false },
         };
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Queue(TreeNode root, bool expected)
+        public void Test_Queue(string rootStr, bool expected)
         {
+            var root = TreeNodeHelper.BuildTree(rootStr);
+
             var sol = new Solution_Queue();
             var res = sol.IsSymmetric(root);
 
@@ -34,8 +37,10 @@ namespace SymmetricTree
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Stack(TreeNode root, bool expected)
+        public void Test_Stack(string rootStr, bool expected)
         {
+            var root = TreeNodeHelper.BuildTree(rootStr);
+            
             var sol = new Solution_Stack();
             var res = sol.IsSymmetric(root);
 
@@ -44,8 +49,10 @@ namespace SymmetricTree
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Recursive(TreeNode root, bool expected)
+        public void Test_Recursive(string rootStr, bool expected)
         {
+            var root = TreeNodeHelper.BuildTree(rootStr);
+            
             var sol = new Solution_Recursive();
             var res = sol.IsSymmetric(root);
 
