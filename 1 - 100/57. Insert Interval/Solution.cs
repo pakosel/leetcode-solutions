@@ -4,6 +4,42 @@ using System;
 
 namespace InsertInterval
 {
+    public class Solution_2022
+    {
+        public int[][] Insert(int[][] intervals, int[] newInterval)
+        {
+            var n = intervals.Length;
+            var arr = intervals.Select(i => i[0]).ToArray();
+            var idx = Array.BinarySearch(arr, newInterval[0]);
+            if (idx < 0)
+                idx = ~idx;
+            var res = new List<int[]>(n + 1);
+            int i = 0;
+
+            //copy first intervals (if any)
+            for (i = 0; i < idx; i++)
+                res.Add(intervals[i]);
+
+            //add or merge the new interval
+            if (res.Count > 0 && res.Last()[1] >= newInterval[0])
+                res.Last()[1] = Math.Max(res.Last()[1], newInterval[1]);
+            else
+                res.Add(newInterval);
+
+            //copy or merge all the rest
+            while (i < n)
+            {
+                if (res.Last()[1] >= intervals[i][0])
+                    res.Last()[1] = Math.Max(res.Last()[1], intervals[i][1]);
+                else
+                    res.Add(intervals[i]);
+                i++;
+            }
+            
+            return res.ToArray();
+        }
+    }
+
     public class Solution
     {
         public int[][] Insert(int[][] intervals, int[] newInterval)

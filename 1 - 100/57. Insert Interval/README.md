@@ -1,8 +1,18 @@
-57. Insert Interval
+# 57. Insert Interval
 
-Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
+You are given an array of non-overlapping intervals `intervals` where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> represent the start and the end of the <code>i<sup>th</sup></code> interval and `intervals` is sorted in ascending order by <code>start<sub>i</sub></code>. You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval.
 
-You may assume that the intervals were initially sorted according to their start times.
+Insert `newInterval` into `intervals` such that `intervals` is still sorted in ascending order by <code>start<sub>i</sub></code> and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
+
+Return `intervals` after the insertion.
+
+**Constraints**:
+- <code>0 <= intervals.length <= 10<sup>4</sup></code>
+- `intervals[i].length == 2`
+- <code>0 <= start<sub>i</sub> <= end<sub>i</sub> <= 10<sup>5</sup></code>
+- `intervals` is sorted by <code>start<sub>i</sub></code> in **ascending** order.
+- `newInterval.length == 2`
+- <code>0 <= start <= end <= 10<sup>5</sup></code>
 
 ### Example 1:
 ```
