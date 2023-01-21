@@ -25,6 +25,16 @@ namespace RestoreIpAddresses
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic2022(string input, string[] expected)
+        {
+            var sol = new Solution_2022();
+            var res = sol.RestoreIpAddresses(input);
+
+            CollectionAssert.AreEquivalent(res, expected);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string input, string[] expected)
         {
             var sol = new Solution();
