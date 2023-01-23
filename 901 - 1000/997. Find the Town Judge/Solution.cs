@@ -6,6 +6,22 @@ using Common;
 
 namespace FindTheTownJudge
 {
+    public class Solution_2022
+    {
+        public int FindJudge(int n, int[][] trust)
+        {
+            if (trust.Length == 0)
+                return n == 1 ? 1 : -1;
+            var dict = trust.GroupBy(t => t[1]).ToDictionary(g => g.Key, g => g.Count());
+
+            var judges = dict.Where(kvp => kvp.Value == n - 1);
+            var res = judges.Count() == 1 ? judges.First().Key : -1;
+            if (res != -1 && trust.All(t => t[0] != res))
+                return res;
+            return -1;
+        }
+    }
+
     public class Solution
     {
         public int FindJudge(int n, int[][] trust)
