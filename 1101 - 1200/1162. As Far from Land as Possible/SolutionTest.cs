@@ -2,6 +2,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace AsFarFromLandAsPossible
 
@@ -23,43 +24,22 @@ namespace AsFarFromLandAsPossible
 
         [Test]
         [TestCaseSource("testCasesStr")]
-        public void Test_GenericStr(string gridStr, int expected)
+        public void Test_Generic2023(string gridStr, int expected)
         {
-            int[][] grid;
-            var arr = gridStr.TrimStart('[').TrimEnd(']').Split("],[");
-            grid = new int[arr.Length][];
-            for(int i=0; i<arr.Length; i++)
-            {
-                var innerArr = arr[i].TrimStart('[').TrimEnd(']').Split(',');
-                grid[i] = new int[innerArr.Length];
-                for(int j=0; j<innerArr.Length; j++)
-                    grid[i][j] = int.Parse(innerArr[j]);
-            }
-
-            var sol = new Solution();
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
+            
+            var sol = new Solution_2023();
             var res = sol.MaxDistance(grid);
 
             Assert.AreEqual(expected, res);
         }
 
-        private static readonly object[] testCases =
-        {
-            //[[0]]
-            new object[] {new int[][] {new int[] { 0 }}, -1 },
-            //[[1,0,1],[0,0,0],[1,0,1]]
-            new object[] {new int[][] {new int[] {1,0,1}, new int[] {0,0,0}, new int[] {1,0,1},}, 2 },
-            //[[1,0,0],[0,0,0],[0,0,0]]
-            new object[] {new int[][] {new int[] {1,0,0}, new int[] {0,0,0}, new int[] {0,0,0},}, 4 },
-            //[[0,0,0],[0,0,0],[0,0,0]]
-            new object[] {new int[][] {new int[] {0,0,0}, new int[] {0,0,0}, new int[] {0,0,0},}, -1 },
-            //[[0,1,0,0],[1,0,0,1],[0,0,0,1],[0,0,1,0]]
-            new object[] {new int[][] {new int[] {0,1,0,0}, new int[] {1,0,0,1}, new int[] {0,0,0,1}, new int[] {0,0,1,0},}, 2 },
-        };
-
         [Test]
-        [TestCaseSource("testCases")]
-        public void Test_Generic(int[][] grid, int expected)
+        [TestCaseSource("testCasesStr")]
+        public void Test_GenericStr(string gridStr, int expected)
         {
+            var grid = ArrayHelper.MatrixFromString<int>(gridStr);
+            
             var sol = new Solution();
             var res = sol.MaxDistance(grid);
 

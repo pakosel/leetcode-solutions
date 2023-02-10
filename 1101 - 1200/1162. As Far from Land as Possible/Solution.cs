@@ -5,6 +5,52 @@ using System.Text;
 
 namespace AsFarFromLandAsPossible
 {
+    public class Solution_2023
+    {
+        public int MaxDistance(int[][] grid)
+        {
+            const int MAX = 100_000;
+            var n = grid.Length;
+            var arr = new int[n, n];
+
+            //initialize grid
+            for (int r = 0; r < n; r++)
+                for (int c = 0; c < n; c++)
+                    if (grid[r][c] == 1)
+                        arr[r, c] = 0;
+                    else
+                        arr[r, c] = MAX;
+
+            //search from top left
+            for (int r = 0; r < n; r++)
+                for (int c = 0; c < n; c++)
+                {
+                    if (arr[r, c] == 0) continue;
+                    var left = c > 0 ? arr[r, c - 1] + 1 : MAX;
+                    var top = r > 0 ? arr[r - 1, c] + 1 : MAX;
+                    var diag = r > 0 && c > 0 ? arr[r - 1, c - 1] + 2 : MAX;
+                    arr[r, c] = Math.Min(arr[r,c], Math.Min(left, Math.Min(top, diag)));
+                }
+
+            var res = -1;
+            
+            //search from bottom right
+            for (int r = n - 1; r >= 0; r--)
+                for (int c = n - 1; c >= 0; c--)
+                {
+                    if (arr[r, c] == 0) continue;
+                    var right = c < n - 1 ? arr[r, c + 1] + 1 : MAX;
+                    var bott = r < n - 1 ? arr[r + 1, c] + 1 : MAX;
+                    var diag = r < n - 1 && c < n - 1 ? arr[r + 1, c + 1] + 2 : MAX;
+                    arr[r, c] = Math.Min(arr[r, c], Math.Min(right, Math.Min(bott, diag)));
+                    if (arr[r, c] == MAX) continue;
+                    res = Math.Max(res, arr[r, c]);
+                }
+
+            return res;
+        }
+    }
+
     public class Solution
     {
         int[][] Distances;
@@ -21,7 +67,7 @@ namespace AsFarFromLandAsPossible
 
             for (int i = 0; i < size; i++)
                 for (int j = 0; j < size; j++)
-                    if(Distances[i][j] != int.MaxValue && Distances[i][j] > max)
+                    if (Distances[i][j] != int.MaxValue && Distances[i][j] > max)
                         max = Distances[i][j];
 
             return max == 0 ? -1 : max;
