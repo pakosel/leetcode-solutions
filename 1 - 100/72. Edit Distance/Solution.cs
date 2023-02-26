@@ -4,6 +4,38 @@ using System;
 
 namespace EditDistance
 {
+    public class Solution_Memo
+    {
+        public int MinDistance(string word1, string word2)
+        {
+            int len1 = word1.Length;
+            int len2 = word2.Length;
+
+            var memo = new Dictionary<(int i1, int i2), int>();
+
+            return Memo(0, 0);
+
+            int Memo(int i1, int i2)
+            {
+                if (memo.ContainsKey((i1, i2)))
+                    return memo[(i1, i2)];
+                var res = 0;
+                if (i1 == len1)
+                    res = len2 - i2;   //we need to insert all missing chars
+                else if (i2 == len2)
+                    res = len1 - i1;   //we need to delete all additional chars
+                else if (word1[i1] == word2[i2])
+                    res = Memo(i1 + 1, i2 + 1);     //we don't need to do anything
+                else
+                    res = 1 + Math.Min(Memo(i1 + 1, i2 + 1), Math.Min(Memo(i1, i2 + 1), Memo(i1 + 1, i2)));     //either replace or insert or delete
+
+                memo.Add((i1, i2), res);
+
+                return res;
+            }
+        }
+    }
+
     public class Solution
     {
         public int MinDistance(string word1, string word2)

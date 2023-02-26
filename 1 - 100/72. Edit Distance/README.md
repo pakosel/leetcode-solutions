@@ -4,9 +4,13 @@ Given two words `word1` and `word2`, find the minimum number of operations requi
 
 You have the following 3 operations permitted on a word:
 
-1. Insert a character
-2. Delete a character
-3. Replace a character
+- Insert a character
+- Delete a character
+- Replace a character
+
+**Constraints**:
+- `0 <= word1.length, word2.length <= 500`
+- `word1` and `word2` consist of lowercase English letters.
 
 ### Example 1:
 ```
