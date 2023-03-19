@@ -6,6 +6,16 @@ using Common;
 
 namespace SymmetricTree
 {
+    public class Solution_2023
+    {
+        public bool IsSymmetric(TreeNode root)
+        {
+            return Equals(root.left, root.right);
+
+            bool Equals(TreeNode n1, TreeNode n2)
+                => (n1 == null && n2 == null) || (n1?.val == n2?.val && Equals(n1?.left, n2?.right) && Equals(n1?.right, n2?.left));
+        }
+    }
     public class Solution_Recursive
     {
         public bool IsSymmetric(TreeNode root) => CheckSymetry(root?.left, root?.right);
@@ -29,15 +39,15 @@ namespace SymmetricTree
 
             queue.Enqueue(root);
             queue.Enqueue(root);
-            while(queue.Count > 0)
+            while (queue.Count > 0)
             {
                 var e1 = queue.Dequeue();
                 var e2 = queue.Dequeue();
-                if(e1 == null && e2 == null)
+                if (e1 == null && e2 == null)
                     continue;
-                if(e1 == null || e2 == null)
+                if (e1 == null || e2 == null)
                     return false;
-                if(e1.val != e2.val)
+                if (e1.val != e2.val)
                     return false;
                 queue.Enqueue(e1.left);
                 queue.Enqueue(e2.right);

@@ -12,7 +12,6 @@ namespace SymmetricTree
     {
         private static readonly object[] testCases =
         {
-            new object[] {"[]", true },
             new object[] {"[1]", true },
             new object[] {"[1,2,2]", true },
             new object[] {"[1,2,3]", false },
@@ -22,6 +21,18 @@ namespace SymmetricTree
             new object[] {"[1,2,2,null,3,null,3]", false },
             new object[] {"[1,2,2,2,null,2]", false },
         };
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic2023(string rootStr, bool expected)
+        {
+            var root = TreeNodeHelper.BuildTree(rootStr);
+
+            var sol = new Solution_2023();
+            var res = sol.IsSymmetric(root);
+
+            Assert.AreEqual(expected, res);
+        }
 
         [Test]
         [TestCaseSource("testCases")]

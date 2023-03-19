@@ -21,6 +21,18 @@ namespace SumRootToLeafNumbers
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic2023(string strArr, int expected)
+        {
+            var root = TreeNodeHelper.BuildTree(strArr);
+
+            var sol = new Solution_2023();
+            var res = sol.SumNumbers(root);
+            
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string strArr, int expected)
         {
             var root = TreeNodeHelper.BuildTree(strArr);

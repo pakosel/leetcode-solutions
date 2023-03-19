@@ -7,6 +7,21 @@ using LowestCommonAncestorDeepestLeaves;
 
 namespace SumRootToLeafNumbers
 {
+    public class Solution_2023
+    {
+        public int SumNumbers(TreeNode root, int sum = 0)
+        {
+            sum = 10 * sum + root.val;
+            if (root.left == null && root.right == null)
+                return sum;
+            var res = 0;
+            if (root.left != null)
+                res += SumNumbers(root.left, sum);
+            if (root.right != null)
+                res += SumNumbers(root.right, sum);
+            return res;
+        }
+    }
     public class Solution
     {
         List<string> nums = new List<string>();
