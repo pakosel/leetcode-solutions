@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using Common;
 
 namespace LongestWordInDictionary
 {
@@ -11,7 +12,7 @@ namespace LongestWordInDictionary
         public string LongestWord(string[] words)
         {
             BuildDict(words);
-            root.IsLeaf = true; //not true but to satisfy DFS while-continue condition
+            root.IsFinal = true; //not true but to satisfy DFS while-continue condition
 
             return DFS(root);
         }
@@ -27,7 +28,7 @@ namespace LongestWordInDictionary
                 var el = stack.Pop();
                 node = el.Item1;
                 var str = el.Item2;
-                if (!node.IsLeaf)
+                if (!node.IsFinal)
                     continue;
                 if (str.Length > longest.Length)
                     longest = str;
@@ -52,14 +53,8 @@ namespace LongestWordInDictionary
                         node.Children[idx] = new Trie();
                     node = node.Children[idx];
                 }
-                node.IsLeaf = true;
+                node.IsFinal = true;
             }
         }
-    }
-
-    public class Trie
-    {
-        public bool IsLeaf;
-        public Trie[] Children = new Trie[26];
     }
 }

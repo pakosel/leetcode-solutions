@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Text;
+using Common;
 
 namespace ShortEncodingOfWords
 {
@@ -31,16 +32,6 @@ namespace ShortEncodingOfWords
             }
 
             return res;
-        }
-
-        public class Trie
-        {
-            public Trie[] Children;
-
-            public Trie()
-            {
-                Children = new Trie[26];
-            }
         }
     }
 

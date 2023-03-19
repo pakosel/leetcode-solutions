@@ -36,5 +36,28 @@ namespace DesignAddAndSearchWordsDataStructure
                 }
             }
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic_2023(string[] instructions, string[] inputs, bool?[] expected)
+        {
+            Assert.AreEqual(instructions.Length, inputs.Length);
+            Assert.AreEqual(expected.Length, inputs.Length);
+
+            var sol = new WordDictionary_2023();
+            for(int i=0; i<instructions.Length; i++)
+            {
+                switch(instructions[i])
+                {
+                    case "addWord":
+                        sol.AddWord(inputs[i]);
+                        break;
+                    case "search":
+                        var res = sol.Search(inputs[i]);
+                        Assert.AreEqual(res, expected[i]);
+                        break;
+                }
+            }
+        }
     }
 }
