@@ -21,6 +21,18 @@ namespace CanPlaceFlowers
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Generic2023(string arrStr, int n, bool expected)
+        {
+            var arr = ArrayHelper.ArrayFromString<int>(arrStr);
+
+            var sol = new Solution_2023();
+            var res = sol.CanPlaceFlowers(arr, n);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_Generic(string arrStr, int n, bool expected)
         {
             var arr = ArrayHelper.ArrayFromString<int>(arrStr);
