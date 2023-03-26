@@ -36,3 +36,5 @@ Explanation: Change the direction of edges show in red such that each node can r
 Input: n = 3, connections = [[1,0],[2,0]]
 Output: 0
 ```
+
+[more info](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/)
