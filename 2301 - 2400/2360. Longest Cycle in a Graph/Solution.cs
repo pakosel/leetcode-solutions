@@ -11,18 +11,14 @@ namespace LongestCycleInGraph
         public int LongestCycle(int[] edges)
         {
             var visited = new HashSet<int>();
-            var dictVisited = new Dictionary<int, int>();
             var res = -1;
 
             for (int i = 0; i < edges.Length; i++)
-            {
-                dictVisited.Clear();
-                Visit(i, 0);
-            }
+                Visit(i, 0, new Dictionary<int, int>());
 
             return res;
 
-            void Visit(int node, int path)
+            void Visit(int node, int path, Dictionary<int, int> dictVisited)
             {
                 if (node == -1)
                     return;
@@ -33,7 +29,7 @@ namespace LongestCycleInGraph
                 {
                     dictVisited.Add(node, path);
                     visited.Add(node);
-                    Visit(edges[node], path + 1);
+                    Visit(edges[node], path + 1, dictVisited);
                 }
             }
         }
