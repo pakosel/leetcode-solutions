@@ -12,7 +12,7 @@ namespace LargestColorValueInDirectedGraph
         {
             var leaves = new HashSet<int>();
             var nodes = new HashSet<int>();
-            var graph = new Dictionary<int, List<int>>();
+            var graph = new Dictionary<int, HashSet<int>>();
             var n = colors.Length;
 
             BuildReversedGraph();
@@ -67,7 +67,7 @@ namespace LargestColorValueInDirectedGraph
                         nodes.Add(e[0]);
                     }
                     if (!graph.ContainsKey(e[1]))
-                        graph.Add(e[1], new List<int>());
+                        graph.Add(e[1], new HashSet<int>());
                     graph[e[1]].Add(e[0]);
                 }
             }
