@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using System.Text;
 
 namespace SimplifyPath
 {
@@ -26,11 +25,7 @@ namespace SimplifyPath
                         break;
                 }
 
-            var sb = new StringBuilder();
-            while (stack.Count > 0)
-                sb.Insert(0, "/" + stack.Pop());
-
-            return sb.Length == 0 ? "/" : sb.ToString();
+            return "/" + string.Join("/", stack.Reverse());
         }
     }
 }
