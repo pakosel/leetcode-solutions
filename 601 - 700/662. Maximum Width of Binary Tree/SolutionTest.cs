@@ -22,6 +22,18 @@ namespace MaximumWidthOfBinaryTree
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic23(string tree, int expected)
+        {
+            var root = TreeNodeHelper.BuildTree(tree);
+
+            var sol = new Solution_2023();
+            var res = sol.WidthOfBinaryTree(root);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string tree, int expected)
         {
             var root = TreeNodeHelper.BuildTree(tree);

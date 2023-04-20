@@ -6,6 +6,32 @@ using Common;
 
 namespace MaximumWidthOfBinaryTree
 {
+    public class Solution_2023
+    {
+        public int WidthOfBinaryTree(TreeNode root)
+        {
+            var q = new Queue<(TreeNode node, long order)>();
+            long res = 0;
+
+            q.Enqueue((root, 1));
+
+            while (q.Count > 0)
+            {
+                var cnt = q.Count;
+                long min = q.Peek().order, max = min;
+                for (int i = 0; i < cnt; i++)
+                {
+                    var curr = q.Dequeue();
+                    min = Math.Min(min, curr.order);
+                    max = Math.Max(max, curr.order);
+                    res = Math.Max(res, max - min + 1);
+                    if (curr.node.left != null) q.Enqueue((curr.node.left, 2 * curr.order - 1));
+                    if (curr.node.right != null) q.Enqueue((curr.node.right, 2 * curr.order));
+                }
+            }
+            return (int)res;
+        }
+    }
     public class Solution
     {
         Dictionary<long, List<long>> dict = new Dictionary<long, List<long>>();
@@ -29,7 +55,7 @@ namespace MaximumWidthOfBinaryTree
                 Traverse(node.right, level + 1, 2 * order);
         }
     }
-    
+
     //Same solution without recursion - Queue based
     public class Solution_NoRecursion
     {
@@ -40,7 +66,7 @@ namespace MaximumWidthOfBinaryTree
             var queue = new Queue<(TreeNode node, long level, long order)>();
             queue.Enqueue((root, 0, 1));
 
-            while(queue.Count > 0)
+            while (queue.Count > 0)
             {
                 var el = queue.Dequeue();
                 if (arr[el.level].min == 0)
