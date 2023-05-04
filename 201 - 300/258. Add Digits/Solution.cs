@@ -13,6 +13,25 @@ namespace AddDigits
             return num;
         }
     }
+
+    public class Solution_Div
+    {
+        public int AddDigits(int num)
+        {
+            while (num > 9)
+            {
+                var sum = 0;
+                while (num > 0)
+                {
+                    sum += num % 10;
+                    num /= 10;
+                }
+                num = sum;
+            }
+
+            return num;
+        }
+    }
     public class Solution_Math
     {
         public int AddDigits(int num)

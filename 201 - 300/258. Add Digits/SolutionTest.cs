@@ -40,5 +40,15 @@ namespace AddDigits
 
             Assert.AreEqual(ret, expected);
         }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_Div(int num, int expected)
+        {
+            var sol = new Solution_Div();
+            var ret = sol.AddDigits(num);
+
+            Assert.AreEqual(ret, expected);
+        }
     }
 }
