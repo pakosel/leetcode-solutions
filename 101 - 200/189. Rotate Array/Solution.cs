@@ -50,7 +50,7 @@ namespace RotateArray
                 return;
             var temp = 0;
             var i = 0;
-            var gcd = GCD(len, k);
+            var gcd = MathExt.Gcd(len, k);
             for (int j = 0; j < gcd; j++)
             {
                 temp = nums[j];
@@ -62,17 +62,6 @@ namespace RotateArray
                 }
                 nums[i] = temp;
             }
-        }
-
-        private static int GCD(int a, int b)
-        {
-            while (a != 0 && b != 0)
-                if (a > b)
-                    a %= b;
-                else
-                    b %= a;
-
-            return a | b;
         }
     }
 }
