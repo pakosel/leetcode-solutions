@@ -9,65 +9,73 @@ namespace ShortestBridge
     {
         public int ShortestBridge(int[][] grid)
         {
+            const int MAX = int.MaxValue - 1;
+            var STEPS = new (int r, int c)[] {(-1, 0), (1, 0), (0, -1), (0, 1)};
             var n = grid.Length;
-            var res = int.MaxValue;
+            var res = MAX;
             var islandNo = 0;
-            var dist = new int?[n, n, 2];
-            var island_0 = new HashSet<(int, int)>();
-            var edgeTiles = new List<(int x, int y)>();
+            var dist = new int?[n, n, 2];   //distance of (r, c) cell from z-th island
+            var waterCells = new Queue<(int r, int c)>[] {new Queue<(int r, int c)>(), new Queue<(int r, int c)>()};
 
+            //map each island
             for (int i = 0; i < n && islandNo < 2; i++)
                 for (int j = 0; j < n && islandNo < 2; j++)
-                    if (grid[i][j] == 1 && !island_0.Contains((i, j)))
-                        dfsMap(i, j, islandNo++);
+                    if (grid[i][j] == 1 && !dist[i, j, 0].HasValue)
+                        dfsMapIsland(i, j, islandNo++);
 
-            foreach (var et in edgeTiles)
-                dfsDist(et.x, et.y, island_0.Contains((et.x, et.y)) ? 0 : 1, -1);
+            //process water cells to calc min bridge len
+            for(int i=0; i<2; i++)
+                while(waterCells[i].Count > 0)
+                {
+                    var curr = waterCells[i].Dequeue();
+                    var path = TakeMinPath(curr.r, curr.c, i);
+                    dist[curr.r, curr.c, i] = path;
+
+                    if (dist[curr.r, curr.c, (i + 1) % 2].HasValue)
+                        res = Math.Min(res, dist[curr.r, curr.c, (i + 1) % 2].Value + path);
+                    AddWaterCells(curr, i);
+                }
 
             return res - 1;
 
-            void dfsMap(int x, int y, int island)
+            void dfsMapIsland(int r, int c, int island)
             {
-                if (x < 0 || y < 0 || x == n || y == n || dist[x, y, island].HasValue || grid[x][y] == 0)
+                if (r < 0 || c < 0 || r == n || c == n || dist[r, c, island].HasValue || grid[r][c] == 0)
                     return;
-                dist[x, y, island] = 0;
-                if (island == 0)
-                    island_0.Add((x, y));
-                if (IsEdgeTile(x, y))
-                    edgeTiles.Add((x, y));
-                dfsMap(x + 1, y, island);
-                dfsMap(x - 1, y, island);
-                dfsMap(x, y + 1, island);
-                dfsMap(x, y - 1, island);
+                dist[r, c, island] = 0;
+                AddWaterCells((r, c), island);
+                foreach(var step in STEPS)
+                    dfsMapIsland(r + step.r, c + step.c, island);
             }
 
-            bool IsEdgeTile(int x, int y)
+            void AddWaterCells((int r, int c) cell, int island)
             {
-                if (x - 1 >= 0 && grid[x - 1][y] == 0)
-                    return true;
-                if (x + 1 < n && grid[x + 1][y] == 0)
-                    return true;
-                if (y - 1 >= 0 && grid[x][y - 1] == 0)
-                    return true;
-                if (y + 1 < n && grid[x][y + 1] == 0)
-                    return true;
-                return false;
+                foreach(var step in STEPS)
+                {
+                    var tgt = (cell.r + step.r, cell.c + step.c);
+                    if(NeedsVisit(tgt, island) && !waterCells[island].Contains(tgt))
+                        waterCells[island].Enqueue(tgt);
+                }
             }
 
-            void dfsDist(int x, int y, int island, int path)
+            bool NeedsVisit((int r, int c) cell, int island)
             {
-                if (x < 0 || y < 0 || x == n || y == n ||
-                   (dist[x, y, island].HasValue && dist[x, y, island].Value <= path))
-                    return;
-                if (path < 0)
-                    path = 0;
-                dist[x, y, island] = path;
-                if (dist[x, y, (island + 1) % 2].HasValue)
-                    res = Math.Min(res, dist[x, y, (island + 1) % 2].Value + path);
-                dfsDist(x + 1, y, island, path + 1);
-                dfsDist(x - 1, y, island, path + 1);
-                dfsDist(x, y + 1, island, path + 1);
-                dfsDist(x, y - 1, island, path + 1);
+                if(cell.r < 0 || cell.r >= n || cell.c < 0 || cell.c >= n)
+                    return false;
+                return grid[cell.r][cell.c] == 0 && !dist[cell.r, cell.c, island].HasValue;
+            }
+
+            int TakeMinPath(int r, int c, int island)
+            {
+                var min = MAX;
+                foreach(var step in STEPS)
+                {
+                    var tgtR = r + step.r;
+                    var tgtC = c + step.c;
+                    if(tgtR >= 0 && tgtR < n && tgtC >= 0 && tgtC < n)
+                        min = Math.Min(min, dist[tgtR, tgtC, island].HasValue ? dist[tgtR, tgtC, island].Value + 1 : MAX);
+                }
+                return min;
             }
         }
     }
