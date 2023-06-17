@@ -13,6 +13,7 @@ namespace MinimumAbsoluteDifferenceInBST
         {
             new object[] {"[4,2,6,1,3]", 1},
             new object[] {"[1,0,48,null,null,12,49]", 1},
+            new object[] {"[236,104,701,null,227,null,911]", 9},
         };
 
         [Test]
