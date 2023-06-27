@@ -6,6 +6,12 @@ Define a pair `(u,v)` which consists of one element from the first array and one
 
 Find the k pairs `(u1,v1)`,`(u2,v2)` ...`(uk,vk)` with the smallest sums.
 
+**Constraints:**
+- <code>1 <= nums1.length, nums2.length <= 10<sup>5</sup></code>
+- <code>-10<sup>9</sup> <= nums1[i], nums2[i] <= 10<sup>9</sup></code>
+- `nums1` and `nums2` both are sorted in ascending order.
+- <code>1 <= k <= 10<sup>4</sup></code>
+
 ### Example 1:
 ```
 Input: nums1 = [1,7,11], nums2 = [2,4,6], k = 3

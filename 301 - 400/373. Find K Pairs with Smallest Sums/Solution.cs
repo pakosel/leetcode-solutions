@@ -5,6 +5,32 @@ using System.Text;
 
 namespace FindPairsWithSmallestSums
 {
+    public class Solution_2023
+    {
+        public IList<IList<int>> KSmallestPairs(int[] nums1, int[] nums2, int k)
+        {
+            PriorityQueue<(int i1, int i2), int> pq = new();
+            var visited = new HashSet<(int, int)>();
+            pq.Enqueue((0, 0), nums1[0] + nums2[0]);
+            var res = new List<IList<int>>();
+            while (k > 0 && pq.Count > 0)
+            {
+                var curr = pq.Dequeue();
+                if (visited.Contains(curr))
+                    continue;
+                visited.Add(curr);
+                k--;
+                res.Add(new int[] { nums1[curr.i1], nums2[curr.i2] });
+
+                if (curr.i2 + 1 < nums2.Length)
+                    pq.Enqueue((curr.i1, curr.i2 + 1), nums1[curr.i1] + nums2[curr.i2 + 1]);
+                if (curr.i1 + 1 < nums1.Length)
+                    pq.Enqueue((curr.i1 + 1, curr.i2), nums1[curr.i1 + 1] + nums2[curr.i2]);
+            }
+            return res;
+        }
+    }
+
     public class Solution
     {
         public IList<IList<int>> KSmallestPairs(int[] nums1, int[] nums2, int k)
