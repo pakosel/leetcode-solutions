@@ -110,6 +110,41 @@ namespace Common
             this.left = left;
             this.right = right;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            TreeNode other = (TreeNode)obj;
+            return val == other.val &&
+                Equals(left, other.left) &&
+                Equals(right, other.right);
+        }
+
+        public override int GetHashCode()
+        {
+            // Custom hash code implementation based on the values of the node and its children.
+            int hash = 17;
+            hash = hash * 31 + val.GetHashCode();
+            hash = hash * 31 + (left != null ? left.GetHashCode() : 0);
+            hash = hash * 31 + (right != null ? right.GetHashCode() : 0);
+
+            return hash;
+        }
+
+        public static bool operator ==(TreeNode node1, TreeNode node2)
+        {
+            if (ReferenceEquals(node1, node2))
+                return true;
+
+            if (ReferenceEquals(node1, null) || ReferenceEquals(node2, null))
+                return false;
+
+            return node1.Equals(node2);
+        }
+
+        public static bool operator !=(TreeNode node1, TreeNode node2) => !(node1 == node2);
     }
 
     public class Node
