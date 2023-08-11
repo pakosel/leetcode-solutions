@@ -10,7 +10,7 @@ namespace CoinChangeII
         public int Change(int amount, int[] coins)
         {
             var len = coins.Length;
-            Array.Sort(coins, (c1, c2) => c1.CompareTo(c2));
+            //coins sorting not needed
 
             var dp = new int[len + 1, amount + 1];
             for (int i = 1; i <= len; i++)
