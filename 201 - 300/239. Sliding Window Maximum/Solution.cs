@@ -7,53 +7,39 @@ namespace SlidingWindowMaximum
 {
     public class Solution
     {
-        SortedSet<int> maxHeap = new SortedSet<int>();
-        Dictionary<int, int> numCount = new Dictionary<int, int>();
-
         public int[] MaxSlidingWindow(int[] nums, int k)
         {
-            List<int> res = new List<int>();
-            int len = nums.Length;
+            var dict = new Dictionary<int, int>();
+            var heap = new SortedSet<int>();
+            for (int i = 0; i < k; i++)
+                Add(i);
+            var res = new List<int>();
+            res.Add(heap.Max);
 
-            int i = 0;
-            while (i < k)
+            for (int i = k; i < nums.Length; i++)
             {
-                AddNum(nums[i]);
-                i++;
-            }
-            res.Add(maxHeap.Max);
-
-            while (i < len)
-            {
-                int lPtr = i - k;
-                RemoveNum(nums[lPtr]);
-                AddNum(nums[i]);
-                res.Add(maxHeap.Max);
-                i++;
+                Delete(i - k);
+                Add(i);
+                res.Add(heap.Max);
             }
 
             return res.ToArray();
-        }
 
-        private void AddNum(int num)
-        {
-            if (numCount.ContainsKey(num))
-                numCount[num] = numCount[num] + 1;
-            else
+            void Add(int pos)
             {
-                maxHeap.Add(num);
-                numCount.Add(num, 1);
+                var val = nums[pos];
+                if (!dict.ContainsKey(val))
+                    dict.Add(val, 0);
+                dict[val]++;
+                heap.Add(val);
             }
-        }
 
-        private void RemoveNum(int num)
-        {
-            if (numCount[num] > 1)
-                numCount[num] = numCount[num] - 1;
-            else
+            void Delete(int pos)
             {
-                numCount.Remove(num);
-                maxHeap.Remove(num);
+                var val = nums[pos];
+                dict[val]--;
+                if (dict[val] == 0)
+                    heap.Remove(val);
             }
         }
     }
