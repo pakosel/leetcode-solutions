@@ -5,6 +5,30 @@ using System.Text;
 
 namespace RepeatedSubstringPattern
 {
+    public class Solution_2023
+    {
+        public bool RepeatedSubstringPattern(string s)
+        {
+            var len = s.Length;
+            for (int i = 1; i <= len / 2; i++)
+                if (len % i == 0 && Check(i))
+                    return true;
+            return false;
+
+            bool Check(int idx)
+            {
+                var pos = 0;
+                while (idx < len)
+                {
+                    if (s[idx++] != s[pos++])
+                        return false;
+                    if (pos >= idx)
+                        pos = 0;
+                }
+                return true;
+            }
+        }
+    }
     public class Solution
     {
         public bool RepeatedSubstringPattern(string s)
