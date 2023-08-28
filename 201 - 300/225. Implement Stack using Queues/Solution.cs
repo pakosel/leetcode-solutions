@@ -5,6 +5,44 @@ using System.Text.RegularExpressions;
 
 namespace ImplementStackUsingQueues
 {
+    public class MyStack_2023
+    {
+        int top = 0;
+        Queue<int> q;
+        public MyStack_2023()
+        {
+            q = new();
+        }
+
+        public void Push(int x)
+        {
+            q.Enqueue(x);
+            top = x;
+        }
+
+        public int Pop()
+        {
+            var cnt = q.Count;
+            for (int i = 0; i < cnt - 1; i++)
+            {
+                if (i == cnt - 2)
+                    top = q.Peek();
+                q.Enqueue(q.Dequeue());
+            }
+            return q.Dequeue();
+
+        }
+
+        public int Top()
+        {
+            return top;
+        }
+
+        public bool Empty()
+        {
+            return q.Count == 0;
+        }
+    }
     public class MyStack_v1
     {
         Queue<int> Q;
@@ -18,7 +56,7 @@ namespace ImplementStackUsingQueues
             var queue = new Queue<int>(Q);
             Q.Clear();
             Q.Enqueue(x);
-            while(queue.Count > 0)
+            while (queue.Count > 0)
                 Q.Enqueue(queue.Dequeue());
         }
 
