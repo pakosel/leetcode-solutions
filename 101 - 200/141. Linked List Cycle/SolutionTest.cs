@@ -15,11 +15,27 @@ namespace LinkedListCycle
             new object[] {"[3,2,0,-4]", 1, true},
             new object[] {"[1,2]", 0, true},
             new object[] {"[1]", -1, false},
+            new object[] {"[1]", 0, true},
             new object[] {"[]", -1, false},
             new object[] {"[1,1,1]", 1, true},
-            
+            new object[] {"[1,2,3]", 0, true},
+            new object[] {"[1,2,3,4]", 0, true},
+            new object[] {"[1,2,3,4,5]", 0, true},
         };
 
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic23(string listStr, int loopIdx, bool expected)
+        {
+            var head = ListNodeHelper.BuildList(listStr);
+            MakeLoop(head, loopIdx);
+
+            var sol = new Solution_2023();
+            var res = sol.HasCycle(head);
+
+            Assert.AreEqual(expected, res);
+        }
+        
         [Test]
         [TestCaseSource("testCases")]
         public void Test_Generic(string listStr, int loopIdx, bool expected)

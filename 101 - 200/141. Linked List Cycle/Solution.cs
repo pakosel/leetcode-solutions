@@ -6,6 +6,23 @@ using Common;
 
 namespace LinkedListCycle
 {
+    public class Solution_2023
+    {
+        public bool HasCycle(ListNode head)
+        {
+            var slow = head;
+            var fast = head?.next;
+            while (slow != null && fast != null)
+            {
+                if (slow == fast)
+                    return true;
+                slow = slow.next;
+                fast = fast.next?.next;
+            }
+            return false;
+        }
+    }
+    
     public class Solution
     {
         public bool HasCycle(ListNode head)
