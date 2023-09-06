@@ -25,6 +25,18 @@ namespace SplitLinkedListInParts
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic23(string listStr, int k, string expectedStr)
+        {
+            var head = ListNodeHelper.BuildList(listStr);
+            var sol = new Solution_2023();
+            var res = sol.SplitListToParts(head, k);
+            var expected = ListNodeHelper.BuildListArray(expectedStr);
+
+            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string listStr, int k, string expectedStr)
         {
             var head = ListNodeHelper.BuildList(listStr);
@@ -32,7 +44,7 @@ namespace SplitLinkedListInParts
             var res = sol.SplitListToParts(head, k);
             var expected = ListNodeHelper.BuildListArray(expectedStr);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }
