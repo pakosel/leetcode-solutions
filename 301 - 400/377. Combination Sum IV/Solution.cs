@@ -10,24 +10,20 @@ namespace CombinationSumIV
     {
         public int CombinationSum4(int[] nums, int target)
         {
-            var memo = new int[target + 1];
-            Array.Fill(memo, -1);
-            Array.Sort(nums);
+            var memo = new Dictionary<int, int>();
+
             return Count(target);
 
             int Count(int tgt)
             {
-                if (memo[tgt] != -1)
+                if (memo.ContainsKey(tgt))
                     return memo[tgt];
 
                 var res = 0;
                 foreach (var n in nums)
-                    if (n >= tgt)
-                    {
-                        res += (n == tgt ? 1 : 0);
-                        break;
-                    }
-                    else
+                    if (n == tgt)
+                        res++;
+                    else if (n < tgt)
                         res += Count(tgt - n);
                 memo[tgt] = res;
                 return res;
