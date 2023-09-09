@@ -2,48 +2,56 @@ using System.Text;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using Common;
 
 namespace PascalTriangle
 {
     [TestFixture]
     public class SolutionTest
     {
-        [Test]
-        [TestCase(1, "[[1]]")]
-        [TestCase(2, "[[1],[1,1]]")]
-        [TestCase(3, "[[1],[1,1],[1,2,1]]")]
-        [TestCase(4, "[[1],[1,1],[1,2,1],[1,3,3,1]]")]
-        [TestCase(5, "[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]")]
-        public void Test_Example(int rowNum, string expected)
+        private static readonly object[] testCases =
         {
-            var sol = new Solution();
-            var ret = sol.GeneratePascal(rowNum);
+            new object[] {1, "[[1]]"},
+            new object[] {2, "[[1],[1,1]]"},
+            new object[] {3, "[[1],[1,1],[1,2,1]]"},
+            new object[] {4, "[[1],[1,1],[1,2,1],[1,3,3,1]]"},
+            new object[] {5, "[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]"},
+        };
 
-            StringBuilder sb = new StringBuilder();
-            sb.Append('[');
-            sb.Append(string.Join(',', ret.Select(it => "[" + string.Join(',', it) + "]")));
-            sb.Append(']');
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic23(int rowNum, string expectedStr)
+        {
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
-            Assert.AreEqual(sb.ToString(), expected);
+            var sol = new Solution_2023();
+            var res = sol.Generate(rowNum);
+
+            CollectionAssert.AreEqual(expected, res);
         }
 
         [Test]
-        [TestCase(1, "[[1]]")]
-        [TestCase(2, "[[1],[1,1]]")]
-        [TestCase(3, "[[1],[1,1],[1,2,1]]")]
-        [TestCase(4, "[[1],[1,1],[1,2,1],[1,3,3,1]]")]
-        [TestCase(5, "[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]")]
-        public void Test_Example_GenList(int rowNum, string expected)
+        [TestCaseSource("testCases")]
+        public void Test_Generic(int rowNum, string expectedStr)
         {
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
+
             var sol = new Solution();
-            var ret = sol.GeneratePascal_GenList(rowNum);
+            var res = sol.GeneratePascal(rowNum);
 
-            StringBuilder sb = new StringBuilder();
-            sb.Append('[');
-            sb.Append(string.Join(',', ret.Select(it => "[" + string.Join(',', it) + "]")));
-            sb.Append(']');
+            CollectionAssert.AreEqual(expected, res);
+        }
 
-            Assert.AreEqual(sb.ToString(), expected);
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_GenList(int rowNum, string expectedStr)
+        {
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
+
+            var sol = new Solution();
+            var res = sol.GeneratePascal_GenList(rowNum);
+
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }
