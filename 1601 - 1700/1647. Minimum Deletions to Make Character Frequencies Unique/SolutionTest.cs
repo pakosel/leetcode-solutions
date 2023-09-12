@@ -20,6 +20,16 @@ namespace MinimumDeletionsToMakeCharacterFrequenciesUnique
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Generic23(string s, int expected)
+        {
+            var sol = new Solution_2023();
+            var res = sol.MinDeletions(s);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_GenericStr(string s, int expected)
         {
             var sol = new Solution();
