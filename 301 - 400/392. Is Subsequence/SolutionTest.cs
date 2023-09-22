@@ -22,6 +22,16 @@ namespace IsSubsequence
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic23(string s, string t, bool expected)
+        {
+            var sol = new Solution_2023();
+            var res = sol.IsSubsequence(s, t);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string s, string t, bool expected)
         {
             var sol = new Solution();
