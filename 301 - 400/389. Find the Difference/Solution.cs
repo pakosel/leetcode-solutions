@@ -5,6 +5,20 @@ using System.Text;
 
 namespace FindTheDifference
 {
+    public class Solution_2023
+    {
+        public char FindTheDifference(string s, string t)
+        {
+            var letters = new int[26];
+            foreach (var c in s)
+                letters[c - 'a']++;
+            foreach (var c in t)
+                if (--letters[c - 'a'] < 0)
+                    return c;
+            return 'a';
+        }
+    }
+    
     public class Solution
     {
         public char FindTheDifference(string s, string t)
