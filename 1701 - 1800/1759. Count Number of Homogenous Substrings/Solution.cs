@@ -6,6 +6,42 @@ using Common;
 
 namespace CountNumberOfHomogenousSubstrings
 {
+    public class Solution_2023
+    {
+        int[] memo = new int[100001];
+        int MOD = 1_000_000_007;
+        public int CountHomogenous(string s)
+        {
+            long res = 0;
+            int left = 0, right = 0;
+            while (right < s.Length)
+            {
+                if (right + 1 >= s.Length || s[right + 1] != s[left])
+                {
+                    res += Calc(right - left + 1);
+                    res %= MOD;
+                    right++;
+                    left = right;
+                }
+                else
+                    right++;
+            }
+            return (int)res;
+
+            int Calc(int val)
+            {
+                if (memo[val] != 0)
+                    return memo[val];
+                if (val == 1)
+                    return 1;
+                var res = Calc(val - 1) + val;
+                res %= MOD;
+                memo[val] = res;
+                return res;
+            }
+        }
+    }
+
     public class Solution
     {
         const int MOD = 1_000_000_007;

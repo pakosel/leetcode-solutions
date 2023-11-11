@@ -28,5 +28,15 @@ namespace CountNumberOfHomogenousSubstrings
 
             Assert.AreEqual(expected, res);
         }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
+        public void Test_Generic2023(string s, int expected)
+        {
+            var sol = new Solution_2023();
+            var res = sol.CountHomogenous(s);
+
+            Assert.AreEqual(expected, res);
+        }
     }
 }
