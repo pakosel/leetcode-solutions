@@ -2,14 +2,13 @@
 [![CircleCI](https://circleci.com/gh/pakosel/leetcode-solutions.svg?style=svg)](https://circleci.com/gh/pakosel/leetcode-solutions)
 
 # leetcode-solutions
-My solutions for the Leetcode problems. Full list of problems available here: https://leetcode.com/problemset/all/
-
+My solutions to the LeetCode problems. The full list of problems is available here: https://leetcode.com/problemset/all/
 
 ## Prerequisites
-In order to run the solutions, install .net SDK from [Microsoft .NET download page](https://dotnet.microsoft.com/en-us/download).
-For Linux the detailed instruction is on [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-ubuntu-2004)
+To run the solutions, install the .NET SDK from the [Microsoft .NET download page](https://dotnet.microsoft.com/en-us/download).
+For Linux, detailed instructions are available on the [Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
 
-Alternatively you can run and develop the code using Gitpod (see below)
+Alternatively, you can run and develop the code using Gitpod (see below).
 
 ## Build
 ```
@@ -43,5 +42,4 @@ dotnet test --framework "net6.0"
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pakosel/leetcode-solutions)
 
-***Gitpod*** is web-based IDE and runtime environment which is an easy to use alternative to downloading the code from GitHub and setting up the development environment. Please use [this link](https://gitpod.io/#https://github.com/pakosel/leetcode-solutions) to start a new **Gitpod Workspace** with pre-installed .net core SDK (you will need to login with GitHub account). 
-After the workspace is started modify the code or execute unit test commands, as described above.
+***Gitpod*** is a web-based IDE and runtime environment, providing an easy-to-use alternative to downloading code from GitHub and setting up the development environment. Please use [this link](https://gitpod.io/#https://github.com/pakosel/leetcode-solutions) to start a new **Gitpod Workspace** with the pre-installed .NET SDK (you will need to log in with your GitHub account). Once the workspace is started, modify the code or execute unit test commands, as described above.
