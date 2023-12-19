@@ -38,9 +38,10 @@ namespace Common
             return res;
         }
 
-        public static T[][] MatrixFromString<T>(string matrixStr, bool skipContentParsing = false)
+        public static T[][] MatrixFromString<T>(string matrixStr, bool skipContentParsing = false, bool contentWithSpace = false)
         {
-            matrixStr = matrixStr.Replace(" ", "");
+            if(!contentWithSpace)
+                matrixStr = matrixStr.Replace(" ", "");
             if(typeof(T) == typeof(char))
                 matrixStr = matrixStr.Replace("'", "");
             if(typeof(T) == typeof(string))
