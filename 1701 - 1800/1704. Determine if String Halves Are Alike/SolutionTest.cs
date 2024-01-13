@@ -24,6 +24,16 @@ namespace DetermineIfStringHalvesAreAlike
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Generic24(string s, bool expected)
+        {
+            var sol = new Solution_2024();
+            var res = sol.HalvesAreAlike(s);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_Generic(string s, bool expected)
         {
             var sol = new Solution();
