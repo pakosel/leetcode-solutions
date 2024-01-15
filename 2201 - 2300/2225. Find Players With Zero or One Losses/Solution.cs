@@ -6,6 +6,20 @@ using Common;
 
 namespace FindPlayersWithZeroOrOneLosses
 {
+    public class Solution_2024
+    {
+        public IList<IList<int>> FindWinners(int[][] matches)
+        {
+            var winners = matches.GroupBy(m => m[0]).ToDictionary(grp => grp.Key, grp => grp.Count());
+            var loosers = matches.GroupBy(m => m[1]).ToDictionary(grp => grp.Key, grp => grp.Count());
+
+            return new IList<int>[] {
+            winners.Where(w => !loosers.ContainsKey(w.Key)).Select(w => w.Key).OrderBy(_ => _).ToList(),
+            loosers.Where(l => l.Value == 1).Select(l => l.Key).OrderBy(_ => _).ToList()
+        };
+        }
+    }
+    
     public class Solution
     {
         public IList<IList<int>> FindWinners(int[][] matches)

@@ -17,6 +17,19 @@ namespace FindPlayersWithZeroOrOneLosses
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Generic24(string matchesStr, string expectedStr)
+        {
+            var matches = ArrayHelper.MatrixFromString<int>(matchesStr);
+            var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
+
+            var sol = new Solution_2024();
+            var res = sol.FindWinners(matches);
+
+            CollectionAssert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_Generic(string matchesStr, string expectedStr)
         {
             var matches = ArrayHelper.MatrixFromString<int>(matchesStr);
