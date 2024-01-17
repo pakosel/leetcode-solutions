@@ -9,9 +9,8 @@ namespace UniqueNumberOfOccurrences
     {
         public bool UniqueOccurrences(int[] arr)
         {
-            var dict = arr.GroupBy(_ => _).ToDictionary(grp => grp.Key, grp => grp.Count());
-
-            return dict.Count == dict.Values.Distinct().Count();
+            var allCounts = arr.GroupBy(_ => _).ToDictionary(grp => grp.Key, grp => grp.Count()).Select(kvp => kvp.Value);
+            return allCounts.Count() == allCounts.Distinct().Count();
         }
     }
 }
