@@ -27,6 +27,16 @@ namespace ClimbingStairs
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic_2024(int n, int expected)
+        {
+            var sol = new Solution_2024();
+            var res = sol.ClimbStairs(n);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic_2022(int n, int expected)
         {
             var sol = new Solution_2022();

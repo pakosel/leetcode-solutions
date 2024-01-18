@@ -5,6 +5,18 @@ using System.Text;
 
 namespace ClimbingStairs
 {
+    public class Solution_2024
+    {
+        public int ClimbStairs(int n)
+        {
+            var arr = new int[n + 2];
+            arr[n] = 1;
+            for (int i = n - 1; i >= 0; i--)
+                arr[i] = arr[i + 1] + arr[i + 2];
+            return arr[0];
+        }
+    }
+    
     public class Solution_2022
     {
         public int ClimbStairs(int n)
