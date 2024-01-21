@@ -4,6 +4,29 @@ using System;
 
 namespace HouseRobber
 {
+    public class Solution_2024
+    {
+        public int Rob(int[] nums)
+        {
+            var len = nums.Length;
+            var memo = new int[len];
+            Array.Fill(memo, -1);
+
+            return Memo(0);
+
+            int Memo(int pos)
+            {
+                if (pos >= len)
+                    return 0;
+                if (memo[pos] != -1)
+                    return memo[pos];
+                var res = Math.Max(nums[pos] + Memo(pos + 2), Memo(pos + 1));
+                memo[pos] = res;
+
+                return res;
+            }
+        }
+    }
     public class Solution_2022
     {
         public int Rob(int[] nums)

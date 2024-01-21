@@ -23,6 +23,18 @@ namespace HouseRobber
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_2024(string numsStr, int expected)
+        {
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+
+            var sol = new Solution_2024();
+            var res = sol.Rob(nums);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_2022(string numsStr, int expected)
         {
             var nums = ArrayHelper.ArrayFromString<int>(numsStr);
