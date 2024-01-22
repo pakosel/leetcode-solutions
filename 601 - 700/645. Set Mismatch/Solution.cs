@@ -5,6 +5,27 @@ using System.Text;
 
 namespace SetMismatch
 {
+    public class Solution_2024
+    {
+        public int[] FindErrorNums(int[] nums)
+        {
+            var res = new int[2];
+            var len = nums.Length;
+            var arr = new int[len + 1];
+            foreach (var n in nums)
+                if (arr[n] == 0)
+                    arr[n]++;
+                else
+                    res[0] = n;
+            for (int i = 1; i <= len; i++)
+                if (arr[i] == 0)
+                {
+                    res[1] = i;
+                    break;
+                }
+            return res;
+        }
+    }
     public class Solution
     {
         public int[] FindErrorNums(int[] nums)

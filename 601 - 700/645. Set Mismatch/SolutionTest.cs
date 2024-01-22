@@ -18,6 +18,19 @@ namespace SetMismatch
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Generic24(string numsStr, string expectedStr)
+        {
+            var nums = ArrayHelper.ArrayFromString<int>(numsStr);
+            var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
+
+            var sol = new Solution_2024();
+            var res = sol.FindErrorNums(nums);
+
+            CollectionAssert.AreEquivalent(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_Generic(string numsStr, string expectedStr)
         {
             var nums = ArrayHelper.ArrayFromString<int>(numsStr);
