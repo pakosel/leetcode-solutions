@@ -9,6 +9,7 @@ Given a binary tree where node values are digits from 1 to 9. A path in the bina
 - `1 <= Node.val <= 9`
 
 ### Example 1:
+![image](https://assets.leetcode.com/uploads/2020/05/06/palindromic_paths_1.png)
 ```
 Input: root = [2,3,1,3,1,null,1]
 Output: 2 
@@ -16,6 +17,7 @@ Explanation: The figure above represents the given binary tree. There are three 
 ```
 
 ### Example 2:
+![image](https://assets.leetcode.com/uploads/2020/05/07/palindromic_paths_2.png)
 ```
 Input: root = [2,1,1,1,3,null,null,null,null,null,1]
 Output: 1 
@@ -27,5 +29,3 @@ Explanation: The figure above represents the given binary tree. There are three 
 Input: root = [9]
 Output: 1
 ```
-
-[more info](https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/)
