@@ -17,6 +17,16 @@ namespace FirstUniqueCharacterInString
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic23(string s, int expected)
+        {
+            var sol = new Solution2023();
+            var res = sol.FirstUniqChar(s);
+
+            Assert.AreEqual(expected, res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string s, int expected)
         {
             var sol = new Solution();
