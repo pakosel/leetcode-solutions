@@ -29,7 +29,7 @@ namespace MinimumWindowSubstring
             var sol = new Solution_2022();
             var res = sol.MinWindow(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace MinimumWindowSubstring
             var sol = new Solution();
             var res = sol.MinWindow(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

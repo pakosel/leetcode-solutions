@@ -24,7 +24,7 @@ namespace LongestWordInDictionary
             var sol = new Solution();
             var res = sol.LongestWord(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

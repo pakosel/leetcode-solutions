@@ -25,7 +25,7 @@ namespace MinimizeMaximumPairSumInArray
             var sol = new Solution();
             var res = sol.MinPairSum(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

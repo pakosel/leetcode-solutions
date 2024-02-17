@@ -28,7 +28,7 @@ namespace DetectCapital
             var sol = new Solution();
             var res = sol.DetectCapitalUse(word);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

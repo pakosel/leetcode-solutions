@@ -36,7 +36,7 @@ namespace ValidSquare
             var sol = new Solution();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace ValidSquare
             var sol = new Solution_WithoutHashSet();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         private int[][] MatrixFromString(string matrixStr)

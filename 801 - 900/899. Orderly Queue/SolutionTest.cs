@@ -25,7 +25,7 @@ namespace OrderlyQueue
             var sol = new Solution();
             var res = sol.OrderlyQueue(s, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

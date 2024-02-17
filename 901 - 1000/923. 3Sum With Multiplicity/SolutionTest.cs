@@ -27,7 +27,7 @@ namespace ThreeSumWithMultiplicity
             var sol = new Solution();
             var res = sol.ThreeSumMulti(arr, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

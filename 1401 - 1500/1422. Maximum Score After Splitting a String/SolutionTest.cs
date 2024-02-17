@@ -31,7 +31,7 @@ namespace MaximumScoreAfterSplittingString
             var sol = new Solution();
             var res = sol.MaxScore(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

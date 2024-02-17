@@ -27,7 +27,7 @@ namespace LexicographicallySmallestEquivalentString
             var sol = new Solution();
             var res = sol.SmallestEquivalentString(s1, s2, baseStr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

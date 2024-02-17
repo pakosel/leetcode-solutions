@@ -28,7 +28,7 @@ namespace BestTimeToBuyStockII
             var sol = new Solution();
             var ret = sol.MaxProfit(prices);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

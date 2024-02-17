@@ -26,7 +26,7 @@ namespace SenderWithLargestWordCount
             var sol = new Solution();
             var res = sol.LargestWordCount(messages, senders);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

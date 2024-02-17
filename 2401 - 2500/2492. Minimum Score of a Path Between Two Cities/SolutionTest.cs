@@ -28,7 +28,7 @@ namespace MinimumScoreOfPathBetweenTwoCities
             var sol = new Solution();
             var res = sol.MinScore(n, roads);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

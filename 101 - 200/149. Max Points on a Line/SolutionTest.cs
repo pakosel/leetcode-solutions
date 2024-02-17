@@ -35,7 +35,7 @@ namespace MaxPointsOnLine
             var sol = new Solution();
             var res = sol.MaxPoints(points);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

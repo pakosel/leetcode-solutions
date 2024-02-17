@@ -28,7 +28,7 @@ namespace JumpGame
             var sol = new Solution_2022();
             var res = sol.CanJump(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace JumpGame
             var sol = new Solution();
             var res = sol.CanJump(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

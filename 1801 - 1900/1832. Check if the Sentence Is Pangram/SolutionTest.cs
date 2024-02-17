@@ -23,7 +23,7 @@ namespace CheckIfTheSentenceIsPangram
             var sol = new Solution();
             var res = sol.CheckIfPangram(sentence);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

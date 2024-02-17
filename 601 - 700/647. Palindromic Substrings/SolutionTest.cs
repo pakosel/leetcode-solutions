@@ -30,7 +30,7 @@ namespace PalindromicSubstrings
             var sol = new Solution();
             var res = sol.CountSubstrings(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

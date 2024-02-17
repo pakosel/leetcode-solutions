@@ -31,7 +31,7 @@ namespace ValidateBinaryTreeNodes
             var sol = new Solution();
             var res = sol.ValidateBinaryTreeNodes(n, leftChild, rightChild);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

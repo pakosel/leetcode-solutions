@@ -54,7 +54,7 @@ namespace DesignUndergroundSystem
                         break;
                 }
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

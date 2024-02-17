@@ -28,7 +28,7 @@ namespace PalindromeNumber
             var sol = new Solution_NoString();
             var res = sol.IsPalindrome(x);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace PalindromeNumber
             var sol = new Solution_ToString();
             var res = sol.IsPalindrome(x);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

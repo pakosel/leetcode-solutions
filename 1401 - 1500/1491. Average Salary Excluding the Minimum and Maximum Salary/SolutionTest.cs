@@ -28,7 +28,7 @@ namespace AverageSalaryExcludingTheMinimumAndMaximumSalary
             var res = sol.Average(salary);
             res = Math.Round(res, 5);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }        
         
         [Test]
@@ -41,7 +41,7 @@ namespace AverageSalaryExcludingTheMinimumAndMaximumSalary
             var res = sol.Average(salary);
             res = Math.Round(res, 5);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

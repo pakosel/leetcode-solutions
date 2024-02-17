@@ -25,7 +25,7 @@ namespace CountNodesEqualToAverageOfSubtree
             var sol = new Solution();
             var res = sol.AverageOfSubtree(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

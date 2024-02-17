@@ -29,7 +29,7 @@ namespace GreatestCommonDivisorOfStrings
             var sol = new Solution();
             var res = sol.GcdOfStrings(str1, str2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

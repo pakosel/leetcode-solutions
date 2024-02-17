@@ -26,7 +26,7 @@ namespace FindTheKBeautyOfNumber
             var sol = new Solution();
             var res = sol.DivisorSubstrings(num, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

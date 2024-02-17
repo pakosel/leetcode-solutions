@@ -25,7 +25,7 @@ namespace LongestStringChain
             var sol = new Solution();
             var res = sol.LongestStrChain(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

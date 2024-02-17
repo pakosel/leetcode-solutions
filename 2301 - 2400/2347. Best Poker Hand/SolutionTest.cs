@@ -27,7 +27,7 @@ namespace BestPokerHand
             var sol = new Solution();
             var res = sol.BestHand(ranks, suits);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

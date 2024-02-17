@@ -29,7 +29,7 @@ namespace MinimumInsertionStepsToMakeStringPalindrome
             var sol = new Solution();
             var res = sol.MinInsertions(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace MinimumInsertionStepsToMakeStringPalindrome
             var sol = new Solution_Ranges();
             var res = sol.MinInsertions(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Triangle
             var sol = new Solution();
             var res = sol.MinimumTotal(triangle);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

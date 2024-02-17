@@ -27,7 +27,7 @@ namespace CheckIfItIsStraightLine
             var sol = new Solution();
             var res = sol.CheckStraightLine(points);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

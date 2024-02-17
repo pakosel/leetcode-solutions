@@ -28,7 +28,7 @@ namespace EliminateMaximumNumberOfMonsters
             var sol = new Solution();
             var res = sol.EliminateMaximum(dist, speed);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

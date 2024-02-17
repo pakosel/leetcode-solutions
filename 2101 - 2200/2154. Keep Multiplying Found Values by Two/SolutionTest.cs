@@ -25,7 +25,7 @@ namespace KeepMultiplyingFoundValuesByTwo
             var sol = new Solution();
             var res = sol.FindFinalValue(nums, orignal);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

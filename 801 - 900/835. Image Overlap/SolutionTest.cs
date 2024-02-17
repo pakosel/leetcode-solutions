@@ -35,7 +35,7 @@ namespace ImageOverlap
             var sol = new Solution();
             var res = sol.LargestOverlap(img1, img2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

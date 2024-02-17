@@ -25,7 +25,7 @@ namespace FindTheWinnerOfAnArrayGame
             var sol = new Solution();
             var res = sol.GetWinner(arr, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

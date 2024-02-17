@@ -30,7 +30,7 @@ namespace LargestPlusSign
             var sol = new Solution();
             var res = sol.OrderOfLargestPlusSign(n, mines);
             
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

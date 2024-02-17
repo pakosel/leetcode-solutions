@@ -29,7 +29,7 @@ namespace ReduceArraySizeToTheHalf
             var sol = new Solution();
             var res = sol.MinSetSize(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

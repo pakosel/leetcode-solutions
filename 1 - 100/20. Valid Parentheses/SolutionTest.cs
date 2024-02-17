@@ -29,7 +29,7 @@ namespace ValidParentheses
             var sol = new Solution();
             var res = sol.IsValid(input);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

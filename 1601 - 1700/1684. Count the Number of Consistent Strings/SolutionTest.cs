@@ -27,7 +27,7 @@ namespace CountNumberConsistentStrings
             var sol = new Solution();
             var res = sol.CountConsistentStrings(allowed, words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

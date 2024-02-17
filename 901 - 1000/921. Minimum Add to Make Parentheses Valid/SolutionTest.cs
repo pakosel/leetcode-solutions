@@ -19,7 +19,7 @@ namespace MinimumAddParentheses
             var sol = new Solution();
             var ret = sol.MinAddToMakeValid(inputStr);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

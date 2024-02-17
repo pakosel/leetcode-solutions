@@ -29,7 +29,7 @@ namespace BinaryTreeLevelOrderTraversal
             var sol = new Solution();
             var res = sol.LevelOrder(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

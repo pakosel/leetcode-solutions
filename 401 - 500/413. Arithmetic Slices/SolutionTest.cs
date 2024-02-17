@@ -31,7 +31,7 @@ namespace ArithmeticSlices
             var sol = new Solution();
             var res = sol.NumberOfArithmeticSlices(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(nodes[i]);
             var ret = Solution.visibleNodes(bst.root);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -76,7 +76,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(nodes[i]);
             var ret = Solution_naive.visibleNodes(bst.root);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]

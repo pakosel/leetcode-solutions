@@ -27,7 +27,7 @@ namespace MinimumLengthOfStringAfterDeletingSimilarEnds
             var sol = new Solution();
             var res = sol.MinimumLength(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

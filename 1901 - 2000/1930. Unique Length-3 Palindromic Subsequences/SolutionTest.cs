@@ -25,7 +25,7 @@ namespace UniqueLength3PalindromicSubsequences
             var sol = new Solution();
             var res = sol.CountPalindromicSubsequence(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

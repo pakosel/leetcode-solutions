@@ -31,7 +31,7 @@ namespace Candy
             var sol = new Solution();
             var res = sol.Candy(ratings);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

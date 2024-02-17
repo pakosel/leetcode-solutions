@@ -39,7 +39,7 @@ namespace StackStabilization
             var sol = new Solution();
             var res = sol.getMinimumSecondsRequired(N, R, A, B);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ValidSudoku
             var sol = new Solution_2022();
             var res = sol.IsValidSudoku(board);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
         
         [Test]
@@ -34,7 +34,7 @@ namespace ValidSudoku
             var sol = new Solution();
             var res = sol.IsValidSudoku(board);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

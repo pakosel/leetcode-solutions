@@ -26,7 +26,7 @@ namespace MinimumDeletionsToMakeCharacterFrequenciesUnique
             var sol = new Solution_2023();
             var res = sol.MinDeletions(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace MinimumDeletionsToMakeCharacterFrequenciesUnique
             var sol = new Solution();
             var res = sol.MinDeletions(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

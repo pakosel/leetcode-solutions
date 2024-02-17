@@ -27,7 +27,7 @@ namespace OnesAndZeroes
             var sol = new Solution();
             var res = sol.FindMaxForm(strs, m, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace OnesAndZeroes
             var sol = new Solution_DP();
             var res = sol.FindMaxForm(strs, m, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

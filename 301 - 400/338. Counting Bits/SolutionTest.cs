@@ -36,7 +36,7 @@ namespace CountingBits
             var sol = new Solution();
             var res = sol.CountBits(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

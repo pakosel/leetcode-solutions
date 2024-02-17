@@ -26,7 +26,7 @@ namespace MaximumLevelSumOfBinaryTree
             var sol = new Solution();
             var res = sol.MaxLevelSum(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

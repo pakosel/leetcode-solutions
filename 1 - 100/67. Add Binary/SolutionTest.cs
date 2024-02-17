@@ -26,7 +26,7 @@ namespace AddBinary
             var sol = new Solution();
             var res = sol.AddBinary(a, b);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

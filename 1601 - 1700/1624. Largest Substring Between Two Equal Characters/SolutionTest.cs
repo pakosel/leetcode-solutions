@@ -25,7 +25,7 @@ namespace LargestSubstringBetweenTwoEqualCharacters
             var sol = new Solution();
             var res = sol.MaxLengthBetweenEqualCharacters(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

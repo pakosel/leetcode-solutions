@@ -29,7 +29,7 @@ namespace StringToInteger
             var sol = new Solution();
             var ret = sol.MyAtoi(str);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

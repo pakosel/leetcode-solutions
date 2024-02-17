@@ -26,7 +26,7 @@ namespace FrogJump
             var sol = new Solution();
             var res = sol.CanCross(stones);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

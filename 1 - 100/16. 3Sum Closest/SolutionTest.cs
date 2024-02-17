@@ -26,7 +26,7 @@ namespace ThreeSumClosest
             var sol = new Solution();
             var res = sol.ThreeSumClosest(nums, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

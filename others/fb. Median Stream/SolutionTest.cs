@@ -12,10 +12,9 @@ namespace MedianStream
         [TestCase(new int[] {1, 2}, new int[] {1, 1})]
         public void Test_Examples(int[] arr, int[] expected)
         {
-            var ret = Solution.findMedian(arr);
-            Console.Out.WriteLine(string.Join(',', ret));
+            var res = Solution.findMedian(arr);
             
-            ClassicAssert.AreEqual(ret, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

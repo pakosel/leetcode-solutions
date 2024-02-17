@@ -30,7 +30,7 @@ namespace MinimumValueToGetPositiveStepByStepSum
             var sol = new Solution();
             var ret = sol.MinStartValue(nums);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

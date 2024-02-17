@@ -25,7 +25,7 @@ namespace MaxProfit
         {
             var ret = Solution.MaxProfitWithKTransactions(prices, k);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace ArrayOfDoubledPairs
             var sol = new Solution();
             var res = sol.CanReorderDoubled(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

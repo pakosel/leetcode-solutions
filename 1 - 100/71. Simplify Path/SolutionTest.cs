@@ -31,7 +31,7 @@ namespace SimplifyPath
             var sol = new Solution();
             var res = sol.SimplifyPath(path);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

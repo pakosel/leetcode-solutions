@@ -29,7 +29,7 @@ namespace FurthestBuildingYouCanReach
             var sol = new Solution();
             var res = sol.FurthestBuilding(heights, bricks, ladders);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

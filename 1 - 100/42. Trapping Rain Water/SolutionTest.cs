@@ -28,7 +28,7 @@ namespace TrappingRainWater
             var sol = new Solution();
             var res = sol.Trap(height);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

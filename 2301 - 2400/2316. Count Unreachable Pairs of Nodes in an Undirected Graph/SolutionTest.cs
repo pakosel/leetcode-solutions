@@ -26,7 +26,7 @@ namespace CountUnreachablePairsOfNodesInAnUndirectedGraph
             var sol = new Solution();
             var res = sol.CountPairs(n, edges);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

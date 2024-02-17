@@ -27,7 +27,7 @@ namespace MinimumOperationsToHalveArraySum
             var sol = new Solution();
             var res = sol.HalveArray(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

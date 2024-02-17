@@ -29,7 +29,7 @@ namespace CombinationSumIV
             var sol = new Solution();
             var res = sol.CombinationSum4(nums, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

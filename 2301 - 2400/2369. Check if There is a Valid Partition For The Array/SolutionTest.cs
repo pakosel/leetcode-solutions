@@ -39,7 +39,7 @@ namespace CheckIfThereIsValidPartitionForTheArray
             var sol = new Solution();
             var res = sol.ValidPartition(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

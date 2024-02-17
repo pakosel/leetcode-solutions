@@ -26,7 +26,7 @@ namespace NumberOfOperationsToMakeNetworkConnected
             var sol = new Solution();
             var res = sol.MakeConnected(n, connections);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

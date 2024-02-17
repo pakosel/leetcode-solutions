@@ -32,7 +32,7 @@ namespace AsFarFromLandAsPossible
             var sol = new Solution_2023();
             var res = sol.MaxDistance(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace AsFarFromLandAsPossible
             var sol = new Solution();
             var res = sol.MaxDistance(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

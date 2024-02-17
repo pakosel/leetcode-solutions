@@ -11,8 +11,8 @@ namespace LargestTripleProduct
         [TestCase(new int[] {2, 1, 2, 1, 2}, new int[] {-1, -1, 4, 4, 8})]
         public void Test_Examples(int[] nums, int[] expected)
         {
-            var ret = Solution.findMaxProduct(nums);
-            ClassicAssert.AreEqual(ret, expected);
+            var res = Solution.findMaxProduct(nums);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

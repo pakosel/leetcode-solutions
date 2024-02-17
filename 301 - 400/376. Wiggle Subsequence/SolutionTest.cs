@@ -29,7 +29,7 @@ namespace WiggleSubsequence
             var sol = new Solution();
             var res = sol.WiggleMaxLength(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

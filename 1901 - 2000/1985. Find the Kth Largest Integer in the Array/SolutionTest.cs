@@ -24,7 +24,7 @@ namespace FindTheKthLargestIntegerInTheArray
             var sol = new Solution();
             var res = sol.KthLargestNumber(nums, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

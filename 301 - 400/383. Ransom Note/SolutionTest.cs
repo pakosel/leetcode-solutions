@@ -23,7 +23,7 @@ namespace RansomNote
             var sol = new Solution();
             var res = sol.CanConstruct(ransomNote, magazine);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace ShortestUnsortedContinuousSubarray
             var sol = new Solution();
             var res = sol.FindUnsortedSubarray(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace LongestConsecutiveSequence
             var sol = new Solution();
             var res = sol.LongestConsecutive(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

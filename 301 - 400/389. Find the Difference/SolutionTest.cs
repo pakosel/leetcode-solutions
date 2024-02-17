@@ -24,7 +24,7 @@ namespace FindTheDifference
             var sol = new Solution_2023();
             var res = sol.FindTheDifference(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace FindTheDifference
             var sol = new Solution();
             var res = sol.FindTheDifference(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

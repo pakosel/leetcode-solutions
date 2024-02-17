@@ -24,7 +24,7 @@ namespace OptimalPartitionOfString
             var sol = new Solution();
             var res = sol.PartitionString(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

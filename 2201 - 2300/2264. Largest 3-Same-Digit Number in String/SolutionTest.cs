@@ -24,7 +24,7 @@ namespace Largest3SameDigitNumberInString
             var sol = new Solution();
             var res = sol.LargestGoodInteger(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace MaximumSubarray
             var sol = new Solution();
             var res = sol.MaxSubArray(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

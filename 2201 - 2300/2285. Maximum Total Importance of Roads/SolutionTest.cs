@@ -25,7 +25,7 @@ namespace MaximumTotalImportanceOfRoads
             var sol = new Solution();
             var res = sol.MaximumImportance(n, roads);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

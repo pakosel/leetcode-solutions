@@ -26,7 +26,7 @@ namespace DetonateTheMaximumBombs
             var sol = new Solution();
             var res = sol.MaximumDetonation(bombs);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

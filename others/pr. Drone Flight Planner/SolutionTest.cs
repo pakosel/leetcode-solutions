@@ -25,7 +25,7 @@ namespace DroneFlightPlanner
         {
             var ret = Solution.CalcDroneMinEnergy(route);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

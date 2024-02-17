@@ -30,7 +30,7 @@ namespace CheckIfAllAsAppearsBeforeAllBs
             var sol = new Solution();
             var res = sol.CheckString(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

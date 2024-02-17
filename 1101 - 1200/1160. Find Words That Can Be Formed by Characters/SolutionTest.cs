@@ -25,7 +25,7 @@ namespace FindWordsThatCanBeFormedByCharacters
             var sol = new Solution();
             var res = sol.CountCharacters(words, chars);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace RemovingStarsFromString
             var sol = new Solution();
             var res = sol.RemoveStars(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

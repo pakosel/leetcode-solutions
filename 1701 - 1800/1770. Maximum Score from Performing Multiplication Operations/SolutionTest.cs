@@ -26,7 +26,7 @@ namespace MaximumScoreFromPerformingMultiplicationOperations
             var sol = new Solution();
             var res = sol.MaximumScore(nums, multipliers);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

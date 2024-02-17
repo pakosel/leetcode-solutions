@@ -26,7 +26,7 @@ namespace NumberOfLaserBeamsInBank
             var sol = new Solution();
             var res = sol.NumberOfBeams(bank);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

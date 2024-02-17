@@ -27,7 +27,7 @@ namespace FindTheIndexOfTheFirstOccurrenceInString
             var sol = new Solution();
             var res = sol.StrStr(haystack, needle);
 
-            ClassicAssert.AreEqual(res, expected);
+            Assert.That(expected == res);
         }
     }
 }

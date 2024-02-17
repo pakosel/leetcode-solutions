@@ -25,7 +25,7 @@ namespace ElementAppearingMoreThan25InSortedArray
             var sol = new Solution();
             var res = sol.FindSpecialInteger(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

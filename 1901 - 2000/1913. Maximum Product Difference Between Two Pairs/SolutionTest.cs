@@ -26,7 +26,7 @@ namespace MaximumProductDifferenceBetweenTwoPairs
             var sol = new Solution();
             var res = sol.MaxProductDifference(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

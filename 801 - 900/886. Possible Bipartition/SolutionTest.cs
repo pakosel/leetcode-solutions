@@ -32,7 +32,7 @@ namespace PossibleBipartition
             var sol = new Solution();
             var res = sol.PossibleBipartition(n, dislikes);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

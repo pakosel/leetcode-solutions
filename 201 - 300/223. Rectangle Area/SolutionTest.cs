@@ -23,7 +23,7 @@ namespace RectangleArea
             var sol = new Solution();
             var res = sol.ComputeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

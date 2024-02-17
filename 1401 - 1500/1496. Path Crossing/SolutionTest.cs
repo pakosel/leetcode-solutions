@@ -25,7 +25,7 @@ namespace PathCrossing
             var sol = new Solution();
             var res = sol.IsPathCrossing(path);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

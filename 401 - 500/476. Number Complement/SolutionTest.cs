@@ -36,7 +36,7 @@ namespace NumberComplement
             var sol = new Solution();
             var res = sol.FindComplement(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

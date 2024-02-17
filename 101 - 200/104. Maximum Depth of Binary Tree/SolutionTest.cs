@@ -28,7 +28,7 @@ namespace MaximumDepthBinaryTree
             var sol = new Solution();
             var res = sol.MaxDepth(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MaximumDepthBinaryTree
             var sol = new Solution();
             var res = sol.MaxDepth(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

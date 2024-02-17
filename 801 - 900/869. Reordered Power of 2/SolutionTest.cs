@@ -31,7 +31,7 @@ namespace ReorderedPowerOf2
             var sol = new Solution();
             var res = sol.ReorderedPowerOf2(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

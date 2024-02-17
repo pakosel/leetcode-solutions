@@ -38,7 +38,7 @@ namespace PartitionEqualSum
             var sol = new Solution();
             var ret = sol.CanPartition(nums);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

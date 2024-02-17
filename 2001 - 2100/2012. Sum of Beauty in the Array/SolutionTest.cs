@@ -30,7 +30,7 @@ namespace SumOfBeautyInTheArray
             var sol = new Solution();
             var res = sol.SumOfBeauties(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

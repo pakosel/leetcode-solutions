@@ -26,7 +26,7 @@ namespace MinimumAbsoluteDifferenceInBST
             var sol = new Solution();
             var res = sol.GetMinimumDifference(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

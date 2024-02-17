@@ -29,7 +29,7 @@ namespace NthDigit
             var sol = new Solution();
             var res = sol.FindNthDigit(input);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

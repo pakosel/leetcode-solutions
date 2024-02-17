@@ -26,7 +26,7 @@ namespace MinimumMovesToReachTargetScore
             var sol = new Solution();
             var res = sol.MinMoves(target, maxDoubles);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace CountAllPossibleRoutes
             var sol = new Solution();
             var res = sol.CountRoutes(locations, start, finish, fuel);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

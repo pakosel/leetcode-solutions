@@ -31,7 +31,7 @@ namespace CoinChange
             var sol = new Solution_DPv2();
             var res = sol.CoinChange(coins, amount);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace CoinChange
             var sol = new Solution_DP();
             var res = sol.CoinChange(coins, amount);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -55,7 +55,7 @@ namespace CoinChange
             var sol = new Solution_Recursive();
             var res = sol.CoinChange(coins, amount);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

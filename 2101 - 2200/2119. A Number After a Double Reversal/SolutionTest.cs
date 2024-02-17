@@ -27,7 +27,7 @@ namespace NumberAfterDoubleReversal
             var sol = new Solution();
             var res = sol.IsSameAfterReversals(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

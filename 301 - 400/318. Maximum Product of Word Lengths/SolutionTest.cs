@@ -26,7 +26,7 @@ namespace MaximumProductOfWordLengths
             var sol = new Solution();
             var res = sol.MaxProduct(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

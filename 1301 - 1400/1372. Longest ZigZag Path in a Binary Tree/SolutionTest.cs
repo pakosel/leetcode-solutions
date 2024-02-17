@@ -28,7 +28,7 @@ namespace LongestZigZagPathInBinaryTree
             var sol = new Solution();
             var res = sol.LongestZigZag(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace LastStoneWeight
             var sol = new Solution();
             var res = sol.LastStoneWeight(stones);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

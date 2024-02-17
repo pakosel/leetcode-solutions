@@ -29,7 +29,7 @@ namespace Ipo
             var sol = new Solution();
             var res = sol.FindMaximizedCapital(k, w, profits, capital);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace MinimumRoundsToCompleteAllTasks
             var sol = new Solution();
             var res = sol.MinimumRounds(tasks);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

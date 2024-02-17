@@ -32,7 +32,7 @@ namespace MinimizeMaximumOfArray
             var sol = new Solution();
             var res = sol.MinimizeArrayValue(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

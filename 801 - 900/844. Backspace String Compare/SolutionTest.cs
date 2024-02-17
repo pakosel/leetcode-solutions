@@ -25,7 +25,7 @@ namespace BackspaceStringCompare
             var sol = new Solution();
             var res = sol.BackspaceCompare(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

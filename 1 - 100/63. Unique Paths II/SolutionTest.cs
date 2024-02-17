@@ -34,7 +34,7 @@ namespace UniquePathsII
             var sol = new Solution_Backtrack();
             var res = sol.UniquePathsWithObstacles(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace UniquePathsII
             var sol = new Solution();
             var res = sol.UniquePathsWithObstacles(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

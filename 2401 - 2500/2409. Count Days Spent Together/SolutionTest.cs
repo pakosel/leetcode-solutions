@@ -24,7 +24,7 @@ namespace CountDaysSpentTogether
             var sol = new Solution();
             var res = sol.CountDaysTogether(arriveAlice, leaveAlice, arriveBob, leaveBob);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

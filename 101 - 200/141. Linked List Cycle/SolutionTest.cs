@@ -34,7 +34,7 @@ namespace LinkedListCycle
             var sol = new Solution_2023();
             var res = sol.HasCycle(head);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
         
         [Test]
@@ -47,7 +47,7 @@ namespace LinkedListCycle
             var sol = new Solution();
             var res = sol.HasCycle(head);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
         
         [Test]
@@ -60,7 +60,7 @@ namespace LinkedListCycle
             var sol = new Solution_O1();
             var res = sol.HasCycle(head);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         private void MakeLoop(ListNode head, int loopIdx)

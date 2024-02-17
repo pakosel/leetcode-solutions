@@ -26,7 +26,7 @@ namespace MaximumLengthOfRepeatedSubarray
             var sol = new Solution();
             var res = sol.FindLength(nums1, nums2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

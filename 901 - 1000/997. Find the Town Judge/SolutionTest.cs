@@ -28,7 +28,7 @@ namespace FindTheTownJudge
             var sol = new Solution_2022();
             var res = sol.FindJudge(n, trust);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
         
         [Test]
@@ -40,7 +40,7 @@ namespace FindTheTownJudge
             var sol = new Solution();
             var res = sol.FindJudge(n, trust);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

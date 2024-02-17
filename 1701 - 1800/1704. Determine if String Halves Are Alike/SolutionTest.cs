@@ -30,7 +30,7 @@ namespace DetermineIfStringHalvesAreAlike
             var sol = new Solution_2024();
             var res = sol.HalvesAreAlike(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace DetermineIfStringHalvesAreAlike
             var sol = new Solution();
             var res = sol.HalvesAreAlike(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

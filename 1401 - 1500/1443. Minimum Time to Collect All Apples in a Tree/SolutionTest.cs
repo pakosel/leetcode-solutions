@@ -32,7 +32,7 @@ namespace MinimumTimeToCollectAllApplesInTree
             var sol = new Solution();
             var res = sol.MinTime(n, edges, hasApple);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

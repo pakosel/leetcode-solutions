@@ -30,7 +30,7 @@ namespace FindCorrespondingNodeBinaryTreeInCloneThatTree
             var sol = new Solution();
             var res = sol.GetTargetCopy(original, cloned, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace TheNumberOfWeakCharactersInTheGame
             var sol = new Solution();
             var res = sol.NumberOfWeakCharacters(properties);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

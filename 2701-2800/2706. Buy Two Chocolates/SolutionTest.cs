@@ -26,7 +26,7 @@ namespace BuyTwoChocolates
             var sol = new Solution();
             var res = sol.BuyChoco(prices, money);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

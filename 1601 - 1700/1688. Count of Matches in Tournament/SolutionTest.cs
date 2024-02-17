@@ -23,7 +23,7 @@ namespace CountOfMatchesInTournament
             var sol = new Solution();
             var res = sol.NumberOfMatches(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

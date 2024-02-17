@@ -24,13 +24,13 @@ namespace ShuffleTheArray
         {
             var nums = ArrayHelper.ArrayFromString<int>(numsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            ClassicAssert.AreEqual(nums.Length, 2*n);
-            ClassicAssert.AreEqual(expected.Length, 2*n);
+            Assert.That(nums.Length == 2*n);
+            Assert.That(expected.Length == 2*n);
 
             var sol = new Solution();
             var res = sol.Shuffle(nums, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

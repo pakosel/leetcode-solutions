@@ -28,7 +28,7 @@ namespace MultiplyStrings
             var sol = new Solution();
             var res = sol.Multiply(num1, num2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

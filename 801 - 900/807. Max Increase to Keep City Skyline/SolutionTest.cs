@@ -26,7 +26,7 @@ namespace MaxIncreaseToKeepCitySkyline
             var sol = new Solution();
             var res = sol.MaxIncreaseKeepingSkyline(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

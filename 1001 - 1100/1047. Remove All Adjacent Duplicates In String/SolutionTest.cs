@@ -26,7 +26,7 @@ namespace RemoveAllAdjacentDuplicatesInString
             var sol = new Solution();
             var res = sol.RemoveDuplicates(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

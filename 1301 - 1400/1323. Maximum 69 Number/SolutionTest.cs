@@ -26,7 +26,7 @@ namespace Maximum69Number
             var sol = new Solution();
             var res = sol.Maximum69Number(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

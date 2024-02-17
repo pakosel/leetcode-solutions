@@ -26,7 +26,7 @@ namespace MaximumMatchingOfPlayersWithTrainers
             var sol = new Solution();
             var res = sol.MatchPlayersAndTrainers(players, trainers);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

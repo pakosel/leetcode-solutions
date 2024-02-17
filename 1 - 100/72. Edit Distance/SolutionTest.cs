@@ -32,7 +32,7 @@ namespace EditDistance
             var sol = new Solution_Memo();
             var res = sol.MinDistance(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace EditDistance
             var sol = new Solution();
             var res = sol.MinDistance(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace FourSumII
             var sol = new Solution();
             var res = sol.FourSumCount(A, B, C, D);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

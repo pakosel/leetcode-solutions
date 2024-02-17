@@ -37,7 +37,7 @@ namespace RegularExpressionMatching
             var sol = new Solution();
             var res = sol.IsMatch(s, p);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Search2DMatrix
             var sol = new Solution();
             var res = sol.SearchMatrix(matrix, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

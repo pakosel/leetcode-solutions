@@ -29,7 +29,7 @@ namespace CheapestFlightsWithinKStops
             var sol = new Solution();
             var res = sol.FindCheapestPrice(n, flights, src, dst, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

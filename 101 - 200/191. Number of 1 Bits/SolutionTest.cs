@@ -28,7 +28,7 @@ namespace NumberOf1Bits
             var sol = new Solution();
             var res = sol.HammingWeight(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

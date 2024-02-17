@@ -36,7 +36,7 @@ namespace MaxDifferenceYouCanGetFromChangingInteger
             var sol = new Solution();
             var res = sol.MaxDiff(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace LongestValidParentheses
             var sol = new Solution();
             var res = sol.LongestValidParentheses(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace LongestValidParentheses
             var sol = new Solution_Stack();
             var res = sol.LongestValidParentheses(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

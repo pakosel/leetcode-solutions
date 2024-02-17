@@ -26,7 +26,7 @@ namespace LongestIncreasingSubsequence
             var sol = new Solution();
             var res = sol.LengthOfLIS(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

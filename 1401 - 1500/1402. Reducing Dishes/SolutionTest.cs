@@ -29,7 +29,7 @@ namespace ReducingDishes
             var sol = new Solution();
             var res = sol.MaxSatisfaction(satisfaction);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

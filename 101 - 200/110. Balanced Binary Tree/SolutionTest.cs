@@ -28,7 +28,7 @@ namespace BalancedBinaryTree
             var sol = new Solution();
             var res = sol.IsBalanced(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace CountNegativeNumbersInSortedMatrix
             var sol = new Solution();
             var res = sol.CountNegatives(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

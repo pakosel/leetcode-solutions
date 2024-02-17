@@ -27,7 +27,7 @@ namespace NaryTreePreorderTraversal
             var sol = new Solution();
             var res = sol.Preorder(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace NaryTreePreorderTraversal
             var sol = new Solution_Recursive();
             var res = sol.Preorder(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace LongestSubstringWithoutRepeatingCharacters
             var sol = new Solution();
             var res = sol.LengthOfLongestSubstring(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
         
         [Test]
@@ -38,7 +38,7 @@ namespace LongestSubstringWithoutRepeatingCharacters
             var sol = new Solution2020();
             var res = sol.LengthOfLongestSubstring(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

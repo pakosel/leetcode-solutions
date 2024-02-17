@@ -25,7 +25,7 @@ namespace MinCostClimbingStairs
             var sol = new Solution();
             var res = sol.MinCostClimbingStairs(cost);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

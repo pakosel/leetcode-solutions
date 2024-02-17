@@ -31,7 +31,7 @@ namespace BulbSwitcher
             var sol = new Solution();
             var res = sol.BulbSwitch(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

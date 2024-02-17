@@ -26,7 +26,7 @@ namespace MaximizeNumberOfSubsequencesInString
             var sol = new Solution();
             var res = sol.MaximumSubsequenceCount(text, pattern);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

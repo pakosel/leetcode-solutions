@@ -28,7 +28,7 @@ namespace KthMissingPositiveNumber
             var sol = new Solution();
             var res = sol.FindKthPositive(arr, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

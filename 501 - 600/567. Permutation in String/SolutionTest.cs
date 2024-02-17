@@ -36,7 +36,7 @@ namespace PermutationInString
             var sol = new Solution();
             var res = sol.CheckInclusion(s1, s2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

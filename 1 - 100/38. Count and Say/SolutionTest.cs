@@ -29,7 +29,7 @@ namespace CountAndSay
             var sol = new Solution();
             var res = sol.CountAndSay(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

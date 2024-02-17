@@ -25,7 +25,7 @@ namespace FindXorBeautyOfArray
             var sol = new Solution();
             var res = sol.XorBeauty(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace LongestCommonSubsequence
             var sol = new Solution();
             var res = sol.LongestCommonSubsequence(text1, text2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

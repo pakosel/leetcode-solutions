@@ -38,7 +38,7 @@ namespace StrongPasswordCheckerII
             var sol = new SolutionRegex();
             var res = sol.StrongPasswordCheckerII(password);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace StrongPasswordCheckerII
             var sol = new Solution();
             var res = sol.StrongPasswordCheckerII(password);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

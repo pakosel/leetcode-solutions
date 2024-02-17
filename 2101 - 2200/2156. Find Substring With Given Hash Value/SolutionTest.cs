@@ -28,7 +28,7 @@ namespace FindSubstringWithGivenHashValue
             var sol = new Solution();
             var res = sol.SubStrHash(s, power, modulo, k, hashValue);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

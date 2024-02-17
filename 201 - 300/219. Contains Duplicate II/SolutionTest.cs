@@ -26,7 +26,7 @@ namespace ContainsDuplicateII
             var sol = new Solution();
             var res = sol.ContainsNearbyDuplicate(nums, k);
             
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

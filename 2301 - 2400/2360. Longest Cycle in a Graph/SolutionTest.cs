@@ -26,7 +26,7 @@ namespace LongestCycleInGraph
             var sol = new Solution();
             var res = sol.LongestCycle(edges);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

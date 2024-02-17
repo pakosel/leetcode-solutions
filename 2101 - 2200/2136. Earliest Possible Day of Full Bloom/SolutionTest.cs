@@ -28,7 +28,7 @@ namespace EarliestPossibleDayOfFullBloom
             var sol = new Solution();
             var res = sol.EarliestFullBloom(plantTime, growTime);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

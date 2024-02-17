@@ -31,7 +31,7 @@ namespace PalindromeLinkedList
             var sol = new Solution();
             var res = sol.IsPalindrome(head);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

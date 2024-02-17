@@ -36,7 +36,7 @@ namespace FlipStringToMonotoneIncreasing
             var sol = new Solution();
             var res = sol.MinFlipsMonoIncr(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

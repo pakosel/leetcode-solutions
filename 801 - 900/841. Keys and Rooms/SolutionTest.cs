@@ -27,7 +27,7 @@ namespace KeysAndRooms
             var sol = new Solution_2022();
             var res = sol.CanVisitAllRooms(rooms);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace KeysAndRooms
             var sol = new Solution();
             var res = sol.CanVisitAllRooms(rooms);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

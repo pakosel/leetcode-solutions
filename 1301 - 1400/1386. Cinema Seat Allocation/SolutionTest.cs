@@ -33,7 +33,7 @@ namespace CinemaSeatAllocation
             var sol = new Solution();
             var res = sol.MaxNumberOfFamilies(n, reserved);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace MaximumPerformanceOfTeam
             var sol = new Solution();
             var res = sol.MaxPerformance(n, speed, efficiency, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

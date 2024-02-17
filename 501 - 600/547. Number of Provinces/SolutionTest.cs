@@ -26,7 +26,7 @@ namespace NumberOfProvinces
             var sol = new Solution();
             var res = sol.FindCircleNum(isConnected);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

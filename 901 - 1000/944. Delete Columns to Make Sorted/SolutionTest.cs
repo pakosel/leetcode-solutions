@@ -27,7 +27,7 @@ namespace DeleteColumnsToMakeSorted
             var sol = new Solution();
             var res = sol.MinDeletionSize(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

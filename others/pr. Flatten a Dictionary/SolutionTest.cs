@@ -63,9 +63,9 @@ namespace FlattenDictionary
         [TestCaseSource("testCases")]
         public void Test_Example(Dictionary<string, object> dict, Dictionary<string, string> expected)
         {
-            var ret = Solution.FlattenDictionary(dict);
+            var res = Solution.FlattenDictionary(dict);
 
-            ClassicAssert.AreEqual(ret, expected);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

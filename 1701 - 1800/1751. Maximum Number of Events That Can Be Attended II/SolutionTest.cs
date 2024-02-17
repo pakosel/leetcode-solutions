@@ -26,7 +26,7 @@ namespace MaximumNumberOfEventsThatCanBeAttendedII
             var sol = new Solution();
             var res = sol.MaxValue(events, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

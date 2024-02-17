@@ -31,7 +31,7 @@ namespace HouseRobber
             var sol = new Solution_2024();
             var res = sol.Rob(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace HouseRobber
             var sol = new Solution_2022();
             var res = sol.Rob(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -55,7 +55,7 @@ namespace HouseRobber
             var sol = new Solution();
             var res = sol.Rob(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

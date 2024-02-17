@@ -27,7 +27,7 @@ namespace MinimumSpeedToArriveOnTime
             var sol = new Solution();
             var res = sol.MinSpeedOnTime(dist, hour);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

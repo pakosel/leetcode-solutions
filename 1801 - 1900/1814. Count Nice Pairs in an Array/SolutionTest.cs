@@ -25,7 +25,7 @@ namespace CountNicePairsInArray
             var sol = new Solution();
             var res = sol.CountNicePairs(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

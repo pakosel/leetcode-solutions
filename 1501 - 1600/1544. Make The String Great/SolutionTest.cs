@@ -24,7 +24,7 @@ namespace MakeTheStringGreat
             var sol = new Solution();
             var res = sol.MakeGood(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

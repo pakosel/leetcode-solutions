@@ -35,7 +35,7 @@ namespace IntegerReplacement
             var sol = new Solution();
             var res = sol.IntegerReplacement(input);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }
