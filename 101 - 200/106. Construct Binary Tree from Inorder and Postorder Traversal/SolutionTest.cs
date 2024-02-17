@@ -31,7 +31,7 @@ namespace ConstructBinaryTreeFromInorderAndPostorderTraversal
             var res = sol.BuildTree(inorder, postorder);
 
             var expected = TreeNodeHelper.BuildTree(expectedStr);
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expected));
         }
     }
 }

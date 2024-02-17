@@ -28,7 +28,7 @@ namespace MiddleOfTheLinkedList
             var sol = new Solution();
             var res = sol.MiddleNode(head);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

@@ -23,8 +23,8 @@ namespace DesignParkingSystem
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<bool>(expectedStr);
             
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);
 
             var sol = new ParkingSystem(args[0][0], args[0][1], args[0][2]);
             var res = new bool[args.Length];

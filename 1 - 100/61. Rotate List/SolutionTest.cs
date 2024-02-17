@@ -33,7 +33,7 @@ namespace RotateList
             var sol = new Solution();
             var res = sol.RotateRight(head, k);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

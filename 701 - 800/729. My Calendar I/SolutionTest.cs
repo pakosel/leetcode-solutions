@@ -26,8 +26,8 @@ namespace MyCalendarI
             var commands = ArrayHelper.ArrayFromString<string>(commandsStr);
             var inputs = ArrayHelper.MatrixFromString<int>(inputStr);
             var expected = ArrayHelper.ArrayFromString<bool?>(expectedStr);
-            ClassicAssert.AreEqual(commands.Length, inputs.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == inputs.Length);
+            Assert.That(commands.Length == expected.Length);
             
             MyCalendar sol = null;
             var res = new bool?[commands.Length];

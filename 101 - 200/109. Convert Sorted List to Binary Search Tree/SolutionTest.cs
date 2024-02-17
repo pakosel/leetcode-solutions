@@ -26,7 +26,7 @@ namespace ConvertSortedListToBinarySearchTree
             var sol = new Solution();
             var res = sol.SortedListToBST(head);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            Assert.That(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

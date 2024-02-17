@@ -29,9 +29,9 @@ namespace ValidSquare
         {
             var points = MatrixFromString(arrStr);
 
-            ClassicAssert.IsTrue(points.Length == 4);
+            Assert.That(points.Length == 4);
             foreach(var p in points)
-                ClassicAssert.IsTrue(p.Length == 2);
+                Assert.That(p.Length == 2);
 
             var sol = new Solution();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
@@ -45,9 +45,9 @@ namespace ValidSquare
         {
             var points = MatrixFromString(arrStr);
 
-            ClassicAssert.IsTrue(points.Length == 4);
+            Assert.That(points.Length == 4);
             foreach(var p in points)
-                ClassicAssert.IsTrue(p.Length == 2);
+                Assert.That(p.Length == 2);
 
             var sol = new Solution_WithoutHashSet();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);

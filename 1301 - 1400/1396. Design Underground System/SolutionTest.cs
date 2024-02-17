@@ -25,8 +25,8 @@ namespace DesignUndergroundSystem
         {
             var args = ArrayHelper.MatrixFromString<string>(argsStr, true);
 
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);            
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);            
 
             var res = new double?[expected.Length];
             var sol = new UndergroundSystem();

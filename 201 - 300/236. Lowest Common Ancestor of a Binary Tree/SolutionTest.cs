@@ -29,7 +29,7 @@ namespace LowestCommonAncestorOfBinaryTree
             var sol = new Solution();
             var res = sol.LowestCommonAncestor(root, TreeNodeHelper.FindNodeWithVal(root, p), TreeNodeHelper.FindNodeWithVal(root, q));
 
-            ClassicAssert.AreEqual(res.val, expected);
+            Assert.That(res.val == expected);
         }
         
         [Test]
@@ -41,7 +41,7 @@ namespace LowestCommonAncestorOfBinaryTree
             var sol = new Solution_Stack();
             var res = sol.LowestCommonAncestor(head, p, q);
 
-            ClassicAssert.AreEqual(res.val, expected);
+            Assert.That(res.val == expected);
         }
     }
 }

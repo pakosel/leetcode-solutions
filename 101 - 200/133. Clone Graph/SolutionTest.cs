@@ -31,8 +31,8 @@ namespace CloneGraph
             var nodesAreEqual = NodesAreEqual(node, ret);
 
             if(node != null)
-                ClassicAssert.AreNotEqual(node, ret);
-            ClassicAssert.AreEqual(nodesAreEqual, true);
+                Assert.That(node != ret);
+            Assert.That(nodesAreEqual);
         }
 
         [Test]
@@ -48,8 +48,8 @@ namespace CloneGraph
             var nodesAreEqual = NodesAreEqual(node, ret);
 
             if(node != null)
-                ClassicAssert.AreNotEqual(node, ret);
-            ClassicAssert.AreEqual(nodesAreEqual, true);
+                Assert.That(node != ret);
+            Assert.That(nodesAreEqual);
         }
 
         private Node[] BuildGraph(string inputArr)

@@ -27,7 +27,7 @@ namespace InvertBinaryTree
             var res = sol.InvertTree(tree);
             var expected = TreeNodeHelper.BuildTree(expectedStr);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            Assert.That(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

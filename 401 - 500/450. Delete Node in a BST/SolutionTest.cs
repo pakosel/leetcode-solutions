@@ -38,7 +38,7 @@ namespace DeleteNodeInBst
 
             var expected = TreeNodeHelper.BuildTree(expectedStr);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expected));
         }
     }
 }

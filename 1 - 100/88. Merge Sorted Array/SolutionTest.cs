@@ -30,7 +30,7 @@ namespace MergeSortedArray
             sol.Merge(nums1, m, nums2, n);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            ClassicAssert.AreEqual(nums1, expected);
+            CollectionAssert.AreEqual(nums1, expected);
         }
     }
 }

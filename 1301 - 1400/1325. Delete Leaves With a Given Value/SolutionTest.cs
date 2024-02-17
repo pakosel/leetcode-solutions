@@ -27,7 +27,7 @@ namespace DeleteLeavesWithGivenValue
             var sol = new Solution();
             var res = sol.RemoveLeafNodes(root, target);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expected));
         }
     }
 }

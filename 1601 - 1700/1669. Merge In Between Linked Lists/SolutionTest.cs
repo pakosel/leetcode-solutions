@@ -29,7 +29,7 @@ namespace MergeInBetweenLinkedLists
             var sol = new Solution();
             var res = sol.MergeInBetween(list1, a, b, list2);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expectedList));
+            Assert.That(ListNodeHelper.AreEqual(res, expectedList));
         }
     }
 }

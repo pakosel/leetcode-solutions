@@ -32,7 +32,7 @@ namespace IncreasingOrderSearchTree
             
             var expectedRoot = TreeNodeHelper.BuildTree(expected);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedRoot));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expectedRoot));
         }
     }
 }

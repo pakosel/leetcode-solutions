@@ -34,7 +34,7 @@ namespace AddTwoNumbers
             var sol = new Solution();
             var res = sol.AddTwoNumbers(l1, l2);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

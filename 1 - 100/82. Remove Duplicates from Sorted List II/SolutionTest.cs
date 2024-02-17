@@ -30,7 +30,7 @@ namespace RemoveDuplicatesFromSortedListII
             var sol = new Solution();
             var res = sol.DeleteDuplicates(head);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

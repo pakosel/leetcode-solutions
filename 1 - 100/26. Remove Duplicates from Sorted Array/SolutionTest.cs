@@ -29,9 +29,9 @@ namespace RemoveDuplicatesFromSortedArray
             var sol = new Solution();
             var res = sol.RemoveDuplicates(nums);
 
-            ClassicAssert.AreEqual(res, expected.Length);
+            Assert.That(res == expected.Length);
             for(int i=0; i<k; i++)
-                ClassicAssert.AreEqual(nums[i], expected[i]);
+                Assert.That(nums[i] == expected[i]);
         }
     }
 }

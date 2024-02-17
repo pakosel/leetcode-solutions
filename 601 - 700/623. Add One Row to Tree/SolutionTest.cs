@@ -29,7 +29,7 @@ namespace AddOneRowToTree
             var sol = new Solution();
             var res = sol.AddOneRow(root, val, depth);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            Assert.That(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

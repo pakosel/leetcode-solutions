@@ -35,7 +35,7 @@ namespace MatrixSpiralCopy
             sb.Append(string.Join(",", ret));
             sb.Append("]");
 
-            ClassicAssert.AreEqual(sb.ToString(), expected);
+            Assert.That(sb.ToString() == expected);
         }
     }
 }

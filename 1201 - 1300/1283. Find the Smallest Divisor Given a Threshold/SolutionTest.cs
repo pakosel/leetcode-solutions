@@ -27,7 +27,7 @@ namespace FindSmallestDivisorGivenThreshold
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            ClassicAssert.IsTrue(arr.Length > 0);
+            Assert.That(arr.Length > 0);
 
             var sol = new Solution();
             var res = sol.SmallestDivisor(arr, threshold);

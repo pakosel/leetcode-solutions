@@ -19,8 +19,8 @@ namespace DesignBrowserHistory
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] instructions, object[] inputs, string[] expected)
         {
-            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
-            ClassicAssert.AreEqual(expected.Length, inputs.Length);
+            Assert.That(instructions.Length == inputs.Length);
+            Assert.That(expected.Length == inputs.Length);
 
             var sol = new BrowserHistory((string)inputs[0]);
             for(int i=1; i<instructions.Length; i++)

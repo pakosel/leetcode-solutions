@@ -42,8 +42,8 @@ namespace DataStreamAsDisjointIntervals
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
             var expected = Enumerable.Range(0, expectedStr.Length).Select(i => expectedStr[i] != null ? ArrayHelper.MatrixFromString<int>(expectedStr[i]) : null).ToArray();
 
-            ClassicAssert.AreEqual(commands.Length, inputs.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == inputs.Length);
+            Assert.That(commands.Length == expected.Length);
             
             var sol = new SummaryRanges();
             for(int i=0; i<commands.Length; i++)

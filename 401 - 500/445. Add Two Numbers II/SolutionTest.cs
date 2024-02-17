@@ -52,7 +52,7 @@ namespace AddTwoNumbersII
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            ClassicAssert.IsTrue(arr.Length > 0);
+            Assert.That(arr.Length > 0);
 
             ListNode head = null;
             for(int i=arr.Length - 1; i >= 0; i--)
@@ -72,7 +72,7 @@ namespace AddTwoNumbersII
                 l2 = l2.next;
             }
 
-            ClassicAssert.IsNull(l2);
+            Assert.That(l2, Is.Null);
 
             return true;
         }

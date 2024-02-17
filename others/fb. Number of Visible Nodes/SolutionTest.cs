@@ -22,7 +22,7 @@ namespace NumberOfVisibleNodes
 */            
             var ret = Solution.visibleNodes(node);
 
-            ClassicAssert.AreEqual(ret, 4);
+            Assert.That(ret == 4);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace NumberOfVisibleNodes
 */            
             var ret = Solution.visibleNodes(node);
 
-            ClassicAssert.AreEqual(ret, 6);
+            Assert.That(ret == 6);
         }
     }
 
@@ -90,7 +90,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(i);
             var ret = Solution.visibleNodes(bst.root);
 
-            ClassicAssert.AreEqual(ret, len);
+            Assert.That(ret == len);
         }
 
         [Test]
@@ -104,7 +104,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(i);
             var ret = Solution_naive.visibleNodes(bst.root);
 
-            ClassicAssert.AreEqual(ret, len);
+            Assert.That(ret == len);
         }
     }
 

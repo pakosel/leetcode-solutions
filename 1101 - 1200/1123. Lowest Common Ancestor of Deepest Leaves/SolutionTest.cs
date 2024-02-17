@@ -29,7 +29,7 @@ namespace LowestCommonAncestorDeepestLeaves
             var res = sol.LcaDeepestLeaves(root);
             var expectedTree = TreeNodeHelper.BuildTree(expected);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedTree));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expectedTree));
         }
     }
 }

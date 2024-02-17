@@ -33,7 +33,7 @@ namespace SortList
             var sol = new Solution();
             var res = sol.SortList(head);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

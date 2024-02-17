@@ -25,7 +25,7 @@ namespace ConstructBinaryTreeFromPreorderAndInorderTraversal
             var sol = new Solution();
             var res = sol.BuildTree(preorder, inorder);
 
-            ClassicAssert.IsTrue(CompareTreeNode(res, expected));
+            Assert.That(CompareTreeNode(res, expected));
         }
 
         private bool CompareTreeNode(TreeNode node1, TreeNode node2)

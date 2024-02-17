@@ -30,7 +30,7 @@ namespace PopulatingNextRightPointersEachNode
             var sol = new Solution();
             var res = sol.Connect(root);
 
-            ClassicAssert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
+            Assert.That(TreeNodeHelper.PrintNode(res) == expected);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace DetectSquares
         {
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
             ClassicAssert.AreEqual(inputs.Length, commands.Length);
-            ClassicAssert.AreEqual(expected.Length, commands.Length);
+            Assert.That(expected.Length == commands.Length);
 
             var res = new List<int?>();
             var sol = new DetectSquares();

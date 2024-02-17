@@ -33,12 +33,12 @@ namespace MergeKsortedLists
 
             while(res != null)
             {
-                ClassicAssert.AreEqual(res.val, expected.val);
+                Assert.That(res.val == expected.val);
                 res = res.next;
                 expected = expected.next;
             }
             
-            ClassicAssert.IsNull(expected);
+            Assert.That(expected, Is.Null);
         }
     }
 }

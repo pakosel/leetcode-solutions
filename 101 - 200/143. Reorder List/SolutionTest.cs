@@ -33,7 +33,7 @@ namespace ReorderList
             var sol = new Solution();
             sol.ReorderList(head);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(head, expected));
+            Assert.That(ListNodeHelper.AreEqual(head, expected));
         }
     }
 }

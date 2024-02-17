@@ -26,7 +26,7 @@ namespace ConvertBinaryNumberInLinkedList
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            ClassicAssert.IsTrue(arr.Length > 0);
+            Assert.That(arr.Length > 0);
 
             ListNode curr = new ListNode(arr[0]);
             var head = curr;

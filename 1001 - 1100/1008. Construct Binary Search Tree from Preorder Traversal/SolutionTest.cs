@@ -29,7 +29,7 @@ namespace ConstructBinarySearchTreeFromPreorderTraversal
             var sol = new Solution();
             var res = sol.BstFromPreorder(preorder);
 
-            ClassicAssert.IsTrue(CompareTreeNode(res, expected));
+            Assert.That(CompareTreeNode(res, expected));
         }
 
         private bool CompareTreeNode(TreeNode node1, TreeNode node2)

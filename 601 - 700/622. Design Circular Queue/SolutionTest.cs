@@ -21,8 +21,8 @@ namespace DesignCircularQueue
         {
             var commands = ArrayHelper.ArrayFromString<string>(commandsStr);
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
-            ClassicAssert.AreEqual(commands.Length, inputs.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == inputs.Length);
+            Assert.That(commands.Length == expected.Length);
             
             var res = new object[commands.Length];
             MyCircularQueue sol = null;

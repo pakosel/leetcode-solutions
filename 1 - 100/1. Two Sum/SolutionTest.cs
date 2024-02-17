@@ -18,9 +18,9 @@ namespace TwoSum
         {
             var sol = new Solution();
             var ret = sol.TwoSum(inputArr, target);
-            ClassicAssert.AreEqual(ret.Length, expected.Length);
+            Assert.That(ret.Length == expected.Length);
             for(int i=0; i<ret.Length; i++)
-                ClassicAssert.AreEqual(ret[i], expected[i]);
+                Assert.That(ret[i] == expected[i]);
         }
     }
 }

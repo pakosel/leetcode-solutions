@@ -33,7 +33,7 @@ namespace SplitLinkedListInParts
             var res = sol.SplitListToParts(head, k);
             var expected = ListNodeHelper.BuildListArray(expectedStr);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            Assert.That(ListNodeHelper.AreEqual(expected, res));
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace SplitLinkedListInParts
             var res = sol.SplitListToParts(head, k);
             var expected = ListNodeHelper.BuildListArray(expectedStr);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            Assert.That(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }

@@ -21,8 +21,8 @@ namespace DesignHashSet
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] commands, int[] args, bool?[] expected)
         {
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);
             bool?[] res = new bool?[commands.Length];
 
             var sol = new MyHashSet();
