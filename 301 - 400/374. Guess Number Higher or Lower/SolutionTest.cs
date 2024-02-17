@@ -26,7 +26,7 @@ namespace GuessNumberHigherOrLower
             sol.Pick(picked);
             var res = sol.GuessNumber(n);
 
-            ClassicAssert.AreEqual(picked, res);
+            Assert.That(picked == res);
         }
     }
 }

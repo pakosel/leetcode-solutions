@@ -25,8 +25,8 @@ namespace EvaluateDivision
             var equations = ArrayHelper.MatrixFromString<string>(equationsStr, true);
             var queries = ArrayHelper.MatrixFromString<string>(queriesStr, true);
 
-            ClassicAssert.AreEqual(equations.Length, values.Length);
-            ClassicAssert.AreEqual(queries.Length, expected.Length);
+            Assert.That(equations.Length == values.Length);
+            Assert.That(queries.Length == expected.Length);
 
             var sol = new Solution();
             var res = sol.CalcEquation(equations, values, queries);

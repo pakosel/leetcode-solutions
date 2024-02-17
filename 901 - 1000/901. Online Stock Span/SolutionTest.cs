@@ -25,7 +25,7 @@ namespace OnlineStockSpan
             var res = new int[prices.Length];
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            ClassicAssert.AreEqual(prices.Length, expected.Length);
+            Assert.That(prices.Length == expected.Length);
 
             for(int i=0; i<prices.Length; i++)
                 res[i] = sol.Next(prices[i][0]);

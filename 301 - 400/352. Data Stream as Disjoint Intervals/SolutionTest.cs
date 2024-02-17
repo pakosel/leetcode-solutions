@@ -51,18 +51,18 @@ namespace DataStreamAsDisjointIntervals
                 {
                     case "addNum":
                         sol.AddNum(inputs[i][0]);
-                        ClassicAssert.AreEqual(expected[i], null);
+                        Assert.That(expected[i], Is.Null);
                         break;
                     case "getIntervals":
                         var res = sol.GetIntervals();
-                        foreach(var it in res)
-                            Console.Write($"[{it[0]},{it[1]}],");
-                        Console.WriteLine();
+                        // foreach(var it in res)
+                        //     Console.Write($"[{it[0]},{it[1]}],");
+                        // Console.WriteLine();
 
                         CollectionAssert.AreEqual(expected[i], res);
                         break;
                     default:
-                        ClassicAssert.AreEqual(expected[i], null);
+                        Assert.That(expected[i], Is.Null);
                         break;
                 }
         }

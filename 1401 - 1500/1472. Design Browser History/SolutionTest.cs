@@ -31,10 +31,10 @@ namespace DesignBrowserHistory
                         sol.Visit((string)inputs[i]);
                         break;
                     case "back":
-                        ClassicAssert.AreEqual(sol.Back((int)inputs[i]), expected[i]);
+                        Assert.That(sol.Back((int)inputs[i]) == expected[i]);
                         break;
                     case "forward":
-                        ClassicAssert.AreEqual(sol.Forward((int)inputs[i]), expected[i]);
+                        Assert.That(sol.Forward((int)inputs[i]) == expected[i]);
                         break;
                 }
             }

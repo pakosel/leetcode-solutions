@@ -24,7 +24,7 @@ namespace ImplementMagicDictionary
             var sol = new MagicDictionary();
             sol.BuildDict(dict);
             for(int i=0; i<words.Length; i++)
-                ClassicAssert.AreEqual(sol.Search(words[i]), expected[i]);
+                Assert.That(sol.Search(words[i]) == expected[i]);
         }
     }
 }

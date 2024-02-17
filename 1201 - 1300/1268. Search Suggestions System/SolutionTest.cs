@@ -25,7 +25,7 @@ namespace SearchSuggestionsSystem
         {
             var products = ArrayHelper.ArrayFromString<string>(productsStr);
             var expected = ArrayHelper.MatrixFromString<string>(expectedStr);
-            ClassicAssert.AreEqual(searchWord.Length, expected.Length);
+            Assert.That(searchWord.Length == expected.Length);
 
             var sol = new Solution();
             var res = sol.SuggestedProducts(products, searchWord);

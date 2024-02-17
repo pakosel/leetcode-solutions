@@ -27,7 +27,7 @@ namespace KnightProbabilityInChessboard
             var sol = new Solution();
             var res = sol.KnightProbability(n, k, row, col);
 
-            ClassicAssert.AreEqual(expected, Math.Round(res, 5));
+            Assert.That(expected == Math.Round(res, 5));
         }
     }
 }

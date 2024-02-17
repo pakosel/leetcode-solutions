@@ -30,7 +30,7 @@ namespace FirstBadVersion
             sol.SetBadVersion(bad);
             var res = sol.FirstBadVersion(n);
 
-            ClassicAssert.AreEqual(res, bad);
+            Assert.That(res == bad);
         }
     }
 }

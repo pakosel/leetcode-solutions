@@ -52,16 +52,16 @@ namespace IntersectionOfTwoLinkedLists
             var sol = constructor();
             var res = sol.GetIntersectionNode(listA, listB);
             if(intersectVal == 0)
-                ClassicAssert.AreEqual(null, res);
+                Assert.That(res, Is.Null);
             else
             {
-                ClassicAssert.AreEqual(intersectVal, res?.val);
+                Assert.That(intersectVal == res?.val);
                 while(skipA-- > 0)
                     listA = listA.next;
                 while(skipB-- > 0)
                     listB = listB.next;
-                ClassicAssert.AreEqual(res, listA);
-                ClassicAssert.AreEqual(res, listB);
+                Assert.That(res == listA);
+                Assert.That(res == listB);
             }
         }
     }

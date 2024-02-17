@@ -29,7 +29,7 @@ namespace ChampagneTower
             var sol = new Solution();
             var res = sol.ChampagneTower(poured, row, glass);
 
-            ClassicAssert.AreEqual(Math.Round(res, 5), expected);
+            Assert.That(Math.Round(res, 5) == expected);
         }
     }
 }

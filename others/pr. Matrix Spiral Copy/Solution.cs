@@ -11,8 +11,8 @@ namespace MatrixSpiralCopy
             int matrixWidth = inputMatrix.GetLength(1);
             int matrixHeight = inputMatrix.GetLength(0);
 
-            Console.Out.WriteLine($"MatrixWidth = {matrixWidth}");
-            Console.Out.WriteLine($"matrixHeight = {matrixHeight}");
+            // Console.Out.WriteLine($"MatrixWidth = {matrixWidth}");
+            // Console.Out.WriteLine($"matrixHeight = {matrixHeight}");
 
             int[] res = new int[matrixWidth * matrixHeight];
 

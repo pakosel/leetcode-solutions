@@ -21,7 +21,7 @@ namespace SenderWithLargestWordCount
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string[] messages, string[] senders, string expected)
         {
-            ClassicAssert.AreEqual(messages.Length, senders.Length);
+            Assert.That(messages.Length == senders.Length);
 
             var sol = new Solution();
             var res = sol.LargestWordCount(messages, senders);

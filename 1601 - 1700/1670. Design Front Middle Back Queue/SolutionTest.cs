@@ -23,7 +23,7 @@ namespace DesignFrontMiddleBackQueue
         public void Test_GenericStr(string[] commands, string argsStr, int?[] expected)
         {
             var argsMatrix = ArrayHelper.MatrixFromString<int>(argsStr);
-            System.Console.WriteLine(argsMatrix.Length);
+            // System.Console.WriteLine(argsMatrix.Length);
 
             var sol = new FrontMiddleBackQueue();
             int?[] res = new int?[argsMatrix.Length];

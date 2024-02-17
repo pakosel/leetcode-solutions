@@ -56,7 +56,7 @@ namespace SlowSums
                 writer.WriteLine($"{naiveVal} == {betterVal}");
             }*/
             
-            ClassicAssert.AreEqual(naiveVal, betterVal);
+            Assert.That(naiveVal == betterVal);
         }
     }
 }

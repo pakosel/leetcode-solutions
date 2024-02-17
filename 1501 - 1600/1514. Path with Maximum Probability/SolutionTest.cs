@@ -24,7 +24,7 @@ namespace PathWithMaximumProbability
         {
             var edges = ArrayHelper.MatrixFromString<int>(edgesStr);
             
-            ClassicAssert.AreEqual(edges.Length, succProb.Length);
+            Assert.That(edges.Length == succProb.Length);
 
             var sol = new Solution();
             var res = sol.MaxProbability(n, edges, succProb, start, end);
