@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace MergeInBetweenLinkedLists
             var sol = new Solution();
             var res = sol.MergeInBetween(list1, a, b, list2);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(res, expectedList));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expectedList));
         }
     }
 }

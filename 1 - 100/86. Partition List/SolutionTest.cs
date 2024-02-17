@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace PartitionList
             var sol = new Solution();
             var res = sol.Partition(head, x);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }

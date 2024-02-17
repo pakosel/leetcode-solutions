@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,7 +33,7 @@ namespace ReorderList
             var sol = new Solution();
             sol.ReorderList(head);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(head, expected));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(head, expected));
         }
     }
 }

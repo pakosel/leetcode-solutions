@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -44,8 +45,8 @@ namespace LinkedListRandomNode
             
             foreach(var val in res.Values)
             {
-                Assert.Greater(val, 0.7 * avg);
-                Assert.Less(val, 1.3 * avg);
+                ClassicAssert.Greater(val, 0.7 * avg);
+                ClassicAssert.Less(val, 1.3 * avg);
             }
         }
     }

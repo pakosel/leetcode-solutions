@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -17,9 +18,9 @@ namespace TwoSum
         {
             var sol = new Solution();
             var ret = sol.TwoSum(inputArr, target);
-            Assert.AreEqual(ret.Length, expected.Length);
+            ClassicAssert.AreEqual(ret.Length, expected.Length);
             for(int i=0; i<ret.Length; i++)
-                Assert.AreEqual(ret[i], expected[i]);
+                ClassicAssert.AreEqual(ret[i], expected[i]);
         }
     }
 }

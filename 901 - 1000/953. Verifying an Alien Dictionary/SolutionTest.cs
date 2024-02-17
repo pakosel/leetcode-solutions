@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -24,7 +25,7 @@ namespace VerifyingAlienDictionary
             var sol = new Solution_2022();
             var res = sol.IsAlienSorted(words, order);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -34,7 +35,7 @@ namespace VerifyingAlienDictionary
             var sol = new Solution();
             var res = sol.IsAlienSorted(words, order);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

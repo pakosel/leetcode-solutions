@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,7 +27,7 @@ namespace InvertBinaryTree
             var res = sol.InvertTree(tree);
             var expected = TreeNodeHelper.BuildTree(expectedStr);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

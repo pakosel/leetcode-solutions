@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -38,7 +39,7 @@ namespace MinimumSizeSubarraySum
             var sol = new Solution();
             var ret = sol.MinSubArrayLen(s, nums);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

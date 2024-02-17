@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,7 +33,7 @@ namespace MissingNumber
             var sol = new Solution_Math();
             var res = sol.MissingNumber(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace MissingNumber
             var sol = new Solution_Jumps();
             var res = sol.MissingNumber(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -56,7 +57,7 @@ namespace MissingNumber
             var sol = new Solution_Naive();
             var res = sol.MissingNumber(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

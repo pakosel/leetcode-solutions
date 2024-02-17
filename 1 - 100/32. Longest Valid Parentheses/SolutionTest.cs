@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -30,7 +31,7 @@ namespace LongestValidParentheses
             var sol = new Solution();
             var res = sol.LongestValidParentheses(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -40,7 +41,7 @@ namespace LongestValidParentheses
             var sol = new Solution_Stack();
             var res = sol.LongestValidParentheses(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

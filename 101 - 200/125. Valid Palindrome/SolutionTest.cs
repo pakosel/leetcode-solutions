@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -17,7 +18,7 @@ namespace ValidPalindrome
             var sol = new Solution();
             var ret = sol.IsPalindrome(input);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

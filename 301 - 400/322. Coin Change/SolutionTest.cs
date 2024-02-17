@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +31,7 @@ namespace CoinChange
             var sol = new Solution_DPv2();
             var res = sol.CoinChange(coins, amount);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -42,7 +43,7 @@ namespace CoinChange
             var sol = new Solution_DP();
             var res = sol.CoinChange(coins, amount);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -54,7 +55,7 @@ namespace CoinChange
             var sol = new Solution_Recursive();
             var res = sol.CoinChange(coins, amount);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

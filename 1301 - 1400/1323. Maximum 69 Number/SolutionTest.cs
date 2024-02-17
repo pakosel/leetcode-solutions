@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +26,7 @@ namespace Maximum69Number
             var sol = new Solution();
             var res = sol.Maximum69Number(num);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

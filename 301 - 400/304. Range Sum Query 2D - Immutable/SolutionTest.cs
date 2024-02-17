@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -43,8 +44,8 @@ namespace RangeSumQuery2DImmutable
             var matrix = ArrayHelper.MatrixFromString<int>(matrixStr);
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            Assert.AreEqual(args.Length, expected.Length);
-            Assert.AreEqual(args.Length, commands.Length);
+            ClassicAssert.AreEqual(args.Length, expected.Length);
+            ClassicAssert.AreEqual(args.Length, commands.Length);
 
             var sol = constructor(matrix);
             var res = new int[expected.Length];
@@ -52,7 +53,7 @@ namespace RangeSumQuery2DImmutable
                 switch(commands[i])
                 {
                     case "sumRegion":
-                        Assert.AreEqual(4, args[i].Length);
+                        ClassicAssert.AreEqual(4, args[i].Length);
                         res[i] = sol.SumRegion(args[i][0], args[i][1], args[i][2], args[i][3]);
                         break;
                 }

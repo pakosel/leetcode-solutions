@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace MedianStream
 {
@@ -14,7 +15,7 @@ namespace MedianStream
             var ret = Solution.findMedian(arr);
             Console.Out.WriteLine(string.Join(',', ret));
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

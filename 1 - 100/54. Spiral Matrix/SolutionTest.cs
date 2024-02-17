@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -39,7 +40,7 @@ namespace SpiralMatrix
             sb.Append(string.Join(",", ret));
             sb.Append("]");
 
-            Assert.AreEqual(sb.ToString(), expected);
+            ClassicAssert.AreEqual(sb.ToString(), expected);
         }
     }
 }

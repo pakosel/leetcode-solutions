@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace MaxProfit
 {
@@ -24,7 +25,7 @@ namespace MaxProfit
         {
             var ret = Solution.MaxProfitWithKTransactions(prices, k);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

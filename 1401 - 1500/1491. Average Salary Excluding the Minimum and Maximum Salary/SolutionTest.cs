@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace AverageSalaryExcludingTheMinimumAndMaximumSalary
             var res = sol.Average(salary);
             res = Math.Round(res, 5);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }        
         
         [Test]
@@ -40,7 +41,7 @@ namespace AverageSalaryExcludingTheMinimumAndMaximumSalary
             var res = sol.Average(salary);
             res = Math.Round(res, 5);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

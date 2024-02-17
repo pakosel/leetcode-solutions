@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -21,8 +22,8 @@ namespace DetectSquares
         public void Test_Generic(string[] commands, string inputsStr, int?[] expected)
         {
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
-            Assert.AreEqual(inputs.Length, commands.Length);
-            Assert.AreEqual(expected.Length, commands.Length);
+            ClassicAssert.AreEqual(inputs.Length, commands.Length);
+            ClassicAssert.AreEqual(expected.Length, commands.Length);
 
             var res = new List<int?>();
             var sol = new DetectSquares();

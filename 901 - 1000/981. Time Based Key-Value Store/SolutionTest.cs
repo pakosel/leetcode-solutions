@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,8 +25,8 @@ namespace TimeBasedKeyValueStore
             var args = ArrayHelper.MatrixFromString<string>(argsStr, true);
             var expected = ArrayHelper.ArrayFromString<string>(expectedStr);
 
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
 
             var res = new string[expected.Length];
             var sol = new TimeMap();
@@ -42,7 +43,7 @@ namespace TimeBasedKeyValueStore
                     {
                         var timestamp = int.Parse(args[i][1]);
                         var get = sol.Get(args[i][0], timestamp);
-                        Assert.AreEqual(expected[i], get);
+                        ClassicAssert.AreEqual(expected[i], get);
                         break;
                     }
                 }

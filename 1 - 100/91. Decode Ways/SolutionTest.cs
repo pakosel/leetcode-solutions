@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -34,7 +35,7 @@ namespace DecodeWays
             var sol = new Solution();
             var res = sol.NumDecodings(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace DecodeWays
             var sol = new Solution_Memoization();
             var res = sol.NumDecodings(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

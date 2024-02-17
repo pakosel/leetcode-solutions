@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -24,7 +25,7 @@ namespace NumberOfDiceRollsWithTargetSum
             var sol = new Solution();
             var res = sol.NumRollsToTarget(n, k, target);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

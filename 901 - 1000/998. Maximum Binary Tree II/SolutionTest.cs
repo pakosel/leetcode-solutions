@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -22,7 +23,7 @@ namespace MaximumBinaryTreeII
             var sol = new Solution();
             var res = sol.InsertIntoMaxTree(input, val);
 
-            Assert.IsTrue(CompareTreeNode(res, expected));
+            ClassicAssert.IsTrue(CompareTreeNode(res, expected));
         }
 
         private bool CompareTreeNode(TreeNode node1, TreeNode node2)

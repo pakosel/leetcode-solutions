@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +31,7 @@ namespace BinaryTreeZigzagLevelOrderTraversal
             var sol = new Solution();
             var res = sol.ZigzagLevelOrder(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

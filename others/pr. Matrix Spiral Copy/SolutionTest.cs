@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace MatrixSpiralCopy
 {
@@ -34,7 +35,7 @@ namespace MatrixSpiralCopy
             sb.Append(string.Join(",", ret));
             sb.Append("]");
 
-            Assert.AreEqual(sb.ToString(), expected);
+            ClassicAssert.AreEqual(sb.ToString(), expected);
         }
     }
 }

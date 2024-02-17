@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,8 +25,8 @@ namespace DesignUndergroundSystem
         {
             var args = ArrayHelper.MatrixFromString<string>(argsStr, true);
 
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);            
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);            
 
             var res = new double?[expected.Length];
             var sol = new UndergroundSystem();
@@ -53,7 +54,7 @@ namespace DesignUndergroundSystem
                         break;
                 }
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

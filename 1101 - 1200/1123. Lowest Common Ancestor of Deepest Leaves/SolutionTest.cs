@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace LowestCommonAncestorDeepestLeaves
             var res = sol.LcaDeepestLeaves(root);
             var expectedTree = TreeNodeHelper.BuildTree(expected);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedTree));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedTree));
         }
     }
 }

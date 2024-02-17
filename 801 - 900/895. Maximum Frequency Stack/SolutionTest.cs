@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -20,8 +21,8 @@ namespace MaximumFrequencyStack
         {
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<int?>(expectedStr);
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
 
             var sol = new FreqStack();
             for(int i=0; i<commands.Length; i++)
@@ -31,7 +32,7 @@ namespace MaximumFrequencyStack
                         sol.Push(args[i][0]);
                         break;
                     case "pop":
-                        Assert.AreEqual(sol.Pop(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
                         break;
                 }
         }

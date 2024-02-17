@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,12 +24,12 @@ namespace PathWithMaximumProbability
         {
             var edges = ArrayHelper.MatrixFromString<int>(edgesStr);
             
-            Assert.AreEqual(edges.Length, succProb.Length);
+            ClassicAssert.AreEqual(edges.Length, succProb.Length);
 
             var sol = new Solution();
             var res = sol.MaxProbability(n, edges, succProb, start, end);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

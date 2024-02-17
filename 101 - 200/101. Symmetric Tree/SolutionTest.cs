@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -31,7 +32,7 @@ namespace SymmetricTree
             var sol = new Solution_2023();
             var res = sol.IsSymmetric(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -43,7 +44,7 @@ namespace SymmetricTree
             var sol = new Solution_Queue();
             var res = sol.IsSymmetric(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -55,7 +56,7 @@ namespace SymmetricTree
             var sol = new Solution_Stack();
             var res = sol.IsSymmetric(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -67,7 +68,7 @@ namespace SymmetricTree
             var sol = new Solution_Recursive();
             var res = sol.IsSymmetric(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

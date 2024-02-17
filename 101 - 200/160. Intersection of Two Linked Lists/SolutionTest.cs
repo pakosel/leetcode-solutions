@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -51,16 +52,16 @@ namespace IntersectionOfTwoLinkedLists
             var sol = constructor();
             var res = sol.GetIntersectionNode(listA, listB);
             if(intersectVal == 0)
-                Assert.AreEqual(null, res);
+                ClassicAssert.AreEqual(null, res);
             else
             {
-                Assert.AreEqual(intersectVal, res?.val);
+                ClassicAssert.AreEqual(intersectVal, res?.val);
                 while(skipA-- > 0)
                     listA = listA.next;
                 while(skipB-- > 0)
                     listB = listB.next;
-                Assert.AreEqual(res, listA);
-                Assert.AreEqual(res, listB);
+                ClassicAssert.AreEqual(res, listA);
+                ClassicAssert.AreEqual(res, listB);
             }
         }
     }

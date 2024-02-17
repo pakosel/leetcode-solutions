@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,13 +24,13 @@ namespace ShuffleTheArray
         {
             var nums = ArrayHelper.ArrayFromString<int>(numsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            Assert.AreEqual(nums.Length, 2*n);
-            Assert.AreEqual(expected.Length, 2*n);
+            ClassicAssert.AreEqual(nums.Length, 2*n);
+            ClassicAssert.AreEqual(expected.Length, 2*n);
 
             var sol = new Solution();
             var res = sol.Shuffle(nums, n);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

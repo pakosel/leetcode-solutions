@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,8 +24,8 @@ namespace LruCache
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<int?>(expectedStr);
             
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
 
             var sol = new LRUCache(args[0][0]);
             var res = new int?[args.Length];

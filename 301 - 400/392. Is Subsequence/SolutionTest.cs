@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -27,7 +28,7 @@ namespace IsSubsequence
             var sol = new Solution_2023();
             var res = sol.IsSubsequence(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -37,7 +38,7 @@ namespace IsSubsequence
             var sol = new Solution();
             var res = sol.IsSubsequence(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

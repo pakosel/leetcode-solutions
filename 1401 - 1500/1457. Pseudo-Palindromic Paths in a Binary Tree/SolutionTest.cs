@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +26,7 @@ namespace PseudoPalindromicPathsInBinaryTree
             var sol = new Solution();
             var res = sol.PseudoPalindromicPaths(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

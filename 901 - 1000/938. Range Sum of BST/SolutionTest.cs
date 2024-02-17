@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace RangeSumOfBst
             var sol = new Solution();
             var res = sol.RangeSumBST(head, low, high);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -40,7 +41,7 @@ namespace RangeSumOfBst
             var sol = new Solution_Recursive();
             var res = sol.RangeSumBST(head, low, high);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -25,7 +26,7 @@ namespace DistinctSubsequences
             var sol = new Solution();
             var res = sol.NumDistinct(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -35,7 +36,7 @@ namespace DistinctSubsequences
             var sol = new Solution_Memo();
             var res = sol.NumDistinct(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

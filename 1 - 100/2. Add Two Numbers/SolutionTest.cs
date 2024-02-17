@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +34,7 @@ namespace AddTwoNumbers
             var sol = new Solution();
             var res = sol.AddTwoNumbers(l1, l2);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

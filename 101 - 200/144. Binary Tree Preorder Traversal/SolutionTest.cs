@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -31,7 +32,7 @@ namespace BinaryTreePreorderTraversal
             var sol = new Solution_2022();
             var res = sol.PreorderTraversal(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace BinaryTreePreorderTraversal
             var sol = new Solution();
             var res = sol.PreorderTraversal(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         private static readonly object[] testCases_bfs =
@@ -64,7 +65,7 @@ namespace BinaryTreePreorderTraversal
             var sol = new Solution();
             var res = sol.BfsTraversal(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

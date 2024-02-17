@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace DroneFlightPlanner
 {
@@ -24,7 +25,7 @@ namespace DroneFlightPlanner
         {
             var ret = Solution.CalcDroneMinEnergy(route);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

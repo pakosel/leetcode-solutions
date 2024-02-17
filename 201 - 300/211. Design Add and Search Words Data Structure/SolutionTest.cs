@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -18,8 +19,8 @@ namespace DesignAddAndSearchWordsDataStructure
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] instructions, string[] inputs, bool?[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new WordDictionary();
             for(int i=0; i<instructions.Length; i++)
@@ -31,7 +32,7 @@ namespace DesignAddAndSearchWordsDataStructure
                         break;
                     case "search":
                         var res = sol.Search(inputs[i]);
-                        Assert.AreEqual(res, expected[i]);
+                        ClassicAssert.AreEqual(res, expected[i]);
                         break;
                 }
             }
@@ -41,8 +42,8 @@ namespace DesignAddAndSearchWordsDataStructure
         [TestCaseSource("testCases")]
         public void Test_Generic_2023(string[] instructions, string[] inputs, bool?[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new WordDictionary_2023();
             for(int i=0; i<instructions.Length; i++)
@@ -54,7 +55,7 @@ namespace DesignAddAndSearchWordsDataStructure
                         break;
                     case "search":
                         var res = sol.Search(inputs[i]);
-                        Assert.AreEqual(res, expected[i]);
+                        ClassicAssert.AreEqual(res, expected[i]);
                         break;
                 }
             }

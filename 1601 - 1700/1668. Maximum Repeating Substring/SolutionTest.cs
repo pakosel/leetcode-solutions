@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -27,7 +28,7 @@ namespace MaximumRepeatingSubstring
             var sol = new Solution();
             var res = sol.MaxRepeating(sequence, word);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -37,7 +38,7 @@ namespace MaximumRepeatingSubstring
             var sol = new Solution_BF();
             var res = sol.MaxRepeating(sequence, word);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

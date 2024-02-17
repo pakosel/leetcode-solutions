@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +26,7 @@ namespace ConvertSortedListToBinarySearchTree
             var sol = new Solution();
             var res = sol.SortedListToBST(head);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

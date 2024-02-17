@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,13 +26,13 @@ namespace NumberOfNodesInTheSubTreeWithTheSameLabel
         {
             var edges = ArrayHelper.MatrixFromString<int>(edgesStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            Assert.AreEqual(n, expected.Length);
-            Assert.AreEqual(n, labels.Length);
+            ClassicAssert.AreEqual(n, expected.Length);
+            ClassicAssert.AreEqual(n, labels.Length);
 
             var sol = new Solution();
             var res = sol.CountSubTrees(n, edges, labels);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

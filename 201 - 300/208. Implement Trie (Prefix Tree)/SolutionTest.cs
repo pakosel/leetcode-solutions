@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -18,8 +19,8 @@ namespace ImplementTriePrefixTree
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] instructions, string[] inputs, bool?[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new Trie();
             for(int i=1; i<instructions.Length; i++)
@@ -30,10 +31,10 @@ namespace ImplementTriePrefixTree
                         sol.Insert(inputs[i]);
                         break;
                     case "search":
-                        Assert.AreEqual(sol.Search(inputs[i]), expected[i]);
+                        ClassicAssert.AreEqual(sol.Search(inputs[i]), expected[i]);
                         break;
                     case "startsWith":
-                        Assert.AreEqual(sol.StartsWith(inputs[i]), expected[i]);
+                        ClassicAssert.AreEqual(sol.StartsWith(inputs[i]), expected[i]);
                         break;
                 }
             }

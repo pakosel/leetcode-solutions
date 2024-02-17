@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,7 +33,7 @@ namespace SplitLinkedListInParts
             var res = sol.SplitListToParts(head, k);
             var expected = ListNodeHelper.BuildListArray(expectedStr);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace SplitLinkedListInParts
             var res = sol.SplitListToParts(head, k);
             var expected = ListNodeHelper.BuildListArray(expectedStr);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }

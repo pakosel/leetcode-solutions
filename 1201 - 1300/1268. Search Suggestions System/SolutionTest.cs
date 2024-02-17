@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,7 +25,7 @@ namespace SearchSuggestionsSystem
         {
             var products = ArrayHelper.ArrayFromString<string>(productsStr);
             var expected = ArrayHelper.MatrixFromString<string>(expectedStr);
-            Assert.AreEqual(searchWord.Length, expected.Length);
+            ClassicAssert.AreEqual(searchWord.Length, expected.Length);
 
             var sol = new Solution();
             var res = sol.SuggestedProducts(products, searchWord);

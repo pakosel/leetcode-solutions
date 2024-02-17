@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -19,8 +20,8 @@ namespace DesignTextEditor
         public void Test_Generic(string[] commands, string argsStr, object[] expected)
         {
             var args = ArrayHelper.MatrixFromString<object>(argsStr, true);
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
             var res = new object[commands.Length];
 
             var sol = new TextEditor();

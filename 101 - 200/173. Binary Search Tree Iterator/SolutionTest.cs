@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,10 +28,10 @@ namespace BinarySearchTreeIterator
                 switch(operations[i])
                 {
                     case "next":
-                        Assert.AreEqual(sol.Next(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Next(), expected[i]);
                         break;
                     case "hasNext":
-                        Assert.AreEqual(sol.HasNext(), expected[i]);
+                        ClassicAssert.AreEqual(sol.HasNext(), expected[i]);
                         break;
                 }
         }

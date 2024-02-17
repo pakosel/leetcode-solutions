@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,13 +25,13 @@ namespace TwoSumIIinputArrayIsSorted
             var numbers = ArrayHelper.ArrayFromString<int>(numbersStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
-            Assert.GreaterOrEqual(numbers.Length, 2);
-            Assert.AreEqual(2, expected.Length);
+            ClassicAssert.GreaterOrEqual(numbers.Length, 2);
+            ClassicAssert.AreEqual(2, expected.Length);
 
             var sol = new Solution();
             var res = sol.TwoSum(numbers, target);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

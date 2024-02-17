@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -29,7 +30,7 @@ namespace TotalCostToHireKWorkers
             var sol = new Solution();
             var res = sol.TotalCost(costs, k, candidates);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

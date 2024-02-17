@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace BalancedSplit
 {
@@ -17,7 +18,7 @@ namespace BalancedSplit
         {
             var ret = Solution.balancedSplitExists(nums);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

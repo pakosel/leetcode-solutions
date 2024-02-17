@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +26,7 @@ namespace ShortEncodingOfWords
             var sol = new Solution_Trie();
             var res = sol.MinimumLengthEncoding(words);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -35,7 +36,7 @@ namespace ShortEncodingOfWords
             var sol = new Solution();
             var res = sol.MinimumLengthEncoding(words);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace StringToInteger
 {
@@ -28,7 +29,7 @@ namespace StringToInteger
             var sol = new Solution();
             var ret = sol.MyAtoi(str);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

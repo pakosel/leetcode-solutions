@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,7 +33,7 @@ namespace RemoveNthNodeFromEndOfList
             var sol = new Solution_2022();
             var res = sol.RemoveNthFromEnd(head, n);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
         }
         
         [Test]
@@ -45,7 +46,7 @@ namespace RemoveNthNodeFromEndOfList
             var sol = new Solution_2022();
             var res = sol.RemoveNthFromEnd(head, n);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }

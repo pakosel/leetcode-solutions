@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,7 +25,7 @@ namespace MaximumTotalImportanceOfRoads
             var sol = new Solution();
             var res = sol.MaximumImportance(n, roads);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

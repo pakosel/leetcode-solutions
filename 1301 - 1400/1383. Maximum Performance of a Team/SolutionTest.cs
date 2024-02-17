@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,13 +24,13 @@ namespace MaximumPerformanceOfTeam
         {
             var speed = ArrayHelper.ArrayFromString<int>(speedStr);
             var efficiency = ArrayHelper.ArrayFromString<int>(efficiencyStr);
-            Assert.AreEqual(n, efficiency.Length);
-            Assert.AreEqual(speed.Length, efficiency.Length);
+            ClassicAssert.AreEqual(n, efficiency.Length);
+            ClassicAssert.AreEqual(speed.Length, efficiency.Length);
 
             var sol = new Solution();
             var res = sol.MaxPerformance(n, speed, efficiency, k);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

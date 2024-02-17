@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -26,7 +27,7 @@ namespace KnightProbabilityInChessboard
             var sol = new Solution();
             var res = sol.KnightProbability(n, k, row, col);
 
-            Assert.AreEqual(expected, Math.Round(res, 5));
+            ClassicAssert.AreEqual(expected, Math.Round(res, 5));
         }
     }
 }

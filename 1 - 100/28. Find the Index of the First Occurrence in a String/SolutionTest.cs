@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,7 +27,7 @@ namespace FindTheIndexOfTheFirstOccurrenceInString
             var sol = new Solution();
             var res = sol.StrStr(haystack, needle);
 
-            Assert.AreEqual(res, expected);
+            ClassicAssert.AreEqual(res, expected);
         }
     }
 }

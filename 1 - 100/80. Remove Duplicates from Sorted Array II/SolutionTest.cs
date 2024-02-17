@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace RemoveDuplicatesFromSortedArrayII
             var sol = new Solution();
             var res = sol.RemoveDuplicates(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
             
             var targetNums = ArrayHelper.ArrayFromString<int>(arrStrOut);
             CollectionAssert.AreEquivalent(targetNums, nums.Take(expected));

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -29,7 +30,7 @@ namespace ToeplitzMatrix
             var sol = new Solution_2022();
             var res = sol.IsToeplitzMatrix(matrix);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -41,7 +42,7 @@ namespace ToeplitzMatrix
             var sol = new Solution();
             var res = sol.IsToeplitzMatrix(matrix);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

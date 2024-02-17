@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +31,7 @@ namespace HouseRobber
             var sol = new Solution_2024();
             var res = sol.Rob(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -42,7 +43,7 @@ namespace HouseRobber
             var sol = new Solution_2022();
             var res = sol.Rob(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -54,7 +55,7 @@ namespace HouseRobber
             var sol = new Solution();
             var res = sol.Rob(nums);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

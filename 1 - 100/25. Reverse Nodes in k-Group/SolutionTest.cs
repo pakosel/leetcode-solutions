@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -44,12 +45,12 @@ namespace ReverseNodesInGroup
 
             while(res != null)
             {
-                Assert.AreEqual(res.val, expected.val);
+                ClassicAssert.AreEqual(res.val, expected.val);
                 res = res.next;
                 expected = expected.next;
             }
             
-            Assert.IsNull(expected);
+            ClassicAssert.IsNull(expected);
         }
     }
 }

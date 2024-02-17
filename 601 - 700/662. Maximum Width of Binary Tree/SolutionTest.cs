@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -29,7 +30,7 @@ namespace MaximumWidthOfBinaryTree
             var sol = new Solution_2023();
             var res = sol.WidthOfBinaryTree(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -41,7 +42,7 @@ namespace MaximumWidthOfBinaryTree
             var sol = new Solution();
             var res = sol.WidthOfBinaryTree(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -53,7 +54,7 @@ namespace MaximumWidthOfBinaryTree
             var sol = new Solution_NoRecursion();
             var res = sol.WidthOfBinaryTree(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

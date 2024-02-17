@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -28,7 +29,7 @@ namespace MinimumWindowSubstring
             var sol = new Solution_2022();
             var res = sol.MinWindow(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -38,7 +39,7 @@ namespace MinimumWindowSubstring
             var sol = new Solution();
             var res = sol.MinWindow(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

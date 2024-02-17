@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,7 +25,7 @@ namespace SuccessfulPairsOfSpellsAndPotions
             var spells = ArrayHelper.ArrayFromString<int>(spellsStr);
             var potions = ArrayHelper.ArrayFromString<int>(potionsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            Assert.AreEqual(spells.Length, expected.Length);
+            ClassicAssert.AreEqual(spells.Length, expected.Length);
 
             var sol = new Solution();
             var res = sol.SuccessfulPairs(spells, potions, success);

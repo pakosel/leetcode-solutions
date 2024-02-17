@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,7 +33,7 @@ namespace LongestPalindromeByConcatenatingTwoLetterWords
             var sol = new Solution2022();
             var res = sol.LongestPalindrome(words);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace LongestPalindromeByConcatenatingTwoLetterWords
             var sol = new Solution();
             var res = sol.LongestPalindrome(words);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

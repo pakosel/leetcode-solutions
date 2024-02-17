@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +26,7 @@ namespace MinimumDeletionsToMakeCharacterFrequenciesUnique
             var sol = new Solution_2023();
             var res = sol.MinDeletions(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -35,7 +36,7 @@ namespace MinimumDeletionsToMakeCharacterFrequenciesUnique
             var sol = new Solution();
             var res = sol.MinDeletions(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

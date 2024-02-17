@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,7 +27,7 @@ namespace NaryTreePreorderTraversal
             var sol = new Solution();
             var res = sol.Preorder(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -39,7 +40,7 @@ namespace NaryTreePreorderTraversal
             var sol = new Solution_Recursive();
             var res = sol.Preorder(root);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

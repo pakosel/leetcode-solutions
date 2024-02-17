@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,17 +33,17 @@ namespace CopyListWithRandomPointer
 
             while(res != null && expected != null)
             {
-                Assert.AreNotEqual(res, expected);
-                Assert.AreEqual(res.val, expected.val);
+                ClassicAssert.AreNotEqual(res, expected);
+                ClassicAssert.AreEqual(res.val, expected.val);
                 if(res.random != null || expected.random != null)
                 {
-                    Assert.AreNotEqual(res.random, expected.random);
-                    Assert.AreEqual(res.random?.val, expected.random?.val);
+                    ClassicAssert.AreNotEqual(res.random, expected.random);
+                    ClassicAssert.AreEqual(res.random?.val, expected.random?.val);
                 }
                 res = res.next;
                 expected = expected.next;
             }
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         private Node BuildNodeList(int?[][] arr)

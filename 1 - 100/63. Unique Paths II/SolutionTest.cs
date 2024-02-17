@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +34,7 @@ namespace UniquePathsII
             var sol = new Solution_Backtrack();
             var res = sol.UniquePathsWithObstacles(grid);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace UniquePathsII
             var sol = new Solution();
             var res = sol.UniquePathsWithObstacles(grid);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

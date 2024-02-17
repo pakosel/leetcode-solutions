@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace ConstructBinarySearchTreeFromPreorderTraversal
             var sol = new Solution();
             var res = sol.BstFromPreorder(preorder);
 
-            Assert.IsTrue(CompareTreeNode(res, expected));
+            ClassicAssert.IsTrue(CompareTreeNode(res, expected));
         }
 
         private bool CompareTreeNode(TreeNode node1, TreeNode node2)

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -23,7 +24,7 @@ namespace FindTheDifference
             var sol = new Solution_2023();
             var res = sol.FindTheDifference(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -33,7 +34,7 @@ namespace FindTheDifference
             var sol = new Solution();
             var res = sol.FindTheDifference(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

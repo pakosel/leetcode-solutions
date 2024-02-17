@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -51,7 +52,7 @@ namespace AddTwoNumbersII
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            Assert.IsTrue(arr.Length > 0);
+            ClassicAssert.IsTrue(arr.Length > 0);
 
             ListNode head = null;
             for(int i=arr.Length - 1; i >= 0; i--)
@@ -64,14 +65,14 @@ namespace AddTwoNumbersII
         {
             while(l1 != null)
             {
-                Assert.AreEqual(l1.val, l2.val);
+                ClassicAssert.AreEqual(l1.val, l2.val);
                 if(l1.val != l2.val)
                     return false;
                 l1 = l1.next;
                 l2 = l2.next;
             }
 
-            Assert.IsNull(l2);
+            ClassicAssert.IsNull(l2);
 
             return true;
         }

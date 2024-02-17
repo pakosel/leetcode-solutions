@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,7 +24,7 @@ namespace ValidSudoku
             var sol = new Solution_2022();
             var res = sol.IsValidSudoku(board);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -33,7 +34,7 @@ namespace ValidSudoku
             var sol = new Solution();
             var res = sol.IsValidSudoku(board);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

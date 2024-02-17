@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace SlowSums
 {
@@ -17,7 +18,7 @@ namespace SlowSums
         {
             var ret = Solution.getTotalTime(arr);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -31,7 +32,7 @@ namespace SlowSums
         {
             var ret = Solution.getTotalTime_naive(arr);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -55,7 +56,7 @@ namespace SlowSums
                 writer.WriteLine($"{naiveVal} == {betterVal}");
             }*/
             
-            Assert.AreEqual(naiveVal, betterVal);
+            ClassicAssert.AreEqual(naiveVal, betterVal);
         }
     }
 }

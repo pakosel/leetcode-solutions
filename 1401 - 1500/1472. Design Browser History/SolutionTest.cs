@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -18,8 +19,8 @@ namespace DesignBrowserHistory
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] instructions, object[] inputs, string[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new BrowserHistory((string)inputs[0]);
             for(int i=1; i<instructions.Length; i++)
@@ -30,10 +31,10 @@ namespace DesignBrowserHistory
                         sol.Visit((string)inputs[i]);
                         break;
                     case "back":
-                        Assert.AreEqual(sol.Back((int)inputs[i]), expected[i]);
+                        ClassicAssert.AreEqual(sol.Back((int)inputs[i]), expected[i]);
                         break;
                     case "forward":
-                        Assert.AreEqual(sol.Forward((int)inputs[i]), expected[i]);
+                        ClassicAssert.AreEqual(sol.Forward((int)inputs[i]), expected[i]);
                         break;
                 }
             }

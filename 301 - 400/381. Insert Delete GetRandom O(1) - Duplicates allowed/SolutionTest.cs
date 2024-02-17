@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -33,15 +34,15 @@ namespace InsertDeleteGetRandomWithDuplicates
                 {
                     case "insert":
                         ret = coll.Insert((int)inputs[i]);
-                        Assert.AreEqual(ret, expected[i]);
+                        ClassicAssert.AreEqual(ret, expected[i]);
                         break;
                     case "remove":
                         ret = coll.Remove((int)inputs[i]);
-                        Assert.AreEqual(ret, expected[i]);
+                        ClassicAssert.AreEqual(ret, expected[i]);
                         break;
                     case "getRandom":
                         retI = coll.GetRandom();
-                        Assert.AreEqual(retI, retI);
+                        ClassicAssert.AreEqual(retI, retI);
                         break;
                 }
         }

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -28,7 +29,7 @@ namespace AddDigits
             var sol = new Solution();
             var ret = sol.AddDigits(num);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -38,7 +39,7 @@ namespace AddDigits
             var sol = new Solution_Math();
             var ret = sol.AddDigits(num);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -48,7 +49,7 @@ namespace AddDigits
             var sol = new Solution_Div();
             var ret = sol.AddDigits(num);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

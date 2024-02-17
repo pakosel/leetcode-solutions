@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -29,7 +30,7 @@ namespace FirstBadVersion
             sol.SetBadVersion(bad);
             var res = sol.FirstBadVersion(n);
 
-            Assert.AreEqual(res, bad);
+            ClassicAssert.AreEqual(res, bad);
         }
     }
 }

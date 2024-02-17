@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -22,12 +23,12 @@ namespace StoneGame
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            Assert.IsTrue(arr.Length > 0);
+            ClassicAssert.IsTrue(arr.Length > 0);
 
             var sol = new Solution_Memoization();
             var res = sol.StoneGame(arr);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }
