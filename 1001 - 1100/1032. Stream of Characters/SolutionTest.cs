@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -35,7 +34,7 @@ namespace StreamOfCharacters
             foreach(var q in queryArr)
                 res[i++] = sol.Query(q[0]);
 
-            CollectionAssert.AreEqual(res, expectedArr);
+            Assert.That(res, Is.EqualTo(expectedArr));
         }
     }
 }

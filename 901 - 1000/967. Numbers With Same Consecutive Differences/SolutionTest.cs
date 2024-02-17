@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +27,7 @@ namespace NumbersWithSameConsecutiveDifferences
             var sol = new Solution();
             var res = sol.NumsSameConsecDiff(n, k);
 
-            CollectionAssert.AreEquivalent(expected, res);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

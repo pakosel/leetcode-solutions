@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +26,7 @@ namespace DailyTemperatures
             var res = sol.DailyTemperatures(temperatures);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -39,7 +38,7 @@ namespace DailyTemperatures
             var res = sol.DailyTemperatures(temperatures);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

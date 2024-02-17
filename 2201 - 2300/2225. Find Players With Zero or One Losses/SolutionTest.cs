@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,7 +25,7 @@ namespace FindPlayersWithZeroOrOneLosses
             var sol = new Solution_2024();
             var res = sol.FindWinners(matches);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -39,7 +38,7 @@ namespace FindPlayersWithZeroOrOneLosses
             var sol = new Solution();
             var res = sol.FindWinners(matches);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

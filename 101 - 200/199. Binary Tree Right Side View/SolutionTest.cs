@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +32,7 @@ namespace BinaryTreeRightSideView
             var sol = new Solution();
             var ret = sol.RightSideView(root);
 
-            CollectionAssert.AreEqual(ret, expected);
+            Assert.That(ret, Is.EqualTo(expected));
         }
     }
 }

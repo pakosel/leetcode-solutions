@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -31,7 +30,7 @@ namespace DesignParkingSystem
             for(int i=1; i<commands.Length; i++)
                 res[i] = sol.AddCar(args[i][0]);
 
-            CollectionAssert.AreEquivalent(expected, res);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace StringCompression
             var res = sol.Compress(chars);
 
             Assert.That(res == expected.Length);
-            CollectionAssert.AreEquivalent(chars.Take(res), expected);
+            Assert.That(chars.Take(res), Is.EquivalentTo(expected));
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +26,7 @@ namespace AllNodesDistanceKInBinaryTree
             var sol = new Solution();
             var res = sol.DistanceK(root, new TreeNode(target), k);
             
-            CollectionAssert.AreEquivalent(expected, res);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

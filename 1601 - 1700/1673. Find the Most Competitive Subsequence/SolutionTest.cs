@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +26,7 @@ namespace FindTheMostCompetitiveSubsequence
             var sol = new Solution();
             var res = sol.MostCompetitive(nums, k);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
+            Assert.That(res, Is.EquivalentTo(ArrayHelper.ArrayFromString<int>(expected)));
         }
 
         [Test]
@@ -39,7 +38,7 @@ namespace FindTheMostCompetitiveSubsequence
             var sol = new Solution_Dqueue();
             var res = sol.MostCompetitive(nums, k);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
+            Assert.That(res, Is.EquivalentTo(ArrayHelper.ArrayFromString<int>(expected)));
         }
     }
 }

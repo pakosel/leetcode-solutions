@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +26,7 @@ namespace SetMismatch
             var sol = new Solution_2024();
             var res = sol.FindErrorNums(nums);
 
-            CollectionAssert.AreEquivalent(expected, res);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -40,7 +39,7 @@ namespace SetMismatch
             var sol = new Solution();
             var res = sol.FindErrorNums(nums);
 
-            CollectionAssert.AreEquivalent(expected, res);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

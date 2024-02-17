@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System;
 using System.Collections.Generic;
 
@@ -23,7 +22,7 @@ namespace NodesInSubtree
             // foreach(var e in output_1)
             //     Console.Out.WriteLine(e);
 
-            CollectionAssert.AreEqual(expected_1, output_1);
+            Assert.That(expected_1, Is.EqualTo(output_1));
         }
 
         [Test]
@@ -44,7 +43,7 @@ namespace NodesInSubtree
             int[] output_2 = Solution.countOfNodes(root_2, queries_2, s_2);
             int[] expected_2 = { 4, 1, 2 };
 
-            CollectionAssert.AreEqual(expected_2, output_2);
+            Assert.That(expected_2, Is.EqualTo(output_2));
         }
     }
 }

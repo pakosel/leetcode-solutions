@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using Dict = System.Collections.Generic.Dictionary<string, object>;
 
 namespace FlattenDictionary
@@ -65,7 +64,7 @@ namespace FlattenDictionary
         {
             var res = Solution.FlattenDictionary(dict);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

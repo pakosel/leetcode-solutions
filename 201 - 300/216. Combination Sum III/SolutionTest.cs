@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -38,7 +37,7 @@ namespace CombinationSumIII
             var sol = new Solution();
             var res = sol.CombinationSum3(k, n);
 
-            CollectionAssert.AreEquivalent(expected.Select(list => list.OrderBy(_ => _)), res.Select(list => list.OrderBy(_ => _)));
+            Assert.That(expected.Select(list => list.OrderBy(_ => _)), Is.EquivalentTo(res.Select(list => list.OrderBy(_ => _))));
         }
     }
 }

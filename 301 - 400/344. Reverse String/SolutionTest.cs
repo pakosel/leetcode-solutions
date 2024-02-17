@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace ReverseString
             var sol = new Solution();
             sol.ReverseString(arr);
 
-            CollectionAssert.AreEqual(arr, expected);
+            Assert.That(arr, Is.EqualTo(expected));
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +32,7 @@ namespace GameOfLife
             var sol = new Solution();
             sol.GameOfLife(grid);
 
-            CollectionAssert.AreEqual(grid, expected);
+            Assert.That(grid, Is.EqualTo(expected));
         }
     }
 }

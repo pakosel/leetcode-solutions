@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 
 namespace LargestTripleProduct
 {
@@ -12,7 +11,7 @@ namespace LargestTripleProduct
         public void Test_Examples(int[] nums, int[] expected)
         {
             var res = Solution.findMaxProduct(nums);
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

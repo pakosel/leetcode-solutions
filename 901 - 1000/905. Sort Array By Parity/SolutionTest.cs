@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -35,7 +34,7 @@ namespace SortArrayByParity
             var sol = new Solution();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
         
         [Test]
@@ -48,7 +47,7 @@ namespace SortArrayByParity
             var sol = new Solution_Linq();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -61,7 +60,7 @@ namespace SortArrayByParity
             var sol = new Solution_InPlace();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
         [Test]
         [TestCaseSource("testCasesStr")]
@@ -73,7 +72,7 @@ namespace SortArrayByParity
             var sol = new Solution_2pass();
             var res = sol.SortArrayByParity(nums);
             
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

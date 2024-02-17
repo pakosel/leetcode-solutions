@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -31,7 +30,7 @@ namespace RestoreIpAddresses
             var sol = new Solution_2022();
             var res = sol.RestoreIpAddresses(input);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -41,7 +40,7 @@ namespace RestoreIpAddresses
             var sol = new Solution();
             var res = sol.RestoreIpAddresses(input);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

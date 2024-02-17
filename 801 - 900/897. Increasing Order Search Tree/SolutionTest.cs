@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +24,7 @@ namespace IncreasingOrderSearchTree
         {
             var root = TreeNodeHelper.BuildTree(arrStr);
             
-            ClassicAssert.IsNotNull(root);
+            Assert.That(root != null);
 
             var sol = new Solution();
             var res = sol.IncreasingBST(root);
