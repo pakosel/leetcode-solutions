@@ -32,7 +32,7 @@ namespace DeleteTheMiddleNodeOfLinkedList
             var sol = new Solution();
             var res = sol.DeleteMiddle(head);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

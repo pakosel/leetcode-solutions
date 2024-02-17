@@ -25,8 +25,8 @@ namespace TimeBasedKeyValueStore
             var args = ArrayHelper.MatrixFromString<string>(argsStr, true);
             var expected = ArrayHelper.ArrayFromString<string>(expectedStr);
 
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);
 
             var res = new string[expected.Length];
             var sol = new TimeMap();

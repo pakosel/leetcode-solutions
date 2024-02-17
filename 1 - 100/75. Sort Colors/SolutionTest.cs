@@ -19,9 +19,9 @@ namespace SortColors
             var sol = new Solution();
             sol.SortColors(nums);
 
-            ClassicAssert.AreEqual(nums.Length, expected.Length);
+            Assert.That(nums.Length == expected.Length);
             for(int i=0; i<nums.Length; i++)
-                ClassicAssert.AreEqual(nums[i], expected[i]);
+                Assert.That(nums[i] == expected[i]);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace BinaryTreePruning
             var sol = new Solution();
             var res = sol.PruneTree(root);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            Assert.That(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

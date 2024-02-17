@@ -29,7 +29,7 @@ namespace RestoreTheArrayFromAdjacentPairs
             var sol = new Solution();
             var res = sol.RestoreArray(adjacentPairs);
 
-            ClassicAssert.IsTrue(expected.SequenceEqual(res) || expected.SequenceEqual(res.Reverse()));
+            Assert.That(expected.SequenceEqual(res) || expected.SequenceEqual(res.Reverse()));
         }
     }
 }

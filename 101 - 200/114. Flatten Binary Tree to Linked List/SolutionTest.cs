@@ -28,7 +28,7 @@ namespace FlattenBinaryTreeToLinkedList
             var sol = new Solution();
             sol.Flatten(root);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(root, expected));
+            Assert.That(TreeNodeHelper.CompareTreeNode(root, expected));
         }
     }
 }

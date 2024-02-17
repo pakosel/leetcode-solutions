@@ -28,7 +28,7 @@ namespace PartitionList
             var sol = new Solution();
             var res = sol.Partition(head, x);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            Assert.That(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }

@@ -33,7 +33,7 @@ namespace RemoveNthNodeFromEndOfList
             var sol = new Solution_2022();
             var res = sol.RemoveNthFromEnd(head, n);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            Assert.That(ListNodeHelper.AreEqual(expected, res));
         }
         
         [Test]
@@ -46,7 +46,7 @@ namespace RemoveNthNodeFromEndOfList
             var sol = new Solution_2022();
             var res = sol.RemoveNthFromEnd(head, n);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, res));
+            Assert.That(ListNodeHelper.AreEqual(expected, res));
         }
     }
 }

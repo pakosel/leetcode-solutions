@@ -28,7 +28,7 @@ namespace InsertIntoBinarySearchTree
             var sol = new Solution();
             var res = sol.InsertIntoBST(root, val);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expected));
         }
     }
 }

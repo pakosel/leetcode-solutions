@@ -31,7 +31,7 @@ namespace MergeIntervals
             var sol = new Solution();
             var res = sol.Merge(intervals);
 
-            ClassicAssert.AreEqual(ArrayHelper.MatrixToString(res), expected);
+            Assert.That(ArrayHelper.MatrixToString(res) == expected);
         }       
     }
 }

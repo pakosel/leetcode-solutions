@@ -32,7 +32,7 @@ namespace MaximumBinaryTree
             var sol = new Solution();
             var res = sol.ConstructMaximumBinaryTree(nums);
 
-            ClassicAssert.IsTrue(CompareTreeNode(res, expected));
+            Assert.That(CompareTreeNode(res, expected));
         }
 
         private bool CompareTreeNode(TreeNode node1, TreeNode node2)

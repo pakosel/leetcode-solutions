@@ -30,7 +30,7 @@ namespace SwappingNodesInLinkedList
             var sol = new Solution();
             var res = sol.SwapNodes(head, k);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

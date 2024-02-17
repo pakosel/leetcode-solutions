@@ -32,7 +32,7 @@ namespace PopulatingNextRightPointersEachNodeII
             var sol = new Solution();
             var res = sol.Connect(root);
 
-            ClassicAssert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
+            Assert.That(TreeNodeHelper.PrintNode(res) == expected);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace PopulatingNextRightPointersEachNodeII
             var sol = new Solution_Recursive();
             var res = sol.Connect(root);
 
-            ClassicAssert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
+            Assert.That(TreeNodeHelper.PrintNode(res) == expected);
         }
     }
 }

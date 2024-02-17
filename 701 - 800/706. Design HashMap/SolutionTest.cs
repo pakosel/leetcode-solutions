@@ -21,8 +21,8 @@ namespace DesignHashMap
         public void Test_Generic(string[] commands, string argsStr, int?[] expected)
         {
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);
             int?[] res = new int?[commands.Length];
 
             var sol = new MyHashMap();

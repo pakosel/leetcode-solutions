@@ -29,7 +29,7 @@ namespace SmallestSubtreeWithDeepestNodes
             var res = sol.SubtreeWithAllDeepest(root);
             var expectedTree = TreeNodeHelper.BuildTree(expected);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedTree));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expectedTree));
         }
     }
 }

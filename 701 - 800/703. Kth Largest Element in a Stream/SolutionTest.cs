@@ -26,7 +26,7 @@ namespace KthLargestElementInStream
             var args = ArrayHelper.ArrayFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == expected.Length);
             ClassicAssert.AreEqual(args.Length, expected.Length);
 
             var sol = new KthLargest(k, init);

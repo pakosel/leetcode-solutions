@@ -19,8 +19,8 @@ namespace ImplementTriePrefixTree
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] instructions, string[] inputs, bool?[] expected)
         {
-            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
-            ClassicAssert.AreEqual(expected.Length, inputs.Length);
+            Assert.That(instructions.Length == inputs.Length);
+            Assert.That(expected.Length == inputs.Length);
 
             var sol = new Trie();
             for(int i=1; i<instructions.Length; i++)

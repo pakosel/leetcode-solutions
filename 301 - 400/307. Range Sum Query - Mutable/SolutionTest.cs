@@ -25,8 +25,8 @@ namespace RangeSumQueryMutable
             var commands = ArrayHelper.ArrayFromString<string>(commandsStr);
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
             var expected = ArrayHelper.ArrayFromString<int?>(expectedStr);
-            ClassicAssert.AreEqual(commands.Length, inputs.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == inputs.Length);
+            Assert.That(commands.Length == expected.Length);
             
             var res = new int?[commands.Length];
             NumArray sol = null;

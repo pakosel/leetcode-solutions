@@ -20,8 +20,8 @@ namespace ImplementStackUsingQueues
         [TestCaseSource("testCases")]
         public void Test_Generic_2023(string[] instructions, int?[] inputs, object[] expected)
         {
-            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
-            ClassicAssert.AreEqual(expected.Length, inputs.Length);
+            Assert.That(instructions.Length == inputs.Length);
+            Assert.That(expected.Length == inputs.Length);
 
             var sol = new MyStack_2023();
             for(int i=0; i<instructions.Length; i++)
@@ -48,8 +48,8 @@ namespace ImplementStackUsingQueues
         [TestCaseSource("testCases")]
         public void Test_Generic_v0(string[] instructions, int?[] inputs, object[] expected)
         {
-            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
-            ClassicAssert.AreEqual(expected.Length, inputs.Length);
+            Assert.That(instructions.Length == inputs.Length);
+            Assert.That(expected.Length == inputs.Length);
 
             var sol = new MyStack_v0();
             for(int i=0; i<instructions.Length; i++)
@@ -76,8 +76,8 @@ namespace ImplementStackUsingQueues
         [TestCaseSource("testCases")]
         public void Test_Generic_v1(string[] instructions, int?[] inputs, object[] expected)
         {
-            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
-            ClassicAssert.AreEqual(expected.Length, inputs.Length);
+            Assert.That(instructions.Length == inputs.Length);
+            Assert.That(expected.Length == inputs.Length);
 
             var sol = new MyStack_v1();
             for(int i=0; i<instructions.Length; i++)

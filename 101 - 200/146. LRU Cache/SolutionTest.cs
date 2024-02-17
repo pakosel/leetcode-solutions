@@ -24,8 +24,8 @@ namespace LruCache
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<int?>(expectedStr);
             
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);
 
             var sol = new LRUCache(args[0][0]);
             var res = new int?[args.Length];

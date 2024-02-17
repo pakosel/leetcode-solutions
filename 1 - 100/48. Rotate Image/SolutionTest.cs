@@ -47,7 +47,7 @@ namespace RotateImage
             var sol = new Solution();
             sol.Rotate(matrix);
 
-            ClassicAssert.AreEqual(matrix, expected);
+            CollectionAssert.AreEqual(matrix, expected);
         }
     }
 }

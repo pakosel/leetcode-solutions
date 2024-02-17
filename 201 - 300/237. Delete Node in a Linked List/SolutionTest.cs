@@ -37,7 +37,7 @@ namespace DeleteNodeInLinkedList
             var sol = new Solution();
             sol.DeleteNode(node);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, head));
+            Assert.That(ListNodeHelper.AreEqual(expected, head));
         }
     }
 }

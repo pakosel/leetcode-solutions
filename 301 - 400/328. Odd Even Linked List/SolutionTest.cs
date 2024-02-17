@@ -36,7 +36,7 @@ namespace OddEvenLinkedList
             
             var expected = ListNodeHelper.BuildList(expectedStr);
 
-            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            Assert.That(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

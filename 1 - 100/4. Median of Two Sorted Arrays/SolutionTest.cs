@@ -28,7 +28,7 @@ namespace MedianOfTwoSortedArrays
             var nums1 = ArrayHelper.ArrayFromString<int>(nums1Str);
             var nums2 = ArrayHelper.ArrayFromString<int>(nums2Str);
 
-            ClassicAssert.IsTrue(nums1.Length > 0 || nums2.Length > 0);
+            Assert.That(nums1.Length > 0 || nums2.Length > 0);
 
             var sol = new Solution();
             var res = sol.FindMedianSortedArrays(nums1, nums2);

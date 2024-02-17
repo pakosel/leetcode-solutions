@@ -26,7 +26,7 @@ namespace MergeTwoSortedLists
             }
             var retListStr = '[' + string.Join(',', lst) + ']';
 
-            ClassicAssert.AreEqual(retListStr, expected);
+            Assert.That(retListStr == expected);
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace MergeTwoSortedLists
             }
             var retListStr = '[' + string.Join(',', lst) + ']';
 
-            ClassicAssert.AreEqual(retListStr, expected);
+            Assert.That(retListStr == expected);
         }
     }
 }

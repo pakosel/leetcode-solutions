@@ -20,8 +20,8 @@ namespace DesignTextEditor
         public void Test_Generic(string[] commands, string argsStr, object[] expected)
         {
             var args = ArrayHelper.MatrixFromString<object>(argsStr, true);
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);
             var res = new object[commands.Length];
 
             var sol = new TextEditor();

@@ -28,7 +28,7 @@ namespace FourSum
             sb.Append(string.Join(',', ret.Select(it => "[" + string.Join(',', it) + "]")));
             sb.Append(']');
             
-            ClassicAssert.AreEqual(sb.ToString(), expected);
+            Assert.That(sb.ToString() == expected);
         }
     }
 }

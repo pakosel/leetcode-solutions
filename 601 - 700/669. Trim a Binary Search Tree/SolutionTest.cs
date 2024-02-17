@@ -28,7 +28,7 @@ namespace TrimBinarySearchTree
             var sol = new Solution();
             var res = sol.TrimBST(root, low, high);
 
-            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
+            Assert.That(TreeNodeHelper.CompareTreeNode(res, expected));
         }
     }
 }

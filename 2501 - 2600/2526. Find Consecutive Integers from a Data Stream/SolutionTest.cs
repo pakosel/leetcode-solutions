@@ -24,8 +24,8 @@ namespace FindConsecutiveIntegersFromDataStream
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<bool>(expectedStr);
 
-            ClassicAssert.AreEqual(commands.Length, args.Length);
-            ClassicAssert.AreEqual(commands.Length, expected.Length);            
+            Assert.That(commands.Length == args.Length);
+            Assert.That(commands.Length == expected.Length);            
 
             var res = new bool[expected.Length];
             DataStream sol = null;
