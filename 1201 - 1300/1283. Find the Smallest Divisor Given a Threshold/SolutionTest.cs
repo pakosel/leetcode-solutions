@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -26,12 +27,12 @@ namespace FindSmallestDivisorGivenThreshold
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            Assert.IsTrue(arr.Length > 0);
+            ClassicAssert.IsTrue(arr.Length > 0);
 
             var sol = new Solution();
             var res = sol.SmallestDivisor(arr, threshold);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

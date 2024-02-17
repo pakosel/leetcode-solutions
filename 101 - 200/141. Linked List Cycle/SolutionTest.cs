@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +34,7 @@ namespace LinkedListCycle
             var sol = new Solution_2023();
             var res = sol.HasCycle(head);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -46,7 +47,7 @@ namespace LinkedListCycle
             var sol = new Solution();
             var res = sol.HasCycle(head);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -59,7 +60,7 @@ namespace LinkedListCycle
             var sol = new Solution_O1();
             var res = sol.HasCycle(head);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         private void MakeLoop(ListNode head, int loopIdx)

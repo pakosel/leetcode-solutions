@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -18,9 +19,9 @@ namespace SortColors
             var sol = new Solution();
             sol.SortColors(nums);
 
-            Assert.AreEqual(nums.Length, expected.Length);
+            ClassicAssert.AreEqual(nums.Length, expected.Length);
             for(int i=0; i<nums.Length; i++)
-                Assert.AreEqual(nums[i], expected[i]);
+                ClassicAssert.AreEqual(nums[i], expected[i]);
         }
     }
 }

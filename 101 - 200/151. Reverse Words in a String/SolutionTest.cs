@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -28,7 +29,7 @@ namespace ReverseWordsInString
             var sol = new Solution();
             var ret = sol.ReverseWords(s);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -38,7 +39,7 @@ namespace ReverseWordsInString
             var sol = new Solution_SemiManual();
             var ret = sol.ReverseWords(s);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -48,7 +49,7 @@ namespace ReverseWordsInString
             var sol = new Solution_FullManual();
             var ret = sol.ReverseWords(s);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

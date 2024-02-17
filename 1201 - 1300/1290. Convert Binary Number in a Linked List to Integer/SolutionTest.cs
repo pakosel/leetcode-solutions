@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -25,7 +26,7 @@ namespace ConvertBinaryNumberInLinkedList
             var arr = arrStr.TrimStart('[').TrimEnd(']').Split(",")
                 .Select(s => int.Parse(s)).ToArray();
 
-            Assert.IsTrue(arr.Length > 0);
+            ClassicAssert.IsTrue(arr.Length > 0);
 
             ListNode curr = new ListNode(arr[0]);
             var head = curr;
@@ -38,7 +39,7 @@ namespace ConvertBinaryNumberInLinkedList
             var sol = new Solution();
             var res = sol.GetDecimalValue(head);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

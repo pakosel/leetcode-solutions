@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -21,7 +22,7 @@ namespace ValidAnagram
             var sol = new Solution_2023();
             var res = sol.IsAnagram(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -31,7 +32,7 @@ namespace ValidAnagram
             var sol = new Solution();
             var res = sol.IsAnagram(s, t);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

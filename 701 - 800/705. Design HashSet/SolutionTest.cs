@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -20,8 +21,8 @@ namespace DesignHashSet
         [TestCaseSource("testCases")]
         public void Test_Generic(string[] commands, int[] args, bool?[] expected)
         {
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
             bool?[] res = new bool?[commands.Length];
 
             var sol = new MyHashSet();

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -35,7 +36,7 @@ namespace NumberOfStepsToReduceNumberToZero
             var sol = new Solution();
             var res = sol.NumberOfSteps(num);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System;
 
 namespace NumberOfVisibleNodes
@@ -21,7 +22,7 @@ namespace NumberOfVisibleNodes
 */            
             var ret = Solution.visibleNodes(node);
 
-            Assert.AreEqual(ret, 4);
+            ClassicAssert.AreEqual(ret, 4);
         }
 
         [Test]
@@ -43,7 +44,7 @@ namespace NumberOfVisibleNodes
 */            
             var ret = Solution.visibleNodes(node);
 
-            Assert.AreEqual(ret, 6);
+            ClassicAssert.AreEqual(ret, 6);
         }
     }
 
@@ -61,7 +62,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(nodes[i]);
             var ret = Solution.visibleNodes(bst.root);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -75,7 +76,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(nodes[i]);
             var ret = Solution_naive.visibleNodes(bst.root);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -89,7 +90,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(i);
             var ret = Solution.visibleNodes(bst.root);
 
-            Assert.AreEqual(ret, len);
+            ClassicAssert.AreEqual(ret, len);
         }
 
         [Test]
@@ -103,7 +104,7 @@ namespace NumberOfVisibleNodes
                 bst.insert(i);
             var ret = Solution_naive.visibleNodes(bst.root);
 
-            Assert.AreEqual(ret, len);
+            ClassicAssert.AreEqual(ret, len);
         }
     }
 

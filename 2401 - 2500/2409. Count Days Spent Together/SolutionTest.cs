@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,7 +24,7 @@ namespace CountDaysSpentTogether
             var sol = new Solution();
             var res = sol.CountDaysTogether(arriveAlice, leaveAlice, arriveBob, leaveBob);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

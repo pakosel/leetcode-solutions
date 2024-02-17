@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 
 namespace FourSum
@@ -27,7 +28,7 @@ namespace FourSum
             sb.Append(string.Join(',', ret.Select(it => "[" + string.Join(',', it) + "]")));
             sb.Append(']');
             
-            Assert.AreEqual(sb.ToString(), expected);
+            ClassicAssert.AreEqual(sb.ToString(), expected);
         }
     }
 }

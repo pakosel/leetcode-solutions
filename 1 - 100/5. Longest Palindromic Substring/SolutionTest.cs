@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -26,7 +27,7 @@ namespace LongestPalindromicSubstring
             var sol = new Solution2022();
             var res = sol.LongestPalindrome(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -36,7 +37,7 @@ namespace LongestPalindromicSubstring
             var sol = new Solution();
             var res = sol.LongestPalindrome(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

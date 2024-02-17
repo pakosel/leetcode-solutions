@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -42,7 +43,7 @@ namespace CanIWin
             var sol = new Solution();
             var res = sol.CanIWin(maxChoosableInteger, desiredTotal);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

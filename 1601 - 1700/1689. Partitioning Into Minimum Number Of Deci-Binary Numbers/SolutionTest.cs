@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace PartitioningIntoMinimumNumberOfDeciBinaryNumbers
             var sol = new Solution();
             var res = sol.MinPartitions(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -37,7 +38,7 @@ namespace PartitioningIntoMinimumNumberOfDeciBinaryNumbers
             var sol = new Solution();
             var res = sol.MinPartitions(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

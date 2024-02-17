@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,8 +26,8 @@ namespace KthLargestElementInStream
             var args = ArrayHelper.ArrayFromString<int>(argsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            Assert.AreEqual(commands.Length, expected.Length);
-            Assert.AreEqual(args.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(args.Length, expected.Length);
 
             var sol = new KthLargest(k, init);
             for(int i=0; i<commands.Length; i++)
@@ -36,7 +37,7 @@ namespace KthLargestElementInStream
                 {
                     case "add":
                         var res = sol.Add(args[i]);
-                        Assert.AreEqual(res, expected[i]);
+                        ClassicAssert.AreEqual(res, expected[i]);
                         break;
                 }
             }

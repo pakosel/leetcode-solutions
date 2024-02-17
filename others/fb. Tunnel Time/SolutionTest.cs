@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -22,12 +23,12 @@ namespace TunnelTime
         {
             var A = ArrayHelper.ArrayFromString<long>(aStr);
             var B = ArrayHelper.ArrayFromString<long>(bStr);
-            Assert.AreEqual(A.Length, B.Length);
+            ClassicAssert.AreEqual(A.Length, B.Length);
 
             var sol = new Solution();
             var res = sol.getSecondsElapsed(C, N, A, B, K);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

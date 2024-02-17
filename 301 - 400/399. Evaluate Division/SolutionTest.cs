@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,8 +25,8 @@ namespace EvaluateDivision
             var equations = ArrayHelper.MatrixFromString<string>(equationsStr, true);
             var queries = ArrayHelper.MatrixFromString<string>(queriesStr, true);
 
-            Assert.AreEqual(equations.Length, values.Length);
-            Assert.AreEqual(queries.Length, expected.Length);
+            ClassicAssert.AreEqual(equations.Length, values.Length);
+            ClassicAssert.AreEqual(queries.Length, expected.Length);
 
             var sol = new Solution();
             var res = sol.CalcEquation(equations, values, queries);

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -19,8 +20,8 @@ namespace ImplementStackUsingQueues
         [TestCaseSource("testCases")]
         public void Test_Generic_2023(string[] instructions, int?[] inputs, object[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new MyStack_2023();
             for(int i=0; i<instructions.Length; i++)
@@ -31,13 +32,13 @@ namespace ImplementStackUsingQueues
                         sol.Push((int)inputs[i]);
                         break;
                     case "pop":
-                        Assert.AreEqual(sol.Pop(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
                         break;
                     case "top":
-                        Assert.AreEqual(sol.Top(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Top(), expected[i]);
                         break;
                     case "empty":
-                        Assert.AreEqual(sol.Empty(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Empty(), expected[i]);
                         break;
                 }
             }
@@ -47,8 +48,8 @@ namespace ImplementStackUsingQueues
         [TestCaseSource("testCases")]
         public void Test_Generic_v0(string[] instructions, int?[] inputs, object[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new MyStack_v0();
             for(int i=0; i<instructions.Length; i++)
@@ -59,13 +60,13 @@ namespace ImplementStackUsingQueues
                         sol.Push((int)inputs[i]);
                         break;
                     case "pop":
-                        Assert.AreEqual(sol.Pop(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
                         break;
                     case "top":
-                        Assert.AreEqual(sol.Top(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Top(), expected[i]);
                         break;
                     case "empty":
-                        Assert.AreEqual(sol.Empty(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Empty(), expected[i]);
                         break;
                 }
             }
@@ -75,8 +76,8 @@ namespace ImplementStackUsingQueues
         [TestCaseSource("testCases")]
         public void Test_Generic_v1(string[] instructions, int?[] inputs, object[] expected)
         {
-            Assert.AreEqual(instructions.Length, inputs.Length);
-            Assert.AreEqual(expected.Length, inputs.Length);
+            ClassicAssert.AreEqual(instructions.Length, inputs.Length);
+            ClassicAssert.AreEqual(expected.Length, inputs.Length);
 
             var sol = new MyStack_v1();
             for(int i=0; i<instructions.Length; i++)
@@ -87,13 +88,13 @@ namespace ImplementStackUsingQueues
                         sol.Push((int)inputs[i]);
                         break;
                     case "pop":
-                        Assert.AreEqual(sol.Pop(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
                         break;
                     case "top":
-                        Assert.AreEqual(sol.Top(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Top(), expected[i]);
                         break;
                     case "empty":
-                        Assert.AreEqual(sol.Empty(), expected[i]);
+                        ClassicAssert.AreEqual(sol.Empty(), expected[i]);
                         break;
                 }
             }

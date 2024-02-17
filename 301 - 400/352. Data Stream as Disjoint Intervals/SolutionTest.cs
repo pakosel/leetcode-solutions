@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -41,8 +42,8 @@ namespace DataStreamAsDisjointIntervals
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
             var expected = Enumerable.Range(0, expectedStr.Length).Select(i => expectedStr[i] != null ? ArrayHelper.MatrixFromString<int>(expectedStr[i]) : null).ToArray();
 
-            Assert.AreEqual(commands.Length, inputs.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, inputs.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
             
             var sol = new SummaryRanges();
             for(int i=0; i<commands.Length; i++)
@@ -50,7 +51,7 @@ namespace DataStreamAsDisjointIntervals
                 {
                     case "addNum":
                         sol.AddNum(inputs[i][0]);
-                        Assert.AreEqual(expected[i], null);
+                        ClassicAssert.AreEqual(expected[i], null);
                         break;
                     case "getIntervals":
                         var res = sol.GetIntervals();
@@ -61,7 +62,7 @@ namespace DataStreamAsDisjointIntervals
                         CollectionAssert.AreEqual(expected[i], res);
                         break;
                     default:
-                        Assert.AreEqual(expected[i], null);
+                        ClassicAssert.AreEqual(expected[i], null);
                         break;
                 }
         }
@@ -75,7 +76,7 @@ namespace DataStreamAsDisjointIntervals
             var sol = new SummaryRanges(intervals);
             var res = sol.GetInterval(num);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

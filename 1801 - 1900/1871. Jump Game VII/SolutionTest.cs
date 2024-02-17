@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -22,7 +23,7 @@ namespace JumpGameVII
             var sol = new Solution_DP();
             var res = sol.CanReach(s, minJump, maxJump);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -32,7 +33,7 @@ namespace JumpGameVII
             var sol = new Solution_Queue();
             var res = sol.CanReach(s, minJump, maxJump);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

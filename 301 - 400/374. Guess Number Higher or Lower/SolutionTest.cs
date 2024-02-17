@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +26,7 @@ namespace GuessNumberHigherOrLower
             sol.Pick(picked);
             var res = sol.GuessNumber(n);
 
-            Assert.AreEqual(picked, res);
+            ClassicAssert.AreEqual(picked, res);
         }
     }
 }

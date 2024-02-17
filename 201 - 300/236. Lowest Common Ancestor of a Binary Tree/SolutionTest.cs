@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace LowestCommonAncestorOfBinaryTree
             var sol = new Solution();
             var res = sol.LowestCommonAncestor(root, TreeNodeHelper.FindNodeWithVal(root, p), TreeNodeHelper.FindNodeWithVal(root, q));
 
-            Assert.AreEqual(res.val, expected);
+            ClassicAssert.AreEqual(res.val, expected);
         }
         
         [Test]
@@ -40,7 +41,7 @@ namespace LowestCommonAncestorOfBinaryTree
             var sol = new Solution_Stack();
             var res = sol.LowestCommonAncestor(head, p, q);
 
-            Assert.AreEqual(res.val, expected);
+            ClassicAssert.AreEqual(res.val, expected);
         }
     }
 }

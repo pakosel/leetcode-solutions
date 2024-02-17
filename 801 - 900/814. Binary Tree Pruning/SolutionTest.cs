@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +34,7 @@ namespace BinaryTreePruning
             var sol = new Solution();
             var res = sol.PruneTree(root);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(expected, res));
         }
     }
 }

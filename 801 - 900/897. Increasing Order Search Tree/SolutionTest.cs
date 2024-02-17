@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,14 +25,14 @@ namespace IncreasingOrderSearchTree
         {
             var root = TreeNodeHelper.BuildTree(arrStr);
             
-            Assert.IsNotNull(root);
+            ClassicAssert.IsNotNull(root);
 
             var sol = new Solution();
             var res = sol.IncreasingBST(root);
             
             var expectedRoot = TreeNodeHelper.BuildTree(expected);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedRoot));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expectedRoot));
         }
     }
 }

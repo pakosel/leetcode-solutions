@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -27,7 +28,7 @@ namespace LongestPalindromicSubsequence
             var sol = new Solution();
             var res = sol.LongestPalindromeSubseq(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -37,7 +38,7 @@ namespace LongestPalindromicSubsequence
             var sol = new SolutionMemoization();
             var res = sol.LongestPalindromeSubseq(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

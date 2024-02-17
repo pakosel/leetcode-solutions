@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -37,7 +38,7 @@ namespace DeleteNodeInBst
 
             var expected = TreeNodeHelper.BuildTree(expectedStr);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(res, expected));
         }
     }
 }

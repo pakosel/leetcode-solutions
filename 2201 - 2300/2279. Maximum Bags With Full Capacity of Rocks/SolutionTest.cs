@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -23,12 +24,12 @@ namespace MaximumBagsWithFullCapacityOfRocks
             var capacity = ArrayHelper.ArrayFromString<int>(capacityStr);
             var rocks = ArrayHelper.ArrayFromString<int>(rocksStr);
 
-            Assert.AreEqual(capacity.Length, rocks.Length);
+            ClassicAssert.AreEqual(capacity.Length, rocks.Length);
 
             var sol = new Solution();
             var res = sol.MaximumBags(capacity, rocks, additionalRocks);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

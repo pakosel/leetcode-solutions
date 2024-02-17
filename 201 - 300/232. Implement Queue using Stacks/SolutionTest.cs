@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -22,8 +23,8 @@ namespace ImplementQueueUsingStacks
             var commands = ArrayHelper.ArrayFromString<string>(commandsStr);
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
 
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);            
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);            
 
             var res = new object[expected.Length];
             var sol = new MyQueue();

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,8 +31,8 @@ namespace CloneGraph
             var nodesAreEqual = NodesAreEqual(node, ret);
 
             if(node != null)
-                Assert.AreNotEqual(node, ret);
-            Assert.AreEqual(nodesAreEqual, true);
+                ClassicAssert.AreNotEqual(node, ret);
+            ClassicAssert.AreEqual(nodesAreEqual, true);
         }
 
         [Test]
@@ -47,8 +48,8 @@ namespace CloneGraph
             var nodesAreEqual = NodesAreEqual(node, ret);
 
             if(node != null)
-                Assert.AreNotEqual(node, ret);
-            Assert.AreEqual(nodesAreEqual, true);
+                ClassicAssert.AreNotEqual(node, ret);
+            ClassicAssert.AreEqual(nodesAreEqual, true);
         }
 
         private Node[] BuildGraph(string inputArr)

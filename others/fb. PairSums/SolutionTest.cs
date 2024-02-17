@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace PairSums
 {
@@ -16,7 +17,7 @@ namespace PairSums
         {
             var ret = Solution.numberOfWays(arr, k);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

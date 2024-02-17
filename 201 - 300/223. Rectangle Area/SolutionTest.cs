@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -22,7 +23,7 @@ namespace RectangleArea
             var sol = new Solution();
             var res = sol.ComputeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

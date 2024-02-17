@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -20,8 +21,8 @@ namespace DesignHashMap
         public void Test_Generic(string[] commands, string argsStr, int?[] expected)
         {
             var args = ArrayHelper.MatrixFromString<int>(argsStr);
-            Assert.AreEqual(commands.Length, args.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, args.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
             int?[] res = new int?[commands.Length];
 
             var sol = new MyHashMap();

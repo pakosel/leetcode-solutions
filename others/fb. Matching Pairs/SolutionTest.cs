@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace MatchingPairs
 {
@@ -20,7 +21,7 @@ namespace MatchingPairs
         {
             var ret = Solution.matchingPairs(s, t);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

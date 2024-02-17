@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,7 +27,7 @@ namespace OnesAndZeroes
             var sol = new Solution();
             var res = sol.FindMaxForm(strs, m, n);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -36,7 +37,7 @@ namespace OnesAndZeroes
             var sol = new Solution_DP();
             var res = sol.FindMaxForm(strs, m, n);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

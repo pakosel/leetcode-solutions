@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -37,7 +38,7 @@ namespace StrongPasswordCheckerII
             var sol = new SolutionRegex();
             var res = sol.StrongPasswordCheckerII(password);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -47,7 +48,7 @@ namespace StrongPasswordCheckerII
             var sol = new Solution();
             var res = sol.StrongPasswordCheckerII(password);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

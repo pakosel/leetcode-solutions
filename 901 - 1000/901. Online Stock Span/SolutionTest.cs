@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -24,7 +25,7 @@ namespace OnlineStockSpan
             var res = new int[prices.Length];
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            Assert.AreEqual(prices.Length, expected.Length);
+            ClassicAssert.AreEqual(prices.Length, expected.Length);
 
             for(int i=0; i<prices.Length; i++)
                 res[i] = sol.Next(prices[i][0]);

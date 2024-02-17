@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace MaximumAreaOfPieceOfCakeAfterHorizontalAndVerticalCuts
             var sol = new Solution();
             var res = sol.MaxArea(h, w, horizontalCuts, verticalCuts);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

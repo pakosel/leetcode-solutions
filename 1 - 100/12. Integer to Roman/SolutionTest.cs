@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace IntegerToRoman
 {
@@ -16,7 +17,7 @@ namespace IntegerToRoman
             var sol = new Solution();
             var ret = sol.IntToRoman(num);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
 
         [Test]
@@ -30,7 +31,7 @@ namespace IntegerToRoman
             var sol = new Solution();
             var ret = sol.IntToRoman(num);
             
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,12 +27,12 @@ namespace MinimumTimeToCollectAllApplesInTree
         {
             var edges = ArrayHelper.MatrixFromString<int>(edgesStr);
             var hasApple = ArrayHelper.ArrayFromString<bool>(hasAppleStr);
-            Assert.AreEqual(n, hasApple.Length);
+            ClassicAssert.AreEqual(n, hasApple.Length);
 
             var sol = new Solution();
             var res = sol.MinTime(n, edges, hasApple);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

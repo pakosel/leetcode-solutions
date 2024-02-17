@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace RecoverBinarySearchTree
             var sol = new Solution();
             sol.RecoverTree(root);
 
-            Assert.IsTrue(TreeNodeHelper.CompareTreeNode(root, expected));
+            ClassicAssert.IsTrue(TreeNodeHelper.CompareTreeNode(root, expected));
         }
     }
 }

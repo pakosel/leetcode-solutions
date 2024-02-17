@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace MinimumInsertionStepsToMakeStringPalindrome
             var sol = new Solution();
             var res = sol.MinInsertions(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -38,7 +39,7 @@ namespace MinimumInsertionStepsToMakeStringPalindrome
             var sol = new Solution_Ranges();
             var res = sol.MinInsertions(s);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

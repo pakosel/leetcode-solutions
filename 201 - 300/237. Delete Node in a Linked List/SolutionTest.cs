@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,13 +31,13 @@ namespace DeleteNodeInLinkedList
             while(node?.val != nodeVal)
                 node = node.next;
             
-            Assert.IsNotNull(node);
-            Assert.IsNotNull(node.next);
+            ClassicAssert.IsNotNull(node);
+            ClassicAssert.IsNotNull(node.next);
 
             var sol = new Solution();
             sol.DeleteNode(node);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(expected, head));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(expected, head));
         }
     }
 }

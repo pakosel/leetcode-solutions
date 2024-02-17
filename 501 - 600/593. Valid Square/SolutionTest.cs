@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -28,14 +29,14 @@ namespace ValidSquare
         {
             var points = MatrixFromString(arrStr);
 
-            Assert.IsTrue(points.Length == 4);
+            ClassicAssert.IsTrue(points.Length == 4);
             foreach(var p in points)
-                Assert.IsTrue(p.Length == 2);
+                ClassicAssert.IsTrue(p.Length == 2);
 
             var sol = new Solution();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -44,14 +45,14 @@ namespace ValidSquare
         {
             var points = MatrixFromString(arrStr);
 
-            Assert.IsTrue(points.Length == 4);
+            ClassicAssert.IsTrue(points.Length == 4);
             foreach(var p in points)
-                Assert.IsTrue(p.Length == 2);
+                ClassicAssert.IsTrue(p.Length == 2);
 
             var sol = new Solution_WithoutHashSet();
             var res = sol.ValidSquare(points[0], points[1], points[2], points[3]);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         private int[][] MatrixFromString(string matrixStr)

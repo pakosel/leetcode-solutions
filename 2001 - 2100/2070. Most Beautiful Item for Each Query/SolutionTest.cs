@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -26,7 +27,7 @@ namespace MostBeautifulItemForEachQuery
             var queries = ArrayHelper.ArrayFromString<int>(queriesStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            Assert.AreEqual(queries.Length, expected.Length);
+            ClassicAssert.AreEqual(queries.Length, expected.Length);
 
             var sol = new Solution();
             var res = sol.MaximumBeauty(items, queries);

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace RemoveLinkedListElements
 
             var expected = ListNodeHelper.BuildList(expectedStr);
 
-            Assert.IsTrue(ListNodeHelper.AreEqual(res, expected));
+            ClassicAssert.IsTrue(ListNodeHelper.AreEqual(res, expected));
         }
     }
 }

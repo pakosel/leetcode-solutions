@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -31,7 +32,7 @@ namespace PopulatingNextRightPointersEachNodeII
             var sol = new Solution();
             var res = sol.Connect(root);
 
-            Assert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
+            ClassicAssert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
         }
 
         [Test]
@@ -43,7 +44,7 @@ namespace PopulatingNextRightPointersEachNodeII
             var sol = new Solution_Recursive();
             var res = sol.Connect(root);
 
-            Assert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
+            ClassicAssert.AreEqual(TreeNodeHelper.PrintNode(res), expected);
         }
     }
 }

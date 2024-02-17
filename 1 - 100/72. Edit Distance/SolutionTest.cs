@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -31,7 +32,7 @@ namespace EditDistance
             var sol = new Solution_Memo();
             var res = sol.MinDistance(word1, word2);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -41,7 +42,7 @@ namespace EditDistance
             var sol = new Solution();
             var res = sol.MinDistance(word1, word2);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -18,7 +19,7 @@ namespace MinimumAddParentheses
             var sol = new Solution();
             var ret = sol.MinAddToMakeValid(inputStr);
 
-            Assert.AreEqual(ret, expected);
+            ClassicAssert.AreEqual(ret, expected);
         }
     }
 }

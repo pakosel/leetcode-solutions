@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -20,12 +21,12 @@ namespace SenderWithLargestWordCount
         [TestCaseSource("testCasesStr")]
         public void Test_Generic(string[] messages, string[] senders, string expected)
         {
-            Assert.AreEqual(messages.Length, senders.Length);
+            ClassicAssert.AreEqual(messages.Length, senders.Length);
 
             var sol = new Solution();
             var res = sol.LargestWordCount(messages, senders);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +29,7 @@ namespace RestoreTheArrayFromAdjacentPairs
             var sol = new Solution();
             var res = sol.RestoreArray(adjacentPairs);
 
-            Assert.IsTrue(expected.SequenceEqual(res) || expected.SequenceEqual(res.Reverse()));
+            ClassicAssert.IsTrue(expected.SequenceEqual(res) || expected.SequenceEqual(res.Reverse()));
         }
     }
 }

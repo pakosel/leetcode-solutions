@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +31,7 @@ namespace RussianDollEnvelopes
             var sol = new Solution_DP();
             var res = sol.MaxEnvelopes(envelopes);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -42,7 +43,7 @@ namespace RussianDollEnvelopes
             var sol = new Solution_Memo();
             var res = sol.MaxEnvelopes(envelopes);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

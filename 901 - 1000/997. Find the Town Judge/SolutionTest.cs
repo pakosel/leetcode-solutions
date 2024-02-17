@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +28,7 @@ namespace FindTheTownJudge
             var sol = new Solution_2022();
             var res = sol.FindJudge(n, trust);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
         
         [Test]
@@ -39,7 +40,7 @@ namespace FindTheTownJudge
             var sol = new Solution();
             var res = sol.FindJudge(n, trust);
 
-            Assert.AreEqual(expected, res);
+            ClassicAssert.AreEqual(expected, res);
         }
     }
 }

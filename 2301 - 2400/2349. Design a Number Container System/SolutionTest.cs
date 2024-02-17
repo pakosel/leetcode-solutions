@@ -1,5 +1,6 @@
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -22,8 +23,8 @@ namespace DesignNumberContainerSystem
             var commands = ArrayHelper.ArrayFromString<string>(commandsStr);
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
             var expected = ArrayHelper.ArrayFromString<int?>(expectedStr);
-            Assert.AreEqual(commands.Length, inputs.Length);
-            Assert.AreEqual(commands.Length, expected.Length);
+            ClassicAssert.AreEqual(commands.Length, inputs.Length);
+            ClassicAssert.AreEqual(commands.Length, expected.Length);
             
             var res = new int?[commands.Length];
             var sol = new NumberContainers();
