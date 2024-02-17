@@ -27,7 +27,7 @@ namespace DetermineIfTwoStringsAreClose
             var sol = new Solution();
             var res = sol.CloseStrings(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

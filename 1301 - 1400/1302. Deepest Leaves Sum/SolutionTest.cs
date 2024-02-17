@@ -26,7 +26,7 @@ namespace DeepestLeavesSum
             var sol = new Solution_BFS();
             var res = sol.DeepestLeavesSum(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace DeepestLeavesSum
             var sol = new Solution_DFS();
             var res = sol.DeepestLeavesSum(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

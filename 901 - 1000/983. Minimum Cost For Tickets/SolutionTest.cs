@@ -28,7 +28,7 @@ namespace MinimumCostForTickets
             var sol = new Solution();
             var res = sol.MincostTickets(days, costs);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

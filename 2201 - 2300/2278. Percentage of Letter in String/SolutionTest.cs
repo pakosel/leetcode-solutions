@@ -25,7 +25,7 @@ namespace PercentageOfLetterInString
             var sol = new Solution();
             var res = sol.PercentageLetter(s, letter);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

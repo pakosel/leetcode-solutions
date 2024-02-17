@@ -31,7 +31,7 @@ namespace ConstructStringFromBinaryTree
             var sol = new Solution();
             var res = sol.Tree2str(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

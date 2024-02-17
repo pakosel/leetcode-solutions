@@ -17,7 +17,7 @@ namespace IntegerToRoman
             var sol = new Solution();
             var ret = sol.IntToRoman(num);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace IntegerToRoman
             var sol = new Solution();
             var ret = sol.IntToRoman(num);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

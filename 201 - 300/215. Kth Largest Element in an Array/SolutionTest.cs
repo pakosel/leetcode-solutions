@@ -28,7 +28,7 @@ namespace KthLargestElementInAnArray
             var sol = new Solution2022();
             var res = sol.FindKthLargest(nums, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace KthLargestElementInAnArray
             var sol = new Solution();
             var res = sol.FindKthLargest(nums, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace MinimumDistanceBetweenBstNodes
             var sol = new Solution();
             var res = sol.MinDiffInBST(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

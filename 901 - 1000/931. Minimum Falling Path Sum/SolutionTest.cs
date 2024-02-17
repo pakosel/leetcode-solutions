@@ -26,7 +26,7 @@ namespace MinimumFallingPathSum
             var sol = new Solution();
             var res = sol.MinFallingPathSum(matrix);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

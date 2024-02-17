@@ -33,7 +33,7 @@ namespace NondecreasingArray
             var sol = new Solution();
             var res = sol.CheckPossibility(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

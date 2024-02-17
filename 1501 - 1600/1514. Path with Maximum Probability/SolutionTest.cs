@@ -29,7 +29,7 @@ namespace PathWithMaximumProbability
             var sol = new Solution();
             var res = sol.MaxProbability(n, edges, succProb, start, end);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

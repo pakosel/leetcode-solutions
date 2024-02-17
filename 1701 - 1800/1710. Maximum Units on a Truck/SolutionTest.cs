@@ -25,7 +25,7 @@ namespace MaximumUnitsOnTruck
             var sol = new Solution();
             var res = sol.MaximumUnits(boxTypes, truckSize);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace TimeNeededToInformAllEmployees
             var sol = new Solution();
             var res = sol.NumOfMinutes(n, headID, manager, informTime);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

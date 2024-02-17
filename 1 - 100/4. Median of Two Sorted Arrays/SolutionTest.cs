@@ -33,7 +33,7 @@ namespace MedianOfTwoSortedArrays
             var sol = new Solution();
             var res = sol.FindMedianSortedArrays(nums1, nums2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace CategorizeBoxAccordingToCriteria
             var sol = new Solution();
             var res = sol.CategorizeBox(length, width, height, mass);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace MinimumTimeVisitingAllPoints
             var sol = new Solution();
             var res = sol.MinTimeToVisitAllPoints(points);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace ClosestDessertCost
             var sol = new Solution();
             var res = sol.ClosestCost(baseCosts, toppingCosts, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

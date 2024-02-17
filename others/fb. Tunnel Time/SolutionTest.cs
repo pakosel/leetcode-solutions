@@ -28,7 +28,7 @@ namespace TunnelTime
             var sol = new Solution();
             var res = sol.getSecondsElapsed(C, N, A, B, K);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

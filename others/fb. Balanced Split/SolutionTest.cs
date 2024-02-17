@@ -18,7 +18,7 @@ namespace BalancedSplit
         {
             var ret = Solution.balancedSplitExists(nums);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

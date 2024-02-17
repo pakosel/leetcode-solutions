@@ -26,7 +26,7 @@ namespace DistinctSubsequences
             var sol = new Solution();
             var res = sol.NumDistinct(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
         
         [Test]
@@ -36,7 +36,7 @@ namespace DistinctSubsequences
             var sol = new Solution_Memo();
             var res = sol.NumDistinct(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace CopyListWithRandomPointer
                 res = res.next;
                 expected = expected.next;
             }
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         private Node BuildNodeList(int?[][] arr)

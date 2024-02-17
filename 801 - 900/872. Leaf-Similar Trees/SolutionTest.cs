@@ -26,7 +26,7 @@ namespace LeafSimilarTrees
             var sol = new Solution();
             var res = sol.LeafSimilar(root1, root2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

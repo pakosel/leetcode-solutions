@@ -25,7 +25,7 @@ namespace FindTheHighestAltitude
             var sol = new Solution();
             var res = sol.LargestAltitude(gain);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

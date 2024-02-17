@@ -32,7 +32,7 @@ namespace RemoveAllAdjacentDuplicatesInStringII
             var sol = new Solution();
             var res = sol.RemoveDuplicates(s, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

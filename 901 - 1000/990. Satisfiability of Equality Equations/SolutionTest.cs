@@ -27,7 +27,7 @@ namespace SatisfiabilityOfEqualityEquations
             var sol = new Solution();
             var res = sol.EquationsPossible(equations);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

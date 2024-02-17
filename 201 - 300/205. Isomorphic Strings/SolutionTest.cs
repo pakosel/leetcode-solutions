@@ -26,7 +26,7 @@ namespace IsomorphicStrings
             var sol = new Solution();
             var res = sol.IsIsomorphic(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

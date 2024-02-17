@@ -25,7 +25,7 @@ namespace LargestOddNumberInString
             var sol = new Solution();
             var res = sol.LargestOddNumber(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

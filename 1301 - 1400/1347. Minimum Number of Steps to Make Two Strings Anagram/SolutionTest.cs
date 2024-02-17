@@ -26,7 +26,7 @@ namespace MinimumNumberOfStepsToMakeTwoStringsAnagram
             var sol = new Solution();
             var res = sol.MinSteps(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

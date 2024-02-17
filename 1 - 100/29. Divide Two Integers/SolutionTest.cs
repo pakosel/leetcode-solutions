@@ -31,7 +31,7 @@ namespace DivideTwoIntegers
             var sol = new Solution();
             var res = sol.Divide(dividend, divisor);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace ValidPalindrome
             var sol = new Solution();
             var ret = sol.IsPalindrome(input);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

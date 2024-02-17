@@ -32,7 +32,7 @@ namespace CapitalizeTheTitle
             var sol = new Solution();
             var res = sol.CapitalizeTitle(title);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

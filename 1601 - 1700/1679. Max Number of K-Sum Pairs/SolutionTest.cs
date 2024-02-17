@@ -28,7 +28,7 @@ namespace MaxNumberOfKSumPairs
             var sol = new Solution();
             var res = sol.MaxOperations(nums, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace CountGoodNodesInBinaryTree
             var sol = new Solution();
             var res = sol.GoodNodes(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

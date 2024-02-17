@@ -22,7 +22,7 @@ namespace ValidAnagram
             var sol = new Solution_2023();
             var res = sol.IsAnagram(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace ValidAnagram
             var sol = new Solution();
             var res = sol.IsAnagram(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

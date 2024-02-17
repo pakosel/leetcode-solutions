@@ -29,7 +29,7 @@ namespace SearchInsertPosition
             var sol = new Solution();
             var res = sol.SearchInsert(nums, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -76,7 +76,7 @@ namespace DataStreamAsDisjointIntervals
             var sol = new SummaryRanges(intervals);
             var res = sol.GetInterval(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

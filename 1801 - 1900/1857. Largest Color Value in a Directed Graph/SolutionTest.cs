@@ -30,7 +30,7 @@ namespace LargestColorValueInDirectedGraph
             var sol = new Solution();
             var res = sol.LargestPathValue(colors, edges);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

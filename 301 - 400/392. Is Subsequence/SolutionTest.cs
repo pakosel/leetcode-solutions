@@ -28,7 +28,7 @@ namespace IsSubsequence
             var sol = new Solution_2023();
             var res = sol.IsSubsequence(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace IsSubsequence
             var sol = new Solution();
             var res = sol.IsSubsequence(s, t);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

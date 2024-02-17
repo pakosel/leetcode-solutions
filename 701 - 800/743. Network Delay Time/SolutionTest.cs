@@ -29,7 +29,7 @@ namespace NetworkDelayTime
             var sol = new Solution();
             var res = sol.NetworkDelayTime(times, n, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace ConstructTargetArrayWithMultipleSums
             var sol = new Solution();
             var res = sol.IsPossible(target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

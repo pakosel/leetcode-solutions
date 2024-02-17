@@ -27,7 +27,7 @@ namespace NthMagicalNumber
             var sol = new Solution();
             var res = sol.NthMagicalNumber(n, a, b);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

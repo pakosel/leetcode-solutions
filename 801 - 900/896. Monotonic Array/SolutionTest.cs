@@ -26,7 +26,7 @@ namespace MonotonicArray
             var sol = new Solution();
             var res = sol.IsMonotonic(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

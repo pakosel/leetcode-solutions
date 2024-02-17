@@ -26,7 +26,7 @@ namespace MinimumGardenPerimeterToCollectEnoughApples
             var sol = new Solution();
             var res = sol.MinimumPerimeter(needApples);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace PowerOfFour
             var sol = new Solution_2022();
             var res = sol.IsPowerOfFour(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace PowerOfFour
             var sol = new Solution();
             var res = sol.IsPowerOfFour(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

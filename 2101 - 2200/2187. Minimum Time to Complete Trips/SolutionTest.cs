@@ -25,7 +25,7 @@ namespace MinimumTimeToCompleteTrips
             var sol = new Solution();
             var res = sol.MinimumTime(time, totalTrips);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

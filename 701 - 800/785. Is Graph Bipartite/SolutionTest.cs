@@ -28,7 +28,7 @@ namespace IsGraphBipartite
             var sol = new Solution();
             var res = sol.IsBipartite(graph);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace InterleavingString
             var sol = new Solution();
             var res = sol.IsInterleave(s1, s2, s3);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

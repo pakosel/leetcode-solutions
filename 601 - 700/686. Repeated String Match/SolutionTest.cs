@@ -26,7 +26,7 @@ namespace RepeatedStringMatch
             var sol = new Solution();
             var res = sol.RepeatedStringMatch(a, b);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

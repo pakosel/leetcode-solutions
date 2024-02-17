@@ -28,7 +28,7 @@ namespace LongestPalindrome
             var sol = new Solution();
             var res = sol.LongestPalindrome(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

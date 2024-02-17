@@ -30,7 +30,7 @@ namespace MaximumXORAfterOperations
             var sol = new Solution();
             var res = sol.MaximumXOR(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

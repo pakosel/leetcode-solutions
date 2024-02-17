@@ -26,7 +26,7 @@ namespace WidestVerticalAreaBetweenTwoPointsContainingNoPoints
             var sol = new Solution();
             var res = sol.MaxWidthOfVerticalArea(points);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

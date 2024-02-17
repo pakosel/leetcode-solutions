@@ -29,7 +29,7 @@ namespace MaximumLengthOfConcatenatedStringWithUniqueCharacters
             var sol = new Solution();
             var res = sol.MaxLength(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

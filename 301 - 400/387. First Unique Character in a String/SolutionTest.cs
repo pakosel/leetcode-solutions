@@ -33,7 +33,7 @@ namespace FirstUniqueCharacterInString
             var sol = new Solution();
             var res = sol.FirstUniqChar(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace MinimumCostToMoveChips
             var sol = new Solution();
             var res = sol.MinCostToMoveChips(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

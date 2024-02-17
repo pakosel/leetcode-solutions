@@ -31,7 +31,7 @@ namespace BestTimeToBuyAndSellStockWithCooldown
             var sol = new Solution();
             var res = sol.MaxProfit(prices);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

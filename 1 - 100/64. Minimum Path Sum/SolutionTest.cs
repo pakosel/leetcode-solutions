@@ -30,7 +30,7 @@ namespace MinimumPathSum
             var sol = new Solution();
             var ret = sol.MinPathSum(intervals);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

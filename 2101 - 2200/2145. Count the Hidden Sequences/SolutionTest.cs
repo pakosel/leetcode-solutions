@@ -29,7 +29,7 @@ namespace CountTheHiddenSequences
             var sol = new Solution();
             var res = sol.NumberOfArrays(hidden, lower, upper);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

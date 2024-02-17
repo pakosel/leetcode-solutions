@@ -27,7 +27,7 @@ namespace Base7
             var sol = new Solution();
             var res = sol.ConvertToBase7(num);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

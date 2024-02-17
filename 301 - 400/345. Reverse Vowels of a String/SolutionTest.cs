@@ -25,7 +25,7 @@ namespace ReverseVowelsOfString
             var sol = new Solution();
             var res = sol.ReverseVowels(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

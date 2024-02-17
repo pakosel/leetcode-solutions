@@ -27,7 +27,7 @@ namespace BinaryTreesWithFactors
             var sol = new Solution();
             var res = sol.NumFactoredBinaryTrees(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

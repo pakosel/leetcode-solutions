@@ -31,7 +31,7 @@ namespace TwoSumIIinputArrayIsSorted
             var sol = new Solution();
             var res = sol.TwoSum(numbers, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

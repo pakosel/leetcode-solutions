@@ -27,7 +27,7 @@ namespace UniqueNumberOfOccurrences
             var sol = new Solution();
             var res = sol.UniqueOccurrences(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

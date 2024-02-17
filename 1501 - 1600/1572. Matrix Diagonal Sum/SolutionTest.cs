@@ -26,7 +26,7 @@ namespace MatrixDiagonalSum
             var sol = new Solution();
             var res = sol.DiagonalSum(mat);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

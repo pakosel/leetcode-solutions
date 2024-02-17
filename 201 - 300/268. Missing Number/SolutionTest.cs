@@ -33,7 +33,7 @@ namespace MissingNumber
             var sol = new Solution_Math();
             var res = sol.MissingNumber(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace MissingNumber
             var sol = new Solution_Jumps();
             var res = sol.MissingNumber(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace MissingNumber
             var sol = new Solution_Naive();
             var res = sol.MissingNumber(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

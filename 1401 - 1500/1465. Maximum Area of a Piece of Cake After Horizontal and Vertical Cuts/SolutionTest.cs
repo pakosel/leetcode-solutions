@@ -29,7 +29,7 @@ namespace MaximumAreaOfPieceOfCakeAfterHorizontalAndVerticalCuts
             var sol = new Solution();
             var res = sol.MaxArea(h, w, horizontalCuts, verticalCuts);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

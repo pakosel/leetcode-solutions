@@ -26,7 +26,7 @@ namespace FindTheOriginalArrayOfPrefixXor
             var sol = new Solution();
             var res = sol.FindArray(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

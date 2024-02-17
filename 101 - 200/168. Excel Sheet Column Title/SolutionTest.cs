@@ -31,7 +31,7 @@ namespace ExcelSheetColumnTitle
             var sol = new Solution();
             var res = sol.ConvertToTitle(colNum);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace MinimumDepthOfBinaryTree
             var sol = new Solution();
             var res = sol.MinDepth(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

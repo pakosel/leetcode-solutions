@@ -30,7 +30,7 @@ namespace ToeplitzMatrix
             var sol = new Solution_2022();
             var res = sol.IsToeplitzMatrix(matrix);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace ToeplitzMatrix
             var sol = new Solution();
             var res = sol.IsToeplitzMatrix(matrix);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace PseudoPalindromicPathsInBinaryTree
             var sol = new Solution();
             var res = sol.PseudoPalindromicPaths(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

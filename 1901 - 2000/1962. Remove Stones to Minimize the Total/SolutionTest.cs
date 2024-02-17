@@ -27,7 +27,7 @@ namespace RemoveStonesToMinimizeTheTotal
             var sol = new Solution();
             var res = sol.MinStoneSum(piles, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

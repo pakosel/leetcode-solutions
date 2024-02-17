@@ -32,7 +32,7 @@ namespace PeakIndexInMountainArray
             var sol = new Solution();
             var res = sol.PeakIndexInMountainArray(arr);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

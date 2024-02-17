@@ -30,7 +30,7 @@ namespace DeleteAndEarn
             var sol = new Solution();
             var res = sol.DeleteAndEarn(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

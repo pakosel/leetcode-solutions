@@ -28,7 +28,7 @@ namespace UncrossedLines
 
             var res = (new Solution()).MaxUncrossedLines(nums1, nums2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

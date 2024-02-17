@@ -33,7 +33,7 @@ namespace LongestPalindromeByConcatenatingTwoLetterWords
             var sol = new Solution2022();
             var res = sol.LongestPalindrome(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace LongestPalindromeByConcatenatingTwoLetterWords
             var sol = new Solution();
             var res = sol.LongestPalindrome(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

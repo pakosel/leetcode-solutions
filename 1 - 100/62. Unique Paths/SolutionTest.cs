@@ -34,7 +34,7 @@ namespace UniquePaths
             var sol = new Solution();
             var res = sol.UniquePaths(m, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace UniquePaths
             var sol = new Solution_2021();
             var res = sol.UniquePaths(m, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

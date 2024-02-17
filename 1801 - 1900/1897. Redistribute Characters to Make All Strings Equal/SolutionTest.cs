@@ -25,7 +25,7 @@ namespace RedistributeCharactersToMakeAllStringsEqual
             var sol = new Solution();
             var res = sol.MakeEqual(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

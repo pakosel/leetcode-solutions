@@ -26,7 +26,7 @@ namespace MinimumAmountOfTimeToCollectGarbage
             var sol = new Solution();
             var res = sol.GarbageCollection(garbage, travel);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace MaximumTwinSumOfLinkedList
             var sol = new Solution();
             var res = sol.PairSum(head);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

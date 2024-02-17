@@ -29,7 +29,7 @@ namespace DeleteOperationForTwoStrings
             var sol = new SolutionDP();
             var res = sol.MinDistance(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace DeleteOperationForTwoStrings
             var sol = new Solution();
             var res = sol.MinDistance(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace DeleteOperationForTwoStrings
             var sol = new Solution_Memoization();
             var res = sol.MinDistance(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

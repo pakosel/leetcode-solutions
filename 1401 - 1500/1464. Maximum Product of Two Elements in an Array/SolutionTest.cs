@@ -26,7 +26,7 @@ namespace MaximumProductOfTwoElementsInArray
             var sol = new Solution();
             var res = sol.MaxProduct(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

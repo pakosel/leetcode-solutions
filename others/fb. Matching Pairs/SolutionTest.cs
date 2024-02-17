@@ -21,7 +21,7 @@ namespace MatchingPairs
         {
             var ret = Solution.matchingPairs(s, t);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

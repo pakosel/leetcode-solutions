@@ -28,7 +28,7 @@ namespace ValidateBinarySearchTree
             var sol = new Solution();
             var res = sol.IsValidBST(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace ValidateBinarySearchTree
             var sol = new Solution_Stack();
             var res = sol.IsValidBST(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

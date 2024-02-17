@@ -26,7 +26,7 @@ namespace PathSum
             var sol = new Solution();
             var res = sol.HasPathSum(root, targetSum);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

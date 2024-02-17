@@ -26,7 +26,7 @@ namespace ConcatenationOfConsecutiveBinaryNumbers
             var sol = new Solution();
             var res = sol.ConcatenatedBinary(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

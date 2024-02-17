@@ -26,7 +26,7 @@ namespace FindIfPathExistsInGraph
             var sol = new Solution();
             var res = sol.ValidPath(n, edges, source, destination);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

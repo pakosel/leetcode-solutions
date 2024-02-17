@@ -27,7 +27,7 @@ namespace MaxAreaOfIsland
             var sol = new Solution();
             var res = sol.MaxAreaOfIsland(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

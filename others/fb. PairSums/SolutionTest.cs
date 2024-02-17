@@ -17,7 +17,7 @@ namespace PairSums
         {
             var ret = Solution.numberOfWays(arr, k);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

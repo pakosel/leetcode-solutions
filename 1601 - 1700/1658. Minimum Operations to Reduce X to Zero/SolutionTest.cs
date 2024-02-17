@@ -30,7 +30,7 @@ namespace MinimumOperationsToReduceXToZero
             var sol = new Solution();
             var res = sol.MinOperations(nums, x);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

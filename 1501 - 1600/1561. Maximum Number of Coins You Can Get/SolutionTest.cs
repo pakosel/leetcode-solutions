@@ -26,7 +26,7 @@ namespace MaximumNumberOfCoinsYouCanGet
             var sol = new Solution();
             var res = sol.MaxCoins(piles);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace MinimizedMaximumOfProductsDistributedToAnyStore
             var sol = new Solution();
             var res = sol.MinimizedMaximum(n, quantities);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

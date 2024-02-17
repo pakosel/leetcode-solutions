@@ -29,7 +29,7 @@ namespace CanPlaceFlowers
             var sol = new Solution_2023();
             var res = sol.CanPlaceFlowers(arr, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace CanPlaceFlowers
             var sol = new Solution();
             var res = sol.CanPlaceFlowers(arr, n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

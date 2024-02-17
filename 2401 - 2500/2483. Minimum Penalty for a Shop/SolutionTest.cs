@@ -39,7 +39,7 @@ namespace MinimumPenaltyForShop
             var sol = new Solution();
             var res = sol.BestClosingTime(customers);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

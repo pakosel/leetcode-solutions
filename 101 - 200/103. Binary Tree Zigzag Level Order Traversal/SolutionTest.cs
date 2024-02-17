@@ -31,7 +31,7 @@ namespace BinaryTreeZigzagLevelOrderTraversal
             var sol = new Solution();
             var res = sol.ZigzagLevelOrder(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

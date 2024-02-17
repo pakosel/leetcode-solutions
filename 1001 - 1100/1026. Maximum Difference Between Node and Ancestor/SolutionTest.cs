@@ -29,7 +29,7 @@ namespace MaximumDifferenceBetweenNodeAncestor
             var sol = new Solution();
             var res = sol.MaxAncestorDiff(node);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

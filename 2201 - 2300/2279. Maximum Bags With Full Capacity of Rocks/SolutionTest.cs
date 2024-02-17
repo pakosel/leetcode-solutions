@@ -29,7 +29,7 @@ namespace MaximumBagsWithFullCapacityOfRocks
             var sol = new Solution();
             var res = sol.MaximumBags(capacity, rocks, additionalRocks);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

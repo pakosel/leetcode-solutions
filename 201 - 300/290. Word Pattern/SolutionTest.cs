@@ -28,7 +28,7 @@ namespace WordPattern
             var sol = new Solution();
             var res = sol.WordPattern(pattern, s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

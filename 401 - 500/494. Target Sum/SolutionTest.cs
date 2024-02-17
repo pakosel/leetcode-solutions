@@ -31,7 +31,7 @@ namespace TargetSum
             var sol = new Solution();
             var res = sol.FindTargetSumWays(nums, S);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

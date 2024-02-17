@@ -29,7 +29,7 @@ namespace MaxDotProductOfTwoSubsequences
             var sol = new Solution();
             var res = sol.MaxDotProduct(nums1, nums2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

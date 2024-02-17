@@ -26,7 +26,7 @@ namespace SignOfTheProductOfAnArray
             var sol = new Solution();
             var res = sol.ArraySign(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

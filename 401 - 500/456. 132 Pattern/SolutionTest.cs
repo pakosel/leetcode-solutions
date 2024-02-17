@@ -29,7 +29,7 @@ namespace The132Pattern
             var sol = new Solution();
             var res = sol.Find132pattern(nums);
             
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

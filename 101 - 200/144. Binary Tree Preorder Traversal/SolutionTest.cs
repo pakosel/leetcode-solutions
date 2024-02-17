@@ -32,7 +32,7 @@ namespace BinaryTreePreorderTraversal
             var sol = new Solution_2022();
             var res = sol.PreorderTraversal(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace BinaryTreePreorderTraversal
             var sol = new Solution();
             var res = sol.PreorderTraversal(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
 
         private static readonly object[] testCases_bfs =
@@ -65,7 +65,7 @@ namespace BinaryTreePreorderTraversal
             var sol = new Solution();
             var res = sol.BfsTraversal(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

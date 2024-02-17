@@ -32,7 +32,7 @@ namespace NumberOfSmoothDescentPeriodsOfStock
             var sol = new Solution();
             var res = sol.GetDescentPeriods(prices);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

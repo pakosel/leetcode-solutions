@@ -26,7 +26,7 @@ namespace ShortEncodingOfWords
             var sol = new Solution_Trie();
             var res = sol.MinimumLengthEncoding(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace ShortEncodingOfWords
             var sol = new Solution();
             var res = sol.MinimumLengthEncoding(words);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

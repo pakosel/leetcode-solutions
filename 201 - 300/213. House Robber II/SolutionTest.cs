@@ -23,7 +23,7 @@ namespace HouseRobber2
             var sol = new Solution();
             var ret = sol.Rob(prices);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

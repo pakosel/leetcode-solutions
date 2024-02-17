@@ -30,7 +30,7 @@ namespace ShortestPathInBinaryMatrix
             var sol = new Solution();
             var res = sol.ShortestPathBinaryMatrix(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

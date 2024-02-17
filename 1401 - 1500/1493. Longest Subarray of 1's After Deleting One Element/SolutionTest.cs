@@ -30,7 +30,7 @@ namespace LongestSubarrayOf1sAfterDeletingOneElement
             var sol = new Solution();
             var res = sol.LongestSubarray(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

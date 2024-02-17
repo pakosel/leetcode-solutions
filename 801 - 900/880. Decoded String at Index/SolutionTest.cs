@@ -27,7 +27,7 @@ namespace DecodedStringAtIndex
             var sol = new Solution();
             var res = sol.DecodeAtIndex(S, K);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

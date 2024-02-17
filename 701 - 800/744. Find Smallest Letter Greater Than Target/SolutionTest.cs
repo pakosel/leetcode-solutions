@@ -27,7 +27,7 @@ namespace FindSmallestLetterGreaterThanTarget
             var sol = new Solution();
             var res = sol.NextGreatestLetter(letters, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

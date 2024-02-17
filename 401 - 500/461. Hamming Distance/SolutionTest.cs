@@ -27,7 +27,7 @@ namespace HammingDistance
             var sol = new Solution();
             var res = sol.HammingDistance(x, y);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

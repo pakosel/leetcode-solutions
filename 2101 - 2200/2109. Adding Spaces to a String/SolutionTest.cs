@@ -26,7 +26,7 @@ namespace AddingSpacesToString
             var sol = new Solution();
             var res = sol.AddSpaces(s, spaces);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

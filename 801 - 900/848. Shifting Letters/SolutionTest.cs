@@ -31,7 +31,7 @@ namespace ShiftingLetters
             var sol = new Solution();
             var res = sol.ShiftingLetters(S, shifts);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

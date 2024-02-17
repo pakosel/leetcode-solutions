@@ -27,7 +27,7 @@ namespace UniqueBinarySearchTrees
             var sol = new Solution();
             var res = sol.NumTrees(input);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

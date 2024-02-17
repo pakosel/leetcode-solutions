@@ -31,7 +31,7 @@ namespace MinimumDifficultyOfJobSchedule
             var sol = new Solution();
             var res = sol.MinDifficulty(arr, d);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace SymmetricTree
             var sol = new Solution_2023();
             var res = sol.IsSymmetric(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace SymmetricTree
             var sol = new Solution_Queue();
             var res = sol.IsSymmetric(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -56,7 +56,7 @@ namespace SymmetricTree
             var sol = new Solution_Stack();
             var res = sol.IsSymmetric(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace SymmetricTree
             var sol = new Solution_Recursive();
             var res = sol.IsSymmetric(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

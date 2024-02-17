@@ -28,7 +28,7 @@ namespace CheckIfTwoStringArraysAreEquivalent
             var sol = new Solution();
             var res = sol.ArrayStringsAreEqual(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace CheckIfTwoStringArraysAreEquivalent
             var sol = new SolutionSB();
             var res = sol.ArrayStringsAreEqual(word1, word2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

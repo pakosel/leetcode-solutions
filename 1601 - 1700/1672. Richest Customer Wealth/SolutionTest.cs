@@ -26,7 +26,7 @@ namespace RichestCustomerWealth
             var sol = new Solution();
             var res = sol.MaximumWealth(accounts);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
    }
 }

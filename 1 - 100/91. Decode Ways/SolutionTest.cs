@@ -35,7 +35,7 @@ namespace DecodeWays
             var sol = new Solution();
             var res = sol.NumDecodings(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace DecodeWays
             var sol = new Solution_Memoization();
             var res = sol.NumDecodings(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

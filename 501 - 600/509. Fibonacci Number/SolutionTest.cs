@@ -30,7 +30,7 @@ namespace FibonacciNumber
             var sol = new Solution();
             var res = sol.Fib(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

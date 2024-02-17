@@ -29,7 +29,7 @@ namespace AddDigits
             var sol = new Solution();
             var ret = sol.AddDigits(num);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace AddDigits
             var sol = new Solution_Math();
             var ret = sol.AddDigits(num);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace AddDigits
             var sol = new Solution_Div();
             var ret = sol.AddDigits(num);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

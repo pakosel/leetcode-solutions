@@ -25,7 +25,7 @@ namespace NumberOfDiceRollsWithTargetSum
             var sol = new Solution();
             var res = sol.NumRollsToTarget(n, k, target);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

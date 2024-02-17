@@ -25,7 +25,7 @@ namespace VerifyingAlienDictionary
             var sol = new Solution_2022();
             var res = sol.IsAlienSorted(words, order);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace VerifyingAlienDictionary
             var sol = new Solution();
             var res = sol.IsAlienSorted(words, order);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

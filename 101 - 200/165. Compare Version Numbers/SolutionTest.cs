@@ -29,7 +29,7 @@ namespace CompareVersionNumbers
             var sol = new Solution();
             var res = sol.CompareVersion(version1, version2);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

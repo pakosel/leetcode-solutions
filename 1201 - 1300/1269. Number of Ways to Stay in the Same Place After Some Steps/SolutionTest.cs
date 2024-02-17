@@ -27,7 +27,7 @@ namespace NumberOfWaysToStayInTheSamePlaceAfterSomeSteps
             var sol = new Solution();
             var res = sol.NumWays(steps, arrLen);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

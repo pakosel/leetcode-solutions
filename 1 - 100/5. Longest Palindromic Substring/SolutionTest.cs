@@ -27,7 +27,7 @@ namespace LongestPalindromicSubstring
             var sol = new Solution2022();
             var res = sol.LongestPalindrome(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace LongestPalindromicSubstring
             var sol = new Solution();
             var res = sol.LongestPalindrome(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

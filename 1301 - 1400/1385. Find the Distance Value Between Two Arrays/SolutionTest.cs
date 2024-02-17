@@ -32,7 +32,7 @@ namespace FindTheDistanceValueBetweenTwoArrays
             var sol = new Solution();
             var res = sol.FindTheDistanceValue(arr1, arr2, d);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace MajorityElement
             var sol = new Solution();
             var res = sol.MajorityElement(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

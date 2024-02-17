@@ -26,7 +26,7 @@ namespace MaximumPointsYouCanObtainFromCards
             var sol = new Solution();
             var res = sol.MaxScore(cardPoints, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

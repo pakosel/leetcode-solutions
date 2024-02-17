@@ -26,7 +26,7 @@ namespace MaximumIceCreamBars
             var sol = new Solution();
             var res = sol.MaxIceCream(costs, coins);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

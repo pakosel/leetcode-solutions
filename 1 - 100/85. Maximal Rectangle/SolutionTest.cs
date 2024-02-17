@@ -29,7 +29,7 @@ namespace MaximalRectangle
             var sol = new Solution();
             var res = sol.MaximalRectangle(matrix);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

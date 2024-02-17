@@ -31,7 +31,7 @@ namespace MaximalSquare
             var sol = new Solution();
             var res = sol.MaximalSquare(matrix);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

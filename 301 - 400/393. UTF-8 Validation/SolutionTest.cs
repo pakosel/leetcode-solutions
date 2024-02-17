@@ -30,7 +30,7 @@ namespace UTF8Validation
             var sol = new Solution();
             var res = sol.ValidUtf8(data);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

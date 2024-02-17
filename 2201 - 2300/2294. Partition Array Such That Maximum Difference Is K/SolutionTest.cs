@@ -26,7 +26,7 @@ namespace PartitionArraySuchThatMaximumDifferenceIsK
             var sol = new Solution();
             var res = sol.PartitionArray(nums, k);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

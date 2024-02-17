@@ -33,7 +33,7 @@ namespace PowerOfTwo
             var sol = new Solution();
             var res = sol.IsPowerOfTwo(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

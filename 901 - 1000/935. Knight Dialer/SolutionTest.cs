@@ -28,7 +28,7 @@ namespace KnightDialer
             var sol = new Solution();
             var res = sol.KnightDialer(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

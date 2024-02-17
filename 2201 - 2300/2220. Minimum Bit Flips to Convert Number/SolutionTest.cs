@@ -27,7 +27,7 @@ namespace MinimumBitFlipsToConvertNumber
             var sol = new Solution();
             var res = sol.MinBitFlips(start, goal);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

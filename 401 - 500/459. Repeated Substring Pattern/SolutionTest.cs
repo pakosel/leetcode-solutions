@@ -31,7 +31,7 @@ namespace RepeatedSubstringPattern
             var sol = new Solution();
             var res = sol.RepeatedSubstringPattern(input);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace RepeatedSubstringPattern
             var sol = new Solution_2023();
             var res = sol.RepeatedSubstringPattern(input);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

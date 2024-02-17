@@ -18,7 +18,7 @@ namespace SlowSums
         {
             var ret = Solution.getTotalTime(arr);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace SlowSums
         {
             var ret = Solution.getTotalTime_naive(arr);
             
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]

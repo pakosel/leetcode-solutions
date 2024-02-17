@@ -29,7 +29,7 @@ namespace MinCostToConnectAllPoints
             var sol = new Solution();
             var res = sol.MinCostConnectPoints(points);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

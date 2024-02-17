@@ -25,7 +25,7 @@ namespace BinaryTreeTilt
             var sol = new Solution();
             var res = sol.FindTilt(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

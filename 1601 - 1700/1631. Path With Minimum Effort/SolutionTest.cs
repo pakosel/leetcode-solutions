@@ -30,7 +30,7 @@ namespace PathWithMinimumEffort
             var sol = new Solution();
             var res = sol.MinimumEffortPath(heights);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

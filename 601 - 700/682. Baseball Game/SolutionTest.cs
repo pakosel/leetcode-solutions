@@ -28,7 +28,7 @@ namespace BaseballGame
             var sol = new SolutionStack();
             var res = sol.CalPoints(ops);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace BaseballGame
             var sol = new SolutionList();
             var res = sol.CalPoints(ops);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

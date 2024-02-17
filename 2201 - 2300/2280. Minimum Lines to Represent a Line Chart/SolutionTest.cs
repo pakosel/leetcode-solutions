@@ -30,7 +30,7 @@ namespace MinimumLinesToRepresentLineChart
             var sol = new Solution();
             var res = sol.MinimumLines(stockPrices);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

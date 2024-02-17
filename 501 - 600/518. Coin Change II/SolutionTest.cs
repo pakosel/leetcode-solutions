@@ -34,7 +34,7 @@ namespace CoinChangeII
             var sol = new Solution();
             var res = sol.Change(amount, coins);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

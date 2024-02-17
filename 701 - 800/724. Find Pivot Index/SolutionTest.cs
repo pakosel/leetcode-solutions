@@ -31,7 +31,7 @@ namespace FindPivotIndex
             var sol = new Solution();
             var res = sol.PivotIndex(nums);
             
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

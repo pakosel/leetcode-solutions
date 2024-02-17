@@ -27,7 +27,7 @@ namespace ZigzagConversion
             var sol = new Solution();
             var res = sol.Convert(s, numRows);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

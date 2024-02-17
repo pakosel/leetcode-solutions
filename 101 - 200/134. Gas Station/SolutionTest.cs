@@ -34,7 +34,7 @@ namespace GasStation
             var sol = new Solution();
             var res = sol.CanCompleteCircuit(gas, cost);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

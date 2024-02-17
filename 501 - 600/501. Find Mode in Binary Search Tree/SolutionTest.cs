@@ -26,7 +26,7 @@ namespace FindModeInBinarySearchTree
             var sol = new Solution();
             var res = sol.FindMode(root);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

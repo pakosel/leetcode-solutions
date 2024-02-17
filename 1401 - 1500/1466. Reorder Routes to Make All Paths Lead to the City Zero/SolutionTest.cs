@@ -26,7 +26,7 @@ namespace ReorderRoutesToMakeAllPathsLeadToTheCityZero
             var sol = new Solution();
             var res = sol.MinReorder(n, connections);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

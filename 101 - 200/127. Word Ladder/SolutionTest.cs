@@ -24,7 +24,7 @@ namespace WordLadder
             var sol = new Solution();
             var ret = sol.LadderLength(beginWord, endWord, wordList.ToList());
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

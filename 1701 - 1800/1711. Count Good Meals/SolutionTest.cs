@@ -33,7 +33,7 @@ namespace CountGoodMeals
             var sol = new Solution();
             var res = sol.CountPairs(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

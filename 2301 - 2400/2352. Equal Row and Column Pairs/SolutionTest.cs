@@ -25,7 +25,7 @@ namespace EqualRowAndColumnPairs
             var sol = new Solution();
             var res = sol.EqualPairs(grid);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

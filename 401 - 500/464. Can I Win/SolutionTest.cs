@@ -43,7 +43,7 @@ namespace CanIWin
             var sol = new Solution();
             var res = sol.CanIWin(maxChoosableInteger, desiredTotal);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

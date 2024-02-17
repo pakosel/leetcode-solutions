@@ -31,7 +31,7 @@ namespace CountPrimes
             var sol = new Solution();
             var res = sol.CountPrimes(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

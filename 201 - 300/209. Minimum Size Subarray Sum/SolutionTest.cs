@@ -39,7 +39,7 @@ namespace MinimumSizeSubarraySum
             var sol = new Solution();
             var ret = sol.MinSubArrayLen(s, nums);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

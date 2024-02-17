@@ -29,7 +29,7 @@ namespace ReverseWordsInString
             var sol = new Solution();
             var ret = sol.ReverseWords(s);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace ReverseWordsInString
             var sol = new Solution_SemiManual();
             var ret = sol.ReverseWords(s);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace ReverseWordsInString
             var sol = new Solution_FullManual();
             var ret = sol.ReverseWords(s);
 
-            ClassicAssert.AreEqual(ret, expected);
+            Assert.That(expected == ret);
         }
     }
 }

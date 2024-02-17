@@ -30,7 +30,7 @@ namespace SplitArrayLargestSum
             var sol = new Solution();
             var res = sol.SplitArray(nums, m);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

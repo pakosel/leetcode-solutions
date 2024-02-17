@@ -23,7 +23,7 @@ namespace JumpGameVII
             var sol = new Solution_DP();
             var res = sol.CanReach(s, minJump, maxJump);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace JumpGameVII
             var sol = new Solution_Queue();
             var res = sol.CanReach(s, minJump, maxJump);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

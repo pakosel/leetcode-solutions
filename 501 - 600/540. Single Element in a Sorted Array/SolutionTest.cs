@@ -37,7 +37,7 @@ namespace SingleElementInSortedArray
             var sol = new Solution();
             var res = sol.SingleNonDuplicate(nums);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

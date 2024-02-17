@@ -26,7 +26,7 @@ namespace MinimumFlips
             var sol = new Solution();
             var res = sol.MinFlips(a, b, c);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

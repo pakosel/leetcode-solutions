@@ -34,7 +34,7 @@ namespace CalculateMoneyInLeetcodeBank
             var sol = new Solution();
             var res = sol.TotalMoney(n);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

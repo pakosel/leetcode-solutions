@@ -29,7 +29,7 @@ namespace MinimumGeneticMutation
             var sol = new Solution();
             var res = sol.MinMutation(start, end, bank);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

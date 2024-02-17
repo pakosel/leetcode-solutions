@@ -23,7 +23,7 @@ namespace CousinsInBinaryTree
             var sol = new Solution();
             var res = sol.IsCousins(root, x, y);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

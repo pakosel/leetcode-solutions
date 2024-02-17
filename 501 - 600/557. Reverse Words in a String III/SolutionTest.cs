@@ -24,7 +24,7 @@ namespace ReverseWordsInStringIII
             var sol = new Solution();
             var res = sol.ReverseWords(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

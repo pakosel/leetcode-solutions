@@ -30,7 +30,7 @@ namespace TotalCostToHireKWorkers
             var sol = new Solution();
             var res = sol.TotalCost(costs, k, candidates);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

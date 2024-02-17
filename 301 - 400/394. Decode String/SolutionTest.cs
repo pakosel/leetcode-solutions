@@ -31,7 +31,7 @@ namespace DecodeString
             var sol = new Solution();
             var res = sol.DecodeString(s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }       
     }
 }

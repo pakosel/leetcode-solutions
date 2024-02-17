@@ -26,13 +26,13 @@ namespace NumberOfNodesInTheSubTreeWithTheSameLabel
         {
             var edges = ArrayHelper.MatrixFromString<int>(edgesStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            ClassicAssert.AreEqual(n, expected.Length);
-            ClassicAssert.AreEqual(n, labels.Length);
+            Assert.That(n == expected.Length);
+            Assert.That(n == labels.Length);
 
             var sol = new Solution();
             var res = sol.CountSubTrees(n, edges, labels);
 
-            ClassicAssert.AreEqual(expected, res);
+            CollectionAssert.AreEqual(expected, res);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace AssignCookies
             var sol = new Solution();
             var res = sol.FindContentChildren(g, s);
 
-            ClassicAssert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }
