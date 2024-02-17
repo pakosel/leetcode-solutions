@@ -28,10 +28,10 @@ namespace BinarySearchTreeIterator
                 switch(operations[i])
                 {
                     case "next":
-                        ClassicAssert.AreEqual(sol.Next(), expected[i]);
+                        Assert.That(sol.Next() == (int)expected[i]);
                         break;
                     case "hasNext":
-                        ClassicAssert.AreEqual(sol.HasNext(), expected[i]);
+                        Assert.That(sol.HasNext() == (bool)expected[i]);
                         break;
                 }
         }

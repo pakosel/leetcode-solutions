@@ -65,7 +65,7 @@ namespace AddTwoNumbersII
         {
             while(l1 != null)
             {
-                ClassicAssert.AreEqual(l1.val, l2.val);
+                Assert.That(l1.val == l2.val);
                 if(l1.val != l2.val)
                     return false;
                 l1 = l1.next;

@@ -43,7 +43,7 @@ namespace TimeBasedKeyValueStore
                     {
                         var timestamp = int.Parse(args[i][1]);
                         var get = sol.Get(args[i][0], timestamp);
-                        ClassicAssert.AreEqual(expected[i], get);
+                        Assert.That(expected[i] == get);
                         break;
                     }
                 }

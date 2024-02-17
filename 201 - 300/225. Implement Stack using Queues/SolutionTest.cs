@@ -32,13 +32,13 @@ namespace ImplementStackUsingQueues
                         sol.Push((int)inputs[i]);
                         break;
                     case "pop":
-                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
+                        Assert.That(sol.Pop() == (int)expected[i]);
                         break;
                     case "top":
-                        ClassicAssert.AreEqual(sol.Top(), expected[i]);
+                        Assert.That(sol.Top() == (int)expected[i]);
                         break;
                     case "empty":
-                        ClassicAssert.AreEqual(sol.Empty(), expected[i]);
+                        Assert.That(sol.Empty() == (bool)expected[i]);
                         break;
                 }
             }
@@ -60,13 +60,13 @@ namespace ImplementStackUsingQueues
                         sol.Push((int)inputs[i]);
                         break;
                     case "pop":
-                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
+                        Assert.That(sol.Pop() == (int)expected[i]);
                         break;
                     case "top":
-                        ClassicAssert.AreEqual(sol.Top(), expected[i]);
+                        Assert.That(sol.Top() == (int)expected[i]);
                         break;
                     case "empty":
-                        ClassicAssert.AreEqual(sol.Empty(), expected[i]);
+                        Assert.That(sol.Empty() == (bool)expected[i]);
                         break;
                 }
             }
@@ -88,13 +88,13 @@ namespace ImplementStackUsingQueues
                         sol.Push((int)inputs[i]);
                         break;
                     case "pop":
-                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
+                        Assert.That(sol.Pop() == (int)expected[i]);
                         break;
                     case "top":
-                        ClassicAssert.AreEqual(sol.Top(), expected[i]);
+                        Assert.That(sol.Top() == (int)expected[i]);
                         break;
                     case "empty":
-                        ClassicAssert.AreEqual(sol.Empty(), expected[i]);
+                        Assert.That(sol.Empty() == (bool)expected[i]);
                         break;
                 }
             }

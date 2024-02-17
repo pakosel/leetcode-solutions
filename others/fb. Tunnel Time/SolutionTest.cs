@@ -23,7 +23,7 @@ namespace TunnelTime
         {
             var A = ArrayHelper.ArrayFromString<long>(aStr);
             var B = ArrayHelper.ArrayFromString<long>(bStr);
-            ClassicAssert.AreEqual(A.Length, B.Length);
+            Assert.That(A.Length == B.Length);
 
             var sol = new Solution();
             var res = sol.getSecondsElapsed(C, N, A, B, K);

@@ -32,7 +32,7 @@ namespace MaximumFrequencyStack
                         sol.Push(args[i][0]);
                         break;
                     case "pop":
-                        ClassicAssert.AreEqual(sol.Pop(), expected[i]);
+                        Assert.That(sol.Pop() == expected[i]);
                         break;
                 }
         }

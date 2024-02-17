@@ -27,7 +27,7 @@ namespace MinimumTimeToCollectAllApplesInTree
         {
             var edges = ArrayHelper.MatrixFromString<int>(edgesStr);
             var hasApple = ArrayHelper.ArrayFromString<bool>(hasAppleStr);
-            ClassicAssert.AreEqual(n, hasApple.Length);
+            Assert.That(n == hasApple.Length);
 
             var sol = new Solution();
             var res = sol.MinTime(n, edges, hasApple);

@@ -34,15 +34,15 @@ namespace InsertDeleteGetRandom
                 {
                     case "insert":
                         ret = set.Insert((int)inputs[i]);
-                        ClassicAssert.AreEqual(ret, expected[i]);
+                        Assert.That(ret == (bool)expected[i]);
                         break;
                     case "remove":
                         ret = set.Remove((int)inputs[i]);
-                        ClassicAssert.AreEqual(ret, expected[i]);
+                        Assert.That(ret == (bool)expected[i]);
                         break;
                     case "getRandom":
                         retI = set.GetRandom();
-                        ClassicAssert.AreEqual(retI, retI);
+                        // Assert.That(retI == retI);
                         break;
                 }
         }

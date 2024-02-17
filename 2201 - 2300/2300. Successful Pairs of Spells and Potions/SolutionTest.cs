@@ -25,7 +25,7 @@ namespace SuccessfulPairsOfSpellsAndPotions
             var spells = ArrayHelper.ArrayFromString<int>(spellsStr);
             var potions = ArrayHelper.ArrayFromString<int>(potionsStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
-            ClassicAssert.AreEqual(spells.Length, expected.Length);
+            Assert.That(spells.Length == expected.Length);
 
             var sol = new Solution();
             var res = sol.SuccessfulPairs(spells, potions, success);

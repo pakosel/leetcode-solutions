@@ -25,8 +25,8 @@ namespace TwoSumIIinputArrayIsSorted
             var numbers = ArrayHelper.ArrayFromString<int>(numbersStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
-            ClassicAssert.GreaterOrEqual(numbers.Length, 2);
-            ClassicAssert.AreEqual(2, expected.Length);
+            Assert.That(numbers.Length >= 2);
+            Assert.That(2 == expected.Length);
 
             var sol = new Solution();
             var res = sol.TwoSum(numbers, target);

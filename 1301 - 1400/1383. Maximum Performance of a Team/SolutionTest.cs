@@ -24,8 +24,8 @@ namespace MaximumPerformanceOfTeam
         {
             var speed = ArrayHelper.ArrayFromString<int>(speedStr);
             var efficiency = ArrayHelper.ArrayFromString<int>(efficiencyStr);
-            ClassicAssert.AreEqual(n, efficiency.Length);
-            ClassicAssert.AreEqual(speed.Length, efficiency.Length);
+            Assert.That(n == efficiency.Length);
+            Assert.That(speed.Length == efficiency.Length);
 
             var sol = new Solution();
             var res = sol.MaxPerformance(n, speed, efficiency, k);

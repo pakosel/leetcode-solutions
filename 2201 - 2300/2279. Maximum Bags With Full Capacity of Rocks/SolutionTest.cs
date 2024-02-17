@@ -24,7 +24,7 @@ namespace MaximumBagsWithFullCapacityOfRocks
             var capacity = ArrayHelper.ArrayFromString<int>(capacityStr);
             var rocks = ArrayHelper.ArrayFromString<int>(rocksStr);
 
-            ClassicAssert.AreEqual(capacity.Length, rocks.Length);
+            Assert.That(capacity.Length == rocks.Length);
 
             var sol = new Solution();
             var res = sol.MaximumBags(capacity, rocks, additionalRocks);

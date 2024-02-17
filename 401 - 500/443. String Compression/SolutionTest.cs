@@ -29,7 +29,7 @@ namespace StringCompression
             var sol = new Solution();
             var res = sol.Compress(chars);
 
-            ClassicAssert.AreEqual(res, expected.Length);
+            Assert.That(res == expected.Length);
             CollectionAssert.AreEquivalent(chars.Take(res), expected);
         }
     }

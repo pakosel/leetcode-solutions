@@ -27,7 +27,7 @@ namespace KthLargestElementInStream
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
             Assert.That(commands.Length == expected.Length);
-            ClassicAssert.AreEqual(args.Length, expected.Length);
+            Assert.That(args.Length == expected.Length);
 
             var sol = new KthLargest(k, init);
             for(int i=0; i<commands.Length; i++)
@@ -37,7 +37,7 @@ namespace KthLargestElementInStream
                 {
                     case "add":
                         var res = sol.Add(args[i]);
-                        ClassicAssert.AreEqual(res, expected[i]);
+                        Assert.That(res == expected[i]);
                         break;
                 }
             }

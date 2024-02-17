@@ -32,7 +32,7 @@ namespace DesignAddAndSearchWordsDataStructure
                         break;
                     case "search":
                         var res = sol.Search(inputs[i]);
-                        ClassicAssert.AreEqual(res, expected[i]);
+                        Assert.That(res == expected[i]);
                         break;
                 }
             }
@@ -55,7 +55,7 @@ namespace DesignAddAndSearchWordsDataStructure
                         break;
                     case "search":
                         var res = sol.Search(inputs[i]);
-                        ClassicAssert.AreEqual(res, expected[i]);
+                        Assert.That(res == expected[i]);
                         break;
                 }
             }

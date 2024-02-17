@@ -33,12 +33,12 @@ namespace CopyListWithRandomPointer
 
             while(res != null && expected != null)
             {
-                ClassicAssert.AreNotEqual(res, expected);
+                Assert.That(res != expected);
                 Assert.That(res.val == expected.val);
                 if(res.random != null || expected.random != null)
                 {
-                    ClassicAssert.AreNotEqual(res.random, expected.random);
-                    ClassicAssert.AreEqual(res.random?.val, expected.random?.val);
+                    Assert.That(res.random != expected.random);
+                    Assert.That(res.random?.val == expected.random?.val);
                 }
                 res = res.next;
                 expected = expected.next;

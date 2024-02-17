@@ -27,7 +27,7 @@ namespace LongestSubsequenceWithLimitedSum
             var queries = ArrayHelper.ArrayFromString<int>(queriesStr);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
             
-            ClassicAssert.AreEqual(queries.Length, expected.Length);
+            Assert.That(queries.Length == expected.Length);
             
             var sol = new Solution();
             var res = sol.AnswerQueries(nums, queries);

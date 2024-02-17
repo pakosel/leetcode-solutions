@@ -22,7 +22,7 @@ namespace DetectSquares
         public void Test_Generic(string[] commands, string inputsStr, int?[] expected)
         {
             var inputs = ArrayHelper.MatrixFromString<int>(inputsStr);
-            ClassicAssert.AreEqual(inputs.Length, commands.Length);
+            Assert.That(inputs.Length == commands.Length);
             Assert.That(expected.Length == commands.Length);
 
             var res = new List<int?>();

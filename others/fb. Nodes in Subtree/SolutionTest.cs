@@ -20,10 +20,10 @@ namespace NodesInSubtree
             int[] output_1 = Solution.countOfNodes(root_1, queries_1, s_1);
             int[] expected_1 = { 2 };
 
-            foreach(var e in output_1)
-                Console.Out.WriteLine(e);
+            // foreach(var e in output_1)
+            //     Console.Out.WriteLine(e);
 
-            ClassicAssert.AreEqual(expected_1, output_1);
+            CollectionAssert.AreEqual(expected_1, output_1);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace NodesInSubtree
             int[] output_2 = Solution.countOfNodes(root_2, queries_2, s_2);
             int[] expected_2 = { 4, 1, 2 };
 
-            ClassicAssert.AreEqual(expected_2, output_2);
+            CollectionAssert.AreEqual(expected_2, output_2);
         }
     }
 }

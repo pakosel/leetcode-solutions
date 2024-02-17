@@ -31,10 +31,10 @@ namespace ImplementTriePrefixTree
                         sol.Insert(inputs[i]);
                         break;
                     case "search":
-                        ClassicAssert.AreEqual(sol.Search(inputs[i]), expected[i]);
+                        Assert.That(sol.Search(inputs[i]) == expected[i]);
                         break;
                     case "startsWith":
-                        ClassicAssert.AreEqual(sol.StartsWith(inputs[i]), expected[i]);
+                        Assert.That(sol.StartsWith(inputs[i]) == expected[i]);
                         break;
                 }
             }
