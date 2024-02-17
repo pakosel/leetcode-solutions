@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +27,7 @@ namespace PascalTriangle
             var sol = new Solution_2023();
             var res = sol.Generate(rowNum);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -40,7 +39,7 @@ namespace PascalTriangle
             var sol = new Solution();
             var res = sol.GeneratePascal(rowNum);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -52,7 +51,7 @@ namespace PascalTriangle
             var sol = new Solution();
             var res = sol.GeneratePascal_GenList(rowNum);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace PathSumII
             var sol = new Solution_2022();
             var res = sol.PathSum(root, target);
 
-            CollectionAssert.AreEqual(res, expected);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -44,7 +43,7 @@ namespace PathSumII
 
             var expected = ArrayHelper.MatrixFromString<int>(expectedStr);
 
-            CollectionAssert.AreEqual(res, expected);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace GroupAnagrams
             var sol = new Solution_2022();
             var res = sol.GroupAnagrams(arr);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -43,7 +42,7 @@ namespace GroupAnagrams
             var sol = new Solution();
             var res = sol.GroupAnagrams(arr);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -56,7 +55,7 @@ namespace GroupAnagrams
             var sol = new Solution_Slow();
             var res = sol.GroupAnagrams(arr);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

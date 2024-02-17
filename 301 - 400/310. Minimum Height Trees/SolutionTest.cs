@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -29,7 +28,7 @@ namespace MinimumHeightTrees
             var sol = new Solution();
             var res = sol.FindMinHeightTrees(n, edges);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -41,7 +40,7 @@ namespace MinimumHeightTrees
             var sol = new Solution_BFS();
             var res = sol.FindMinHeightTrees(n, edges);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         private int[][] StringArrayToArray(string strArray)

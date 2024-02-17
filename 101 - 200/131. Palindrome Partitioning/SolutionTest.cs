@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -25,7 +24,7 @@ namespace PalindromePartitioning
             var sol = new Solution();
             var res = sol.Partition(s);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

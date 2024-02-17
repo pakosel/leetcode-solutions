@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -31,7 +30,7 @@ namespace InsertionSortList
             var sol = new Solution();
             var res = sol.InsertionSortList(head);
 
-            CollectionAssert.AreEqual(res.ToGenericList(), expected);
+            Assert.That(res.ToGenericList(), Is.EqualTo(expected));
         }
     }
 

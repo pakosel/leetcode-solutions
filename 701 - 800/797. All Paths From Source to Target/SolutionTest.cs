@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace AllPathsFromSourceToTarget
             var res = sol.AllPathsSourceTarget(graph);
             var expected = ArrayHelper.MatrixFromString<int>(expectedArr);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -43,7 +42,7 @@ namespace AllPathsFromSourceToTarget
             var res = sol.AllPathsSourceTarget(graph);
             var expected = ArrayHelper.MatrixFromString<int>(expectedArr);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

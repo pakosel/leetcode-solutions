@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -37,7 +36,7 @@ namespace InsertInterval
             var sol = new Solution_2022();
             var res = sol.Insert(intervals, newInterval);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
 
         [Test]
@@ -51,7 +50,7 @@ namespace InsertInterval
             var sol = new Solution();
             var res = sol.Insert(intervals, newInterval);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

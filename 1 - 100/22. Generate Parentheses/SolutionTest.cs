@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -26,7 +25,7 @@ namespace GenerateParentheses
             var sol = new Solution();
             var res = sol.GenerateParenthesis(n);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

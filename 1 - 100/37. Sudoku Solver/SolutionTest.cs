@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -27,7 +26,7 @@ namespace SudokuSolver
             var sol = new Solution();
             sol.SolveSudoku(board);
 
-            CollectionAssert.AreEqual(board, expected);
+            Assert.That(board, Is.EqualTo(expected));
         }
     }
 }

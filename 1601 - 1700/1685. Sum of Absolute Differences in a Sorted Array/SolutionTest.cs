@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -25,7 +24,7 @@ namespace SumAbsoluteDifferencesInSortedArray
             var sol = new Solution();
             var res = sol.GetSumAbsoluteDifferences(nums);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
+            Assert.That(res, Is.EquivalentTo(ArrayHelper.ArrayFromString<int>(expected)));
         }
     }
 }

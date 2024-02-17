@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -28,7 +27,7 @@ namespace KRadiusSubarrayAverages
             var sol = new Solution();
             var res = sol.GetAverages(nums, k);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

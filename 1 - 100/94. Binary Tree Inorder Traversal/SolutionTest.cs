@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace BinaryTreeInorderTraversal
             var sol = new Solution();
             var res = sol.InorderTraversal(root);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
         
         [Test]
@@ -43,7 +42,7 @@ namespace BinaryTreeInorderTraversal
             var sol = new Solution_2020();
             var res = sol.InorderTraversal(root);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

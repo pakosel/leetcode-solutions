@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -29,7 +28,7 @@ namespace SquaresOfSortedArray
             var sol = new Solution();
             var res = sol.SortedSquares(arr);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
+            Assert.That(res, Is.EquivalentTo(ArrayHelper.ArrayFromString<int>(expected)));
         }
 
         [Test]
@@ -41,7 +40,7 @@ namespace SquaresOfSortedArray
             var sol = new Solution_Naive();
             var res = sol.SortedSquares(arr);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
+            Assert.That(res, Is.EquivalentTo(ArrayHelper.ArrayFromString<int>(expected)));
         }
 
         [Test]
@@ -53,7 +52,7 @@ namespace SquaresOfSortedArray
             var sol = new Solution_Parallel();
             var res = sol.SortedSquares(arr);
 
-            CollectionAssert.AreEquivalent(res, ArrayHelper.ArrayFromString<int>(expected));
+            Assert.That(res, Is.EquivalentTo(ArrayHelper.ArrayFromString<int>(expected)));
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -47,7 +46,7 @@ namespace RotateImage
             var sol = new Solution();
             sol.Rotate(matrix);
 
-            CollectionAssert.AreEqual(matrix, expected);
+            Assert.That(matrix, Is.EqualTo(expected));
         }
     }
 }

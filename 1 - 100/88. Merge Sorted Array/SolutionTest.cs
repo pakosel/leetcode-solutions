@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace MergeSortedArray
             sol.Merge(nums1, m, nums2, n);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            CollectionAssert.AreEqual(nums1, expected);
+            Assert.That(nums1, Is.EqualTo(expected));
         }
     }
 }

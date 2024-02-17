@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -36,7 +35,7 @@ namespace CountingBits
             var sol = new Solution();
             var res = sol.CountBits(n);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(res, Is.EqualTo(expected));
         }
     }
 }

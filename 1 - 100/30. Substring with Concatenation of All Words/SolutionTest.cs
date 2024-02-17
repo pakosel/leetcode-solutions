@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -30,7 +29,7 @@ namespace SubstringConcatenationAllWords
             var sol = new Solution();
             var res = sol.FindSubstring(s, words);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -42,7 +41,7 @@ namespace SubstringConcatenationAllWords
             var sol = new Solution_TLE();
             var res = sol.FindSubstring(s, words);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

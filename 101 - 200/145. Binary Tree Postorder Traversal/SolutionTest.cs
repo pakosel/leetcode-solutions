@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -29,7 +28,7 @@ namespace BinaryTreePostorderTraversal
             var ret = sol.PostorderTraversal(tree);
             var expected = ArrayHelper.ArrayFromString<int>(expectedStr);
 
-            CollectionAssert.AreEquivalent(ret, expected);
+            Assert.That(ret, Is.EquivalentTo(expected));
         }
     }
 }

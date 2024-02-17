@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -43,7 +42,7 @@ namespace SnapshotArray
                         break;
                 }
 
-            CollectionAssert.AreEquivalent(expected, res);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

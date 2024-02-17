@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -36,7 +35,7 @@ namespace DesignFrontMiddleBackQueue
                 res[i] = ExecuteOperation(commands[i], sol, arg);
             }
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         private int? ExecuteOperation(string operation, FrontMiddleBackQueue queue, int? arg)

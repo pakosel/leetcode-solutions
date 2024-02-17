@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -32,7 +31,7 @@ namespace PermutationsII
             var sol = new Solution();
             var res = sol.PermuteUnique(input);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -45,7 +44,7 @@ namespace PermutationsII
             var sol = new Solution_List();
             var res = sol.PermuteUnique(input);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
 
         [Test]
@@ -58,7 +57,7 @@ namespace PermutationsII
             var sol = new Solution_Memoization();
             var res = sol.PermuteUnique(input);
 
-            CollectionAssert.AreEquivalent(res, expected);
+            Assert.That(res, Is.EquivalentTo(expected));
         }
     }
 }

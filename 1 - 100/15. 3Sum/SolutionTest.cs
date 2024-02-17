@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -31,7 +30,7 @@ namespace ThreeSum
 
             var expectedArr = ArrayHelper.MatrixFromString<int>(expected);
 
-            CollectionAssert.AreEquivalent(ret, expectedArr);
+            Assert.That(ret, Is.EquivalentTo(expectedArr));
         }
 
         [Test]
@@ -47,7 +46,7 @@ namespace ThreeSum
             //parse expected array
             var expectedArr = ArrayHelper.MatrixFromString<int>(expected);
 
-            CollectionAssert.AreEquivalent(ret, expectedArr);
+            Assert.That(ret, Is.EquivalentTo(expectedArr));
         }
     }
 }

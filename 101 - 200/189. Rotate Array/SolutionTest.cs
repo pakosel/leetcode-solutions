@@ -1,6 +1,5 @@
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -33,7 +32,7 @@ namespace RotateArray
             var sol = new Solution_Basic();
             sol.Rotate(nums, k);
 
-            CollectionAssert.AreEqual(nums, expected);
+            Assert.That(nums, Is.EqualTo(expected));
         }
         
         [Test]
@@ -46,7 +45,7 @@ namespace RotateArray
             var sol = new Solution_O_k();
             sol.Rotate(nums, k);
 
-            CollectionAssert.AreEqual(nums, expected);
+            Assert.That(nums, Is.EqualTo(expected));
         }
 
         [Test]
@@ -59,7 +58,7 @@ namespace RotateArray
             var sol = new Solution_O_1();
             sol.Rotate(nums, k);
 
-            CollectionAssert.AreEqual(nums, expected);
+            Assert.That(nums, Is.EqualTo(expected));
         }
     }
 }

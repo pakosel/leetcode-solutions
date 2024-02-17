@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -31,8 +30,8 @@ namespace TopKFrequentElements
             var res = sol.TopKFrequent(arr, k);
             var resBoring = solutionBoring.TopKFrequent(arr, k);
 
-            CollectionAssert.AreEqual(expected, res);
-            CollectionAssert.AreEqual(resBoring, expected);
+            Assert.That(res, Is.EqualTo(expected));
+            Assert.That(resBoring, Is.EqualTo(expected));
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Linq;
 using System.Collections.Generic;
 using Common;
@@ -59,7 +58,7 @@ namespace DataStreamAsDisjointIntervals
                         //     Console.Write($"[{it[0]},{it[1]}],");
                         // Console.WriteLine();
 
-                        CollectionAssert.AreEqual(expected[i], res);
+                        Assert.That(expected[i], Is.EqualTo(res));
                         break;
                     default:
                         Assert.That(expected[i], Is.Null);
