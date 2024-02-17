@@ -26,7 +26,7 @@ namespace PartitionArrayForMaximumSum
             var sol = new Solution();
             var res = sol.MaxSumAfterPartitioning(arr, k);
             
-            Assert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
     }
 }

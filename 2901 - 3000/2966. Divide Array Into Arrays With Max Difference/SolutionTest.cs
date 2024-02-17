@@ -25,7 +25,7 @@ namespace DivideArrayIntoArraysWithMaxDifference
             var sol = new Solution();
             var res = sol.DivideArray(nums, k);
 
-            CollectionAssert.AreEqual(expected, res);
+            Assert.That(expected, Is.EqualTo(res));
         }
     }
 }

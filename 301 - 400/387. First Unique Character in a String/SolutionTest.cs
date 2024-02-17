@@ -22,7 +22,7 @@ namespace FirstUniqueCharacterInString
             var sol = new Solution2023();
             var res = sol.FirstUniqChar(s);
 
-            Assert.AreEqual(expected, res);
+            Assert.That(expected == res);
         }
 
         [Test]
