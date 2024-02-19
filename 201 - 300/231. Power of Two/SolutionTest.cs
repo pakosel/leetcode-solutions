@@ -27,7 +27,17 @@ namespace PowerOfTwo
 
         [Test]
         [TestCaseSource("testCases")]
-        public void Test_Stack(int n, bool expected)
+        public void Test_Generic24(int n, bool expected)
+        {
+            var sol = new Solution2024();
+            var res = sol.IsPowerOfTwo(n);
+
+            Assert.That(expected == res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic(int n, bool expected)
         {
             var sol = new Solution();
             var res = sol.IsPowerOfTwo(n);

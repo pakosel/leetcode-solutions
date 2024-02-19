@@ -4,6 +4,11 @@ Given an integer `n`, return `true` *if it is a power of two. Otherwise, return*
 
 An integer `n` is a power of two, if there exists an integer `x` such that <code>n == 2<sup>x</sup></code>.
 
+**Follow up**: Could you solve it without loops/recursion?
+
+**Constraints**:
+- <code>-2<sup>31</sup> <= n <= 2<sup>31 - 1</sup></code>
+
 ### Example 1:
 ```
 Input: n = 1
