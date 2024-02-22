@@ -6,6 +6,24 @@ using Common;
 
 namespace FindTheTownJudge
 {
+    public class Solution_2024
+    {
+        public int FindJudge(int n, int[][] trust)
+        {
+            var arr = new int[n + 1];
+            var arrT = new int[n + 1];
+            foreach (var p in trust)
+            {
+                arr[p[0]]++;
+                arrT[p[1]]++;
+            }
+            for (int i = 1; i <= n; i++)
+                if (arr[i] == 0 && arrT[i] == n - 1)
+                    return i;
+            return -1;
+        }
+    }
+    
     public class Solution_2022
     {
         public int FindJudge(int n, int[][] trust)

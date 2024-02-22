@@ -20,6 +20,19 @@ namespace FindTheTownJudge
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic_2024(int n, string trustStr, int expected)
+        {
+            var trust = ArrayHelper.MatrixFromString<int>(trustStr);
+
+            var sol = new Solution_2024();
+            var res = sol.FindJudge(n, trust);
+
+            Assert.That(expected == res);
+        }
+        
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic_2022(int n, string trustStr, int expected)
         {
             var trust = ArrayHelper.MatrixFromString<int>(trustStr);
