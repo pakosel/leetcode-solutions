@@ -6,6 +6,13 @@ using Common;
 
 namespace SameTree
 {
+    public class Solution2024
+    {
+        public bool IsSameTree(TreeNode p, TreeNode q) =>
+            (p == null && q == null) ||
+            (p?.val == q?.val && IsSameTree(p?.left, q?.left) && IsSameTree(p?.right, q?.right));
+    }
+    
     public class Solution
     {
         public bool IsSameTree(TreeNode p, TreeNode q)

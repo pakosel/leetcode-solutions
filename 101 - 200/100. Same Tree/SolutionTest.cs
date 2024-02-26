@@ -23,6 +23,19 @@ namespace SameTree
 
         [Test]
         [TestCaseSource("testCases")]
+        public void Test_Generic24(string pStr, string qStr, bool expected)
+        {
+            var p = TreeNodeHelper.BuildTree(pStr);
+            var q = TreeNodeHelper.BuildTree(qStr);
+
+            var sol = new Solution2024();
+            var res = sol.IsSameTree(p, q);
+
+            Assert.That(expected == res);
+        }
+
+        [Test]
+        [TestCaseSource("testCases")]
         public void Test_Generic(string pStr, string qStr, bool expected)
         {
             var p = TreeNodeHelper.BuildTree(pStr);
