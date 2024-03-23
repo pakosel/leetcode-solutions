@@ -17,14 +17,14 @@ namespace ReorderList
                 stack.Push(curr);
                 curr = curr.next;
             }
-            int cnt = stack.Count() / 2;
+
             curr = head;
-            while (cnt-- > 0)
+            var todo = stack.Count / 2;
+            while (todo-- > 0)
             {
-                var ins = stack.Pop();
-                ins.next = curr.next;
-                curr.next = ins;
-                curr = ins.next;
+                var pop = stack.Pop();
+                (pop.next, curr.next) = (curr.next, pop);
+                curr = curr.next.next;
             }
             curr.next = null;
         }

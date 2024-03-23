@@ -19,6 +19,20 @@ namespace MergeInBetweenLinkedLists
 
         [Test]
         [TestCaseSource("testCasesStr")]
+        public void Test_Generic2024(string strList1, int a, int b, string strList2, string expected)
+        {
+            var list1 = ListNodeHelper.BuildList(strList1);
+            var list2 = ListNodeHelper.BuildList(strList2);
+            var expectedList = ListNodeHelper.BuildList(expected);
+
+            var sol = new Solution2024();
+            var res = sol.MergeInBetween(list1, a, b, list2);
+
+            Assert.That(ListNodeHelper.AreEqual(res, expectedList));
+        }
+
+        [Test]
+        [TestCaseSource("testCasesStr")]
         public void Test_Generic(string strList1, int a, int b, string strList2, string expected)
         {
             var list1 = ListNodeHelper.BuildList(strList1);

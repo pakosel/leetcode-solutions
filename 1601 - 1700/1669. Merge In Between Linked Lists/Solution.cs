@@ -6,6 +6,24 @@ using Common;
 
 namespace MergeInBetweenLinkedLists
 {
+    public class Solution2024
+    {
+        public ListNode MergeInBetween(ListNode list1, int a, int b, ListNode list2)
+        {
+            b -= a;
+            var currA = list1;
+            while (--a > 0)
+                currA = currA.next;
+            var toDel = currA.next;
+            while (b-- > 0)
+                toDel = toDel.next;
+            currA.next = list2;
+            while (currA.next != null)
+                currA = currA.next;
+            currA.next = toDel.next;
+            return list1;
+        }
+    }
     public class Solution
     {
         public ListNode MergeInBetween(ListNode list1, int a, int b, ListNode list2)
