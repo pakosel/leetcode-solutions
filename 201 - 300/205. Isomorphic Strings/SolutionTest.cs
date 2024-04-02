@@ -16,6 +16,7 @@ namespace IsomorphicStrings
             new object[] {"foo", "bar", false},
             new object[] {"paper", "title", true},
             new object[] {"badc", "baba", false},
+            new object[] {"13", "42", true},
         };
 
         [Test]

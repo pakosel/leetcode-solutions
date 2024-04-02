@@ -9,25 +9,16 @@ namespace IsomorphicStrings
     {
         public bool IsIsomorphic(string s, string t)
         {
-            if (s.Length != t.Length)
-                return false;
-            var replacementsS = new Dictionary<char, char>(26);
-            var replacementsT = new Dictionary<char, char>(26);
+            var replaceS = new int[255];
+            var replaceT = new int[255];
             for (int i = 0; i < s.Length; i++)
-            {
-                var cs = s[i];
-                var ct = t[i];
-
-                if (!replacementsS.ContainsKey(cs))
-                    replacementsS.Add(cs, ct);
-                else if (replacementsS[cs] != ct)
+                if (replaceS[s[i]] == 0 && replaceT[t[i]] == 0)
+                {
+                    replaceS[s[i]] = t[i];
+                    replaceT[t[i]] = s[i];
+                }
+                else if (replaceS[s[i]] != t[i] || replaceT[t[i]] != s[i])
                     return false;
-
-                if (!replacementsT.ContainsKey(ct))
-                    replacementsT.Add(ct, cs);
-                else if (replacementsT[ct] != cs)
-                    return false;
-            }
             return true;
         }
     }
