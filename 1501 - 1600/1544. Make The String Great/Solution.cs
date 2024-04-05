@@ -5,6 +5,20 @@ using System.Text;
 
 namespace MakeTheStringGreat
 {
+    public class Solution2024
+    {
+        public string MakeGood(string s)
+        {
+            var sb = new StringBuilder();
+            foreach (char c in s)
+                if (sb.Length > 0 && Math.Abs(sb[^1] - c) == 32)
+                    sb.Length--;
+                else
+                    sb.Append(c);
+            return sb.ToString();
+        }
+    }
+    
     public class Solution
     {
         public string MakeGood(string s)
