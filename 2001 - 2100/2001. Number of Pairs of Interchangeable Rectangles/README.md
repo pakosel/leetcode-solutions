@@ -7,7 +7,6 @@ Two rectangles `i` and `j` (`i < j`) are considered **interchangeable** if they 
 Return the ***number*** *of pairs of* ***interchangeable*** *rectangles in* `rectangles`.
 
 **Constraints**:
-<code>i</code>
 - <code>n == rectangles.length</code>
 - <code>1 <= n <= 10<sup>5</sup></code>
 - <code>rectangles[i].length == 2</code>

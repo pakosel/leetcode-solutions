@@ -32,5 +32,15 @@ namespace NthTribonacciNumber
 
             Assert.That(expected == res);
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic24(int n, int expected)
+        {
+            var sol = new Solution2024();
+            var res = sol.Tribonacci(n);
+
+            Assert.That(expected == res);
+        }
     }
 }
