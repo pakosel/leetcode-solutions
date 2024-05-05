@@ -38,5 +38,24 @@ namespace DeleteNodeInLinkedList
 
             Assert.That(ListNodeHelper.AreEqual(expected, head));
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic24(string listStr, int nodeVal, string expectedStr)
+        {
+            var head = ListNodeHelper.BuildList(listStr);
+            var expected = ListNodeHelper.BuildList(expectedStr);
+            ListNode node = head;
+            while(node?.val != nodeVal)
+                node = node.next;
+            
+            Assert.That(node != null);
+            Assert.That(node.next != null);
+
+            var sol = new Solution24();
+            sol.DeleteNode(node);
+
+            Assert.That(ListNodeHelper.AreEqual(expected, head));
+        }
     }
 }
