@@ -5,6 +5,29 @@ using System.Text;
 
 namespace Subsets
 {
+    public class Solution2024
+    {
+        public IList<IList<int>> Subsets(int[] nums)
+        {
+            return AllSets(nums.Length - 1, new List<IList<int>>() { new List<int>() });
+
+            IList<IList<int>> AllSets(int idx, IList<IList<int>> sets)
+            {
+                if (idx < 0)
+                    return sets;
+                var newElems = new List<List<int>>();
+                foreach (var e in sets)
+                {
+                    var newList = new List<int>(e) { nums[idx] };
+                    newElems.Add(newList);
+                }
+
+                foreach (var e in newElems)
+                    sets.Add(e);
+                return AllSets(idx - 1, sets);
+            }
+        }
+    }
     public class Solution
     {
         public IList<IList<int>> Subsets(int[] nums)
