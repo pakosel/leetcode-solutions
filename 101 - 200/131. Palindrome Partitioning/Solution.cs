@@ -5,10 +5,57 @@ using System.Text;
 
 namespace PalindromePartitioning
 {
+    public class Solution2024
+    {
+        public IList<IList<string>> Partition(string s)
+        {
+            var memo = new Dictionary<(int, int), IList<IList<string>>>();
+
+            return Memo(0, s.Length - 1);
+
+            IList<IList<string>> Memo(int start, int end)
+            {
+                var key = (start, end);
+                if (memo.ContainsKey(key))
+                    return memo[key];
+                var res = new List<IList<string>>();
+                if (start == end)
+                    res.Add(new List<string>() { s[start..(end + 1)] });
+                else
+                {
+                    for (int i = start; i <= end; i++)
+                        if (CheckPalindrome(start, i))
+                        {
+                            var sub = Memo(i + 1, end);
+                            if (i + 1 > end)
+                                res.Add(new List<string>() { s[start..(i + 1)] });
+                            else
+                                foreach (var list in sub)
+                                {
+                                    var n = new List<string>() { s[start..(i + 1)] };
+                                    n.AddRange(list);
+                                    res.Add(n);
+                                }
+                        }
+                }
+                memo[key] = res;
+                return res;
+            }
+
+            bool CheckPalindrome(int start, int end)
+            {
+                while (start < end)
+                    if (s[start++] != s[end--])
+                        return false;
+                return true;
+            }
+        }
+    }
+
     public class Solution
     {
-        Dictionary<string, List<IList<string>>> dict = new Dictionary<string, List<IList<string>>>();
-        Dictionary<string, bool> palindromes = new Dictionary<string, bool>();
+        Dictionary<string, List<IList<string>>> dict = new();
+        Dictionary<string, bool> palindromes = new();
 
         public IList<IList<string>> Partition(string s)
         {

@@ -5,7 +5,6 @@ Given a string `s`, partition `s` such that every substring of the partition is 
 A **palindrome** string is a string that reads the same backward as forward.
 
 **Constraints**:
-
 - `1 <= s.length <= 16`
 - `s` contains only lowercase English letters.
 
