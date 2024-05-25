@@ -5,6 +5,56 @@ using System.Text;
 
 namespace WordBreakII
 {
+    public class Solution2024
+    {
+        public IList<string> WordBreak(string s, IList<string> wordDict)
+        {
+            var trie = new Trie();
+            foreach (var word in wordDict)
+                TrieAdd(word, trie, 0);
+            var res = new List<string>();
+
+            Track(0, 0, trie, "");
+
+            return res;
+
+            void TrieAdd(string word, Trie trie, int pos)
+            {
+                if (trie.child[word[pos] - 'a'] == null)
+                    trie.child[word[pos] - 'a'] = new Trie();
+                if (pos == word.Length - 1)
+                    trie.child[word[pos] - 'a'].isWord = true;
+                else
+                    TrieAdd(word, trie.child[word[pos] - 'a'], pos + 1);
+            }
+
+            void Track(int startPos, int currPos, Trie currTrie, string currRes)
+            {
+                if (currPos == s.Length)
+                {
+                    if(startPos == currPos)
+                        res.Add(currRes[1..]);
+                    return;
+                }
+
+                var c = s[currPos];
+                if (currTrie.child[c - 'a'] == null)
+                    return;
+
+                if (currTrie.child[c - 'a'].isWord)
+                {
+                    Track(currPos + 1, currPos + 1, trie, $"{currRes} {s[startPos..(currPos+1)]}");
+                }
+                Track(startPos, currPos + 1, currTrie.child[c - 'a'], currRes);
+            }
+        }
+
+        public class Trie
+        {
+            public Trie[] child = new Trie[26];
+            public bool isWord;
+        }
+    }
     public class Solution
     {
         Dictionary<string, List<string>> cache = new Dictionary<string, List<string>>();
