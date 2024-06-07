@@ -6,6 +6,22 @@ using Common;
 
 namespace LongestPalindrome
 {
+    public class Solution2024
+    {
+        public int LongestPalindrome(string s)
+        {
+            var arr = new int[255];
+            foreach (var c in s)
+                arr[c]++;
+            var res = 0;
+            foreach (var e in arr)
+                res += 2 * (e / 2);
+            if (res % 2 == 0 && arr.Any(e => e % 2 == 1))
+                res++;
+            return res;
+        }
+    }
+    
     public class Solution
     {
         public int LongestPalindrome(string s)

@@ -29,5 +29,15 @@ namespace LongestPalindrome
 
             Assert.That(expected == res);
         }
+
+        [Test]
+        [TestCaseSource("testCases")]
+        public void Test_Generic2024(string s, int expected)
+        {
+            var sol = new Solution2024();
+            var res = sol.LongestPalindrome(s);
+
+            Assert.That(expected == res);
+        }
     }
 }
